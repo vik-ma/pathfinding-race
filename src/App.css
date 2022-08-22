@@ -1,7 +1,21 @@
 body {
+    color:white;
     background-color: #292929;
 }
 
-p {
-    color:white;
+
+
+.node {
+    border: 1px solid white;    
+    height: 40px;
+    width: 40px;
+    margin: 1px;
+}
+
+#right-most {
+    border-right:1px solid white; 
+}
+
+#bottom-most {
+    border-bottom:1px solid white; 
 }
