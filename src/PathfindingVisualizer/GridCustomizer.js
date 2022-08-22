@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const GridGenerator = () => {
+export const GridCustomizer = () => {
   const SLIDER_DEFAULT_VALUE = 20;
   const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_DEFAULT_VALUE);

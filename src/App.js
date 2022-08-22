@@ -1,12 +1,13 @@
 import "./App.css";
-import React, { useState } from "react";
-import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
+//import React, { useState } from "react";
+//import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
+import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GridGenerator></GridGenerator>
+        <GridCustomizer></GridCustomizer>
       </header>
     </div>
   );
