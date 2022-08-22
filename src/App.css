@@ -3,7 +3,16 @@ body {
     background-color: #292929;
 }
 
+.sliderContainer {
+    margin-left: 10px;
+    display: flex;
+    align-items: stretch;
+    justify-content:flex-start; 
+}
 
+.buttonContainer {
+    margin-left: 13px;
+}
 
 .node {
     border: 1px solid white;    

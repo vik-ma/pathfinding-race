@@ -7,7 +7,7 @@ export const GridCustomizer = () => {
 
   return (
     <div>
-      <div>
+      <div className="sliderContainer">
         <input
           type="range"
           min="10"
@@ -16,8 +16,8 @@ export const GridCustomizer = () => {
           defaultValue="SLIDER_DEFAULT_VALUE"
           onChange={(e) => setRowCount(e.target.value)}
         ></input>
-        Set Row Count: {rowCount}
-        <br />
+        Set Row Count: {rowCount}</div>
+        <div className="sliderContainer">
         <input
           type="range"
           min="10"
@@ -28,9 +28,9 @@ export const GridCustomizer = () => {
         ></input>
         Set Column Count: {colCount}
         <br />
-        <button>Create Grid</button>
-      </div>
-      <div></div>
+        </div>
+        
+      <div className="buttonContainer"><button>Create Grid</button></div>
     </div>
   );
 };
