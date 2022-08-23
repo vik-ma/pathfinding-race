@@ -14,11 +14,21 @@ body {
     margin-left: 13px;
 }
 
+.gridContainer {
+    margin: 15px;
+    border: 1px solid white;
+    inline-size: min-content;
+}
+
+.rowWrapper {
+    display: flex;
+}
+
 .node {
     border: 1px solid white;    
     height: 40px;
     width: 40px;
-    margin: 1px;
+    margin: 0px;
 }
 
 #right-most {

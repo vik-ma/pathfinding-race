@@ -1,6 +1,6 @@
 import "./App.css";
 //import React, { useState } from "react";
-//import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
+import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
 import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <GridCustomizer></GridCustomizer>
+        <GridGenerator></GridGenerator>
       </header>
     </div>
   );
