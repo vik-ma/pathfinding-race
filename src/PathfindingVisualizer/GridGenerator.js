@@ -9,7 +9,7 @@ export const GridGenerator = () => {
 
   useEffect(() => {
     createGrid();
-  }, []);
+  }, [rowCount, colCount]);
 
   const createGrid = () => {
     const grid = new Array(rowCount);
