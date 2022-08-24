@@ -3,9 +3,7 @@ import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 
 export const GridGenerator = () => {
-  const { isGridRendered, setIsGridRendered } = useContext(GridContext);
-  const rowCount = 8;
-  const colCount = 14;
+  const {rowCount, colCount} = useContext(GridContext);
 
   const [gridLayout, setGridLayout] = useState([]);
 

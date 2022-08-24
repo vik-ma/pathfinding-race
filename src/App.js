@@ -7,11 +7,18 @@ import { TestComponent } from "./TestComponent";
 
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(false);
+
+  const SLIDER_DEFAULT_VALUE = 12;
+  const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
+  const [colCount, setColCount] = useState(SLIDER_DEFAULT_VALUE);
+
   return (
     <div className="App">
       <header className="App-header">
-        <GridContext.Provider value={{ isGridRendered, setIsGridRendered }}>
-          <GridCustomizer></GridCustomizer>
+        <GridContext.Provider
+          value={{ rowCount, setRowCount, colCount, setColCount }}
+        >
+          <GridCustomizer />
           <div className="buttonContainer">
             <button
               onClick={() => {
@@ -26,6 +33,14 @@ function App() {
               }}
             >
               Destroy Grid
+            </button>
+
+            <button
+              onClick={() => {
+                setIsGridRendered(true);
+              }}
+            >
+              TEST BUTTON
             </button>
           </div>
           {isGridRendered ? <GridGenerator /> : null}
