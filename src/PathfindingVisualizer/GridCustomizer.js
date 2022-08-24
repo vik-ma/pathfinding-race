@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 export const GridCustomizer = () => {
   const SLIDER_DEFAULT_VALUE = 20;
   const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_DEFAULT_VALUE);
-
   return (
     <div>
       <div className="sliderContainer">
@@ -16,8 +15,9 @@ export const GridCustomizer = () => {
           defaultValue="SLIDER_DEFAULT_VALUE"
           onChange={(e) => setRowCount(e.target.value)}
         ></input>
-        Set Row Count: {rowCount}</div>
-        <div className="sliderContainer">
+        Set Row Count: {rowCount}
+      </div>
+      <div className="sliderContainer">
         <input
           type="range"
           min="10"
@@ -28,9 +28,7 @@ export const GridCustomizer = () => {
         ></input>
         Set Column Count: {colCount}
         <br />
-        </div>
-        
-      <div className="buttonContainer"><button>Create Grid</button></div>
+      </div>
     </div>
   );
 };

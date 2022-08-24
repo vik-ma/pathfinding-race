@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 
 export const GridGenerator = () => {
+  const { isGridRendered, setIsGridRendered } = useContext(GridContext);
   const rowCount = 8;
-  const colCount = 17;
+  const colCount = 14;
 
   const [gridLayout, setGridLayout] = useState([]);
 
