@@ -14,19 +14,21 @@ function App() {
           <GridCustomizer></GridCustomizer>
           <div className="buttonContainer">
             <button
-              // onClick={() => {
-              //   setIsGridRendered(true);
-              // }}
               onClick={() => {
-                isGridRendered
-                  ? setIsGridRendered(false)
-                  : setIsGridRendered(true);
+                setIsGridRendered(true);
               }}
             >
               Create Grid
             </button>
+            <button
+              onClick={() => {
+                setIsGridRendered(false);
+              }}
+            >
+              Destroy Grid
+            </button>
           </div>
-          {isGridRendered ? <GridGenerator /> : <TestComponent />}
+          {isGridRendered ? <GridGenerator /> : null}
         </GridContext.Provider>
       </header>
     </div>
