@@ -3,12 +3,12 @@ export function BreadthFirstSearch(startNode, goalNode) {
   queue.push(startNode);
 
   while (queue.length !== 0) {
-    var currrentNode = queue.shift();
-    var adjacentNodes = currrentNode.adjacentNodes;
-    console.log(`VISITED ${currrentNode.row} ${currrentNode.col}`);
+    var currentNode = queue.shift();
+    var adjacentNodes = currentNode.adjacentNodes;
+    console.log(`VISITED ${currentNode.row} ${currentNode.col}`);
 
-    if (currrentNode === goalNode) {
-      console.log(`PATH FOUND ${currrentNode.row} ${currrentNode.col}`);
+    if (currentNode === goalNode) {
+      console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
       break;
     }
 
