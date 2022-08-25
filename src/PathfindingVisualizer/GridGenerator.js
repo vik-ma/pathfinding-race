@@ -47,6 +47,8 @@ export const GridGenerator = () => {
                   key={colIndex}
                   isStartNode={isStartNode}
                   isGoalNode={isGoalNode}
+                  row={rowIndex}
+                  col={colIndex}
                 />
               );
             })}
