@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
+import { DepthFirstSearch } from "../Algorithms/DepthFirstSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
@@ -32,7 +33,8 @@ export const GridGenerator = () => {
     const startNode = grid[START_NODE_ROW][START_NODE_COL]
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL]
 
-    BreadthFirstSearch(startNode, goalNode)
+    // BreadthFirstSearch(startNode, goalNode)
+    DepthFirstSearch(startNode, goalNode)
   };
 
   const createNode = (grid) => {

@@ -5,6 +5,7 @@ export function BreadthFirstSearch(startNode, goalNode) {
   while (queue.length !== 0) {
     var currrentNode = queue.shift();
     var adjacentNodes = currrentNode.adjacentNodes;
+    console.log(`VISITED ${currrentNode.row} ${currrentNode.col}`);
 
     if (currrentNode === goalNode) {
       console.log(`PATH FOUND ${currrentNode.row} ${currrentNode.col}`);
