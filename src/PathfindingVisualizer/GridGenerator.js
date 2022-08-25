@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
+import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
   const START_NODE_ROW = 0;
   const START_NODE_COL = 1;
-  const GOAL_NODE_ROW = rowCount - 2;
-  const GOAL_NODE_COL = colCount - 1;
+  const GOAL_NODE_ROW = rowCount-2;
+  const GOAL_NODE_COL = colCount-1;
 
   const [gridLayout, setGridLayout] = useState([]);
 
@@ -25,12 +26,28 @@ export const GridGenerator = () => {
     createNode(grid);
 
     setGridLayout(grid);
+
+    createAdjacentNodes(grid);
+
+    const startNode = grid[START_NODE_ROW][START_NODE_COL]
+    const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL]
+
+    BreadthFirstSearch(startNode, goalNode)
   };
 
   const createNode = (grid) => {
     for (let row = 0; row < rowCount; row++) {
       for (let col = 0; col < colCount; col++) {
         grid[row][col] = new gridElement(row, col);
+        // grid[row][col].addAdjacentNodes(grid);
+      }
+    }
+  };
+
+  const createAdjacentNodes = (grid) => {
+    for (let row = 0; row < rowCount; row++) {
+      for (let col = 0; col < colCount; col++) {
+        grid[row][col].addAdjacentNodes(grid);
       }
     }
   };
@@ -61,8 +78,22 @@ export const GridGenerator = () => {
   function gridElement(row, col) {
     this.row = row;
     this.col = col;
-    this.isStartNode = this.row === START_NODE_ROW && this.col === START_NODE_COL;
+    this.isStartNode =
+      this.row === START_NODE_ROW && this.col === START_NODE_COL;
     this.isGoalNode = this.row === GOAL_NODE_ROW && this.col === GOAL_NODE_COL;
+
+    this.isVisited = false;
+    this.adjacentNodes = [];
+    this.previousNode = undefined;
+    this.addAdjacentNodes = function (grid) {
+      let row = this.row;
+      let col = this.col;
+      if (row > 0) this.adjacentNodes.push(grid[row - 1][col]);
+      if (row < rowCount - 1) this.adjacentNodes.push(grid[row + 1][col]);
+      if (col > 0) this.adjacentNodes.push(grid[row][col - 1]);
+      if (col < colCount - 1) this.adjacentNodes.push(grid[row][col + 1]);
+    }
+    ;
   }
 
   return <div className="gridContainer">{drawGrid}</div>;
