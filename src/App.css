@@ -33,10 +33,10 @@ body {
     margin: 0px;
 }
 
-#right-most {
-    border-right:1px solid white; 
+.node-start {
+    background-color: crimson;
 }
 
-#bottom-most {
-    border-bottom:1px solid white; 
+.node-goal {
+    background-color:lawngreen;
 }

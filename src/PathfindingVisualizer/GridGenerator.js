@@ -3,7 +3,11 @@ import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 
 export const GridGenerator = () => {
-  const {rowCount, colCount} = useContext(GridContext);
+  const { rowCount, colCount } = useContext(GridContext);
+  const START_NODE_ROW = 0;
+  const START_NODE_COL = 1;
+  const GOAL_NODE_ROW = rowCount - 2;
+  const GOAL_NODE_COL = colCount - 1;
 
   const [gridLayout, setGridLayout] = useState([]);
 
@@ -37,7 +41,14 @@ export const GridGenerator = () => {
         return (
           <div key={rowIndex} className="rowWrapper">
             {row.map((col, colIndex) => {
-              return <Node key={colIndex} />;
+              const { isStartNode, isGoalNode } = col;
+              return (
+                <Node
+                  key={colIndex}
+                  isStartNode={isStartNode}
+                  isGoalNode={isGoalNode}
+                />
+              );
             })}
           </div>
         );
@@ -48,6 +59,8 @@ export const GridGenerator = () => {
   function gridElement(row, col) {
     this.row = row;
     this.col = col;
+    this.isStartNode = this.row === START_NODE_ROW && this.col === START_NODE_COL;
+    this.isGoalNode = this.row === GOAL_NODE_ROW && this.col === GOAL_NODE_COL;
   }
 
   return <div className="gridContainer">{drawGrid}</div>;
