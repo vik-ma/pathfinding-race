@@ -7,6 +7,7 @@ import { TestComponent } from "./TestComponent";
 
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(false);
+  const [renderTest, setRenderTest] = useState(false);
 
   const SLIDER_DEFAULT_VALUE = 12;
   const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
@@ -37,13 +38,14 @@ function App() {
 
             <button
               onClick={() => {
-                setIsGridRendered(true);
+                setRenderTest(true);
               }}
             >
               TEST BUTTON
             </button>
           </div>
           {isGridRendered ? <GridGenerator /> : null}
+          {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>
       </header>
     </div>
