@@ -3,6 +3,7 @@ import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
 import { DepthFirstSearch } from "../Algorithms/DepthFirstSearch";
+import { Dijkstra } from "../Algorithms/Dijkstra";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
@@ -34,10 +35,11 @@ export const GridGenerator = () => {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    let testAlgo = BreadthFirstSearch(startNode, goalNode);
-    // let testAlgo = DepthFirstSearch(startNode, goalNode)
-    console.log(testAlgo.pathFoundMessage);
-    console.log(testAlgo.path);
+    // let testAlgo = BreadthFirstSearch(startNode, goalNode);
+    // let testAlgo = DepthFirstSearch(startNode, goalNode);
+    let testAlgo = Dijkstra(startNode, goalNode);
+    // console.log(testAlgo.pathFoundMessage);
+    // console.log(testAlgo.path);
   };
 
   const createNodeMatrix = (grid) => {
@@ -89,6 +91,7 @@ export const GridGenerator = () => {
     this.isVisited = false;
     this.adjacentNodes = [];
     this.previousNode = undefined;
+    this.distance = Infinity;
     this.addAdjacentNodes = function (grid) {
       let row = this.row;
       let col = this.col;

@@ -9,13 +9,12 @@ export function BreadthFirstSearch(startNode, goalNode) {
     path.push(currentNode);
     var adjacentNodes = currentNode.adjacentNodes;
     // console.log(`VISITED ${currentNode.row} ${currentNode.col}`);
-    currentNode.isVisited = true; 
-    // console.log(currentNode)
+    currentNode.isVisited = true;
 
     if (currentNode === goalNode) {
       // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
-      pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`
-      return {path, pathFoundMessage};
+      pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
+      return { path, pathFoundMessage };
     }
 
     for (let i = 0; i < adjacentNodes.length; i++) {
@@ -25,6 +24,6 @@ export function BreadthFirstSearch(startNode, goalNode) {
       }
     }
   }
-  
-  return {path, pathFoundMessage};
+
+  return { path, pathFoundMessage };
 }

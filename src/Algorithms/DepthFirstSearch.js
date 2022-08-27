@@ -4,20 +4,19 @@ export function DepthFirstSearch(startNode, goalNode) {
   dFSRecursion(startNode);
   var stopRecursion = false;
 
-
   function dFSRecursion(currentNode) {
     if (currentNode.isVisited) {
       return;
     } else if (currentNode === goalNode) {
-      console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
+      // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
       currentNode.isVisited = true;
       stopRecursion = true;
-      pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`
-      path.push(currentNode)
-      return {path, pathFoundMessage}
+      pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
+      path.push(currentNode);
+      return { path, pathFoundMessage };
     } else {
       currentNode.isVisited = true;
-      path.push(currentNode)
+      path.push(currentNode);
       // console.log(`VISITED ${currentNode.row} ${currentNode.col}`);
     }
 
@@ -28,5 +27,6 @@ export function DepthFirstSearch(startNode, goalNode) {
       }
     }
   }
-  return {path, pathFoundMessage}
+  
+  return { path, pathFoundMessage };
 }
