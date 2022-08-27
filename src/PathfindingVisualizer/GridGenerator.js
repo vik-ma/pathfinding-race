@@ -38,8 +38,8 @@ export const GridGenerator = () => {
     // let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
     let testAlgo = Dijkstra(startNode, goalNode);
-    // console.log(testAlgo.pathFoundMessage);
-    // console.log(testAlgo.path);
+    console.log(testAlgo.pathFoundMessage);
+    console.log(testAlgo.path);
   };
 
   const createNodeMatrix = (grid) => {

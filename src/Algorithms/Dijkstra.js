@@ -8,12 +8,11 @@ export function Dijkstra(startNode, goalNode) {
 
   startNode.distance = 0;
   pq.enqueue([startNode, 0]);
-  path.push(startNode);
 
   while (!pq.isEmpty()) {
     let currentNode = pq.dequeue();
     currentNode.isVisited = true;
-
+    path.push(currentNode);
     // console.log(`VISITED ${currentNode.row} ${currentNode.col}`);
 
     if (currentNode === goalNode) {
@@ -28,7 +27,6 @@ export function Dijkstra(startNode, goalNode) {
         let newDist = currentNode.distance + 1;
         if (newDist < adjacentNodes[i].distance) {
           adjacentNodes[i].distance = newDist;
-          path.push(currentNode);
           pq.enqueue([adjacentNodes[i], adjacentNodes[i].distance]);
         }
       }
