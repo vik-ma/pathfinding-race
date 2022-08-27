@@ -8,8 +8,9 @@ export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
   const START_NODE_ROW = 0;
   const START_NODE_COL = 1;
-  const GOAL_NODE_ROW = rowCount-2;
-  const GOAL_NODE_COL = colCount-1;
+  const GOAL_NODE_ROW = rowCount - 2;
+  const GOAL_NODE_COL = colCount - 1;
+  const NUM_NODES = rowCount * colCount;
 
   const [gridLayout, setGridLayout] = useState([]);
 
@@ -30,11 +31,11 @@ export const GridGenerator = () => {
 
     createAdjacentNodes(grid);
 
-    const startNode = grid[START_NODE_ROW][START_NODE_COL]
-    const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL]
+    const startNode = grid[START_NODE_ROW][START_NODE_COL];
+    const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    // BreadthFirstSearch(startNode, goalNode)
-    DepthFirstSearch(startNode, goalNode)
+    BreadthFirstSearch(startNode, goalNode);
+    // DepthFirstSearch(startNode, goalNode)
   };
 
   const createNode = (grid) => {
@@ -94,8 +95,7 @@ export const GridGenerator = () => {
       if (row < rowCount - 1) this.adjacentNodes.push(grid[row + 1][col]);
       if (col > 0) this.adjacentNodes.push(grid[row][col - 1]);
       if (col < colCount - 1) this.adjacentNodes.push(grid[row][col + 1]);
-    }
-    ;
+    };
   }
 
   return <div className="gridContainer">{drawGrid}</div>;

@@ -35,8 +35,13 @@ body {
 
 .node-start {
     background-color: crimson;
+    /* border: 1px solid crimson; */
 }
 
 .node-goal {
     background-color:lawngreen;
+}
+
+.node-visited {
+    background-color: aqua;
 }

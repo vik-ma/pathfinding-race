@@ -7,6 +7,7 @@ export function DepthFirstSearch(startNode, goalNode) {
       return;
     } else if (currentNode === goalNode) {
       console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
+      currentNode.isVisited = true;
       stopRecursion = true;
     } else {
       currentNode.isVisited = true;
