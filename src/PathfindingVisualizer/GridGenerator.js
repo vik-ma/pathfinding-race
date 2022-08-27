@@ -34,8 +34,9 @@ export const GridGenerator = () => {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    BreadthFirstSearch(startNode, goalNode);
-    // DepthFirstSearch(startNode, goalNode)
+    let bFS = BreadthFirstSearch(startNode, goalNode);
+    // let dFS = DepthFirstSearch(startNode, goalNode)
+    console.log(bFS.pathFoundMessage);
   };
 
   const createNode = (grid) => {
