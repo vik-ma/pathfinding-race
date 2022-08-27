@@ -25,30 +25,30 @@ export const GridGenerator = () => {
       grid[row] = new Array(colCount);
     }
 
-    createNode(grid);
+    createNodeMatrix(grid);
 
     setGridLayout(grid);
 
-    createAdjacentNodes(grid);
+    createAdjacentNodeMatrix(grid);
 
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    let bFS = BreadthFirstSearch(startNode, goalNode);
-    // let dFS = DepthFirstSearch(startNode, goalNode)
-    console.log(bFS.pathFoundMessage);
+    let testAlgo = BreadthFirstSearch(startNode, goalNode);
+    // let testAlgo = DepthFirstSearch(startNode, goalNode)
+    console.log(testAlgo.pathFoundMessage);
+    console.log(testAlgo.path);
   };
 
-  const createNode = (grid) => {
+  const createNodeMatrix = (grid) => {
     for (let row = 0; row < rowCount; row++) {
       for (let col = 0; col < colCount; col++) {
         grid[row][col] = new gridElement(row, col);
-        // grid[row][col].addAdjacentNodes(grid);
       }
     }
   };
 
-  const createAdjacentNodes = (grid) => {
+  const createAdjacentNodeMatrix = (grid) => {
     for (let row = 0; row < rowCount; row++) {
       for (let col = 0; col < colCount; col++) {
         grid[row][col].addAdjacentNodes(grid);
