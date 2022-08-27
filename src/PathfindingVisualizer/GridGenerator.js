@@ -4,6 +4,7 @@ import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
 import { DepthFirstSearch } from "../Algorithms/DepthFirstSearch";
 import { Dijkstra } from "../Algorithms/Dijkstra";
+import { Astar } from "../Algorithms/Astar";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
@@ -11,6 +12,9 @@ export const GridGenerator = () => {
   const START_NODE_COL = 1;
   const GOAL_NODE_ROW = rowCount - 2;
   const GOAL_NODE_COL = colCount - 1;
+  // const GOAL_NODE_COL = 3;
+  // const GOAL_NODE_ROW = 9;
+
   const NUM_NODES = rowCount * colCount;
 
   const [gridLayout, setGridLayout] = useState([]);
@@ -37,7 +41,8 @@ export const GridGenerator = () => {
 
     // let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
-    let testAlgo = Dijkstra(startNode, goalNode);
+    // let testAlgo = Dijkstra(startNode, goalNode);
+    let testAlgo = Astar(startNode, goalNode)
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
   };
