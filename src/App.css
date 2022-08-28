@@ -46,6 +46,10 @@ body {
     background-color: aqua;
 }
 
+.node-visited-bi {
+    background-color: coral;
+}
+
 .node-wall {
     background-color: aliceblue;
 }
