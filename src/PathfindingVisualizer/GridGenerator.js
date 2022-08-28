@@ -36,17 +36,19 @@ export const GridGenerator = () => {
 
     setGridLayout(grid);
 
+    createWalls(grid);
+
     createAdjacentNodeMatrix(grid);
 
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    // let testAlgo = BreadthFirstSearch(startNode, goalNode);
+    let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
     // let testAlgo = Dijkstra(startNode, goalNode);
     // let testAlgo = Astar(startNode, goalNode)
     // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
-    let testAlgo = BidirectionalSearch(startNode, goalNode)
+    // let testAlgo = BidirectionalSearch(startNode, goalNode);
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
   };
@@ -67,13 +69,20 @@ export const GridGenerator = () => {
     }
   };
 
+  const createWalls = (grid) => {
+    grid[0][2].isWall = true;
+    grid[1][0].isWall = true;
+    // grid[1][1].isWall = true;
+    grid[1][2].isWall = true;
+  };
+
   const drawGrid = (
     <div>
       {gridLayout.map((row, rowIndex) => {
         return (
           <div key={rowIndex} className="rowWrapper">
             {row.map((col, colIndex) => {
-              const { isStartNode, isGoalNode } = col;
+              const { isStartNode, isGoalNode, isWall } = col;
               return (
                 <Node
                   key={colIndex}
@@ -81,6 +90,7 @@ export const GridGenerator = () => {
                   isGoalNode={isGoalNode}
                   row={rowIndex}
                   col={colIndex}
+                  isWall={isWall}
                 />
               );
             })}
@@ -97,6 +107,7 @@ export const GridGenerator = () => {
       this.row === START_NODE_ROW && this.col === START_NODE_COL;
     this.isGoalNode = this.row === GOAL_NODE_ROW && this.col === GOAL_NODE_COL;
 
+    this.isWall = false;
     this.isVisited = false;
     this.isVisitedBidirectional = false;
     this.adjacentNodes = [];
@@ -105,10 +116,14 @@ export const GridGenerator = () => {
     this.addAdjacentNodes = function (grid) {
       let row = this.row;
       let col = this.col;
-      if (row > 0) this.adjacentNodes.push(grid[row - 1][col]);
-      if (row < rowCount - 1) this.adjacentNodes.push(grid[row + 1][col]);
-      if (col > 0) this.adjacentNodes.push(grid[row][col - 1]);
-      if (col < colCount - 1) this.adjacentNodes.push(grid[row][col + 1]);
+      if (row > 0 && !grid[row - 1][col].isWall)
+        this.adjacentNodes.push(grid[row - 1][col]);
+      if (row < rowCount - 1 && !grid[row + 1][col].isWall)
+        this.adjacentNodes.push(grid[row + 1][col]);
+      if (col > 0 && !grid[row][col - 1].isWall)
+        this.adjacentNodes.push(grid[row][col - 1]);
+      if (col < colCount - 1 && !grid[row][col + 1].isWall)
+        this.adjacentNodes.push(grid[row][col + 1]);
     };
   }
 

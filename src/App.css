@@ -45,3 +45,7 @@ body {
 .node-visited {
     background-color: aqua;
 }
+
+.node-wall {
+    background-color: aliceblue;
+}
