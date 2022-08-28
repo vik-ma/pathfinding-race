@@ -1,6 +1,6 @@
 import { PriorityQueue } from "./PriorityQueue";
 
-export function Astar(startNode, goalNode) {
+export function GreedyBestFirstSearch(startNode, goalNode) {
   var pq = new PriorityQueue();
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
@@ -33,13 +33,8 @@ export function Astar(startNode, goalNode) {
     let adjacentNodes = currentNode.adjacentNodes;
     for (let i = 0; i < adjacentNodes.length; i++) {
       if (!adjacentNodes[i].isVisited) {
-        let newDist = currentNode.distance + 1;
-        if (newDist < adjacentNodes[i].distance) {
-          adjacentNodes[i].distance = newDist;
-          let priority =
-            adjacentNodes[i].distance + heuristic(adjacentNodes[i], goalNode);
-          pq.enqueue([adjacentNodes[i], priority]);
-        }
+        let priority = heuristic(adjacentNodes[i], goalNode);
+        pq.enqueue([adjacentNodes[i], priority]);
       }
     }
   }

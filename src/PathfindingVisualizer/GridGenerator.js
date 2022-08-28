@@ -5,6 +5,7 @@ import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
 import { DepthFirstSearch } from "../Algorithms/DepthFirstSearch";
 import { Dijkstra } from "../Algorithms/Dijkstra";
 import { Astar } from "../Algorithms/Astar";
+import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
@@ -42,7 +43,8 @@ export const GridGenerator = () => {
     // let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
     // let testAlgo = Dijkstra(startNode, goalNode);
-    let testAlgo = Astar(startNode, goalNode)
+    // let testAlgo = Astar(startNode, goalNode)
+    let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
   };
