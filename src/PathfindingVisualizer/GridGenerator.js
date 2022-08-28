@@ -6,6 +6,7 @@ import { DepthFirstSearch } from "../Algorithms/DepthFirstSearch";
 import { Dijkstra } from "../Algorithms/Dijkstra";
 import { Astar } from "../Algorithms/Astar";
 import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
+import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
@@ -44,7 +45,8 @@ export const GridGenerator = () => {
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
     // let testAlgo = Dijkstra(startNode, goalNode);
     // let testAlgo = Astar(startNode, goalNode)
-    let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
+    // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
+    let testAlgo = BidirectionalSearch(startNode, goalNode)
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
   };
@@ -96,6 +98,7 @@ export const GridGenerator = () => {
     this.isGoalNode = this.row === GOAL_NODE_ROW && this.col === GOAL_NODE_COL;
 
     this.isVisited = false;
+    this.isVisitedBidirectional = false;
     this.adjacentNodes = [];
     this.previousNode = undefined;
     this.distance = Infinity;
