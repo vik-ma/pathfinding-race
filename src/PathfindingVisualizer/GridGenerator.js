@@ -14,8 +14,8 @@ export const GridGenerator = () => {
   const START_NODE_COL = 1;
   const GOAL_NODE_ROW = rowCount - 2;
   const GOAL_NODE_COL = colCount - 1;
-  // const GOAL_NODE_COL = 3;
-  // const GOAL_NODE_ROW = 9;
+  // const GOAL_NODE_COL = 9;
+  // const GOAL_NODE_ROW = 11;
 
   const NUM_NODES = rowCount * colCount;
 
@@ -70,10 +70,20 @@ export const GridGenerator = () => {
   };
 
   const createWalls = (grid) => {
-    grid[0][2].isWall = true;
-    grid[1][0].isWall = true;
-    grid[1][1].isWall = true;
-    grid[1][2].isWall = true;
+    // grid[0][2].isWall = true;
+    // grid[1][0].isWall = true;
+    // grid[1][1].isWall = true;
+    // grid[1][2].isWall = true;
+    grid[7][4].isWall = true;
+    grid[6][5].isWall = true;
+    grid[5][6].isWall = true;
+    grid[4][7].isWall = true;
+    grid[3][8].isWall = true;
+    grid[8][4].isWall = true;
+    grid[9][4].isWall = true;
+    grid[10][4].isWall = true;
+    grid[11][4].isWall = true;
+   
   };
 
   const drawGrid = (
@@ -115,6 +125,10 @@ export const GridGenerator = () => {
     this.adjacentNodes = [];
     this.previousNode = undefined;
     this.distance = Infinity;
+    this.isClosed = false;
+    this.f = 0;
+    this.g = 0;
+    this.h = 0;
     this.addAdjacentNodes = function (grid) {
       let row = this.row;
       let col = this.col;

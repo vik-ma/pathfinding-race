@@ -1,12 +1,57 @@
-import { PriorityQueue } from "./PriorityQueue";
-
 export function Astar(startNode, goalNode) {
-  var pq = new PriorityQueue();
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
 
-  startNode.distance = 0;
-  pq.enqueue([startNode, 0]);
+  var openSet = [];
+  var closedSet = [];
+
+  openSet.push(startNode);
+
+  while (openSet.length > 0) {
+    let minIndex = 0;
+    for (let i = 0; i < openSet.length; i++) {
+      if (openSet[i].f < openSet[minIndex].f) {
+        minIndex = i;
+      }
+    }
+
+    let currentNode = openSet[minIndex];
+    currentNode.isVisited = true;
+    path.push(currentNode);
+
+    if (currentNode === goalNode) {
+      // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
+      pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
+      return { path, pathFoundMessage };
+    }
+
+    openSet = openSet.filter((node) => node !== currentNode);
+    closedSet.push(currentNode);
+
+    let adjacentNodes = currentNode.adjacentNodes;
+    for (let i = 0; i < adjacentNodes.length; i++) {
+      if (!closedSet.includes(adjacentNodes[i])) {
+        let gScore = currentNode.g + 1;
+
+        let newPath = false;
+
+        if (openSet.includes(currentNode)) {
+          adjacentNodes[i].g = gScore;
+          newPath = true;
+        } else {
+          adjacentNodes[i].g = gScore;
+          newPath = true;
+          openSet.push(adjacentNodes[i]);
+        }
+
+        if (newPath) {
+          adjacentNodes[i].h = heuristic(adjacentNodes[i], goalNode);
+          adjacentNodes[i].f = adjacentNodes[i].g + adjacentNodes[i].h;
+          adjacentNodes[i].previousNode = currentNode;
+        }
+      }
+    }
+  }
 
   function heuristic(nodeA, nodeB) {
     let x1 = nodeA.row;
@@ -16,32 +61,6 @@ export function Astar(startNode, goalNode) {
     let y2 = nodeB.col;
 
     return Math.abs(x1 - x2) + Math.abs(y1 - y2);
-  }
-
-  while (!pq.isEmpty()) {
-    let currentNode = pq.dequeue();
-    currentNode.isVisited = true;
-    path.push(currentNode);
-    // console.log(`VISITED ${currentNode.row} ${currentNode.col}`);
-
-    if (currentNode === goalNode) {
-      // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
-      pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
-      return { path, pathFoundMessage };
-    }
-
-    let adjacentNodes = currentNode.adjacentNodes;
-    for (let i = 0; i < adjacentNodes.length; i++) {
-      if (!adjacentNodes[i].isVisited) {
-        let newDist = currentNode.distance + 1;
-        if (newDist < adjacentNodes[i].distance) {
-          adjacentNodes[i].distance = newDist;
-          let priority =
-            adjacentNodes[i].distance + heuristic(adjacentNodes[i], goalNode);
-          pq.enqueue([adjacentNodes[i], priority]);
-        }
-      }
-    }
   }
 
   return { path, pathFoundMessage };
