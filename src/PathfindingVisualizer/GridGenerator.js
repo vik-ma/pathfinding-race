@@ -43,10 +43,10 @@ export const GridGenerator = () => {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    // let testAlgo = BreadthFirstSearch(startNode, goalNode);
+    let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
     // let testAlgo = Dijkstra(startNode, goalNode);
-    let testAlgo = Astar(startNode, goalNode)
+    // let testAlgo = Astar(startNode, goalNode)
     // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
     // let testAlgo = BidirectionalSearch(startNode, goalNode);
     console.log(testAlgo.pathFoundMessage);
@@ -84,7 +84,6 @@ export const GridGenerator = () => {
     grid[9][4].isWall = true;
     grid[10][4].isWall = true;
     grid[11][4].isWall = true;
-   
   };
 
   const drawGrid = (
@@ -93,7 +92,13 @@ export const GridGenerator = () => {
         return (
           <div key={rowIndex} className="rowWrapper">
             {row.map((col, colIndex) => {
-              const { isStartNode, isGoalNode, isWall, isVisited, isVisitedBidirectional } = col;
+              const {
+                isStartNode,
+                isGoalNode,
+                isWall,
+                isVisited,
+                isVisitedBidirectional,
+              } = col;
               return (
                 <Node
                   key={colIndex}
