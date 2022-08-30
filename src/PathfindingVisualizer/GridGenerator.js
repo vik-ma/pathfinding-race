@@ -43,9 +43,9 @@ export const GridGenerator = () => {
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
 
-    let testAlgo = BreadthFirstSearch(startNode, goalNode);
+    // let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
-    // let testAlgo = Dijkstra(startNode, goalNode);
+    let testAlgo = Dijkstra(startNode, goalNode);
     // let testAlgo = Astar(startNode, goalNode)
     // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
     // let testAlgo = BidirectionalSearch(startNode, goalNode);
