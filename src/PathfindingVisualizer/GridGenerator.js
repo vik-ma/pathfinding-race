@@ -51,6 +51,7 @@ export const GridGenerator = () => {
     // let testAlgo = BidirectionalSearch(startNode, goalNode);
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
+    console.log(testAlgo.shortestpath);
   };
 
   const createNodeMatrix = (grid) => {

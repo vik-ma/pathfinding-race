@@ -1,6 +1,7 @@
 export function Astar(startNode, goalNode) {
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
+  var shortestpath = [];
 
   var openSet = [];
   var closedSet = [];
@@ -22,7 +23,16 @@ export function Astar(startNode, goalNode) {
     if (currentNode === goalNode) {
       // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
       pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
-      return { path, pathFoundMessage };
+
+      let tempNode = currentNode;
+      shortestpath.push(tempNode);
+      while (tempNode.previousNode) {
+        shortestpath.push(tempNode.previousNode);
+        tempNode = tempNode.previousNode;
+      }
+
+      shortestpath = shortestpath.reverse();
+      return { path, pathFoundMessage, shortestpath };
     }
 
     openSet = openSet.filter((node) => node !== currentNode);
