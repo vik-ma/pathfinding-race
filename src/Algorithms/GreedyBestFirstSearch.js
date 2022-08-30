@@ -1,9 +1,11 @@
 import { PriorityQueue } from "./PriorityQueue";
 
 export function GreedyBestFirstSearch(startNode, goalNode) {
-  var pq = new PriorityQueue();
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
+  var pathToGoal = [];
+
+  var pq = new PriorityQueue();
 
   startNode.distance = 0;
   pq.enqueue([startNode, 0]);
@@ -27,7 +29,16 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
     if (currentNode === goalNode) {
       // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
       pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
-      return { path, pathFoundMessage };
+
+      let tempNode = currentNode;
+      pathToGoal.push(tempNode);
+      while (tempNode.previousNode) {
+        pathToGoal.push(tempNode.previousNode);
+        tempNode = tempNode.previousNode;
+      }
+
+      pathToGoal = pathToGoal.reverse();
+      return { path, pathFoundMessage, shortestpath: pathToGoal };
     }
 
     let adjacentNodes = currentNode.adjacentNodes;
@@ -35,6 +46,7 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
       if (!adjacentNodes[i].isVisited) {
         let priority = heuristic(adjacentNodes[i], goalNode);
         pq.enqueue([adjacentNodes[i], priority]);
+        adjacentNodes[i].previousNode = currentNode;
       }
     }
   }

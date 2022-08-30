@@ -1,7 +1,7 @@
 export function BreadthFirstSearch(startNode, goalNode) {
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
-  var shortestpath = [];
+  var pathToGoal = [];
 
   var queue = [];
   queue.push(startNode);
@@ -18,14 +18,14 @@ export function BreadthFirstSearch(startNode, goalNode) {
       pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
 
       let tempNode = currentNode;
-      shortestpath.push(tempNode);
+      pathToGoal.push(tempNode);
       while (tempNode.previousNode) {
-        shortestpath.push(tempNode.previousNode);
+        pathToGoal.push(tempNode.previousNode);
         tempNode = tempNode.previousNode;
       }
 
-      shortestpath = shortestpath.reverse();
-      return { path, pathFoundMessage, shortestpath };
+      pathToGoal = pathToGoal.reverse();
+      return { path, pathFoundMessage, shortestpath: pathToGoal };
     }
 
     for (let i = 0; i < adjacentNodes.length; i++) {

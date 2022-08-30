@@ -45,13 +45,13 @@ export const GridGenerator = () => {
 
     // let testAlgo = BreadthFirstSearch(startNode, goalNode);
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
-    let testAlgo = Dijkstra(startNode, goalNode);
+    // let testAlgo = Dijkstra(startNode, goalNode);
     // let testAlgo = Astar(startNode, goalNode)
-    // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
+    let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
     // let testAlgo = BidirectionalSearch(startNode, goalNode);
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
-    console.log(testAlgo.shortestpath);
+    console.log(testAlgo.pathtoGoal);
   };
 
   const createNodeMatrix = (grid) => {
