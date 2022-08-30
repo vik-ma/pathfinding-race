@@ -47,11 +47,11 @@ export const GridGenerator = () => {
     // let testAlgo = DepthFirstSearch(startNode, goalNode);
     // let testAlgo = Dijkstra(startNode, goalNode);
     // let testAlgo = Astar(startNode, goalNode)
-    let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
-    // let testAlgo = BidirectionalSearch(startNode, goalNode);
+    // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
+    let testAlgo = BidirectionalSearch(startNode, goalNode);
     console.log(testAlgo.pathFoundMessage);
     console.log(testAlgo.path);
-    console.log(testAlgo.pathtoGoal);
+    console.log(testAlgo.pathToGoal);
   };
 
   const createNodeMatrix = (grid) => {
@@ -78,12 +78,12 @@ export const GridGenerator = () => {
     grid[7][4].isWall = true;
     grid[6][5].isWall = true;
     grid[5][6].isWall = true;
-    grid[4][7].isWall = true;
-    grid[3][8].isWall = true;
-    grid[8][4].isWall = true;
-    grid[9][4].isWall = true;
-    grid[10][4].isWall = true;
-    grid[11][4].isWall = true;
+    // grid[4][7].isWall = true;
+    // grid[3][8].isWall = true;
+    // grid[8][4].isWall = true;
+    // grid[9][4].isWall = true;
+    // grid[10][4].isWall = true;
+    // grid[11][4].isWall = true;
   };
 
   const drawGrid = (
@@ -130,6 +130,7 @@ export const GridGenerator = () => {
     this.isVisitedBidirectional = false;
     this.adjacentNodes = [];
     this.previousNode = undefined;
+    this.previousNodeBidirectional = undefined;
     this.distance = Infinity;
     this.isClosed = false;
     this.f = 0;

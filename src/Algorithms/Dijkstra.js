@@ -29,7 +29,7 @@ export function Dijkstra(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, shortestpath: pathToGoal };
+      return { path, pathFoundMessage, pathToGoal };
     }
 
     let adjacentNodes = currentNode.adjacentNodes;

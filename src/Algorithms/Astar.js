@@ -32,7 +32,7 @@ export function Astar(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, shortestpath: pathToGoal };
+      return { path, pathFoundMessage, pathToGoal };
     }
 
     openSet = openSet.filter((node) => node !== currentNode);

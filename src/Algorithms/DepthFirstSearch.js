@@ -1,6 +1,6 @@
 export function DepthFirstSearch(startNode, goalNode) {
-  var pathFoundMessage = "CANT FIND PATH";
   var path = [];
+  var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
 
   dFSRecursion(startNode);
@@ -16,10 +16,8 @@ export function DepthFirstSearch(startNode, goalNode) {
       pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
       path.push(currentNode);
 
-      //NOT ACTUALLY SHORTEST PATH, AS YOU CAN'T GET IT USING DFS
-      //JUST THE PATH TAKEN
       pathToGoal = path;
-      return { path, pathFoundMessage, shortestpath: pathToGoal };
+      return { path, pathFoundMessage, pathToGoal };
     } else {
       currentNode.isVisited = true;
       path.push(currentNode);

@@ -25,7 +25,7 @@ export function BreadthFirstSearch(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, shortestpath: pathToGoal };
+      return { path, pathFoundMessage, pathToGoal };
     }
 
     for (let i = 0; i < adjacentNodes.length; i++) {
