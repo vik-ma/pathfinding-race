@@ -64,12 +64,12 @@ export const GridGenerator = () => {
     grid[7][4].isWall = true;
     grid[6][5].isWall = true;
     grid[5][6].isWall = true;
-    // grid[4][7].isWall = true;
-    // grid[3][8].isWall = true;
-    // grid[8][4].isWall = true;
-    // grid[9][4].isWall = true;
-    // grid[10][4].isWall = true;
-    // grid[11][4].isWall = true;
+    grid[4][7].isWall = true;
+    grid[3][8].isWall = true;
+    grid[8][4].isWall = true;
+    grid[9][4].isWall = true;
+    grid[10][4].isWall = true;
+    grid[11][4].isWall = true;
   };
 
   const drawGrid = (
@@ -110,6 +110,7 @@ export const GridGenerator = () => {
     this.isStartNode = this.row === startNodeRow && this.col === startNodeCol;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
+    this.allowDiagonals = true;
     this.isWall = false;
     this.isVisited = false;
     this.isVisitedBidirectional = false;
@@ -132,6 +133,38 @@ export const GridGenerator = () => {
         this.adjacentNodes.push(grid[row][col - 1]);
       if (col < colCount - 1 && !grid[row][col + 1].isWall)
         this.adjacentNodes.push(grid[row][col + 1]);
+
+      // DIAGONALS
+      if (this.allowDiagonals) {
+        if (
+          row > 0 &&
+          col > 0 &&
+          !grid[row - 1][col - 1].isWall &&
+          !(grid[row - 1][col].isWall && grid[row][col - 1].isWall)
+        )
+          this.adjacentNodes.push(grid[row - 1][col - 1]);
+        if (
+          row < rowCount - 1 &&
+          col > 0 &&
+          !grid[row + 1][col - 1].isWall &&
+          !(grid[row + 1][col].isWall && grid[row][col - 1].isWall)
+        )
+          this.adjacentNodes.push(grid[row + 1][col - 1]);
+        if (
+          row < rowCount - 1 &&
+          col < colCount - 1 &&
+          !grid[row + 1][col + 1].isWall &&
+          !(grid[row + 1][col].isWall && grid[row][col + 1].isWall)
+        )
+          this.adjacentNodes.push(grid[row + 1][col + 1]);
+        if (
+          row > 0 &&
+          col < colCount - 1 &&
+          !grid[row - 1][col + 1].isWall &&
+          !(grid[row - 1][col].isWall && grid[row][col + 1].isWall)
+        )
+          this.adjacentNodes.push(grid[row - 1][col + 1]);
+      }
     };
   }
 
