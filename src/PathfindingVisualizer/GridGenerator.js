@@ -20,7 +20,6 @@ export const GridGenerator = () => {
   const [gridLayout, setGridLayout] = useState([]);
   const [savedGrid, setSavedGrid] = useState([]);
 
-
   useEffect(() => {
     createGrid();
   }, [rowCount, colCount]);
@@ -60,10 +59,10 @@ export const GridGenerator = () => {
   };
 
   const createWalls = (grid) => {
-    // grid[0][2].isWall = true;
-    // grid[1][0].isWall = true;
+    grid[0][2].isWall = true;
+    grid[1][0].isWall = true;
     // grid[1][1].isWall = true;
-    // grid[1][2].isWall = true;
+    grid[1][2].isWall = true;
     grid[7][4].isWall = true;
     grid[6][5].isWall = true;
     grid[5][6].isWall = true;
@@ -142,18 +141,33 @@ export const GridGenerator = () => {
   const visualizePath = () => {
     let grid = savedGrid;
     const startNode = grid[0][1];
-    const goalNode = grid[6][7];
+    const goalNode = grid[10][11];
 
-    let algo = BreadthFirstSearch(startNode, goalNode);
+    let algo = BidirectionalSearch(startNode, goalNode);
 
-    for (let i = 0; i < algo.path.length; i++) {
-      setTimeout(() => {
-        const node = algo.path[i];
-        document.getElementById(`node-${node.row}-${node.col}`).className =
-          "node node-visited";
-      }, 50 * i);
+    for (let i = 0; i <= algo.path.length; i++) {
+      if (i === algo.path.length) {
+        if (algo.pathToGoal !== undefined) {
+          setTimeout(() => {
+            drawWinnerPath(algo);
+          }, 50 * i);
+        }
+      } else {
+        setTimeout(() => {
+          const node = algo.path[i];
+          document.getElementById(`node-${node.row}-${node.col}`).className =
+            "node node-visited";
+        }, 50 * i);
+      }
     }
+  };
 
+  const drawWinnerPath = (algo) => {
+    for (let i = 0; i < algo.pathToGoal.length; i++) {
+      const node = algo.pathToGoal[i];
+      document.getElementById(`node-${node.row}-${node.col}`).className =
+        "node node-visited node-winner";
+    }
   };
 
   return (
