@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
 import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 import { GridContext } from "./Helpers/GridContexts";

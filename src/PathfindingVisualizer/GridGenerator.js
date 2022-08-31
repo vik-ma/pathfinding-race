@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
@@ -10,12 +10,10 @@ import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
-  const START_NODE_ROW = 0;
-  const START_NODE_COL = 1;
-  const GOAL_NODE_ROW = rowCount - 2;
-  const GOAL_NODE_COL = colCount - 1;
-  // const GOAL_NODE_COL = 9;
-  // const GOAL_NODE_ROW = 11;
+  const [startNodeRow, setStartNodeRow] = useState(1);
+  const [startNodeCol, setStartNodeCol] = useState(1);
+  const [goalNodeRow, setGoalNodeRow] = useState(8);
+  const [goalNodeCol, setGoalNodeCol] = useState(6);
 
   const [gridLayout, setGridLayout] = useState([]);
   const [savedGrid, setSavedGrid] = useState([]);
@@ -109,9 +107,8 @@ export const GridGenerator = () => {
   function gridElement(row, col) {
     this.row = row;
     this.col = col;
-    this.isStartNode =
-      this.row === START_NODE_ROW && this.col === START_NODE_COL;
-    this.isGoalNode = this.row === GOAL_NODE_ROW && this.col === GOAL_NODE_COL;
+    this.isStartNode = this.row === startNodeRow && this.col === startNodeCol;
+    this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
     this.isWall = false;
     this.isVisited = false;
@@ -140,8 +137,8 @@ export const GridGenerator = () => {
 
   const visualizePath = () => {
     let grid = savedGrid;
-    const startNode = grid[0][1];
-    const goalNode = grid[10][11];
+    const startNode = grid[startNodeRow][startNodeCol];
+    const goalNode = grid[goalNodeRow][goalNodeCol];
 
     let algo = BidirectionalSearch(startNode, goalNode);
 
@@ -155,8 +152,9 @@ export const GridGenerator = () => {
       } else {
         setTimeout(() => {
           const node = algo.path[i];
-          document.getElementById(`node-${node.row}-${node.col}`).className =
-            "node node-visited";
+          document
+            .getElementById(`node-${node.row}-${node.col}`)
+            .classList.add("node-visited");
         }, 50 * i);
       }
     }
@@ -165,8 +163,9 @@ export const GridGenerator = () => {
   const drawWinnerPath = (algo) => {
     for (let i = 0; i < algo.pathToGoal.length; i++) {
       const node = algo.pathToGoal[i];
-      document.getElementById(`node-${node.row}-${node.col}`).className =
-        "node node-visited node-winner";
+      document
+        .getElementById(`node-${node.row}-${node.col}`)
+        .classList.add("node-winner");
     }
   };
 
