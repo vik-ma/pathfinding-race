@@ -69,7 +69,7 @@ export const GridGenerator = () => {
     grid[8][4].isWall = true;
     grid[9][4].isWall = true;
     grid[10][4].isWall = true;
-    grid[11][4].isWall = true;
+    // grid[11][4].isWall = true;
   };
 
   const drawGrid = (
@@ -173,7 +173,7 @@ export const GridGenerator = () => {
     const startNode = grid[startNodeRow][startNodeCol];
     const goalNode = grid[goalNodeRow][goalNodeCol];
 
-    let algo = BidirectionalSearch(startNode, goalNode);
+    let algo = Astar(startNode, goalNode);
 
     for (let i = 0; i <= algo.path.length; i++) {
       if (i === algo.path.length) {
@@ -187,7 +187,7 @@ export const GridGenerator = () => {
           const node = algo.path[i];
           document
             .getElementById(`node-${node.row}-${node.col}`)
-            .classList.add("node-visited");
+            .classList.add("node-visited", "node-current");
         }, 50 * i);
       }
     }
@@ -204,10 +204,10 @@ export const GridGenerator = () => {
 
   return (
     <div>
-      <div className="gridContainer">{drawGrid}</div>
       <button className="buttonContainer" onClick={visualizePath}>
         VISUALIZE
       </button>
+      <div className="gridContainer">{drawGrid}</div>
     </div>
   );
 };

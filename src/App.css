@@ -36,10 +36,13 @@ body {
 .node-start {
     background-color: crimson;
     /* border: 1px solid crimson; */
+    box-shadow: inset 0 0 0 5px crimson;
 }
 
 .node-goal {
     background-color:lawngreen;
+    /* border: 1px solid lawngreen; */
+    box-shadow: inset 0 0 0 5px lawngreen;
 }
 
 .node-visited {
@@ -57,3 +60,15 @@ body {
 .node-winner {
     box-shadow: inset 0 0 0 3px gold;
 }
+
+@keyframes current-anim {
+    from {}
+    to {box-shadow: inset 0 0 0 3px black;}
+  }
+
+.node-current {
+    animation-name: current-anim;
+    animation-duration: 50ms;
+}
+
+

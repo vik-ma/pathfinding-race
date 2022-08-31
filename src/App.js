@@ -19,7 +19,6 @@ function App() {
     setIsGridRendered(false);
     setGridKey(gridKey + 1);
     setIsGridRendered(true);
-    console.log(gridKey)
   };
 
   return (
