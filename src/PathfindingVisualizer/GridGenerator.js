@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
@@ -17,9 +17,9 @@ export const GridGenerator = () => {
   // const GOAL_NODE_COL = 9;
   // const GOAL_NODE_ROW = 11;
 
-  const NUM_NODES = rowCount * colCount;
-
   const [gridLayout, setGridLayout] = useState([]);
+  const [savedGrid, setSavedGrid] = useState([]);
+
 
   useEffect(() => {
     createGrid();
@@ -40,18 +40,7 @@ export const GridGenerator = () => {
 
     createAdjacentNodeMatrix(grid);
 
-    const startNode = grid[START_NODE_ROW][START_NODE_COL];
-    const goalNode = grid[GOAL_NODE_ROW][GOAL_NODE_COL];
-
-    // let testAlgo = BreadthFirstSearch(startNode, goalNode);
-    // let testAlgo = DepthFirstSearch(startNode, goalNode);
-    // let testAlgo = Dijkstra(startNode, goalNode);
-    // let testAlgo = Astar(startNode, goalNode)
-    // let testAlgo = GreedyBestFirstSearch(startNode, goalNode)
-    let testAlgo = BidirectionalSearch(startNode, goalNode);
-    console.log(testAlgo.pathFoundMessage);
-    console.log(testAlgo.path);
-    console.log(testAlgo.pathToGoal);
+    setSavedGrid(grid);
   };
 
   const createNodeMatrix = (grid) => {
@@ -150,5 +139,29 @@ export const GridGenerator = () => {
     };
   }
 
-  return <div className="gridContainer">{drawGrid}</div>;
+  const visualizePath = () => {
+    let grid = savedGrid;
+    const startNode = grid[0][1];
+    const goalNode = grid[6][7];
+
+    let algo = BreadthFirstSearch(startNode, goalNode);
+
+    for (let i = 0; i < algo.path.length; i++) {
+      setTimeout(() => {
+        const node = algo.path[i];
+        document.getElementById(`node-${node.row}-${node.col}`).className =
+          "node node-visited";
+      }, 50 * i);
+    }
+
+  };
+
+  return (
+    <div>
+      <div className="gridContainer">{drawGrid}</div>
+      <button className="buttonContainer" onClick={visualizePath}>
+        VISUALIZE
+      </button>
+    </div>
+  );
 };
