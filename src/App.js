@@ -13,6 +13,15 @@ function App() {
   const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_DEFAULT_VALUE);
 
+  const [gridKey, setGridKey] = useState(0);
+
+  const remakeGrid = () => {
+    setIsGridRendered(false);
+    setGridKey(gridKey + 1);
+    setIsGridRendered(true);
+    console.log(gridKey)
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,7 +44,7 @@ function App() {
             >
               Destroy Grid
             </button>
-
+            <button onClick={remakeGrid}>Remake Grid</button>
             <button
               onClick={() => {
                 setRenderTest(true);
@@ -44,7 +53,7 @@ function App() {
               TEST BUTTON
             </button>
           </div>
-          {isGridRendered ? <GridGenerator /> : null}
+          {isGridRendered ? <GridGenerator key={gridKey} /> : null}
           {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>
       </header>
