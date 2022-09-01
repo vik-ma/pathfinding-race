@@ -1,6 +1,7 @@
 export function DepthFirstSearch(startNode, goalNode) {
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
+  var pathIsFound = false;
   // var pathToGoal = [];
 
   dFSRecursion(startNode);
@@ -13,13 +14,14 @@ export function DepthFirstSearch(startNode, goalNode) {
       // console.log(`PATH FOUND ${currentNode.row} ${currentNode.col}`);
       currentNode.isVisited = true;
       stopRecursion = true;
+      pathIsFound = true;
       pathFoundMessage = `PATH FOUND ${currentNode.row} ${currentNode.col}`;
       path.push(currentNode);
 
       let pathToGoal = path.map((i) => i);
 
 
-      return { path, pathFoundMessage, pathToGoal };
+      return { path, pathFoundMessage, pathToGoal, pathIsFound };
     } else {
       currentNode.isVisited = true;
       path.push(currentNode);
@@ -34,5 +36,5 @@ export function DepthFirstSearch(startNode, goalNode) {
     }
   }
 
-  return { path, pathFoundMessage };
+  return { path, pathFoundMessage, pathIsFound };
 }

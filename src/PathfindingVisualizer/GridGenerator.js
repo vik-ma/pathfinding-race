@@ -10,13 +10,18 @@ import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
-  const [startNodeRow, setStartNodeRow] = useState(1);
-  const [startNodeCol, setStartNodeCol] = useState(1);
+  const [startNodeRow, setStartNodeRow] = useState(11);
+  const [startNodeCol, setStartNodeCol] = useState(6);
+  const [startNodeRow2, setStartNodeRow2] = useState(5);
+  const [startNodeCol2, setStartNodeCol2] = useState(10);
   const [goalNodeRow, setGoalNodeRow] = useState(8);
   const [goalNodeCol, setGoalNodeCol] = useState(6);
 
+  const [numStartNodes, setStartNumNodes] = useState(2);
+
   const [gridLayout, setGridLayout] = useState([]);
   const [savedGrid, setSavedGrid] = useState([]);
+  const [savedGrid2, setSavedGrid2] = useState([]);
 
   useEffect(() => {
     createGrid();
@@ -38,6 +43,22 @@ export const GridGenerator = () => {
     createAdjacentNodeMatrix(grid);
 
     setSavedGrid(grid);
+
+    const grid2 = new Array(rowCount);
+
+    for (let row = 0; row < rowCount; row++) {
+      grid2[row] = new Array(colCount);
+    }
+
+    createNodeMatrix(grid2);
+
+    setGridLayout(grid2);
+
+    createWalls(grid2);
+
+    createAdjacentNodeMatrix(grid2);
+
+    setSavedGrid2(grid2);
   };
 
   const createNodeMatrix = (grid) => {
@@ -80,6 +101,7 @@ export const GridGenerator = () => {
             {row.map((col, colIndex) => {
               const {
                 isStartNode,
+                isStartNode2,
                 isGoalNode,
                 isWall,
                 isVisited,
@@ -89,6 +111,7 @@ export const GridGenerator = () => {
                 <Node
                   key={colIndex}
                   isStartNode={isStartNode}
+                  isStartNode2={isStartNode2}
                   isGoalNode={isGoalNode}
                   row={rowIndex}
                   col={colIndex}
@@ -108,6 +131,8 @@ export const GridGenerator = () => {
     this.row = row;
     this.col = col;
     this.isStartNode = this.row === startNodeRow && this.col === startNodeCol;
+    this.isStartNode2 =
+      this.row === startNodeRow2 && this.col === startNodeCol2;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
     this.allowDiagonals = true;
@@ -170,32 +195,59 @@ export const GridGenerator = () => {
 
   const visualizePath = () => {
     let grid = savedGrid;
+    let grid2 = savedGrid2;
     const startNode = grid[startNodeRow][startNodeCol];
     const goalNode = grid[goalNodeRow][goalNodeCol];
+    const startNode2 = grid2[startNodeRow2][startNodeCol2];
+    const goalNode2 = grid2[goalNodeRow][goalNodeCol];
 
-    let algo = Astar(startNode, goalNode);
+    let algoArray = [];
 
-    for (let i = 0; i <= algo.path.length; i++) {
-      if (i === algo.path.length) {
-        if (algo.pathToGoal !== undefined) {
+    let algo1 = Astar(startNode, goalNode);
+    algoArray.push(algo1);
+    let algo2 = Astar(startNode2, goalNode2);
+    algoArray.push(algo2);
+
+    let pathMinLength = Math.min(algo1.path.length, algo2.path.length);
+
+    let anyPathFound = false;
+    let minIndex = [];
+
+    for (let i = 0; i < algoArray.length; i++) {
+      if (algoArray[i].path.length === pathMinLength && algoArray[i].pathIsFound) {
+        minIndex.push(algoArray[i]);
+      }
+      if (anyPathFound === false && algoArray[i].pathIsFound === true) {
+        anyPathFound = true;
+      }
+    }
+
+    for (let i = 0; i <= pathMinLength; i++) {
+      if (i === pathMinLength) {
+        if (anyPathFound) {
           setTimeout(() => {
-            drawWinnerPath(algo);
+            drawWinnerPath(minIndex[0]);
           }, 50 * i);
         }
       } else {
         setTimeout(() => {
-          const node = algo.path[i];
+          const node = algo1.path[i];
+          const node2 = algo2.path[i];
           document
             .getElementById(`node-${node.row}-${node.col}`)
             .classList.add("node-visited", "node-current");
+          document
+            .getElementById(`node-${node2.row}-${node2.col}`)
+            .classList.add("node-visited-bi", "node-current");
         }, 50 * i);
       }
     }
   };
 
-  const drawWinnerPath = (algo) => {
-    for (let i = 0; i < algo.pathToGoal.length; i++) {
-      const node = algo.pathToGoal[i];
+  const drawWinnerPath = (winnerAlgo) => {
+    console.log(winnerAlgo.pathToGoal)
+    for (let i = 0; i < winnerAlgo.pathToGoal.length; i++) {
+      const node = winnerAlgo.pathToGoal[i];
       document
         .getElementById(`node-${node.row}-${node.col}`)
         .classList.add("node-winner");

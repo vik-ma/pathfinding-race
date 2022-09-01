@@ -3,6 +3,7 @@ export function BidirectionalSearch(startNode, goalNode) {
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
+  var pathIsFound = false;
 
   var sourceQueue = [];
   var destinationQueue = [];
@@ -21,6 +22,8 @@ export function BidirectionalSearch(startNode, goalNode) {
       if (currentNodeFwd.isVisited && currentNodeFwd.isVisitedBidirectional) {
         pathFoundMessage = `PATH FOUND - INTERSECTION (FORWARD): ${currentNodeFwd.row} ${currentNodeFwd.col}`;
 
+        pathIsFound = true;
+
         let tempNodeFwd = currentNodeFwd;
         pathToGoal.push(tempNodeFwd);
         while (tempNodeFwd.previousNode) {
@@ -36,7 +39,7 @@ export function BidirectionalSearch(startNode, goalNode) {
           tempNodeBack = tempNodeBack.previousNodeBidirectional;
         }
 
-        return { path, pathFoundMessage, pathToGoal };
+        return { path, pathFoundMessage, pathToGoal, pathIsFound };
 
       }
 
@@ -58,6 +61,8 @@ export function BidirectionalSearch(startNode, goalNode) {
       if (currentNodeBack.isVisited && currentNodeBack.isVisitedBidirectional) {
         pathFoundMessage = `PATH FOUND - INTERSECTION (BACK): ${currentNodeBack.row} ${currentNodeBack.col}`;
 
+        pathIsFound = true;
+
         let tempNodeBack = currentNodeBack;
         pathToGoal.push(tempNodeBack);
         while (tempNodeBack.previousNodeBidirectional) {
@@ -75,7 +80,7 @@ export function BidirectionalSearch(startNode, goalNode) {
 
         pathToGoal = pathToGoal.reverse();
         
-        return { path, pathFoundMessage, pathToGoal };
+        return { path, pathFoundMessage, pathToGoal, pathIsFound };
       }
 
       for (let i = 0; i < adjacentNodesBack.length; i++) {
@@ -88,5 +93,5 @@ export function BidirectionalSearch(startNode, goalNode) {
     }
   }
 
-  return { path, pathFoundMessage };
+  return { path, pathFoundMessage, pathIsFound };
 }

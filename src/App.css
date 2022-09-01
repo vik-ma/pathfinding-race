@@ -39,6 +39,11 @@ body {
     box-shadow: inset 0 0 0 5px crimson;
 }
 
+.node-start-2 {
+    background-color:cornflowerblue;
+    box-shadow: inset 0 0 0 5px cornflowerblue;
+}
+
 .node-goal {
     background-color:lawngreen;
     /* border: 1px solid lawngreen; */
