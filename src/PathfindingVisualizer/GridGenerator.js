@@ -14,8 +14,8 @@ export const GridGenerator = () => {
   const [startNodeRow1, setStartNodeRow1] = useState(4);
   const [startNodeCol1, setStartNodeCol1] = useState(1);
 
-  const [startNodeRow2, setStartNodeRow2] = useState(0);
-  const [startNodeCol2, setStartNodeCol2] = useState(11);
+  const [startNodeRow2, setStartNodeRow2] = useState(1);
+  const [startNodeCol2, setStartNodeCol2] = useState(6);
 
   const [startNodeRow3, setStartNodeRow3] = useState(14);
   const [startNodeCol3, setStartNodeCol3] = useState(6);
@@ -26,7 +26,7 @@ export const GridGenerator = () => {
   const [goalNodeRow, setGoalNodeRow] = useState(7);
   const [goalNodeCol, setGoalNodeCol] = useState(7);
 
-  const [numStartNodes, setStartNumNodes] = useState(4);
+  const [numStartNodes, setStartNumNodes] = useState(2);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -276,8 +276,8 @@ export const GridGenerator = () => {
 
     console.log(1, "Crimson", algoMap[1].algoName);
     console.log(2, "Blue", algoMap[2].algoName);
-    console.log(3, "Khaki", algoMap[3].algoName);
-    console.log(4, "Orchid", algoMap[4].algoName);
+    // console.log(3, "Khaki", algoMap[3].algoName);
+    // console.log(4, "Orchid", algoMap[4].algoName);
 
     let pathMinLength = Math.min(...algoPathLengths);
 

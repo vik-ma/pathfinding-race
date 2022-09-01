@@ -6,7 +6,7 @@ import { GridContext } from "./Helpers/GridContexts";
 import { TestComponent } from "./TestComponent";
 
 function App() {
-  const [isGridRendered, setIsGridRendered] = useState(false);
+  const [isGridRendered, setIsGridRendered] = useState(true);
   const [renderTest, setRenderTest] = useState(false);
 
   const SLIDER_DEFAULT_VALUE = 12;
