@@ -33,41 +33,50 @@ body {
     margin: 0px;
 }
 
-.node-1 {
-    background-color: crimson;
-    /* border: 1px solid crimson; */
-    box-shadow: inset 0 0 0 3px crimson;
-}
-
-.node-2 {
-    background-color:cornflowerblue;
-    box-shadow: inset 0 0 0 5px cornflowerblue;
-}
-
-.node-goal {
-    background-color:lawngreen;
-    /* border: 1px solid lawngreen; */
-    box-shadow: inset 0 0 0 5px lawngreen;
-}
-
-.node-visited {
-    background-color: aqua;
-}
-
-.node-visited-bi {
-    background-color: coral;
-}
-
 .node-wall {
     background-color: aliceblue;
 }
 
+.node-goal {
+    background-color:lawngreen;
+    box-shadow: inset 0 0 0 5px lawngreen;
+}
+
+.node-1 {
+    background-color: crimson;
+    box-shadow: inset 0 0 0 7px crimson;
+}
+
+.node-2 {
+    background-color:dodgerblue;
+    box-shadow: inset 0 0 0 7px dodgerblue;
+}
+
+.node-3 {
+    background-color: darkkhaki;
+    box-shadow: inset 0 0 0 7px darkkhaki;
+}
+
+.node-4{
+    background-color: darkorchid;
+    box-shadow: inset 0 0 0 7px darkorchid;
+}
+
 .node-winner-1 {
-    box-shadow: inset 0 0 0 3px coral;
+    box-shadow: inset 0 0 0 5px darkred;
 }
 
 .node-winner-2 {
-    box-shadow: inset 0 0 0 3px aqua;
+    box-shadow: inset 0 0 0 5px darkblue;
+}
+
+.node-winner-3 {
+    box-shadow: inset 0 0 0 5px peru;
+}
+
+.node-winner-4 {
+    box-shadow: inset 0 0 0 7px indigo;
+
 }
 
 @keyframes current-anim {
