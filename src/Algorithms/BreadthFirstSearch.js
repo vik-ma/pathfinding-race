@@ -3,6 +3,7 @@ export function BreadthFirstSearch(startNode, goalNode) {
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
   var pathIsFound = false;
+  var algoName = "Breadth-First Search"
 
   var queue = [];
   queue.push(startNode);
@@ -28,7 +29,7 @@ export function BreadthFirstSearch(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, pathToGoal, pathIsFound };
+      return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
     }
 
     for (let i = 0; i < adjacentNodes.length; i++) {
@@ -40,5 +41,5 @@ export function BreadthFirstSearch(startNode, goalNode) {
     }
   }
 
-  return { path, pathFoundMessage, pathIsFound };
+  return { path, pathFoundMessage, pathIsFound, algoName };
 }

@@ -4,6 +4,7 @@ export function BidirectionalSearch(startNode, goalNode) {
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
   var pathIsFound = false;
+  var algoName = "Bidirectional Search"
 
   var sourceQueue = [];
   var destinationQueue = [];
@@ -39,7 +40,7 @@ export function BidirectionalSearch(startNode, goalNode) {
           tempNodeBack = tempNodeBack.previousNodeBidirectional;
         }
 
-        return { path, pathFoundMessage, pathToGoal, pathIsFound };
+        return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
 
       }
 
@@ -80,7 +81,7 @@ export function BidirectionalSearch(startNode, goalNode) {
 
         pathToGoal = pathToGoal.reverse();
         
-        return { path, pathFoundMessage, pathToGoal, pathIsFound };
+        return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
       }
 
       for (let i = 0; i < adjacentNodesBack.length; i++) {
@@ -93,5 +94,5 @@ export function BidirectionalSearch(startNode, goalNode) {
     }
   }
 
-  return { path, pathFoundMessage, pathIsFound };
+  return { path, pathFoundMessage, pathIsFound, algoName };
 }

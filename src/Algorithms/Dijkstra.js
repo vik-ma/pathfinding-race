@@ -6,6 +6,7 @@ export function Dijkstra(startNode, goalNode) {
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
   var pathIsFound = false;
+  var algoName = "Dijkstra's Algorithm"
 
   var pq = new PriorityQueue();
 
@@ -32,7 +33,7 @@ export function Dijkstra(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, pathToGoal, pathIsFound };
+      return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
     }
 
     let adjacentNodes = currentNode.adjacentNodes;
@@ -48,5 +49,5 @@ export function Dijkstra(startNode, goalNode) {
     }
   }
 
-  return { path, pathFoundMessage, pathIsFound };
+  return { path, pathFoundMessage, pathIsFound, algoName };
 }

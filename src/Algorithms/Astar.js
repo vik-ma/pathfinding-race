@@ -3,6 +3,7 @@ export function Astar(startNode, goalNode) {
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
   var pathIsFound = false;
+  var algoName = "A-Star";
 
   var openSet = [];
   var closedSet = [];
@@ -34,7 +35,7 @@ export function Astar(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, pathToGoal, pathIsFound };
+      return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
     }
 
     openSet = openSet.filter((node) => node !== currentNode);
@@ -75,5 +76,5 @@ export function Astar(startNode, goalNode) {
     return Math.abs(x1 - x2) + Math.abs(y1 - y2);
   }
 
-  return { path, pathFoundMessage, pathIsFound };
+  return { path, pathFoundMessage, pathIsFound, algoName };
 }

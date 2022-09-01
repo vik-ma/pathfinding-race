@@ -5,6 +5,7 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
   var pathIsFound = false;
+  var algoName = "Greedy Best-First Search";
 
   var pq = new PriorityQueue();
 
@@ -41,7 +42,7 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
       }
 
       pathToGoal = pathToGoal.reverse();
-      return { path, pathFoundMessage, pathToGoal, pathIsFound };
+      return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
     }
 
     let adjacentNodes = currentNode.adjacentNodes;
@@ -54,5 +55,5 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
     }
   }
 
-  return { path, pathFoundMessage, pathIsFound };
+  return { path, pathFoundMessage, pathIsFound, algoName };
 }
