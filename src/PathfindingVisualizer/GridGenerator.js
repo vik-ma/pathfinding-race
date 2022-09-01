@@ -11,22 +11,42 @@ import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
 
-  const [startNodeRow1, setStartNodeRow1] = useState(4);
-  const [startNodeCol1, setStartNodeCol1] = useState(1);
+  const [startNodeRow1, setStartNodeRow1] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
+  const [startNodeCol1, setStartNodeCol1] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
 
-  const [startNodeRow2, setStartNodeRow2] = useState(1);
-  const [startNodeCol2, setStartNodeCol2] = useState(6);
+  const [startNodeRow2, setStartNodeRow2] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
+  const [startNodeCol2, setStartNodeCol2] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
 
-  const [startNodeRow3, setStartNodeRow3] = useState(14);
-  const [startNodeCol3, setStartNodeCol3] = useState(6);
+  const [startNodeRow3, setStartNodeRow3] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
+  const [startNodeCol3, setStartNodeCol3] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
 
-  const [startNodeRow4, setStartNodeRow4] = useState(17);
-  const [startNodeCol4, setStartNodeCol4] = useState(17);
+  const [startNodeRow4, setStartNodeRow4] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
+  const [startNodeCol4, setStartNodeCol4] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
 
-  const [goalNodeRow, setGoalNodeRow] = useState(7);
-  const [goalNodeCol, setGoalNodeCol] = useState(7);
+  const [goalNodeRow, setGoalNodeRow] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
+  const [goalNodeCol, setGoalNodeCol] = useState(
+    Math.floor(Math.random() * rowCount)
+  );
 
-  const [numStartNodes, setStartNumNodes] = useState(2);
+  const [numStartNodes, setStartNumNodes] = useState(4);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -42,6 +62,35 @@ export const GridGenerator = () => {
   const createGrid = () => {
     let gridsForAllStartNodes = [];
 
+    const wallDensity = Math.floor(rowCount * colCount * 0.3);
+
+    const walls = new Set();
+    const goal = [goalNodeRow, goalNodeCol];
+    const start1 = [startNodeRow1, startNodeCol1];
+    const start2 = [startNodeRow2, startNodeCol2];
+    const start3 = [startNodeRow3, startNodeCol3];
+    const start4 = [startNodeRow4, startNodeCol4];
+    walls.add(goal, start1, start2);
+    if (numStartNodes >= 3) {
+      walls.add(start3);
+      if (numStartNodes >= 4) {
+        walls.add(start4);
+      }
+    }
+    while (walls.size !== wallDensity) {
+      walls.add([
+        Math.floor(Math.random() * rowCount),
+        Math.floor(Math.random() * colCount),
+      ]);
+    }
+    walls.delete(goal, start1, start2, start3, start4);
+    // if (numStartNodes >= 3) {
+    //   walls.delete(start3);
+    //   if (numStartNodes >= 4) {
+    //     walls.delete(start4);
+    //   }
+    // }
+
     for (let i = 0; i < numStartNodes; i++) {
       const grid = new Array(rowCount);
 
@@ -53,9 +102,10 @@ export const GridGenerator = () => {
 
       setGridLayout(grid);
 
-      createWalls(grid);
+      createWalls(grid, walls);
 
       createAdjacentNodeMatrix(grid);
+      // console.log(grid.adjacentNodes);
 
       gridsForAllStartNodes.push(grid);
     }
@@ -82,20 +132,10 @@ export const GridGenerator = () => {
     }
   };
 
-  const createWalls = (grid) => {
-    grid[0][2].isWall = true;
-    // grid[1][0].isWall = true;
-    // grid[1][1].isWall = true;
-    grid[1][2].isWall = true;
-    grid[7][4].isWall = true;
-    grid[6][5].isWall = true;
-    grid[5][6].isWall = true;
-    grid[4][7].isWall = true;
-    grid[3][8].isWall = true;
-    grid[8][4].isWall = true;
-    grid[9][4].isWall = true;
-    grid[10][4].isWall = true;
-    // grid[11][4].isWall = true;
+  const createWalls = (grid, walls) => {
+    walls.forEach((element) => {
+      grid[element[0]][element[1]].isWall = true;
+    });
   };
 
   const drawGrid = (
@@ -232,12 +272,17 @@ export const GridGenerator = () => {
       }
     }
 
+    // console.log(grid1[goalNodeRow][goalNodeCol]);
+    // console.log(grid2[goalNodeRow][goalNodeCol]);
+    // console.log(grid3[goalNodeRow][goalNodeCol]);
+    // console.log(grid4[goalNodeRow][goalNodeCol]);
+
     let algoMap = {};
     let algoPathLengths = [];
 
     for (let i = 1; i < numStartNodes + 1; i++) {
-      let algoType = Math.floor(Math.random() * 6);
-      // let algoType = 5;
+      // let algoType = Math.floor(Math.random() * 6);
+      let algoType = 5;
       switch (algoType) {
         case 0:
           var algo = Astar(gridStartMap[i], gridGoalMap[i]);
@@ -274,10 +319,14 @@ export const GridGenerator = () => {
       }
     }
 
-    console.log(1, "Crimson", algoMap[1].algoName);
-    console.log(2, "Blue", algoMap[2].algoName);
+    // console.log(1, "Crimson", algoMap[1].algoName);
+    // console.log(2, "Blue", algoMap[2].algoName);
     // console.log(3, "Khaki", algoMap[3].algoName);
     // console.log(4, "Orchid", algoMap[4].algoName);
+    console.log(algoMap[1]);
+    console.log(algoMap[2]);
+    console.log(algoMap[3]);
+    console.log(algoMap[4]);
 
     let pathMinLength = Math.min(...algoPathLengths);
 
