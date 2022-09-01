@@ -10,9 +10,9 @@ import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
-  const [startNodeRow, setStartNodeRow] = useState(11);
-  const [startNodeCol, setStartNodeCol] = useState(6);
-  const [startNodeRow2, setStartNodeRow2] = useState(5);
+  const [startNodeRow, setStartNodeRow] = useState(0);
+  const [startNodeCol, setStartNodeCol] = useState(0);
+  const [startNodeRow2, setStartNodeRow2] = useState(2);
   const [startNodeCol2, setStartNodeCol2] = useState(10);
   const [goalNodeRow, setGoalNodeRow] = useState(8);
   const [goalNodeCol, setGoalNodeCol] = useState(6);
@@ -79,7 +79,7 @@ export const GridGenerator = () => {
 
   const createWalls = (grid) => {
     grid[0][2].isWall = true;
-    grid[1][0].isWall = true;
+    // grid[1][0].isWall = true;
     // grid[1][1].isWall = true;
     grid[1][2].isWall = true;
     grid[7][4].isWall = true;
@@ -213,8 +213,13 @@ export const GridGenerator = () => {
     let anyPathFound = false;
     let minIndex = [];
 
+    console.log(algo1.path, algo2.path);
+
     for (let i = 0; i < algoArray.length; i++) {
-      if (algoArray[i].path.length === pathMinLength && algoArray[i].pathIsFound) {
+      if (
+        algoArray[i].path.length === pathMinLength &&
+        algoArray[i].pathIsFound
+      ) {
         minIndex.push(algoArray[i]);
       }
       if (anyPathFound === false && algoArray[i].pathIsFound === true) {
@@ -226,7 +231,7 @@ export const GridGenerator = () => {
       if (i === pathMinLength) {
         if (anyPathFound) {
           setTimeout(() => {
-            drawWinnerPath(minIndex[0]);
+            drawWinnerPath(minIndex);
           }, 50 * i);
         }
       } else {
@@ -245,12 +250,14 @@ export const GridGenerator = () => {
   };
 
   const drawWinnerPath = (winnerAlgo) => {
-    console.log(winnerAlgo.pathToGoal)
-    for (let i = 0; i < winnerAlgo.pathToGoal.length; i++) {
-      const node = winnerAlgo.pathToGoal[i];
-      document
-        .getElementById(`node-${node.row}-${node.col}`)
-        .classList.add("node-winner");
+    for (let i = 0; i < winnerAlgo.length; i++) {
+      let path = winnerAlgo[i].pathToGoal;
+      for (let i = 0; i < path.length; i++) {
+        const node = path[i];
+        document
+          .getElementById(`node-${node.row}-${node.col}`)
+          .classList.add("node-winner");
+      }
     }
   };
 
