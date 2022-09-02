@@ -11,40 +11,33 @@ import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 export const GridGenerator = () => {
   const { rowCount, colCount } = useContext(GridContext);
 
-  const [startNodeRow1, setStartNodeRow1] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
-  const [startNodeCol1, setStartNodeCol1] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
+  const randomNodeRow = new Set();
+  const randomNodeCol = new Set();
 
-  const [startNodeRow2, setStartNodeRow2] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
-  const [startNodeCol2, setStartNodeCol2] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
+  while (randomNodeRow.size < 5) {
+    randomNodeRow.add(Math.floor(Math.random() * rowCount));
+  }
+  while (randomNodeCol.size < 5) {
+    randomNodeCol.add(Math.floor(Math.random() * colCount));
+  }
 
-  const [startNodeRow3, setStartNodeRow3] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
-  const [startNodeCol3, setStartNodeCol3] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
+  const randomNodeRowArray = Array.from(randomNodeRow);
+  const randomNodeColArray = Array.from(randomNodeCol);
 
-  const [startNodeRow4, setStartNodeRow4] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
-  const [startNodeCol4, setStartNodeCol4] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
+  const [startNodeRow1, setStartNodeRow1] = useState(randomNodeRowArray[0]);
+  const [startNodeCol1, setStartNodeCol1] = useState(randomNodeColArray[0]);
 
-  const [goalNodeRow, setGoalNodeRow] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
-  const [goalNodeCol, setGoalNodeCol] = useState(
-    Math.floor(Math.random() * rowCount)
-  );
+  const [startNodeRow2, setStartNodeRow2] = useState(randomNodeRowArray[1]);
+  const [startNodeCol2, setStartNodeCol2] = useState(randomNodeColArray[1]);
+
+  const [startNodeRow3, setStartNodeRow3] = useState(randomNodeRowArray[2]);
+  const [startNodeCol3, setStartNodeCol3] = useState(randomNodeColArray[2]);
+
+  const [startNodeRow4, setStartNodeRow4] = useState(randomNodeRowArray[3]);
+  const [startNodeCol4, setStartNodeCol4] = useState(randomNodeColArray[3]);
+
+  const [goalNodeRow, setGoalNodeRow] = useState(randomNodeRowArray[4]);
+  const [goalNodeCol, setGoalNodeCol] = useState(randomNodeColArray[4]);
 
   const [numStartNodes, setStartNumNodes] = useState(4);
 
@@ -65,25 +58,26 @@ export const GridGenerator = () => {
     const wallDensity = Math.floor(rowCount * colCount * 0.3);
 
     const walls = new Set();
-    const goal = [goalNodeRow, goalNodeCol];
-    const start1 = [startNodeRow1, startNodeCol1];
-    const start2 = [startNodeRow2, startNodeCol2];
-    const start3 = [startNodeRow3, startNodeCol3];
-    const start4 = [startNodeRow4, startNodeCol4];
-    walls.add(goal, start1, start2);
-    if (numStartNodes >= 3) {
-      walls.add(start3);
-      if (numStartNodes >= 4) {
-        walls.add(start4);
-      }
-    }
+    // const goal = [goalNodeRow, goalNodeCol];
+    // const start1 = [startNodeRow1, startNodeCol1];
+    // const start2 = [startNodeRow2, startNodeCol2];
+    // const start3 = [startNodeRow3, startNodeCol3];
+    // const start4 = [startNodeRow4, startNodeCol4];
+    // walls.add(goal, start1, start2);
+    // if (numStartNodes >= 3) {
+    //   walls.add(start3);
+    //   if (numStartNodes >= 4) {
+    //     walls.add(start4);
+    //   }
+    // }
     while (walls.size !== wallDensity) {
       walls.add([
         Math.floor(Math.random() * rowCount),
         Math.floor(Math.random() * colCount),
       ]);
     }
-    walls.delete(goal, start1, start2, start3, start4);
+    // walls.delete(goal, start1, start2, start3, start4);
+
     // if (numStartNodes >= 3) {
     //   walls.delete(start3);
     //   if (numStartNodes >= 4) {
@@ -136,6 +130,11 @@ export const GridGenerator = () => {
     walls.forEach((element) => {
       grid[element[0]][element[1]].isWall = true;
     });
+    grid[startNodeRow1][startNodeCol1].isWall = false;
+    grid[startNodeRow2][startNodeCol2].isWall = false;
+    grid[startNodeRow3][startNodeCol3].isWall = false;
+    grid[startNodeRow4][startNodeCol4].isWall = false;
+    grid[goalNodeRow][goalNodeCol].isWall = false;
   };
 
   const drawGrid = (
@@ -279,46 +278,66 @@ export const GridGenerator = () => {
 
     let algoMap = {};
     let algoPathLengths = [];
+    let algoPathCompleted = [];
 
     for (let i = 1; i < numStartNodes + 1; i++) {
-      // let algoType = Math.floor(Math.random() * 6);
-      let algoType = 5;
+      let algoType = Math.floor(Math.random() * 6);
+      // let algoType = 5;
       switch (algoType) {
         case 0:
           var algo = Astar(gridStartMap[i], gridGoalMap[i]);
           algoMap[i] = algo;
           algoPathLengths.push(algo.path.length);
+          if (algo.pathIsFound) {
+            algoPathCompleted.push(algo.path.length);
+          }
           break;
         case 1:
           var algo = BidirectionalSearch(gridStartMap[i], gridGoalMap[i]);
           algoMap[i] = algo;
           algoPathLengths.push(algo.path.length);
+          if (algo.pathIsFound) {
+            algoPathCompleted.push(algo.path.length);
+          }
           break;
         case 2:
           var algo = BreadthFirstSearch(gridStartMap[i], gridGoalMap[i]);
           algoMap[i] = algo;
           algoPathLengths.push(algo.path.length);
+          if (algo.pathIsFound) {
+            algoPathCompleted.push(algo.path.length);
+          }
           break;
         case 3:
           var algo = DepthFirstSearch(gridStartMap[i], gridGoalMap[i]);
           algoMap[i] = algo;
           algoPathLengths.push(algo.path.length);
+          if (algo.pathIsFound) {
+            algoPathCompleted.push(algo.path.length);
+          }
           break;
         case 4:
           var algo = Dijkstra(gridStartMap[i], gridGoalMap[i]);
           algoMap[i] = algo;
           algoPathLengths.push(algo.path.length);
+          if (algo.pathIsFound) {
+            algoPathCompleted.push(algo.path.length);
+          }
           break;
         case 5:
           var algo = GreedyBestFirstSearch(gridStartMap[i], gridGoalMap[i]);
           algoMap[i] = algo;
           algoPathLengths.push(algo.path.length);
+          if (algo.pathIsFound) {
+            algoPathCompleted.push(algo.path.length);
+          }
           break;
         default:
           return;
       }
     }
 
+    // console.log(algoPathLengths);
     // console.log(1, "Crimson", algoMap[1].algoName);
     // console.log(2, "Blue", algoMap[2].algoName);
     // console.log(3, "Khaki", algoMap[3].algoName);
@@ -327,26 +346,56 @@ export const GridGenerator = () => {
     console.log(algoMap[2]);
     console.log(algoMap[3]);
     console.log(algoMap[4]);
+    // console.log(startNodeRow1, startNodeCol1);
+    // console.log(startNodeRow2, startNodeCol2);
+    // console.log(startNodeRow3, startNodeCol3);
+    // console.log(startNodeRow4, startNodeCol4);
+    // console.log(goalNodeRow, goalNodeCol);
 
-    let pathMinLength = Math.min(...algoPathLengths);
+    let pathMaxLength = Math.max(...algoPathLengths);
+    let pathMinCompleted = Math.min(...algoPathCompleted);
 
     let anyPathFound = false;
     let minIndex = {};
 
-    for (let [key, value] of Object.entries(algoMap)) {
-      if (
-        algoMap[key].path.length === pathMinLength &&
-        algoMap[key].pathIsFound
-      ) {
-        minIndex[key] = value;
-      }
-      if (anyPathFound === false && algoMap[key].pathIsFound === true) {
-        anyPathFound = true;
+    let lengthToDraw = 0;
+
+    if (algoPathCompleted.length < 1) {
+      lengthToDraw = pathMaxLength;
+    } else {
+      anyPathFound = true;
+      lengthToDraw = pathMinCompleted;
+      for (let [key, value] of Object.entries(algoMap)) {
+        if (algoMap[key].pathIsFound) {
+          if (algoMap[key].path.length === pathMinCompleted) {
+            minIndex[key] = value;
+          }
+        }
       }
     }
 
-    for (let i = 0; i <= pathMinLength; i++) {
-      if (i === pathMinLength) {
+    //
+    //   let lowestDrawnLength = Infinity;
+    //   if (
+    //     algoMap[key].path.length < lowestDrawnLength &&
+    //     algoMap[key].pathIsFound
+    //   ) {
+    //     minIndex[key] = value;
+    //   }
+    //   if (algoMap[key].path.length === lowestDrawnLength &&
+    //     algoMap[key].pathIsFound) {
+    //       minIndex[key] = value;
+    //     }
+    //   }
+
+    //   if (anyPathFound === false && algoMap[key].pathIsFound === true) {
+    //     anyPathFound = true;
+    //   }
+    // }
+
+
+    for (let i = 0; i <= lengthToDraw; i++) {
+      if (i === lengthToDraw) {
         if (anyPathFound) {
           setTimeout(() => {
             drawWinnerPath(minIndex);
@@ -354,20 +403,28 @@ export const GridGenerator = () => {
         }
       } else {
         setTimeout(() => {
-          const node = algoMap[1].path[i];
-          const node2 = algoMap[2].path[i];
-          document
-            .getElementById(`node-${node.row}-${node.col}`)
-            .classList.add("node-1", "node-current");
-          document
-            .getElementById(`node-${node2.row}-${node2.col}`)
-            .classList.add("node-2", "node-current");
-          if (algoMap[3]) {
-            const node3 = algoMap[3].path[i];
+          if (algoMap[1].path.length > i) {
+            const node = algoMap[1].path[i];
             document
-              .getElementById(`node-${node3.row}-${node3.col}`)
-              .classList.add("node-3", "node-current");
-            if (algoMap[4]) {
+              .getElementById(`node-${node.row}-${node.col}`)
+              .classList.add("node-1", "node-current");
+          }
+          if (algoMap[2].path.length > i) {
+            const node2 = algoMap[2].path[i];
+            document
+              .getElementById(`node-${node2.row}-${node2.col}`)
+              .classList.add("node-2", "node-current");
+          }
+          if (algoMap[3]) {
+            if (algoMap[3].path.length > i) {
+              const node3 = algoMap[3].path[i];
+              document
+                .getElementById(`node-${node3.row}-${node3.col}`)
+                .classList.add("node-3", "node-current");
+            }
+          }
+          if (algoMap[4]) {
+            if (algoMap[4].path.length > i) {
               const node4 = algoMap[4].path[i];
               document
                 .getElementById(`node-${node4.row}-${node4.col}`)
