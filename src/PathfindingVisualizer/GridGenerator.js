@@ -275,7 +275,11 @@ export const GridGenerator = () => {
           var algo = Dijkstra(gridStartMap[i], gridGoalMap[i]);
           break;
         case 5:
-          var algo = GreedyBestFirstSearch(gridStartMap[i], gridGoalMap[i]);
+          var algo = GreedyBestFirstSearch(
+            gridStartMap[i],
+            gridGoalMap[i],
+            rowCount * colCount
+          );
           break;
         default:
           return;
@@ -301,7 +305,8 @@ export const GridGenerator = () => {
     let lengthToDraw = 0;
 
     if (algoPathCompleted.length < 1) {
-      lengthToDraw = pathMaxLength;
+      //200 = 10 seconds
+      lengthToDraw = Math.min(pathMaxLength, 200);
     } else {
       anyPathFound = true;
       lengthToDraw = pathMinCompleted;

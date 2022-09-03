@@ -1,6 +1,6 @@
 import { PriorityQueue } from "./PriorityQueue";
 
-export function GreedyBestFirstSearch(startNode, goalNode) {
+export function GreedyBestFirstSearch(startNode, goalNode, gridMaxNodes) {
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
@@ -28,7 +28,7 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
     currentNode.isVisited = true;
     path.push(currentNode);
 
-    if (path.length > 500) {
+    if (path.length > gridMaxNodes) {
       return { path, pathFoundMessage, pathIsFound, algoName, loopTooLongMsg };
     }
 
