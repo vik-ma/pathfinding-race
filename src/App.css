@@ -28,13 +28,13 @@ body {
 
 .node {
     border: 1px solid white;    
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     margin: 0px;
     font-weight: bold;
     text-align: center;
     font-size: larger;
-    line-height: 36px;
+    line-height: 26px;
     color:white;
 }
 
@@ -44,7 +44,7 @@ body {
 
 .node-goal {
     background-image: conic-gradient(lawngreen 0deg 360deg) !important;
-    border: 1px solid darkgreen !important;
+    border: 1px solid black !important;
     box-shadow: inset 0 0 0 4px darkgreen;
     color:darkgreen !important;
 }
@@ -64,9 +64,9 @@ body {
 }
 
 .node-start-3 {
-    box-shadow: inset 0 0 0 4px darkgoldenrod !important;
-    border: 1px solid darkgoldenrod !important;
-    /* color: darkgoldenrod; */
+    box-shadow: inset 0 0 0 4px saddlebrown !important;
+    border: 1px solid saddlebrown !important;
+    /* color:saddlebrown; */
 }
 
 .node-start-4 {
@@ -100,7 +100,7 @@ body {
 }
 
 .node-winner-3 {
-    box-shadow: inset 0 0 0 4px darkgoldenrod;
+    box-shadow: inset 0 0 0 4px saddlebrown;
 }
 
 .node-winner-4 {
@@ -108,7 +108,7 @@ body {
 }
 
 .node-winner-tie {
-    box-shadow: inset 0 0 0 4px black;
+    box-shadow: inset 0 0 0 4px #4d4d4d;
 }
 
 @keyframes current-anim {

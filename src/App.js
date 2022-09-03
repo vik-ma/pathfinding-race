@@ -9,9 +9,10 @@ function App() {
   const [isGridRendered, setIsGridRendered] = useState(true);
   const [renderTest, setRenderTest] = useState(false);
 
-  const SLIDER_DEFAULT_VALUE = 12;
-  const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
-  const [colCount, setColCount] = useState(SLIDER_DEFAULT_VALUE);
+  const SLIDER_ROW_DEFAULT_VALUE = 18;
+  const SLIDER_COL_DEFAULT_VALUE = 25;
+  const [rowCount, setRowCount] = useState(SLIDER_ROW_DEFAULT_VALUE);
+  const [colCount, setColCount] = useState(SLIDER_COL_DEFAULT_VALUE);
 
   // const [randRow1, setRandRow1] = useState(Math.floor(Math.random() * rowCount));
   // const [randRow2, setRandRow2] = useState(Math.floor(Math.random() * rowCount));
