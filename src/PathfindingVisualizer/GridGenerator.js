@@ -55,7 +55,7 @@ export const GridGenerator = () => {
   const createGrid = () => {
     let gridsForAllStartNodes = [];
 
-    const wallDensity = Math.floor(rowCount * colCount * 0.2);
+    const wallDensity = Math.floor(rowCount * colCount * 0.3);
 
     const walls = new Set();
 

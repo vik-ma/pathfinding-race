@@ -21,21 +21,17 @@ export const Node = ({
     : isWall
     ? "node-wall"
     : "";
-  const gridText = isStartNode1
-    ? "S C"
-    : isStartNode2
-    ? "S B"
-    : isStartNode3
-    ? "S K"
-    : isStartNode4
-    ? "S O"
-    : isGoalNode
-    ? "G"
-    : "";
+  const gridText =
+    isStartNode1 || isStartNode2 || isStartNode3 || isStartNode4
+      ? "S"
+      : isGoalNode
+      ? "G"
+      : // : `${row},${col}`;
+        "";
   return (
     <div className={`node ${nodeValues}`} id={`node-${row}-${col}`}>
       {/* {row},{col} */}
-      {/* {gridText} */}
+      {gridText}
     </div>
   );
 };
