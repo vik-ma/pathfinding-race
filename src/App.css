@@ -41,54 +41,61 @@ body {
 }
 
 .node-goal {
-    background-image: conic-gradient(lawngreen 0deg 360deg) !important ; 
-    /* box-shadow: inset 0 0 0 5px lawngreen !important ; */
+    background-image: conic-gradient(lawngreen 0deg 360deg) !important;
     color:darkgreen;
     
 }
 
+.node-start-1 {
+    box-shadow: inset 0 0 0 5px darkred !important;
+}
+
+.node-start-2 {
+    box-shadow: inset 0 0 0 5px mediumblue !important;
+}
+
+.node-start-3 {
+    box-shadow: inset 0 0 0 5px darkgoldenrod !important;
+}
+
+.node-start-4 {
+    box-shadow: inset 0 0 0 5px indigo !important;
+}
+
 .node-visited-1 {
     background-color: crimson;
-    /* box-shadow: inset 0 0 0 7px crimson; */
-    /* color:maroon; */
 }
 
 .node-visited-2 {
     background-color:dodgerblue;
-    /* box-shadow: inset 0 0 0 7px dodgerblue; */
-    /* color: darkblue; */
 }
 
 .node-visited-3 {
     background-color: darkkhaki;
-    /* box-shadow: inset 0 0 0 7px darkdarkkhaki; */
-    /* color:peru; */
 }
 
-.node-visited-4{
+.node-visited-4 {
     background-color: darkorchid;
-    /* box-shadow: inset 0 0 0 7px darkorchid; */
-    /* color:indigo; */
 }
 
 .node-winner-1 {
-    box-shadow: inset 0 0 0 5px maroon;
+    box-shadow: inset 0 0 0 5px darkred;
 }
 
 .node-winner-2 {
-    box-shadow: inset 0 0 0 5px darkblue;
+    box-shadow: inset 0 0 0 5px mediumblue;
 }
 
 .node-winner-3 {
-    box-shadow: inset 0 0 0 5px peru;
+    box-shadow: inset 0 0 0 5px darkgoldenrod;
 }
 
 .node-winner-4 {
-    box-shadow: inset 0 0 0 7px indigo;
+    box-shadow: inset 0 0 0 5px indigo;
 }
 
 .node-winner-tie {
-    box-shadow: inset 0 0 0 7px grey;
+    box-shadow: inset 0 0 0 5px silver;
 }
 
 @keyframes current-anim {
@@ -144,39 +151,5 @@ body {
 
 .node-visited-1-2-3-4 {
     background-image: conic-gradient(crimson 0deg 90deg, dodgerblue 90deg 180deg, darkkhaki 180deg 270deg, darkorchid 270deg 360deg);
-}
-
-
-
-#test {
-    margin-left: 100px;
-    height: 100px;
-    width: 100px;
-    border: 1px solid white;   
-    /* background-image: repeating-conic-gradient(red 0deg 90deg, yellow 90deg 180deg, blue 180deg 270deg, green 270deg 360deg); */
-    /* background-image: repeating-conic-gradient(red 0deg 90deg); */
-    /* background-image: repeating-conic-gradient(); */
-
-    /* background-image: repeating-conic-gradient(yellow 90deg 180deg); */
-    /* background-image: repeating-conic-gradient(var(--teste), var(--testo)); */
-    /* background-image: conic-gradient(red 90deg 270deg,yellow 270deg 90deg); */
-    --teste:crimson 0deg 90deg;
-    --testee: dodgerblue 90deg 180deg;
-    --testy:khaki 180deg 270deg;
-    --testo:darkorchid 270deg 360deg;
-
-    
-}
-
-:root {
-}
-
-.test1 {
-    /* background-image: repeating-conic-gradient(yellow 90deg 180deg); */
-    /* background-image: repeating-conic-gradient(red 0deg 90deg, yellow 90deg 180deg, blue 180deg 270deg, green 270deg 360deg); */
-}
-
-.test2 {
-    
 }
 

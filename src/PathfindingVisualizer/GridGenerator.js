@@ -168,7 +168,7 @@ export const GridGenerator = () => {
       numStartNodes >= 4;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
-    this.allowDiagonals = true;
+    this.allowDiagonals = false;
     this.isWall = false;
     this.isVisited = false;
     this.isVisitedBidirectional = false;
@@ -412,6 +412,9 @@ export const GridGenerator = () => {
             }
             return "node-visited-1-2-3";
           }
+          if (classNames.includes("4")) {
+            return "node-visited-1-2-4";
+          }
           return "node-visited-1-2";
         }
         if (classNames.includes("3")) {
@@ -431,6 +434,9 @@ export const GridGenerator = () => {
               return "node-visited-1-2-3-4";
             }
             return "node-visited-1-2-3";
+          }
+          if (classNames.includes("4")) {
+            return "node-visited-1-2-4";
           }
           return "node-visited-1-2";
         }
@@ -452,6 +458,9 @@ export const GridGenerator = () => {
             }
             return "node-visited-1-2-3";
           }
+          if (classNames.includes("4")) {
+            return "node-visited-1-3-4";
+          }
           return "node-visited-1-3";
         }
         if (classNames.includes("2")) {
@@ -472,6 +481,9 @@ export const GridGenerator = () => {
             }
             return "node-visited-1-2-4";
           }
+          if (classNames.includes("3")) {
+            return "node-visited-1-3-4";
+          }
           return "node-visited-1-4";
         }
         if (classNames.includes("2")) {
@@ -489,28 +501,10 @@ export const GridGenerator = () => {
     }
   }
 
-  const test = () => {
-    document.getElementById("node-0-0").classList.add("node-visited-1-2-3-4");
-    var asda = document.getElementById("node-0-0").className;
-    // var aa = asda.split(" ");
-    // const asd = document.querySelector("#test");
-    // let asda = getComputedStyle(asd).backgroundImage;
-    // document.getElementById("test").style.backgroundImage =
-    //   // "repeating-conic-gradient(rgb(220, 20, 60) 0deg, rgb(220, 20, 60) 90deg)";
-    //   "repeating-conic-gradient(var(--testo), var(--testy))";
-    // aa.style.backgroundImage = "repeating-conic-gradient(var(--testee));";
-    // console.log(aa);
-    // document.getElementById("node-0-0").classList.remove(asda[1]);
-    console.log(asda.includes("nodea"));
-  };
-
   return (
     <div>
       <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
-      </button>
-      <button className="buttonContainer" onClick={test}>
-        TESTTSTSTTST
       </button>
       <div className="gridContainer">{drawGrid}</div>
     </div>

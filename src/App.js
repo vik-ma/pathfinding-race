@@ -7,7 +7,7 @@ import { TestComponent } from "./TestComponent";
 
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(true);
-  const [renderTest, setRenderTest] = useState(true);
+  const [renderTest, setRenderTest] = useState(false);
 
   const SLIDER_DEFAULT_VALUE = 12;
   const [rowCount, setRowCount] = useState(SLIDER_DEFAULT_VALUE);
