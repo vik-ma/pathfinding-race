@@ -9,13 +9,13 @@ export const Node = ({
   isWall,
 }) => {
   const nodeValues = isStartNode1
-    ? "node-start-1"
+    ? "node-visited-1"
     : isStartNode2
-    ? "node-start-2"
+    ? "node-visited-2"
     : isStartNode3
-    ? "node-start-3"
+    ? "node-visited-3"
     : isStartNode4
-    ? "node-start-4"
+    ? "node-visited-4"
     : isGoalNode
     ? "node-goal"
     : isWall

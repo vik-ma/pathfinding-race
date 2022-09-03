@@ -55,7 +55,7 @@ export const GridGenerator = () => {
   const createGrid = () => {
     let gridsForAllStartNodes = [];
 
-    const wallDensity = Math.floor(rowCount * colCount * 0.5);
+    const wallDensity = Math.floor(rowCount * colCount * 0.2);
 
     const walls = new Set();
 
@@ -329,30 +329,50 @@ export const GridGenerator = () => {
         setTimeout(() => {
           if (algoMap[1].path.length > i) {
             const node = algoMap[1].path[i];
+            const classNames = document.getElementById(
+              `node-${node.row}-${node.col}`
+            ).className;
+            const newClass = getNewNodeClass(1, classNames);
+
             document
               .getElementById(`node-${node.row}-${node.col}`)
-              .classList.add("node-start-1", "node-current");
+              .classList.add(newClass, "node-current");
           }
           if (algoMap[2].path.length > i) {
             const node2 = algoMap[2].path[i];
+            const classNames = document.getElementById(
+              `node-${node2.row}-${node2.col}`
+            ).className;
+            const newClass = getNewNodeClass(2, classNames);
+
             document
               .getElementById(`node-${node2.row}-${node2.col}`)
-              .classList.add("node-start-2", "node-current");
+              .classList.add(newClass, "node-current");
           }
           if (algoMap[3]) {
             if (algoMap[3].path.length > i) {
               const node3 = algoMap[3].path[i];
+              const classNames = document.getElementById(
+                `node-${node3.row}-${node3.col}`
+              ).className;
+              const newClass = getNewNodeClass(3, classNames);
+
               document
                 .getElementById(`node-${node3.row}-${node3.col}`)
-                .classList.add("node-start-3", "node-current");
+                .classList.add(newClass, "node-current");
             }
           }
           if (algoMap[4]) {
             if (algoMap[4].path.length > i) {
               const node4 = algoMap[4].path[i];
+              const classNames = document.getElementById(
+                `node-${node4.row}-${node4.col}`
+              ).className;
+              const newClass = getNewNodeClass(4, classNames);
+
               document
                 .getElementById(`node-${node4.row}-${node4.col}`)
-                .classList.add("node-start-4", "node-current");
+                .classList.add(newClass, "node-current");
             }
           }
         }, 50 * i);
@@ -382,10 +402,115 @@ export const GridGenerator = () => {
     }
   };
 
+  function getNewNodeClass(algoNum, classNames) {
+    switch (algoNum) {
+      case 1:
+        if (classNames.includes("2")) {
+          if (classNames.includes("3")) {
+            if (classNames.includes("4")) {
+              return "node-visited-1-2-3-4";
+            }
+            return "node-visited-1-2-3";
+          }
+          return "node-visited-1-2";
+        }
+        if (classNames.includes("3")) {
+          if (classNames.includes("4")) {
+            return "node-visited-1-3-4";
+          }
+          return "node-visited-1-3";
+        }
+        if (classNames.includes("4")) {
+          return "node-visited-1-4";
+        }
+        return "node-visited-1";
+      case 2:
+        if (classNames.includes("1")) {
+          if (classNames.includes("3")) {
+            if (classNames.includes("4")) {
+              return "node-visited-1-2-3-4";
+            }
+            return "node-visited-1-2-3";
+          }
+          return "node-visited-1-2";
+        }
+        if (classNames.includes("3")) {
+          if (classNames.includes("4")) {
+            return "node-visited-2-3-4";
+          }
+          return "node-visited-2-3";
+        }
+        if (classNames.includes("4")) {
+          return "node-visited-2-4";
+        }
+        return "node-visited-2";
+      case 3:
+        if (classNames.includes("1")) {
+          if (classNames.includes("2")) {
+            if (classNames.includes("4")) {
+              return "node-visited-1-2-3-4";
+            }
+            return "node-visited-1-2-3";
+          }
+          return "node-visited-1-3";
+        }
+        if (classNames.includes("2")) {
+          if (classNames.includes("4")) {
+            return "node-visited-2-3-4";
+          }
+          return "node-visited-2-3";
+        }
+        if (classNames.includes("4")) {
+          return "node-visited-3-4";
+        }
+        return "node-visited-3";
+      case 4:
+        if (classNames.includes("1")) {
+          if (classNames.includes("2")) {
+            if (classNames.includes("3")) {
+              return "node-visited-1-2-3-4";
+            }
+            return "node-visited-1-2-4";
+          }
+          return "node-visited-1-4";
+        }
+        if (classNames.includes("2")) {
+          if (classNames.includes("3")) {
+            return "node-visited-2-3-4";
+          }
+          return "node-visited-2-4";
+        }
+        if (classNames.includes("3")) {
+          return "node-visited-3-4";
+        }
+        return "node-visited-4";
+      default:
+        return;
+    }
+  }
+
+  const test = () => {
+    document.getElementById("node-0-0").classList.add("node-visited-1-2-3-4");
+    var asda = document.getElementById("node-0-0").className;
+    // var aa = asda.split(" ");
+    // const asd = document.querySelector("#test");
+    // let asda = getComputedStyle(asd).backgroundImage;
+    // document.getElementById("test").style.backgroundImage =
+    //   // "repeating-conic-gradient(rgb(220, 20, 60) 0deg, rgb(220, 20, 60) 90deg)";
+    //   "repeating-conic-gradient(var(--testo), var(--testy))";
+    // aa.style.backgroundImage = "repeating-conic-gradient(var(--testee));";
+    // console.log(aa);
+    // document.getElementById("node-0-0").classList.remove(asda[1]);
+    console.log(asda.includes("nodea"));
+  };
+
   return (
     <div>
       <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
+      </button>
+      <button className="buttonContainer" onClick={test}>
+        TESTTSTSTTST
       </button>
       <div className="gridContainer">{drawGrid}</div>
     </div>
