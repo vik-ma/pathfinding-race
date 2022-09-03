@@ -55,7 +55,7 @@ export const GridGenerator = () => {
   const createGrid = () => {
     let gridsForAllStartNodes = [];
 
-    const wallDensity = Math.floor(rowCount * colCount * 0.3);
+    const wallDensity = Math.floor(rowCount * colCount * 0.5);
 
     const walls = new Set();
     // const goal = [goalNodeRow, goalNodeCol];
@@ -188,7 +188,7 @@ export const GridGenerator = () => {
       numStartNodes >= 4;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
-    this.allowDiagonals = false;
+    this.allowDiagonals = true;
     this.isWall = false;
     this.isVisited = false;
     this.isVisitedBidirectional = false;

@@ -6,6 +6,7 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
   var pathToGoal = [];
   var pathIsFound = false;
   var algoName = "Greedy Best-First Search";
+  var loopTooLongMsg = "Search aborted, algorithm took too long to finish!";
 
   var pq = new PriorityQueue();
 
@@ -26,6 +27,11 @@ export function GreedyBestFirstSearch(startNode, goalNode) {
     let currentNode = pq.dequeue();
     currentNode.isVisited = true;
     path.push(currentNode);
+
+    if (path.length > 500) {
+      return { path, pathFoundMessage, pathIsFound, algoName, loopTooLongMsg };
+    }
+
     // console.log(`VISITED ${currentNode.row} ${currentNode.col}`);
 
     if (currentNode === goalNode) {
