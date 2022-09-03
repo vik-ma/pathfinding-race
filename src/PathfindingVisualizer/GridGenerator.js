@@ -58,32 +58,13 @@ export const GridGenerator = () => {
     const wallDensity = Math.floor(rowCount * colCount * 0.5);
 
     const walls = new Set();
-    // const goal = [goalNodeRow, goalNodeCol];
-    // const start1 = [startNodeRow1, startNodeCol1];
-    // const start2 = [startNodeRow2, startNodeCol2];
-    // const start3 = [startNodeRow3, startNodeCol3];
-    // const start4 = [startNodeRow4, startNodeCol4];
-    // walls.add(goal, start1, start2);
-    // if (numStartNodes >= 3) {
-    //   walls.add(start3);
-    //   if (numStartNodes >= 4) {
-    //     walls.add(start4);
-    //   }
-    // }
+
     while (walls.size !== wallDensity) {
       walls.add([
         Math.floor(Math.random() * rowCount),
         Math.floor(Math.random() * colCount),
       ]);
     }
-    // walls.delete(goal, start1, start2, start3, start4);
-
-    // if (numStartNodes >= 3) {
-    //   walls.delete(start3);
-    //   if (numStartNodes >= 4) {
-    //     walls.delete(start4);
-    //   }
-    // }
 
     for (let i = 0; i < numStartNodes; i++) {
       const grid = new Array(rowCount);
@@ -99,7 +80,6 @@ export const GridGenerator = () => {
       createWalls(grid, walls);
 
       createAdjacentNodeMatrix(grid);
-      // console.log(grid.adjacentNodes);
 
       gridsForAllStartNodes.push(grid);
     }
@@ -246,7 +226,7 @@ export const GridGenerator = () => {
     };
   }
 
-  const visualizePath = () => {
+  const calculatePaths = () => {
     var grid1 = savedGrid1;
     var grid2 = savedGrid2;
     var grid3 = savedGrid3;
@@ -271,11 +251,6 @@ export const GridGenerator = () => {
       }
     }
 
-    // console.log(grid1[goalNodeRow][goalNodeCol]);
-    // console.log(grid2[goalNodeRow][goalNodeCol]);
-    // console.log(grid3[goalNodeRow][goalNodeCol]);
-    // console.log(grid4[goalNodeRow][goalNodeCol]);
-
     let algoMap = {};
     let algoPathLengths = [];
     let algoPathCompleted = [];
@@ -286,71 +261,36 @@ export const GridGenerator = () => {
       switch (algoType) {
         case 0:
           var algo = Astar(gridStartMap[i], gridGoalMap[i]);
-          algoMap[i] = algo;
-          algoPathLengths.push(algo.path.length);
-          if (algo.pathIsFound) {
-            algoPathCompleted.push(algo.path.length);
-          }
           break;
         case 1:
           var algo = BidirectionalSearch(gridStartMap[i], gridGoalMap[i]);
-          algoMap[i] = algo;
-          algoPathLengths.push(algo.path.length);
-          if (algo.pathIsFound) {
-            algoPathCompleted.push(algo.path.length);
-          }
           break;
         case 2:
           var algo = BreadthFirstSearch(gridStartMap[i], gridGoalMap[i]);
-          algoMap[i] = algo;
-          algoPathLengths.push(algo.path.length);
-          if (algo.pathIsFound) {
-            algoPathCompleted.push(algo.path.length);
-          }
           break;
         case 3:
           var algo = DepthFirstSearch(gridStartMap[i], gridGoalMap[i]);
-          algoMap[i] = algo;
-          algoPathLengths.push(algo.path.length);
-          if (algo.pathIsFound) {
-            algoPathCompleted.push(algo.path.length);
-          }
           break;
         case 4:
           var algo = Dijkstra(gridStartMap[i], gridGoalMap[i]);
-          algoMap[i] = algo;
-          algoPathLengths.push(algo.path.length);
-          if (algo.pathIsFound) {
-            algoPathCompleted.push(algo.path.length);
-          }
           break;
         case 5:
           var algo = GreedyBestFirstSearch(gridStartMap[i], gridGoalMap[i]);
-          algoMap[i] = algo;
-          algoPathLengths.push(algo.path.length);
-          if (algo.pathIsFound) {
-            algoPathCompleted.push(algo.path.length);
-          }
           break;
         default:
           return;
       }
+      algoMap[i] = algo;
+      algoPathLengths.push(algo.path.length);
+      if (algo.pathIsFound) {
+        algoPathCompleted.push(algo.path.length);
+      }
     }
 
-    // console.log(algoPathLengths);
-    // console.log(1, "Crimson", algoMap[1].algoName);
-    // console.log(2, "Blue", algoMap[2].algoName);
-    // console.log(3, "Khaki", algoMap[3].algoName);
-    // console.log(4, "Orchid", algoMap[4].algoName);
     console.log(algoMap[1]);
     console.log(algoMap[2]);
     console.log(algoMap[3]);
     console.log(algoMap[4]);
-    // console.log(startNodeRow1, startNodeCol1);
-    // console.log(startNodeRow2, startNodeCol2);
-    // console.log(startNodeRow3, startNodeCol3);
-    // console.log(startNodeRow4, startNodeCol4);
-    // console.log(goalNodeRow, goalNodeCol);
 
     let pathMaxLength = Math.max(...algoPathLengths);
     let pathMinCompleted = Math.min(...algoPathCompleted);
@@ -374,26 +314,10 @@ export const GridGenerator = () => {
       }
     }
 
-    //
-    //   let lowestDrawnLength = Infinity;
-    //   if (
-    //     algoMap[key].path.length < lowestDrawnLength &&
-    //     algoMap[key].pathIsFound
-    //   ) {
-    //     minIndex[key] = value;
-    //   }
-    //   if (algoMap[key].path.length === lowestDrawnLength &&
-    //     algoMap[key].pathIsFound) {
-    //       minIndex[key] = value;
-    //     }
-    //   }
+    visualizePaths(algoMap, minIndex, lengthToDraw, anyPathFound);
+  };
 
-    //   if (anyPathFound === false && algoMap[key].pathIsFound === true) {
-    //     anyPathFound = true;
-    //   }
-    // }
-
-
+  const visualizePaths = (algoMap, minIndex, lengthToDraw, anyPathFound) => {
     for (let i = 0; i <= lengthToDraw; i++) {
       if (i === lengthToDraw) {
         if (anyPathFound) {
@@ -407,20 +331,20 @@ export const GridGenerator = () => {
             const node = algoMap[1].path[i];
             document
               .getElementById(`node-${node.row}-${node.col}`)
-              .classList.add("node-1", "node-current");
+              .classList.add("node-start-1", "node-current");
           }
           if (algoMap[2].path.length > i) {
             const node2 = algoMap[2].path[i];
             document
               .getElementById(`node-${node2.row}-${node2.col}`)
-              .classList.add("node-2", "node-current");
+              .classList.add("node-start-2", "node-current");
           }
           if (algoMap[3]) {
             if (algoMap[3].path.length > i) {
               const node3 = algoMap[3].path[i];
               document
                 .getElementById(`node-${node3.row}-${node3.col}`)
-                .classList.add("node-3", "node-current");
+                .classList.add("node-start-3", "node-current");
             }
           }
           if (algoMap[4]) {
@@ -428,7 +352,7 @@ export const GridGenerator = () => {
               const node4 = algoMap[4].path[i];
               document
                 .getElementById(`node-${node4.row}-${node4.col}`)
-                .classList.add("node-4", "node-current");
+                .classList.add("node-start-4", "node-current");
             }
           }
         }, 50 * i);
@@ -436,10 +360,10 @@ export const GridGenerator = () => {
     }
   };
 
-  const drawWinnerPath = (winnerAlgo) => {
-    for (let [key, value] of Object.entries(winnerAlgo)) {
-      if (Object.keys(winnerAlgo).length === 1) {
-        let path = winnerAlgo[key].pathToGoal;
+  const drawWinnerPath = (winnerAlgoMap) => {
+    for (let [key, value] of Object.entries(winnerAlgoMap)) {
+      if (Object.keys(winnerAlgoMap).length === 1) {
+        let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
           const node = path[i];
           document
@@ -447,7 +371,7 @@ export const GridGenerator = () => {
             .classList.add(`node-winner-${key}`);
         }
       } else {
-        let path = winnerAlgo[key].pathToGoal;
+        let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
           const node = path[i];
           document
@@ -460,7 +384,7 @@ export const GridGenerator = () => {
 
   return (
     <div>
-      <button className="buttonContainer" onClick={visualizePath}>
+      <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
       </button>
       <div className="gridContainer">{drawGrid}</div>
