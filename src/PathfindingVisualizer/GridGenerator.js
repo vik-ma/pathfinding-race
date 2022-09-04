@@ -9,37 +9,7 @@ import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
-  const { rowCount, colCount } = useContext(GridContext);
-
-  const randomNodeRow = new Set();
-  const randomNodeCol = new Set();
-
-  while (randomNodeRow.size < 5) {
-    randomNodeRow.add(Math.floor(Math.random() * rowCount));
-  }
-  while (randomNodeCol.size < 5) {
-    randomNodeCol.add(Math.floor(Math.random() * colCount));
-  }
-
-  const randomNodeRowArray = Array.from(randomNodeRow);
-  const randomNodeColArray = Array.from(randomNodeCol);
-
-  const [startNodeRow1, setStartNodeRow1] = useState(randomNodeRowArray[0]);
-  const [startNodeCol1, setStartNodeCol1] = useState(randomNodeColArray[0]);
-
-  const [startNodeRow2, setStartNodeRow2] = useState(randomNodeRowArray[1]);
-  const [startNodeCol2, setStartNodeCol2] = useState(randomNodeColArray[1]);
-
-  const [startNodeRow3, setStartNodeRow3] = useState(randomNodeRowArray[2]);
-  const [startNodeCol3, setStartNodeCol3] = useState(randomNodeColArray[2]);
-
-  const [startNodeRow4, setStartNodeRow4] = useState(randomNodeRowArray[3]);
-  const [startNodeCol4, setStartNodeCol4] = useState(randomNodeColArray[3]);
-
-  const [goalNodeRow, setGoalNodeRow] = useState(randomNodeRowArray[4]);
-  const [goalNodeCol, setGoalNodeCol] = useState(randomNodeColArray[4]);
-
-  const [numStartNodes, setStartNumNodes] = useState(4);
+  const { rowCount, colCount, numStartNodes } = useContext(GridContext);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -48,9 +18,47 @@ export const GridGenerator = () => {
 
   const [gridLayout, setGridLayout] = useState([]);
 
+  const createNodeRows = () => {
+    const randomNodeRow = new Set();
+
+    while (randomNodeRow.size < numStartNodes + 1) {
+      randomNodeRow.add(Math.floor(Math.random() * rowCount));
+    }
+    const randomNodeArray = Array.from(randomNodeRow);
+    return randomNodeArray;
+  };
+
+  const createNodeCols = () => {
+    const randomNodeCol = new Set();
+
+    while (randomNodeCol.size < numStartNodes + 1) {
+      randomNodeCol.add(Math.floor(Math.random() * colCount));
+    }
+    const randomNodeColArray = Array.from(randomNodeCol);
+    return randomNodeColArray;
+  };
+
+  const [randomNodeRowArray, setRandomNodeRowArray] = useState(
+    createNodeRows()
+  );
+  const [randomNodeColArray, setRandomNodeColArray] = useState(
+    createNodeCols()
+  );
+
+  const [goalNodeRow, setGoalNodeRow] = useState(randomNodeRowArray[0]);
+  const [goalNodeCol, setGoalNodeCol] = useState(randomNodeColArray[0]);
+  const [startNodeRow1, setStartNodeRow1] = useState(randomNodeRowArray[1]);
+  const [startNodeCol1, setStartNodeCol1] = useState(randomNodeColArray[1]);
+  const [startNodeRow2, setStartNodeRow2] = useState(randomNodeRowArray[2]);
+  const [startNodeCol2, setStartNodeCol2] = useState(randomNodeColArray[2]);
+  const [startNodeRow3, setStartNodeRow3] = useState(randomNodeRowArray[3]);
+  const [startNodeCol3, setStartNodeCol3] = useState(randomNodeColArray[3]);
+  const [startNodeRow4, setStartNodeRow4] = useState(randomNodeRowArray[4]);
+  const [startNodeCol4, setStartNodeCol4] = useState(randomNodeColArray[4]);
+
   useEffect(() => {
     createGrid();
-  }, [rowCount, colCount]);
+  }, [rowCount, colCount, numStartNodes]);
 
   const createGrid = () => {
     let gridsForAllStartNodes = [];
@@ -110,11 +118,15 @@ export const GridGenerator = () => {
     walls.forEach((element) => {
       grid[element[0]][element[1]].isWall = true;
     });
+    grid[goalNodeRow][goalNodeCol].isWall = false;
     grid[startNodeRow1][startNodeCol1].isWall = false;
     grid[startNodeRow2][startNodeCol2].isWall = false;
-    grid[startNodeRow3][startNodeCol3].isWall = false;
-    grid[startNodeRow4][startNodeCol4].isWall = false;
-    grid[goalNodeRow][goalNodeCol].isWall = false;
+    if (numStartNodes > 2) {
+      grid[startNodeRow3][startNodeCol3].isWall = false;
+      if (numStartNodes > 3) {
+        grid[startNodeRow4][startNodeCol4].isWall = false;
+      }
+    }
   };
 
   const drawGrid = (
