@@ -21,13 +21,18 @@ export const Node = ({
     : isWall
     ? "node-wall"
     : "";
-  const gridText =
-    isStartNode1 || isStartNode2 || isStartNode3 || isStartNode4
-      ? "S"
-      : isGoalNode
-      ? "G"
-      : // : `${row},${col}`;
-        "";
+  const gridText = isStartNode1
+    ? "1"
+    : isStartNode2
+    ? "2"
+    : isStartNode3
+    ? "3"
+    : isStartNode4
+    ? "4"
+    : isGoalNode
+    ? "G"
+    : // : `${row},${col}`;
+      "";
   return (
     <div className={`node ${nodeValues}`} id={`node-${row}-${col}`}>
       {/* {row},{col} */}
