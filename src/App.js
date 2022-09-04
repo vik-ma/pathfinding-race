@@ -15,10 +15,14 @@ function App() {
   const [colCount, setColCount] = useState(SLIDER_COL_DEFAULT_VALUE);
 
   const SLIDER_NUMNODES_DEFAULT_VALUE = 4;
-  const [numStartNodes, setNumStartNodes] = useState(SLIDER_NUMNODES_DEFAULT_VALUE);
+  const [numStartNodes, setNumStartNodes] = useState(
+    SLIDER_NUMNODES_DEFAULT_VALUE
+  );
 
-  const SLIDER_WALL_DENSITY_DEFAULT_VALUE = 0.15;
-  const [wallDensityValue, setWallDensityValue] = useState(SLIDER_WALL_DENSITY_DEFAULT_VALUE);
+  const SLIDER_WALL_DENSITY_DEFAULT_VALUE = 0.4;
+  const [wallDensityValue, setWallDensityValue] = useState(
+    SLIDER_WALL_DENSITY_DEFAULT_VALUE
+  );
 
   const [gridKey, setGridKey] = useState(0);
 
@@ -40,7 +44,7 @@ function App() {
             numStartNodes,
             setNumStartNodes,
             wallDensityValue,
-            setWallDensityValue
+            setWallDensityValue,
           }}
         >
           <GridCustomizer />

@@ -19,6 +19,7 @@ export const GridCustomizer = () => {
   const defaultWallDensity = wallDensityValue;
 
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
+  const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
 
   return (
     <div>
@@ -54,7 +55,7 @@ export const GridCustomizer = () => {
             min="1"
             max="3"
             name="wallDensity"
-            defaultValue={defaultWallDensity}
+            defaultValue={inverseWallDensityMap[defaultWallDensity]}
             onChange={(e) =>
               setWallDensityValue(wallDensityMap[e.target.value])
             }
