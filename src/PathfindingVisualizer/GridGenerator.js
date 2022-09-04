@@ -9,7 +9,7 @@ import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
-  const { rowCount, colCount, numStartNodes } = useContext(GridContext);
+  const { rowCount, colCount, numStartNodes, wallDensityValue } = useContext(GridContext);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -58,12 +58,12 @@ export const GridGenerator = () => {
 
   useEffect(() => {
     createGrid();
-  }, [rowCount, colCount, numStartNodes]);
+  }, [rowCount, colCount, wallDensityValue]);
 
   const createGrid = () => {
     let gridsForAllStartNodes = [];
-
-    const wallDensity = Math.floor(rowCount * colCount * 0.4);
+    
+    const wallDensity = Math.floor(rowCount * colCount * wallDensityValue);
 
     const walls = new Set();
 
