@@ -24,10 +24,26 @@ function App() {
     SLIDER_WALL_DENSITY_DEFAULT_VALUE
   );
 
+  const [algoList, setAlgoList] = useState([
+    Math.floor(Math.random() * 6),
+    Math.floor(Math.random() * 6),
+    Math.floor(Math.random() * 6),
+    Math.floor(Math.random() * 6),
+  ]);
+
   const [gridKey, setGridKey] = useState(0);
+
+  const generateNewAlgoList = () => {
+    const newAlgoList = [];
+    for (let i = 0; i < numStartNodes; i++) {
+      newAlgoList.push(Math.floor(Math.random() * 6));
+    }
+    setAlgoList(newAlgoList);
+  };
 
   const remakeGrid = () => {
     setIsGridRendered(false);
+    generateNewAlgoList();
     setGridKey(gridKey + 1);
     setIsGridRendered(true);
   };
@@ -45,9 +61,12 @@ function App() {
             setNumStartNodes,
             wallDensityValue,
             setWallDensityValue,
+            algoList,
+            setAlgoList,
           }}
         >
-          <GridCustomizer />
+          {" "}
+          {isGridRendered ? <GridGenerator key={gridKey} /> : null}
           <div className="buttonContainer">
             <button
               onClick={() => {
@@ -72,7 +91,7 @@ function App() {
               TEST BUTTON
             </button>
           </div>
-          {isGridRendered ? <GridGenerator key={gridKey} /> : null}
+          <GridCustomizer />
           {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>
       </header>

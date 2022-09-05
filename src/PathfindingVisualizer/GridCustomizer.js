@@ -21,6 +21,7 @@ export const GridCustomizer = () => {
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
   const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
 
+
   return (
     <div>
       <div className="sliderContainer">

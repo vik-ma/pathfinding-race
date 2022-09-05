@@ -9,7 +9,8 @@ import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
-  const { rowCount, colCount, numStartNodes, wallDensityValue } = useContext(GridContext);
+  const { rowCount, colCount, numStartNodes, wallDensityValue, algoList } =
+    useContext(GridContext);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -62,7 +63,7 @@ export const GridGenerator = () => {
 
   const createGrid = () => {
     let gridsForAllStartNodes = [];
-    
+
     const wallDensity = Math.floor(rowCount * colCount * wallDensityValue);
 
     const walls = new Set();
@@ -96,6 +97,8 @@ export const GridGenerator = () => {
     setSavedGrid2(gridsForAllStartNodes[1]);
     setSavedGrid3(gridsForAllStartNodes[2]);
     setSavedGrid4(gridsForAllStartNodes[3]);
+
+    // calculatePaths();
   };
 
   const createNodeMatrix = (grid) => {
@@ -180,7 +183,7 @@ export const GridGenerator = () => {
       numStartNodes >= 4;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
-    this.allowDiagonals = true;
+    this.allowDiagonals = false;
     this.isWall = false;
     this.isVisited = false;
     this.isVisitedBidirectional = false;
@@ -267,8 +270,8 @@ export const GridGenerator = () => {
     let algoPathLengths = [];
     let algoPathCompleted = [];
 
-    for (let i = 1; i < numStartNodes + 1; i++) {
-      let algoType = Math.floor(Math.random() * 6);
+    for (let i = 1; i < algoList.length+1; i++) {
+      let algoType = algoList[i-1];
       // let algoType = 5;
       switch (algoType) {
         case 0:
@@ -520,10 +523,25 @@ export const GridGenerator = () => {
 
   return (
     <div>
+      <div className="resultContainer">
+        WHICH ALGORITHM WILL REACH THE [&nbsp;&nbsp;&nbsp;] GOAL NODE FIRST?
+        <br />
+        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
+        <br />
+        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
+        <br />
+        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
+        <br />
+        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
+        <br />
+        [&nbsp;&nbsp;&nbsp;] No Path Will Be Found!
+        <br />
+        YOUR GUESS [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search WAS CORRECT!
+      </div>
+      <div className="gridContainer">{drawGrid}</div>
       <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
       </button>
-      <div className="gridContainer">{drawGrid}</div>
     </div>
   );
 };

@@ -26,6 +26,12 @@ body {
     inline-size: min-content;
 }
 
+.resultContainer {
+    display: flex;
+    margin: 10px;
+    column-gap: 10px;
+}
+
 .rowWrapper {
     display: flex;
 }
