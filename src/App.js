@@ -25,6 +25,29 @@ function App() {
     SLIDER_WALL_DENSITY_DEFAULT_VALUE
   );
 
+  const algorithmMap = {
+    0: "A-Star Search",
+    1: "Bidirectional Search",
+    2: "Breadth First Search",
+    3: "Depth First Search",
+    4: "Dijkstra's Algorithm",
+    5: "Greedy Best-First Search",
+  };
+  const styles = {
+    node: "node",
+    nodevisited1: "node-visited-1",
+    nodevisited2: "node-visited-2",
+    nodevisited3: "node-visited-3",
+    nodevisited4: "node-visited-4",
+    nodestart1: "node-start-1",
+    nodestart2: "node-start-2",
+    nodestart3: "node-start-3",
+    nodestart4: "node-start-4",
+    nodegoal: "node-goal",
+    titlebarnode: "titleBarNode",
+    nodex: "node-x"
+  };
+
   const [algoList, setAlgoList] = useState([
     Math.floor(Math.random() * 6),
     Math.floor(Math.random() * 6),
@@ -66,6 +89,8 @@ function App() {
             setWallDensityValue,
             algoList,
             setAlgoList,
+            styles,
+            algorithmMap
           }}
         >
           {isGridRendered ? <TitleBar key={titleKey} /> : null}
