@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
 import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 import { GridContext } from "./Helpers/GridContexts";
+import { TitleBar } from "./PathfindingVisualizer/TitleBar";
 import { TestComponent } from "./TestComponent";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
   ]);
 
   const [gridKey, setGridKey] = useState(0);
+  const [titleKey, setTitleKey] = useState(1000);
 
   const generateNewAlgoList = () => {
     const newAlgoList = [];
@@ -45,6 +47,7 @@ function App() {
     setIsGridRendered(false);
     generateNewAlgoList();
     setGridKey(gridKey + 1);
+    setTitleKey(titleKey + 1);
     setIsGridRendered(true);
   };
 
@@ -65,7 +68,7 @@ function App() {
             setAlgoList,
           }}
         >
-          {" "}
+          {isGridRendered ? <TitleBar key={titleKey} /> : null}
           {isGridRendered ? <GridGenerator key={gridKey} /> : null}
           <div className="buttonContainer">
             <button

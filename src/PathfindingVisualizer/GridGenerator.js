@@ -523,21 +523,7 @@ export const GridGenerator = () => {
 
   return (
     <div>
-      <div className="resultContainer">
-        WHICH ALGORITHM WILL REACH THE [&nbsp;&nbsp;&nbsp;] GOAL NODE FIRST?
-        <br />
-        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
-        <br />
-        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
-        <br />
-        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
-        <br />
-        [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search
-        <br />
-        [&nbsp;&nbsp;&nbsp;] No Path Will Be Found!
-        <br />
-        YOUR GUESS [&nbsp;&nbsp;&nbsp;] Greedy Best-First Search WAS CORRECT!
-      </div>
+      
       <div className="gridContainer">{drawGrid}</div>
       <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
