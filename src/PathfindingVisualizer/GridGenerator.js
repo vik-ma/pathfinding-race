@@ -9,8 +9,16 @@ import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
 export const GridGenerator = () => {
-  const { rowCount, colCount, numStartNodes, wallDensityValue, algoList } =
-    useContext(GridContext);
+  const {
+    rowCount,
+    colCount,
+    numStartNodes,
+    wallDensityValue,
+    algoList,
+    winnerAlgo,
+    setWinnerAlgo,
+    setRenderWinnerMsg,
+  } = useContext(GridContext);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -97,8 +105,6 @@ export const GridGenerator = () => {
     setSavedGrid2(gridsForAllStartNodes[1]);
     setSavedGrid3(gridsForAllStartNodes[2]);
     setSavedGrid4(gridsForAllStartNodes[3]);
-
-    // calculatePaths();
   };
 
   const createNodeMatrix = (grid) => {
@@ -270,8 +276,8 @@ export const GridGenerator = () => {
     let algoPathLengths = [];
     let algoPathCompleted = [];
 
-    for (let i = 1; i < algoList.length+1; i++) {
-      let algoType = algoList[i-1];
+    for (let i = 1; i < algoList.length + 1; i++) {
+      let algoType = algoList[i - 1];
       // let algoType = 5;
       switch (algoType) {
         case 0:
@@ -405,6 +411,10 @@ export const GridGenerator = () => {
       if (Object.keys(winnerAlgoMap).length === 1) {
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
+          if (i === path.length - 1) {
+            setWinnerAlgo({ [key]: winnerAlgoMap[key].algoName });
+            setRenderWinnerMsg(true);
+          }
           const node = path[i];
           document
             .getElementById(`node-${node.row}-${node.col}`)
@@ -413,6 +423,15 @@ export const GridGenerator = () => {
       } else {
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
+          if (i === path.length - 1) {
+            // setWinnerAlgo([...winnerAlgo, {[key]: winnerAlgoMap[key].algoName}]);
+            setWinnerAlgo((prevState) => ({
+              ...prevState,
+              [key]: winnerAlgoMap[key].algoName,
+            }));
+            // setWinnerAlgo([[key], winnerAlgoMap[key].algoName]);
+            setRenderWinnerMsg(true);
+          }
           const node = path[i];
           document
             .getElementById(`node-${node.row}-${node.col}`)
@@ -523,11 +542,10 @@ export const GridGenerator = () => {
 
   return (
     <div>
-      
-      <div className="gridContainer">{drawGrid}</div>
       <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
       </button>
+      <div className="gridContainer">{drawGrid}</div>
     </div>
   );
 };

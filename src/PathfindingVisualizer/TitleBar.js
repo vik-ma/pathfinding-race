@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 
 export const TitleBar = () => {
-  const { algoList, styles, algorithmMap, numStartNodes } =
+  const { algoList, styles, algorithmMap, numStartNodes, nodeDivMap } =
     useContext(GridContext);
 
   return (
@@ -11,7 +11,7 @@ export const TitleBar = () => {
         <div className="titleBarChoices">
           WHICH ALGORITHM WILL REACH THE GOAL NODE{" "}
           <div
-            className={`${styles.node} ${styles.nodegoal} ${styles.titlebarnode}`}
+            className={nodeDivMap["nodegoal"]}
           >
             G
           </div>{" "}
@@ -19,7 +19,7 @@ export const TitleBar = () => {
         </div>
         <div className="titleBarChoices">
           <div
-            className={`${styles.node} ${styles.nodevisited1} ${styles.nodestart1} ${styles.titlebarnode}`}
+            className={nodeDivMap["nodestart1"]}
           >
             1
           </div>{" "}
@@ -28,7 +28,7 @@ export const TitleBar = () => {
 
         <div className="titleBarChoices">
           <div
-            className={`${styles.node} ${styles.nodevisited2} ${styles.nodestart2} ${styles.titlebarnode}`}
+            className={nodeDivMap["nodestart2"]}
           >
             2
           </div>{" "}
@@ -37,7 +37,7 @@ export const TitleBar = () => {
         {numStartNodes > 2 ? (
           <div className="titleBarChoices">
             <div
-              className={`${styles.node} ${styles.nodevisited3} ${styles.nodestart3} ${styles.titlebarnode}`}
+              className={nodeDivMap["nodestart3"]}
             >
               3
             </div>{" "}
@@ -47,7 +47,7 @@ export const TitleBar = () => {
         {numStartNodes > 3 ? (
           <div className="titleBarChoices">
             <div
-              className={`${styles.node} ${styles.nodevisited4} ${styles.nodestart4} ${styles.titlebarnode}`}
+              className={nodeDivMap["nodestart4"]}
             >
               4
             </div>{" "}
@@ -56,7 +56,7 @@ export const TitleBar = () => {
         ) : null}
         <div className="titleBarChoices">
           <div
-            className={`${styles.node} ${styles.nodex} ${styles.titlebarnode}`}
+            className={nodeDivMap["nodex"]}
           >
             X
           </div>{" "}

@@ -3,7 +3,7 @@ export function Astar(startNode, goalNode) {
   var pathFoundMessage = "CANT FIND PATH";
   var pathToGoal = [];
   var pathIsFound = false;
-  var algoName = "A-Star";
+  var algoName = "A-Star Search";
 
   var openSet = [];
   var closedSet = [];
