@@ -88,67 +88,71 @@ function App() {
   };
 
   const printWinnerAlgos = (algoMap) => {
-    const winnerDivList = [];
-    const winnerNameList = [];
-    for (let [key, value] of Object.entries(algoMap)) {
-      const keyNum = key;
-      var name = algoMap[key];
-      switch (keyNum) {
-        case "1":
-          var divBox = <div className={nodeDivMap["nodestart1"]}>1</div>;
+    if (algoMap !== null) {
+      const winnerDivList = [];
+      const winnerNameList = [];
+      for (let [key, value] of Object.entries(algoMap)) {
+        const keyNum = key;
+        var name = algoMap[key];
+        switch (keyNum) {
+          case "1":
+            var divBox = <div className={nodeDivMap["nodestart1"]}>1</div>;
+            break;
+          case "2":
+            var divBox = <div className={nodeDivMap["nodestart2"]}>2</div>;
+            break;
+          case "3":
+            var divBox = <div className={nodeDivMap["nodestart3"]}>3</div>;
+            break;
+          case "4":
+            var divBox = <div className={nodeDivMap["nodestart4"]}>4</div>;
+            break;
+          default:
+            return;
+        }
+        winnerDivList.push(divBox);
+        winnerNameList.push(name);
+      }
+
+      switch (winnerDivList.length) {
+        case 1:
+          var printText = (
+            <div>
+              WINNING ALGORITHM: {winnerDivList[0]} {winnerNameList[0]}
+            </div>
+          );
           break;
-        case "2":
-          var divBox = <div className={nodeDivMap["nodestart2"]}>2</div>;
+        case 2:
+          var printText = (
+            <div>
+              TIE: {winnerDivList[0]} {winnerNameList[0]} and {winnerDivList[1]}
+              {winnerNameList[1]}
+            </div>
+          );
           break;
-        case "3":
-          var divBox = <div className={nodeDivMap["nodestart3"]}>3</div>;
+        case 3:
+          var printText = (
+            <div>
+              TIE: {winnerDivList[0]} {winnerNameList[0]}, {winnerDivList[1]}
+              {winnerNameList[1]} and {winnerDivList[2]} {winnerNameList[2]}
+            </div>
+          );
           break;
-        case "4":
-          var divBox = <div className={nodeDivMap["nodestart4"]}>4</div>;
+        case 4:
+          var printText = (
+            <div>
+              TIE: {winnerDivList[0]} {winnerNameList[0]}, {winnerDivList[1]}
+              {winnerNameList[1]}, {winnerDivList[2]} {winnerNameList[2]} and{" "}
+              {winnerDivList[3]} {winnerNameList[3]}
+            </div>
+          );
           break;
         default:
-          var divBox = <div className={nodeDivMap["nodex"]}>X</div>;
-          break;
+          return;
       }
-      winnerDivList.push(divBox);
-      winnerNameList.push(name);
     }
-
-    switch (winnerDivList.length) {
-      case 1:
-        var printText = (
-          <div>
-            WINNING ALGORITHM: {winnerDivList[0]} {winnerNameList[0]}
-          </div>
-        );
-        break;
-      case 2:
-        var printText = (
-          <div>
-            TIE: {winnerDivList[0]} {winnerNameList[0]} and {winnerDivList[1]}
-            {winnerNameList[1]}
-          </div>
-        );
-        break;
-      case 3:
-        var printText = (
-          <div>
-            TIE: {winnerDivList[0]} {winnerNameList[0]}, {winnerDivList[1]}
-            {winnerNameList[1]} and {winnerDivList[2]} {winnerNameList[2]}
-          </div>
-        );
-        break;
-      case 4:
-        var printText = (
-          <div>
-            TIE: {winnerDivList[0]} {winnerNameList[0]}, {winnerDivList[1]}
-            {winnerNameList[1]}, {winnerDivList[2]} {winnerNameList[2]} and{" "}
-            {winnerDivList[3]} {winnerNameList[3]}
-          </div>
-        );
-        break;
-      default:
-        return;
+    else {
+      var printText = <div><div className={nodeDivMap["nodex"]}>X</div> No algorithms were able to reach the goal node!</div>;
     }
     return printText;
   };

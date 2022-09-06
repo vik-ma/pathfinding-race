@@ -350,6 +350,10 @@ export const GridGenerator = () => {
           setTimeout(() => {
             drawWinnerPath(minIndex);
           }, 50 * i);
+        } else {
+          setTimeout(() => {
+            setRenderWinnerMsg(true);
+          }, 50 * i);
         }
       } else {
         setTimeout(() => {
@@ -424,12 +428,10 @@ export const GridGenerator = () => {
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
           if (i === path.length - 1) {
-            // setWinnerAlgo([...winnerAlgo, {[key]: winnerAlgoMap[key].algoName}]);
             setWinnerAlgo((prevState) => ({
               ...prevState,
               [key]: winnerAlgoMap[key].algoName,
             }));
-            // setWinnerAlgo([[key], winnerAlgoMap[key].algoName]);
             setRenderWinnerMsg(true);
           }
           const node = path[i];
