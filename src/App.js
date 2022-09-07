@@ -15,7 +15,7 @@ function App() {
   const [rowCount, setRowCount] = useState(SLIDER_ROW_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_COL_DEFAULT_VALUE);
 
-  const SLIDER_NUMNODES_DEFAULT_VALUE = 4;
+  const SLIDER_NUMNODES_DEFAULT_VALUE = 2;
   const [numStartNodes, setNumStartNodes] = useState(
     SLIDER_NUMNODES_DEFAULT_VALUE
   );
@@ -59,12 +59,12 @@ function App() {
     nodex: `${styles.node} ${styles.nodex} ${styles.titlebarnode}`,
   };
 
-  const [algoList, setAlgoList] = useState([
-    Math.floor(Math.random() * 6),
-    Math.floor(Math.random() * 6),
-    Math.floor(Math.random() * 6),
-    Math.floor(Math.random() * 6),
-  ]);
+  const [algoList, setAlgoList] = useState(
+    Array.from(
+      numStartNodes > 3 ? { length: 4 } : numStartNodes > 2 ? { length: 3 } : { length: 2 },
+      () => Math.floor(Math.random() * 6)
+    ),
+  );
 
   const [gridKey, setGridKey] = useState(0);
   const [titleKey, setTitleKey] = useState(1000);
@@ -150,9 +150,13 @@ function App() {
         default:
           return;
       }
-    }
-    else {
-      var printText = <div><div className={nodeDivMap["nodex"]}>X</div> No algorithms were able to reach the goal node!</div>;
+    } else {
+      var printText = (
+        <div>
+          <div className={nodeDivMap["nodex"]}>X</div> No algorithms were able
+          to reach the goal node!
+        </div>
+      );
     }
     return printText;
   };
