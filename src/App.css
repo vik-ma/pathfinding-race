@@ -40,6 +40,10 @@ body {
     margin-top: 2px;
 }
 
+.titleBarChoices:hover {
+    background-color:seagreen
+}
+
 .titleBarNode {
     display: inline-block;
 }

@@ -15,7 +15,7 @@ function App() {
   const [rowCount, setRowCount] = useState(SLIDER_ROW_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_COL_DEFAULT_VALUE);
 
-  const SLIDER_NUMNODES_DEFAULT_VALUE = 2;
+  const SLIDER_NUMNODES_DEFAULT_VALUE = 4;
   const [numStartNodes, setNumStartNodes] = useState(
     SLIDER_NUMNODES_DEFAULT_VALUE
   );
@@ -61,13 +61,19 @@ function App() {
 
   const [algoList, setAlgoList] = useState(
     Array.from(
-      numStartNodes > 3 ? { length: 4 } : numStartNodes > 2 ? { length: 3 } : { length: 2 },
+      numStartNodes > 3
+        ? { length: 4 }
+        : numStartNodes > 2
+        ? { length: 3 }
+        : { length: 2 },
       () => Math.floor(Math.random() * 6)
-    ),
+    )
   );
 
   const [gridKey, setGridKey] = useState(0);
   const [titleKey, setTitleKey] = useState(1000);
+
+  const [userChoice, setUserChoice] = useState(0);
 
   const generateNewAlgoList = () => {
     const newAlgoList = [];
@@ -182,6 +188,8 @@ function App() {
             winnerAlgo,
             setWinnerAlgo,
             setRenderWinnerMsg,
+            userChoice,
+            setUserChoice
           }}
         >
           {isGridRendered ? <TitleBar key={titleKey} /> : null}
