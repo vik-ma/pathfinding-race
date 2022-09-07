@@ -44,15 +44,16 @@ body {
 }
 
 .titleBarChoices:hover {
-    background-color:seagreen
+    background-color:seagreen;
 }
 
 .selectedChoice {
-    box-shadow: inset 0 0 0 3px seagreen !important;
+    box-shadow: inset 0 0 0 3px seagreen;
 }
 
 .titleBarNode {
     display: inline-block;
+    border-radius: 3px;
 }
 
 .rowWrapper {

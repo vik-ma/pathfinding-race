@@ -94,7 +94,6 @@ export const TitleBar = () => {
         >
           <div className={nodeDivMap["nodex"]}>X</div> No Path Will Be Found!
         </div>
-        <div></div>
       </div>
     </div>
   );
