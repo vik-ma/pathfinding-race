@@ -27,6 +27,7 @@ function App() {
 
   const [winnerAlgo, setWinnerAlgo] = useState({});
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
+  const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
 
   const algorithmMap = {
     0: "A-Star Search",
@@ -85,8 +86,9 @@ function App() {
 
   const remakeGrid = () => {
     setIsGridRendered(false);
-    setWinnerAlgo(null);
+    setWinnerAlgo({});
     setRenderWinnerMsg(false);
+    setUserChoice(0);
     generateNewAlgoList();
     setGridKey(gridKey + 1);
     setTitleKey(titleKey + 1);
@@ -187,9 +189,12 @@ function App() {
             nodeDivMap,
             winnerAlgo,
             setWinnerAlgo,
+            renderWinnerMsg,
             setRenderWinnerMsg,
             userChoice,
-            setUserChoice
+            setUserChoice,
+            calculatedAlgoMap,
+            setCalculatedAlgoMap
           }}
         >
           {isGridRendered ? <TitleBar key={titleKey} /> : null}

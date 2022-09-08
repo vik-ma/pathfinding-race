@@ -15,9 +15,9 @@ export const GridGenerator = () => {
     numStartNodes,
     wallDensityValue,
     algoList,
-    winnerAlgo,
     setWinnerAlgo,
     setRenderWinnerMsg,
+    setCalculatedAlgoMap,
   } = useContext(GridContext);
 
   const [savedGrid1, setSavedGrid1] = useState([]);
@@ -340,6 +340,13 @@ export const GridGenerator = () => {
       }
     }
 
+    setCalculatedAlgoMap({
+      1: algoMap[1],
+      2: algoMap[2],
+      ...(algoMap[3] && { 3: algoMap[3] }),
+      ...(algoMap[4] && { 3: algoMap[4] }),
+    });
+
     visualizePaths(algoMap, minIndex, lengthToDraw, anyPathFound);
   };
 
@@ -353,6 +360,7 @@ export const GridGenerator = () => {
         } else {
           setTimeout(() => {
             setRenderWinnerMsg(true);
+            setWinnerAlgo({ 5: "No Path Found" });
           }, 50 * i);
         }
       } else {

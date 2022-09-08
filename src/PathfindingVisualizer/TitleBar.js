@@ -8,15 +8,13 @@ export const TitleBar = () => {
     algorithmMap,
     numStartNodes,
     nodeDivMap,
-    userChoice,
     setUserChoice,
+    renderWinnerMsg,
+    calculatedAlgoMap,
+    winnerAlgo,
   } = useContext(GridContext);
 
   const [selectedDiv, setSelectedDiv] = useState("");
-
-  const setChoice = (num) => {
-    setUserChoice(num);
-  };
 
   return (
     <div>
@@ -28,7 +26,7 @@ export const TitleBar = () => {
         <div
           className={`titleBarChoices ${
             selectedDiv === "algoChoice1" ? " selectedChoice" : undefined
-          }`}
+          } ${renderWinnerMsg && winnerAlgo[1] ? "winnerAlgo" : ""}`}
           onClick={() => {
             setSelectedDiv("algoChoice1");
             setUserChoice(1);
@@ -42,7 +40,7 @@ export const TitleBar = () => {
         <div
           className={`titleBarChoices ${
             selectedDiv === "algoChoice2" ? " selectedChoice" : undefined
-          }`}
+          } ${renderWinnerMsg && winnerAlgo[2] ? "winnerAlgo" : ""}`}
           onClick={() => {
             setSelectedDiv("algoChoice2");
             setUserChoice(2);
@@ -56,7 +54,7 @@ export const TitleBar = () => {
           <div
             className={`titleBarChoices ${
               selectedDiv === "algoChoice3" ? " selectedChoice" : undefined
-            }`}
+            } ${renderWinnerMsg && winnerAlgo[3] ? "winnerAlgo" : ""}`}
             onClick={() => {
               setSelectedDiv("algoChoice3");
               setUserChoice(3);
@@ -71,7 +69,7 @@ export const TitleBar = () => {
           <div
             className={`titleBarChoices ${
               selectedDiv === "algoChoice4" ? " selectedChoice" : undefined
-            }`}
+            } ${renderWinnerMsg && winnerAlgo[4] ? "winnerAlgo" : ""}`}
             onClick={() => {
               setSelectedDiv("algoChoice4");
               setUserChoice(4);
@@ -84,8 +82,8 @@ export const TitleBar = () => {
         ) : null}
         <div
           className={`titleBarChoices ${
-            selectedDiv === "algoChoice5" ? " selectedChoice" : undefined
-          }`}
+            selectedDiv === "algoChoice0" ? " selectedChoice" : undefined
+          } ${renderWinnerMsg && winnerAlgo[5] ? "winnerAlgo" : ""}`}
           onClick={() => {
             setSelectedDiv("algoChoice5");
             setUserChoice(5);
