@@ -30,17 +30,12 @@ body {
     margin-left: 20px;
 }
 
-.titleBarContainerContainer {
-    display: table-cell;
-    vertical-align: middle; 
-    display: flex;
-}
-
 .titleBarChoices {
     padding: 3px;
     width: 215px;
     align-items: center;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .titleBarChoices:hover {
@@ -55,6 +50,12 @@ body {
 .winnerAlgo {
     background-color:goldenrod !important;
 }
+
+.algoPathMsg {
+    margin-left: 10px;
+    display: inline-block;
+}
+
 
 .titleBarNode {
     display: inline-block;

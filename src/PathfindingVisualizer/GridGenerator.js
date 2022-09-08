@@ -344,7 +344,7 @@ export const GridGenerator = () => {
       1: algoMap[1],
       2: algoMap[2],
       ...(algoMap[3] && { 3: algoMap[3] }),
-      ...(algoMap[4] && { 3: algoMap[4] }),
+      ...(algoMap[4] && { 4: algoMap[4] }),
     });
 
     visualizePaths(algoMap, minIndex, lengthToDraw, anyPathFound);
