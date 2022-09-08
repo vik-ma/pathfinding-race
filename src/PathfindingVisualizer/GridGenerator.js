@@ -47,23 +47,19 @@ export const GridGenerator = () => {
     return randomNodeColArray;
   };
 
-  const [randomNodeRowArray, setRandomNodeRowArray] = useState(
-    createNodeRows()
-  );
-  const [randomNodeColArray, setRandomNodeColArray] = useState(
-    createNodeCols()
-  );
+  const [randomNodeRowArray] = useState(createNodeRows());
+  const [randomNodeColArray] = useState(createNodeCols());
 
-  const [goalNodeRow, setGoalNodeRow] = useState(randomNodeRowArray[0]);
-  const [goalNodeCol, setGoalNodeCol] = useState(randomNodeColArray[0]);
-  const [startNodeRow1, setStartNodeRow1] = useState(randomNodeRowArray[1]);
-  const [startNodeCol1, setStartNodeCol1] = useState(randomNodeColArray[1]);
-  const [startNodeRow2, setStartNodeRow2] = useState(randomNodeRowArray[2]);
-  const [startNodeCol2, setStartNodeCol2] = useState(randomNodeColArray[2]);
-  const [startNodeRow3, setStartNodeRow3] = useState(randomNodeRowArray[3]);
-  const [startNodeCol3, setStartNodeCol3] = useState(randomNodeColArray[3]);
-  const [startNodeRow4, setStartNodeRow4] = useState(randomNodeRowArray[4]);
-  const [startNodeCol4, setStartNodeCol4] = useState(randomNodeColArray[4]);
+  const [goalNodeRow] = useState(randomNodeRowArray[0]);
+  const [goalNodeCol] = useState(randomNodeColArray[0]);
+  const [startNodeRow1] = useState(randomNodeRowArray[1]);
+  const [startNodeCol1] = useState(randomNodeColArray[1]);
+  const [startNodeRow2] = useState(randomNodeRowArray[2]);
+  const [startNodeCol2] = useState(randomNodeColArray[2]);
+  const [startNodeRow3] = useState(randomNodeRowArray[3]);
+  const [startNodeCol3] = useState(randomNodeColArray[3]);
+  const [startNodeRow4] = useState(randomNodeRowArray[4]);
+  const [startNodeCol4] = useState(randomNodeColArray[4]);
 
   useEffect(() => {
     createGrid();
@@ -326,8 +322,8 @@ export const GridGenerator = () => {
     let lengthToDraw = 0;
 
     if (algoPathCompleted.length < 1) {
-      //200 = 10 seconds
-      lengthToDraw = Math.min(pathMaxLength, 200);
+      //100 = 5 seconds
+      lengthToDraw = Math.min(pathMaxLength, 100);
     } else {
       anyPathFound = true;
       lengthToDraw = pathMinCompleted;

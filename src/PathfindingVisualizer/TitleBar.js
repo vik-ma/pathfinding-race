@@ -4,7 +4,6 @@ import { GridContext } from "../Helpers/GridContexts";
 export const TitleBar = () => {
   const {
     algoList,
-    styles,
     algorithmMap,
     numStartNodes,
     nodeDivMap,
