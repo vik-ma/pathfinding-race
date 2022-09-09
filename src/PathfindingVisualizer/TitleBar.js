@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef} from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { GridGenerator } from "./GridGenerator";
 
@@ -12,6 +12,7 @@ export const TitleBar = () => {
     renderWinnerMsg,
     calculatedAlgoMap,
     winnerAlgo,
+    remakeGrid,
   } = useContext(GridContext);
 
   const generatorRef = useRef();
@@ -33,6 +34,7 @@ export const TitleBar = () => {
             onClick={() => {
               setSelectedDiv("algoChoice1");
               setUserChoice(1);
+              generatorRef.current.visualize();
             }}
             id="algoChoice1"
           >
@@ -57,6 +59,7 @@ export const TitleBar = () => {
             onClick={() => {
               setSelectedDiv("algoChoice2");
               setUserChoice(2);
+              generatorRef.current.visualize();
             }}
             id="algoChoice2"
           >
@@ -82,6 +85,7 @@ export const TitleBar = () => {
               onClick={() => {
                 setSelectedDiv("algoChoice3");
                 setUserChoice(3);
+                generatorRef.current.visualize();
               }}
               id="algoChoice3"
             >
@@ -108,6 +112,7 @@ export const TitleBar = () => {
               onClick={() => {
                 setSelectedDiv("algoChoice4");
                 setUserChoice(4);
+                generatorRef.current.visualize();
               }}
               id="algoChoice4"
             >
@@ -133,6 +138,7 @@ export const TitleBar = () => {
             onClick={() => {
               setSelectedDiv("algoChoice0");
               setUserChoice(5);
+              generatorRef.current.visualize();
             }}
             id="algoChoice5"
           >
@@ -145,8 +151,10 @@ export const TitleBar = () => {
           </div>
         </div>
       </div>
-      <button onClick={() => generatorRef.current.visualize()}>VISUALIZE</button>
-      <GridGenerator ref={generatorRef}/>
+      <button onClick={() => generatorRef.current.visualize()}>
+        JUST VISUALIZE
+      </button>
+      <GridGenerator ref={generatorRef} />
     </div>
   );
 };
