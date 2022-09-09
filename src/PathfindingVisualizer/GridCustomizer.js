@@ -11,7 +11,7 @@ export const GridCustomizer = () => {
     setNumStartNodes,
     wallDensityValue,
     setWallDensityValue,
-    remakeGrid
+    remakeGrid,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -22,36 +22,38 @@ export const GridCustomizer = () => {
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
   const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
 
-
   return (
     <div>
+      <h1>SETTINGS</h1>
       <div className="sliderContainer">
         <div className="sliderElement">
+          Row Count: {rowCount}
+          <br />
           <input
             type="range"
             min="10"
             max="26"
             name="row"
             defaultValue={defaultRowValue}
-            onChange={(e) => setRowCount(e.target.value)}
+            onChange={(e) => setRowCount(e.target.valueAsNumber)}
           ></input>
-          <br />
-          Set Row Count: {rowCount}
         </div>
         <div className="sliderElement">
+          Column Count: {colCount}
+          <br />
           <input
             type="range"
             min="10"
             max="40"
             name="col"
             defaultValue={defaultColValue}
-            onChange={(e) => setColCount(e.target.value)}
+            onChange={(e) => setColCount(e.target.valueAsNumber)}
           ></input>
-          <br />
-          Set Column Count: {colCount}
         </div>
-        <br />
+
         <div className="sliderElement">
+          Wall Density: {wallDensityValue}
+          <br />
           <input
             type="range"
             min="1"
@@ -62,21 +64,19 @@ export const GridCustomizer = () => {
               setWallDensityValue(wallDensityMap[e.target.value])
             }
           ></input>
-          <br />
-          Set Wall Density: {wallDensityValue}
         </div>
-        {/* <div className="sliderElement">
+        <div className="sliderElement">
+          Number of Start Nodes: {numStartNodes}
+          <br />
           <input
             type="range"
             min="2"
             max="4"
             name="numNodes"
             defaultValue={defaultNumNodes}
-            onChangeCapture={(e) => setNodeSlider(e.target.value)}
+            onChange={(e) => setNumStartNodes(e.target.valueAsNumber)}
           ></input>
-          <br />
-          Set Number of Nodes: {numStartNodes}
-        </div> */}
+        </div>
       </div>
       <button onClick={() => remakeGrid()}>RETURN</button>
     </div>

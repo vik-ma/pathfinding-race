@@ -13,6 +13,8 @@ import { Dijkstra } from "../Algorithms/Dijkstra";
 import { Astar } from "../Algorithms/Astar";
 import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
+import { createNodeRows } from "../Helpers/GenerateNodePosRow";
+import { createNodeCols } from "../Helpers/GenerateNodePosCol";
 
 export const GridGenerator = forwardRef((props, ref) => {
   const {
@@ -40,27 +42,28 @@ export const GridGenerator = forwardRef((props, ref) => {
   const [gridLayout, setGridLayout] = useState([]);
 
   const createNodeRows = () => {
-    const randomNodeRow = new Set();
-
-    while (randomNodeRow.size < numStartNodes + 1) {
-      randomNodeRow.add(Math.floor(Math.random() * rowCount));
-    }
-    const randomNodeArray = Array.from(randomNodeRow);
-    return randomNodeArray;
+    const nodeRows = Array(rowCount)
+      .fill()
+      .map((_, index) => index);
+    nodeRows.sort(() => Math.random() - 0.5);
+    return nodeRows.slice(0, numStartNodes + 1);
   };
 
   const createNodeCols = () => {
-    const randomNodeCol = new Set();
-
-    while (randomNodeCol.size < numStartNodes + 1) {
-      randomNodeCol.add(Math.floor(Math.random() * colCount));
-    }
-    const randomNodeColArray = Array.from(randomNodeCol);
-    return randomNodeColArray;
+    const nodeCols = Array(colCount)
+      .fill()
+      .map((_, index) => index);
+    nodeCols.sort(() => Math.random() - 0.5);
+    return nodeCols.slice(0, numStartNodes + 1);
   };
 
-  const [randomNodeRowArray] = useState(createNodeRows());
-  const [randomNodeColArray] = useState(createNodeCols());
+  const [randomNodeRowArray] = useState(createNodeRows()
+    
+  );
+  const [randomNodeColArray] = useState(
+    createNodeCols()
+  );
+
 
   const [goalNodeRow] = useState(randomNodeRowArray[0]);
   const [goalNodeCol] = useState(randomNodeColArray[0]);
@@ -75,7 +78,7 @@ export const GridGenerator = forwardRef((props, ref) => {
 
   useEffect(() => {
     createGrid();
-  }, [rowCount, colCount, wallDensityValue]);
+  }, []);
 
   const createGrid = () => {
     let gridsForAllStartNodes = [];

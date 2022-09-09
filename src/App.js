@@ -9,6 +9,7 @@ import { TestComponent } from "./TestComponent";
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(true);
   const [renderTest, setRenderTest] = useState(false);
+  const [isSettingsRendered, setIsSettingsRendered] = useState(false);
 
   const SLIDER_ROW_DEFAULT_VALUE = 18;
   const SLIDER_COL_DEFAULT_VALUE = 25;
@@ -28,8 +29,6 @@ function App() {
   const [winnerAlgo, setWinnerAlgo] = useState({});
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
   const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
-
-  const [isSettingsRendered, setIsSettingsRendered] = useState(false);
 
   const algorithmMap = {
     0: "A-Star Search",
@@ -87,6 +86,7 @@ function App() {
   };
 
   const remakeGrid = () => {
+    setIsSettingsRendered(false);
     setIsGridRendered(false);
     setWinnerAlgo({});
     setRenderWinnerMsg(false);
@@ -100,7 +100,7 @@ function App() {
   const switchToSettingsMenu = () => {
     setIsGridRendered(false);
     setIsSettingsRendered(true);
-  }
+  };
 
   const printWinnerAlgos = (algoMap) => {
     if (algoMap !== null) {
@@ -203,11 +203,11 @@ function App() {
             calculatedAlgoMap,
             setCalculatedAlgoMap,
             remakeGrid,
-            switchToSettingsMenu
+            switchToSettingsMenu,
           }}
         >
-          {isGridRendered ? <TitleBar key={titleKey} /> : null}
           {isSettingsRendered ? <GridCustomizer /> : null}
+          {isGridRendered ? <TitleBar key={titleKey} /> : null}
           {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
           {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
           <div className="buttonContainer">
