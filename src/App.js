@@ -29,6 +29,8 @@ function App() {
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
   const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
 
+  const [isSettingsRendered, setIsSettingsRendered] = useState(false);
+
   const algorithmMap = {
     0: "A-Star Search",
     1: "Bidirectional Search",
@@ -94,6 +96,11 @@ function App() {
     setTitleKey(titleKey + 1);
     setIsGridRendered(true);
   };
+
+  const switchToSettingsMenu = () => {
+    setIsGridRendered(false);
+    setIsSettingsRendered(true);
+  }
 
   const printWinnerAlgos = (algoMap) => {
     if (algoMap !== null) {
@@ -195,14 +202,16 @@ function App() {
             setUserChoice,
             calculatedAlgoMap,
             setCalculatedAlgoMap,
-            remakeGrid
+            remakeGrid,
+            switchToSettingsMenu
           }}
         >
           {isGridRendered ? <TitleBar key={titleKey} /> : null}
+          {isSettingsRendered ? <GridCustomizer /> : null}
           {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
           {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
-          {/* <div className="buttonContainer">
-            <button
+          <div className="buttonContainer">
+            {/* <button
               onClick={() => {
                 setIsGridRendered(true);
               }}
@@ -216,16 +225,15 @@ function App() {
             >
               Destroy Grid
             </button>
-            <button onClick={remakeGrid}>Remake Grid</button>
-            <button
+            <button onClick={remakeGrid}>Remake Grid</button> */}
+            {/* <button
               onClick={() => {
                 setRenderTest(true);
               }}
             >
               TEST BUTTON
-            </button>
-          </div> */}
-          {/* <GridCustomizer /> */}
+            </button> */}
+          </div>
           {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>
       </header>

@@ -13,6 +13,7 @@ export const TitleBar = () => {
     calculatedAlgoMap,
     winnerAlgo,
     remakeGrid,
+    switchToSettingsMenu
   } = useContext(GridContext);
 
   const generatorRef = useRef();
@@ -155,6 +156,8 @@ export const TitleBar = () => {
         JUST VISUALIZE
       </button>{" "}
       <button onClick={() => remakeGrid()}>New Map</button>
+      {" "}
+      <button onClick={() => switchToSettingsMenu()}>SETTINGS</button>
       <GridGenerator ref={generatorRef} />
     </div>
   );

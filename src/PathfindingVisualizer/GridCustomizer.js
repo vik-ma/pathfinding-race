@@ -11,6 +11,7 @@ export const GridCustomizer = () => {
     setNumStartNodes,
     wallDensityValue,
     setWallDensityValue,
+    remakeGrid
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -77,6 +78,7 @@ export const GridCustomizer = () => {
           Set Number of Nodes: {numStartNodes}
         </div> */}
       </div>
+      <button onClick={() => remakeGrid()}>RETURN</button>
     </div>
   );
 };
