@@ -13,8 +13,6 @@ import { Dijkstra } from "../Algorithms/Dijkstra";
 import { Astar } from "../Algorithms/Astar";
 import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
-import { createNodeRows } from "../Helpers/GenerateNodePosRow";
-import { createNodeCols } from "../Helpers/GenerateNodePosCol";
 
 export const GridGenerator = forwardRef((props, ref) => {
   const {
@@ -26,6 +24,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     setWinnerAlgo,
     setRenderWinnerMsg,
     setCalculatedAlgoMap,
+    allowDiagonal,
   } = useContext(GridContext);
 
   useImperativeHandle(ref, () => ({
@@ -57,13 +56,8 @@ export const GridGenerator = forwardRef((props, ref) => {
     return nodeCols.slice(0, numStartNodes + 1);
   };
 
-  const [randomNodeRowArray] = useState(createNodeRows()
-    
-  );
-  const [randomNodeColArray] = useState(
-    createNodeCols()
-  );
-
+  const [randomNodeRowArray] = useState(createNodeRows());
+  const [randomNodeColArray] = useState(createNodeCols());
 
   const [goalNodeRow] = useState(randomNodeRowArray[0]);
   const [goalNodeCol] = useState(randomNodeColArray[0]);
@@ -200,7 +194,7 @@ export const GridGenerator = forwardRef((props, ref) => {
       numStartNodes >= 4;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
-    this.allowDiagonals = false;
+    this.allowDiagonals = allowDiagonal;
     this.isWall = false;
     this.isVisited = false;
     this.isVisitedBidirectional = false;

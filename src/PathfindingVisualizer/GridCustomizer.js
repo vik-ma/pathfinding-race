@@ -12,6 +12,8 @@ export const GridCustomizer = () => {
     wallDensityValue,
     setWallDensityValue,
     remakeGrid,
+    allowDiagonal,
+    setAllowDiagonal,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -76,6 +78,17 @@ export const GridCustomizer = () => {
             defaultValue={defaultNumNodes}
             onChange={(e) => setNumStartNodes(e.target.valueAsNumber)}
           ></input>
+        </div>
+        <div className="sliderElement">
+          <input
+            type="checkbox"
+            id="allowDiagonals"
+            name="allowDiagonals"
+            checked={allowDiagonal}
+            value="allowDiagonal"
+            onChange={() => setAllowDiagonal(!allowDiagonal)}
+          />
+          <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
         </div>
       </div>
       <button onClick={() => remakeGrid()}>RETURN</button>
