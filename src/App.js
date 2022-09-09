@@ -198,8 +198,8 @@ function App() {
           }}
         >
           {isGridRendered ? <TitleBar key={titleKey} /> : null}
-          {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null}
-          {isGridRendered ? <GridGenerator key={gridKey} /> : null}
+          {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
+          {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
           <div className="buttonContainer">
             <button
               onClick={() => {

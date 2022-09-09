@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
@@ -8,7 +14,7 @@ import { Astar } from "../Algorithms/Astar";
 import { GreedyBestFirstSearch } from "../Algorithms/GreedyBestFirstSearch";
 import { BidirectionalSearch } from "../Algorithms/BidirectionalSearch";
 
-export const GridGenerator = () => {
+export const GridGenerator = forwardRef((props, ref) => {
   const {
     rowCount,
     colCount,
@@ -19,6 +25,12 @@ export const GridGenerator = () => {
     setRenderWinnerMsg,
     setCalculatedAlgoMap,
   } = useContext(GridContext);
+
+  useImperativeHandle(ref, () => ({
+    visualize() {
+      calculatePaths();
+    },
+  }));
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -548,10 +560,10 @@ export const GridGenerator = () => {
 
   return (
     <div>
-      <button className="buttonContainer" onClick={calculatePaths}>
+      {/* <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
-      </button>
+      </button> */}
       <div className="gridContainer">{drawGrid}</div>
     </div>
   );
-};
+});

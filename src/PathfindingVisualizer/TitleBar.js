@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef} from "react";
 import { GridContext } from "../Helpers/GridContexts";
+import { GridGenerator } from "./GridGenerator";
 
 export const TitleBar = () => {
   const {
@@ -12,6 +13,8 @@ export const TitleBar = () => {
     calculatedAlgoMap,
     winnerAlgo,
   } = useContext(GridContext);
+
+  const generatorRef = useRef();
 
   const [selectedDiv, setSelectedDiv] = useState("");
 
@@ -142,6 +145,8 @@ export const TitleBar = () => {
           </div>
         </div>
       </div>
+      <button onClick={() => generatorRef.current.visualize()}>VISUALIZE</button>
+      <GridGenerator ref={generatorRef}/>
     </div>
   );
 };
