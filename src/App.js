@@ -194,13 +194,14 @@ function App() {
             userChoice,
             setUserChoice,
             calculatedAlgoMap,
-            setCalculatedAlgoMap
+            setCalculatedAlgoMap,
+            remakeGrid
           }}
         >
           {isGridRendered ? <TitleBar key={titleKey} /> : null}
           {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
           {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
-          <div className="buttonContainer">
+          {/* <div className="buttonContainer">
             <button
               onClick={() => {
                 setIsGridRendered(true);
@@ -223,8 +224,8 @@ function App() {
             >
               TEST BUTTON
             </button>
-          </div>
-          <GridCustomizer />
+          </div> */}
+          {/* <GridCustomizer /> */}
           {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>
       </header>

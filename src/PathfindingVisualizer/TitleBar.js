@@ -153,7 +153,8 @@ export const TitleBar = () => {
       </div>
       <button onClick={() => generatorRef.current.visualize()}>
         JUST VISUALIZE
-      </button>
+      </button>{" "}
+      <button onClick={() => remakeGrid()}>New Map</button>
       <GridGenerator ref={generatorRef} />
     </div>
   );
