@@ -26,8 +26,10 @@ function App() {
     SLIDER_WALL_DENSITY_DEFAULT_VALUE
   );
 
-  const ALLOW_DIAGONAL_VALUE = false;
-  const [allowDiagonal, setAllowDiagonal] = useState(ALLOW_DIAGONAL_VALUE);
+  const ALLOW_DIAGONAL_DEFAULT_VALUE = false;
+  const [allowDiagonal, setAllowDiagonal] = useState(
+    ALLOW_DIAGONAL_DEFAULT_VALUE
+  );
 
   const [winnerAlgo, setWinnerAlgo] = useState({});
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
@@ -74,6 +76,17 @@ function App() {
       () => Math.floor(Math.random() * 6)
     )
   );
+
+  // const [disabledAlgos, setDisabledAlgos] = useState({
+  //   1: false,
+  //   2: false,
+  //   3: false,
+  //   4: false,
+  //   5: false,
+  //   6: false,
+  // });
+
+  const [disabledAlgos, setDisabledAlgos] = useState([]);
 
   const [gridKey, setGridKey] = useState(0);
   const [titleKey, setTitleKey] = useState(1000);
@@ -209,6 +222,8 @@ function App() {
             switchToSettingsMenu,
             allowDiagonal,
             setAllowDiagonal,
+            disabledAlgos,
+            setDisabledAlgos,
           }}
         >
           {isSettingsRendered ? <GridCustomizer /> : null}
@@ -231,13 +246,13 @@ function App() {
               Destroy Grid
             </button>
             <button onClick={remakeGrid}>Remake Grid</button> */}
-            <button
+            {/* <button
               onClick={() => {
                 setRenderTest(true);
               }}
             >
               TEST BUTTON
-            </button>
+            </button> */}
           </div>
           {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>

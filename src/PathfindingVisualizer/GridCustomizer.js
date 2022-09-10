@@ -14,6 +14,8 @@ export const GridCustomizer = () => {
     remakeGrid,
     allowDiagonal,
     setAllowDiagonal,
+    disabledAlgos,
+    setDisabledAlgos,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -24,6 +26,25 @@ export const GridCustomizer = () => {
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
   const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
   const wordWallDensityMap = { 0.15: "Low", 0.25: "Medium", 0.4: "High" };
+
+  const addToDisabledAlgos = (num) => {
+    if (disabledAlgos.length < 5) {
+      setDisabledAlgos([...disabledAlgos, num]);
+    }
+  };
+
+  const handleAlgoCheckboxChange = (e, num) => {
+    if (!e) {
+      //If checkbox gets unchecked
+      if (disabledAlgos.length < 5) {
+        setDisabledAlgos([...disabledAlgos, num]);
+      }
+    } else {
+      //If checkbox gets checked
+      const newArray = disabledAlgos.filter((x) => x !== num);
+      setDisabledAlgos(newArray);
+    }
+  };
 
   return (
     <div>
@@ -91,7 +112,77 @@ export const GridCustomizer = () => {
           />
           <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
         </div>
+        <div className="sliderElement">
+          <label>Enabled Algorithms</label>
+          <br />
+          <input
+            type="checkbox"
+            id="astar"
+            name="astar"
+            checked={!disabledAlgos.includes(0)}
+            value="astar"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
+          />
+          <label htmlFor="astar">A-Star Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="bidirectional"
+            name="bidirectional"
+            checked={!disabledAlgos.includes(1)}
+            value="bidirectional"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
+          />
+          <label htmlFor="bidirectional">Bidirectional Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="breadth"
+            name="breadth"
+            checked={!disabledAlgos.includes(2)}
+            value="breadth"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
+          />
+          <label htmlFor="breadth">Breadth-First Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="depth"
+            name="depth"
+            checked={!disabledAlgos.includes(3)}
+            value="depth"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
+          />
+          <label htmlFor="depth">Depth-First Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="dijkstra"
+            name="dijkstra"
+            checked={!disabledAlgos.includes(4)}
+            value="dijkstra"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
+          />
+          <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
+          <br />
+          <input
+            type="checkbox"
+            id="greedy"
+            name="greedy"
+            checked={!disabledAlgos.includes(5)}
+            value="greedy"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
+          />
+          <label htmlFor="greedy">Greedy Best-First Search</label>
+        </div>
       </div>
+      <button onClick={() => addToDisabledAlgos(1)}>ADDD</button>
+      <br />
+      {disabledAlgos}
+      <br />
+      <button onClick={null}>check</button>
+      <br />
+      <br />
       <button onClick={() => remakeGrid()}>RETURN</button>
     </div>
   );
