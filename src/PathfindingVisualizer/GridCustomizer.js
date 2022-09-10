@@ -23,6 +23,7 @@ export const GridCustomizer = () => {
 
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
   const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
+  const wordWallDensityMap = { 0.15: "Low", 0.25: "Medium", 0.4: "High" };
 
   return (
     <div>
@@ -54,7 +55,7 @@ export const GridCustomizer = () => {
         </div>
 
         <div className="sliderElement">
-          Wall Density: {wallDensityValue}
+          Wall Density: {wordWallDensityMap[wallDensityValue]}
           <br />
           <input
             type="range"
