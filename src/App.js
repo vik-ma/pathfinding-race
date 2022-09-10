@@ -77,15 +77,6 @@ function App() {
     )
   );
 
-  // const [disabledAlgos, setDisabledAlgos] = useState({
-  //   1: false,
-  //   2: false,
-  //   3: false,
-  //   4: false,
-  //   5: false,
-  //   6: false,
-  // });
-
   const [disabledAlgos, setDisabledAlgos] = useState([]);
 
   const [gridKey, setGridKey] = useState(0);
@@ -96,9 +87,17 @@ function App() {
   const generateNewAlgoList = () => {
     const newAlgoList = [];
     for (let i = 0; i < numStartNodes; i++) {
-      newAlgoList.push(Math.floor(Math.random() * 6));
+      newAlgoList.push(filterDisabledAlgos());
     }
     setAlgoList(newAlgoList);
+  };
+
+  const filterDisabledAlgos = () => {
+    let random = Math.floor(Math.random() * 6);
+    while (disabledAlgos.includes(random)) {
+      random = Math.floor(Math.random() * 6);
+    }
+    return random;
   };
 
   const remakeGrid = () => {

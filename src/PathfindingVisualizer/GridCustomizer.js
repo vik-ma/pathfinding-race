@@ -176,13 +176,6 @@ export const GridCustomizer = () => {
           <label htmlFor="greedy">Greedy Best-First Search</label>
         </div>
       </div>
-      <button onClick={() => addToDisabledAlgos(1)}>ADDD</button>
-      <br />
-      {disabledAlgos}
-      <br />
-      <button onClick={null}>check</button>
-      <br />
-      <br />
       <button onClick={() => remakeGrid()}>RETURN</button>
     </div>
   );
