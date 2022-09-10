@@ -56,10 +56,13 @@ body {
     display: inline-block;
 }
 
-
 .titleBarNode {
     display: inline-block;
     border-radius: 3px;
+}
+
+.noPathFoundMsg {
+    margin-top: 5px;
 }
 
 .rowWrapper {

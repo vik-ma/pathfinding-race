@@ -25,7 +25,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     setRenderWinnerMsg,
     setCalculatedAlgoMap,
     allowDiagonal,
-    visualizerSpeed
+    visualizerSpeed,
   } = useContext(GridContext);
 
   useImperativeHandle(ref, () => ({
@@ -40,6 +40,10 @@ export const GridGenerator = forwardRef((props, ref) => {
   const [savedGrid4, setSavedGrid4] = useState([]);
 
   const [gridLayout, setGridLayout] = useState([]);
+
+  const [showNoPathFoundMsg, setShowNoPathFoundMsg] = useState(false);
+  //100 = 5 seconds
+  const [visualizerSkipTime, setVisualizerSkipTime] = useState(100);
 
   const createNodeRows = () => {
     const nodeRows = Array(rowCount)
@@ -332,8 +336,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     let lengthToDraw = 0;
 
     if (algoPathCompleted.length < 1) {
-      //100 = 5 seconds
-      lengthToDraw = Math.min(pathMaxLength, 100);
+      lengthToDraw = Math.min(pathMaxLength, visualizerSkipTime);
     } else {
       anyPathFound = true;
       lengthToDraw = pathMinCompleted;
@@ -367,6 +370,7 @@ export const GridGenerator = forwardRef((props, ref) => {
           setTimeout(() => {
             setRenderWinnerMsg(true);
             setWinnerAlgo({ 5: "No Path Found" });
+            setShowNoPathFoundMsg(true);
           }, visualizerSpeed * i);
         }
       } else {
@@ -562,6 +566,7 @@ export const GridGenerator = forwardRef((props, ref) => {
         VISUALIZE
       </button> */}
       <div className="gridContainer">{drawGrid}</div>
+      {showNoPathFoundMsg ? <div className="noPathFoundMsg">No paths found, rest of visualization skipped.</div> : null}
     </div>
   );
 });
