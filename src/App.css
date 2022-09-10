@@ -208,6 +208,7 @@ body {
 }
 
 .node-visited-1-2-3-4 {
-    background-image: conic-gradient(crimson 0deg 90deg, dodgerblue 90deg 180deg, darkkhaki 180deg 270deg, darkorchid 270deg 360deg);
+    /* background-image: conic-gradient(crimson 0deg 45deg, dodgerblue 45deg 135deg, darkkhaki 135deg 225deg, darkorchid 225deg 315deg, crimson 315deg 360deg); */
+    background-image: conic-gradient(darkorchid 0deg 45deg, crimson 45deg 135deg, dodgerblue 135deg 225deg, darkkhaki 225deg 315deg, darkorchid 315deg 360deg);
 }
 
