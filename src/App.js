@@ -31,6 +31,9 @@ function App() {
     ALLOW_DIAGONAL_DEFAULT_VALUE
   );
 
+  const VIS_SPEED_DEFAULT_VALUE = 50;
+  const [visualizerSpeed, setVisualizerSpeed] = useState(VIS_SPEED_DEFAULT_VALUE);
+
   const [winnerAlgo, setWinnerAlgo] = useState({});
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
   const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
@@ -83,6 +86,8 @@ function App() {
   const [titleKey, setTitleKey] = useState(1000);
 
   const [userChoice, setUserChoice] = useState(0);
+
+
 
   const generateNewAlgoList = () => {
     const newAlgoList = [];
@@ -223,6 +228,8 @@ function App() {
             setAllowDiagonal,
             disabledAlgos,
             setDisabledAlgos,
+            visualizerSpeed,
+            setVisualizerSpeed
           }}
         >
           {isSettingsRendered ? <GridCustomizer /> : null}

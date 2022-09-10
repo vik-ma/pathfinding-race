@@ -16,22 +16,22 @@ export const GridCustomizer = () => {
     setAllowDiagonal,
     disabledAlgos,
     setDisabledAlgos,
+    visualizerSpeed,
+    setVisualizerSpeed,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
   const defaultColValue = colCount;
   const defaultNumNodes = numStartNodes;
   const defaultWallDensity = wallDensityValue;
+  const defaultVisualizerSpeed = visualizerSpeed;
 
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
   const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
   const wordWallDensityMap = { 0.15: "Low", 0.25: "Medium", 0.4: "High" };
-
-  const addToDisabledAlgos = (num) => {
-    if (disabledAlgos.length < 5) {
-      setDisabledAlgos([...disabledAlgos, num]);
-    }
-  };
+  const visualizerSpeedMap = { 1: 150, 2: 100, 3: 50 };
+  const inverseVisualizerSpeedMap = { 150: 1, 100: 2, 50: 3 };
+  const wordVisualizerSpeedMap = { 150: "Slow", 100: "Medium", 50: "Fast" };
 
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
@@ -74,7 +74,6 @@ export const GridCustomizer = () => {
             onChange={(e) => setColCount(e.target.valueAsNumber)}
           ></input>
         </div>
-
         <div className="sliderElement">
           Wall Density: {wordWallDensityMap[wallDensityValue]}
           <br />
@@ -86,6 +85,20 @@ export const GridCustomizer = () => {
             defaultValue={inverseWallDensityMap[defaultWallDensity]}
             onChange={(e) =>
               setWallDensityValue(wallDensityMap[e.target.value])
+            }
+          ></input>
+        </div>
+        <div className="sliderElement">
+          Visualizer Speed: {wordVisualizerSpeedMap[visualizerSpeed]}
+          <br />
+          <input
+            type="range"
+            min="1"
+            max="3"
+            name="visSpeed"
+            defaultValue={inverseVisualizerSpeedMap[defaultVisualizerSpeed]}
+            onChange={(e) =>
+              setVisualizerSpeed(visualizerSpeedMap[e.target.value])
             }
           ></input>
         </div>
@@ -113,7 +126,7 @@ export const GridCustomizer = () => {
           <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
         </div>
         <div className="sliderElement">
-          <label>Enabled Algorithms</label>
+          <label>Enabled Algorithms:</label>
           <br />
           <input
             type="checkbox"

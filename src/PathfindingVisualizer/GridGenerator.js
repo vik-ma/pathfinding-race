@@ -25,6 +25,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     setRenderWinnerMsg,
     setCalculatedAlgoMap,
     allowDiagonal,
+    visualizerSpeed
   } = useContext(GridContext);
 
   useImperativeHandle(ref, () => ({
@@ -361,12 +362,12 @@ export const GridGenerator = forwardRef((props, ref) => {
         if (anyPathFound) {
           setTimeout(() => {
             drawWinnerPath(minIndex);
-          }, 50 * i);
+          }, visualizerSpeed * i);
         } else {
           setTimeout(() => {
             setRenderWinnerMsg(true);
             setWinnerAlgo({ 5: "No Path Found" });
-          }, 50 * i);
+          }, visualizerSpeed * i);
         }
       } else {
         setTimeout(() => {
@@ -418,7 +419,7 @@ export const GridGenerator = forwardRef((props, ref) => {
                 .classList.add(newClass, "node-current");
             }
           }
-        }, 50 * i);
+        }, visualizerSpeed * i);
       }
     }
   };
