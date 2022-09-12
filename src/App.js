@@ -252,6 +252,8 @@ function App() {
             updateUserScore,
             visIsFinished,
             setVisIsFinished,
+            visIsOngoing,
+            setVisIsOngoing
           }}
         >
           {isSettingsRendered ? <GridCustomizer /> : null}

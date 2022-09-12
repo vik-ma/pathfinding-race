@@ -69,6 +69,17 @@ body {
     display: flex;
 }
 
+:root {
+    --nodebgcolor1: crimson;
+    --nodebgcolor2: dodgerblue;
+    --nodebgcolor3: darkkhaki;
+    --nodebgcolor4: darkorchid;
+    --nodebordercolor1: darkred;
+    --nodebordercolor2: mediumblue;
+    --nodebordercolor3: saddlebrown;
+    --nodebordercolor4: indigo;
+}
+
 .node {
     border: 1px solid white;    
     height: 30px;
@@ -100,59 +111,59 @@ body {
 }
 
 .node-start-1 {
-    box-shadow: inset 0 0 0 4px darkred !important;
-    border: 1px solid darkred !important; 
-    /* color: darkred; */
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor1) !important;
+    border: 1px solid var(--nodebordercolor1) !important; 
+    /* color: var(--nodebordercolor1); */
 }
 
 .node-start-2 {
-    box-shadow: inset 0 0 0 4px mediumblue !important;
-    border: 1px solid mediumblue !important;
-    /* color: mediumblue; */
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor2) !important;
+    border: 1px solid var(--nodebordercolor2) !important;
+    /* color: var(--nodebordercolor2); */
 }
 
 .node-start-3 {
-    box-shadow: inset 0 0 0 4px saddlebrown !important;
-    border: 1px solid saddlebrown !important;
-    /* color:saddlebrown; */
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor3) !important;
+    border: 1px solid var(--nodebordercolor3) !important;
+    /* color:var(--nodebordercolor3); */
 }
 
 .node-start-4 {
-    box-shadow: inset 0 0 0 4px indigo !important;
-    border: 1px solid indigo !important;
-    /* color:indigo; */
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor4) !important;
+    border: 1px solid var(--nodebordercolor4) !important;
+    /* color:var(--nodebordercolor4); */
 }
 
 .node-visited-1 {
-    background-color: crimson;
+    background-color: var(--nodebgcolor1);
 }
 
 .node-visited-2 {
-    background-color:dodgerblue;
+    background-color:var(--nodebgcolor2);
 }
 
 .node-visited-3 {
-    background-color: darkkhaki;
+    background-color: var(--nodebgcolor3);
 }
 
 .node-visited-4 {
-    background-color: darkorchid;
+    background-color: var(--nodebgcolor4);
 }
 
 .node-winner-1 {
-    box-shadow: inset 0 0 0 4px darkred;
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor1);
 }
 
 .node-winner-2 {
-    box-shadow: inset 0 0 0 4px mediumblue;
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor2);
 }
 
 .node-winner-3 {
-    box-shadow: inset 0 0 0 4px saddlebrown;
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor3);
 }
 
 .node-winner-4 {
-    box-shadow: inset 0 0 0 4px indigo;
+    box-shadow: inset 0 0 0 4px var(--nodebordercolor4);
 }
 
 .node-winner-tie {
@@ -170,48 +181,48 @@ body {
 }
 
 .node-visited-1-2 {
-    background-image: conic-gradient(crimson 0deg 180deg,dodgerblue 180deg 360deg);
-    /* background-image: repeating-conic-gradient(crimson 0deg 90deg,dodgerblue 90deg 180deg); */
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor2) 180deg 360deg);
+    /* background-image: repeating-conic-gradient(var(--nodebgcolor1) 0deg 90deg,var(--nodebgcolor2) 90deg 180deg); */
 }
 
 .node-visited-1-3 {
-    background-image: conic-gradient(crimson 0deg 180deg,darkkhaki 180deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor3) 180deg 360deg);
 }
 
 .node-visited-1-4 {
-    background-image: conic-gradient(crimson 0deg 180deg,darkorchid 180deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor4) 180deg 360deg);
 }
 
 .node-visited-2-3 {
-    background-image: conic-gradient(dodgerblue 0deg 180deg,darkkhaki 180deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor2) 0deg 180deg,var(--nodebgcolor3) 180deg 360deg);
 }
 
 .node-visited-2-4 {
-    background-image: conic-gradient(dodgerblue 0deg 180deg,darkorchid 180deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor2) 0deg 180deg,var(--nodebgcolor4) 180deg 360deg);
 }
 
 .node-visited-3-4 {
-    background-image: conic-gradient(darkkhaki 0deg 180deg,darkorchid 180deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor3) 0deg 180deg,var(--nodebgcolor4) 180deg 360deg);
 }
 
 .node-visited-1-2-3 {
-    background-image: conic-gradient(crimson 0deg 120deg,dodgerblue 120deg 240deg, darkkhaki 240deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 120deg,var(--nodebgcolor2) 120deg 240deg, var(--nodebgcolor3) 240deg 360deg);
 }
 
 .node-visited-1-2-4 {
-    background-image: conic-gradient(crimson 0deg 120deg,dodgerblue 120deg 240deg, darkorchid 240deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 120deg,var(--nodebgcolor2) 120deg 240deg, var(--nodebgcolor4) 240deg 360deg);
 }
 
 .node-visited-1-3-4 {
-    background-image: conic-gradient(crimson 0deg 120deg,darkkhaki 120deg 240deg, darkorchid 240deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 120deg,var(--nodebgcolor3) 120deg 240deg, var(--nodebgcolor4) 240deg 360deg);
 }
 
 .node-visited-2-3-4 {
-    background-image: conic-gradient(dodgerblue 0deg 120deg, darkkhaki 120deg 240deg, darkorchid 240deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor2) 0deg 120deg, var(--nodebgcolor3) 120deg 240deg, var(--nodebgcolor4) 240deg 360deg);
 }
 
 .node-visited-1-2-3-4 {
-    /* background-image: conic-gradient(crimson 0deg 45deg, dodgerblue 45deg 135deg, darkkhaki 135deg 225deg, darkorchid 225deg 315deg, crimson 315deg 360deg); */
-    background-image: conic-gradient(darkorchid 0deg 45deg, crimson 45deg 135deg, dodgerblue 135deg 225deg, darkkhaki 225deg 315deg, darkorchid 315deg 360deg);
+    /* background-image: conic-gradient(var(--nodebgcolor1) 0deg 45deg, var(--nodebgcolor2) 45deg 135deg, var(--nodebgcolor3) 135deg 225deg, var(--nodebgcolor4) 225deg 315deg, var(--nodebgcolor1) 315deg 360deg); */
+    background-image: conic-gradient(var(--nodebgcolor4) 0deg 45deg, var(--nodebgcolor1) 45deg 135deg, var(--nodebgcolor2) 135deg 225deg, var(--nodebgcolor3) 225deg 315deg, var(--nodebgcolor4) 315deg 360deg);
 }
 
