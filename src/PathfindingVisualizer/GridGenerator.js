@@ -26,15 +26,13 @@ export const GridGenerator = forwardRef((props, ref) => {
     setCalculatedAlgoMap,
     allowDiagonal,
     visualizerSpeed,
-    setTimesGuessed,
-    setUserScore,
-    userChoice,
-    updateUserScore,
-    setVisIsFinished
+    setVisIsFinished,
+    setVisIsOngoing,
   } = useContext(GridContext);
 
   useImperativeHandle(ref, () => ({
     visualize() {
+      setVisIsOngoing(true);
       calculatePaths();
     },
   }));
@@ -442,6 +440,7 @@ export const GridGenerator = forwardRef((props, ref) => {
             setWinnerAlgo({ [key]: winnerAlgoMap[key].algoName });
             setRenderWinnerMsg(true);
             setVisIsFinished(true);
+            setVisIsOngoing(false);
           }
           const node = path[i];
           document
@@ -458,6 +457,7 @@ export const GridGenerator = forwardRef((props, ref) => {
             }));
             setRenderWinnerMsg(true);
             setVisIsFinished(true);
+            setVisIsOngoing(false);
           }
           const node = path[i];
           document

@@ -20,7 +20,6 @@ export const TitleBar = () => {
     updateUserScore,
     visIsFinished,
     visIsOngoing,
-    setVisIsOngoing
   } = useContext(GridContext);
 
   const generatorRef = useRef();
@@ -30,7 +29,6 @@ export const TitleBar = () => {
   useEffect(() => {
     updateUserScore();
   }, [visIsFinished]);
-
 
   return (
     <div>
@@ -45,9 +43,11 @@ export const TitleBar = () => {
               selectedDiv === "algoChoice1" ? " selectedChoice" : undefined
             } ${renderWinnerMsg && winnerAlgo[1] ? "winnerAlgo" : ""}`}
             onClick={() => {
-              setSelectedDiv("algoChoice1");
-              setUserChoice(1);
-              generatorRef.current.visualize();
+              if (!visIsOngoing && !visIsFinished) {
+                setSelectedDiv("algoChoice1");
+                setUserChoice(1);
+                generatorRef.current.visualize();
+              }
             }}
             id="algoChoice1"
           >
@@ -70,9 +70,11 @@ export const TitleBar = () => {
               selectedDiv === "algoChoice2" ? " selectedChoice" : undefined
             } ${renderWinnerMsg && winnerAlgo[2] ? "winnerAlgo" : ""}`}
             onClick={() => {
-              setSelectedDiv("algoChoice2");
-              setUserChoice(2);
-              generatorRef.current.visualize();
+              if (!visIsOngoing && !visIsFinished) {
+                setSelectedDiv("algoChoice2");
+                setUserChoice(2);
+                generatorRef.current.visualize();
+              }
             }}
             id="algoChoice2"
           >
@@ -96,9 +98,11 @@ export const TitleBar = () => {
                 selectedDiv === "algoChoice3" ? " selectedChoice" : undefined
               } ${renderWinnerMsg && winnerAlgo[3] ? "winnerAlgo" : ""}`}
               onClick={() => {
-                setSelectedDiv("algoChoice3");
-                setUserChoice(3);
-                generatorRef.current.visualize();
+                if (!visIsOngoing && !visIsFinished) {
+                  setSelectedDiv("algoChoice3");
+                  setUserChoice(3);
+                  generatorRef.current.visualize();
+                }
               }}
               id="algoChoice3"
             >
@@ -123,9 +127,11 @@ export const TitleBar = () => {
                 selectedDiv === "algoChoice4" ? " selectedChoice" : undefined
               } ${renderWinnerMsg && winnerAlgo[4] ? "winnerAlgo" : ""}`}
               onClick={() => {
-                setSelectedDiv("algoChoice4");
-                setUserChoice(4);
-                generatorRef.current.visualize();
+                if (!visIsOngoing && !visIsFinished) {
+                  setSelectedDiv("algoChoice4");
+                  setUserChoice(4);
+                  generatorRef.current.visualize();
+                }
               }}
               id="algoChoice4"
             >
@@ -149,9 +155,11 @@ export const TitleBar = () => {
               selectedDiv === "algoChoice0" ? " selectedChoice" : undefined
             } ${renderWinnerMsg && winnerAlgo[5] ? "winnerAlgo" : ""}`}
             onClick={() => {
-              setSelectedDiv("algoChoice0");
-              setUserChoice(5);
-              generatorRef.current.visualize();
+              if (!visIsOngoing && !visIsFinished) {
+                setSelectedDiv("algoChoice0");
+                setUserChoice(5);
+                generatorRef.current.visualize();
+              }
             }}
             id="algoChoice5"
           >
