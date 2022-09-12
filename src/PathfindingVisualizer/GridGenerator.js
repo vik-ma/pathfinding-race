@@ -46,7 +46,7 @@ export const GridGenerator = forwardRef((props, ref) => {
 
   const [showNoPathFoundMsg, setShowNoPathFoundMsg] = useState(false);
   //100 = 5 seconds
-  const [visualizerSkipTime, setVisualizerSkipTime] = useState(100);
+  const visualizerSkipTime = 100;
 
   const createNodeRows = () => {
     const nodeRows = Array(rowCount)
@@ -373,7 +373,9 @@ export const GridGenerator = forwardRef((props, ref) => {
           setTimeout(() => {
             setRenderWinnerMsg(true);
             setWinnerAlgo({ 5: "No Path Found" });
-            setShowNoPathFoundMsg(true);
+            if (lengthToDraw === visualizerSkipTime) {
+              setShowNoPathFoundMsg(true);
+            }
           }, visualizerSpeed * i);
         }
       } else {

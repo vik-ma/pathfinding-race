@@ -8,7 +8,6 @@ export const TitleBar = () => {
     algorithmMap,
     numStartNodes,
     nodeDivMap,
-    userChoice,
     setUserChoice,
     renderWinnerMsg,
     calculatedAlgoMap,
