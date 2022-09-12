@@ -376,6 +376,7 @@ export const GridGenerator = forwardRef((props, ref) => {
             if (lengthToDraw === visualizerSkipTime) {
               setShowNoPathFoundMsg(true);
             }
+            setVisIsOngoing(false);
           }, visualizerSpeed * i);
         }
       } else {

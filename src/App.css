@@ -21,7 +21,6 @@ body {
 
 .appBackdrop {
     background-color:rgb(194, 194, 194);
-    inline-size: min-content;
     margin-top: 5px;
     padding: 10px 20px 20px 20px;
     border-radius: 10px;
