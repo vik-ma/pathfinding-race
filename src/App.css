@@ -70,14 +70,14 @@ body {
 }
 
 :root {
-    --nodebgcolor1: crimson;
+    --nodebgcolor1: rgb(236, 27, 62);
     --nodebgcolor2: dodgerblue;
-    --nodebgcolor3: darkkhaki;
+    --nodebgcolor3: rgb(224, 209, 4);
     --nodebgcolor4: darkorchid;
-    --nodebordercolor1: darkred;
-    --nodebordercolor2: mediumblue;
-    --nodebordercolor3: saddlebrown;
-    --nodebordercolor4: indigo;
+    --nodebordercolor1: rgb(160, 1, 1);
+    --nodebordercolor2: rgb(28, 68, 245);
+    --nodebordercolor3: rgb(185, 136, 1);
+    --nodebordercolor4: rgb(107, 2, 182);
 }
 
 .node {
@@ -151,28 +151,28 @@ body {
 }
 
 .node-winner-1 {
-    box-shadow: inset 0 0 0 4px var(--nodebordercolor1);
+    box-shadow: inset 0 0 0 5px var(--nodebordercolor1);
 }
 
 .node-winner-2 {
-    box-shadow: inset 0 0 0 4px var(--nodebordercolor2);
+    box-shadow: inset 0 0 0 5px var(--nodebordercolor2);
 }
 
 .node-winner-3 {
-    box-shadow: inset 0 0 0 4px var(--nodebordercolor3);
+    box-shadow: inset 0 0 0 5px var(--nodebordercolor3);
 }
 
 .node-winner-4 {
-    box-shadow: inset 0 0 0 4px var(--nodebordercolor4);
+    box-shadow: inset 0 0 0 5px var(--nodebordercolor4);
 }
 
 .node-winner-tie {
-    box-shadow: inset 0 0 0 4px #4d4d4d;
+    box-shadow: inset 0 0 0 5px #4d4d4d;
 }
 
 @keyframes current-anim {
     from {}
-    to {box-shadow: inset 0 0 0 3px black;}
+    to {box-shadow: inset 0 0 0 5px black;}
   }
 
 .node-current {
