@@ -21,7 +21,7 @@ function App() {
     SLIDER_NUMNODES_DEFAULT_VALUE
   );
 
-  const SLIDER_WALL_DENSITY_DEFAULT_VALUE = 0.4;
+  const SLIDER_WALL_DENSITY_DEFAULT_VALUE = 0.25;
   const [wallDensityValue, setWallDensityValue] = useState(
     SLIDER_WALL_DENSITY_DEFAULT_VALUE
   );
@@ -32,7 +32,9 @@ function App() {
   );
 
   const VIS_SPEED_DEFAULT_VALUE = 50;
-  const [visualizerSpeed, setVisualizerSpeed] = useState(VIS_SPEED_DEFAULT_VALUE);
+  const [visualizerSpeed, setVisualizerSpeed] = useState(
+    VIS_SPEED_DEFAULT_VALUE
+  );
 
   const [winnerAlgo, setWinnerAlgo] = useState({});
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
@@ -86,8 +88,11 @@ function App() {
   const [titleKey, setTitleKey] = useState(1000);
 
   const [userChoice, setUserChoice] = useState(0);
+  const [userGuessScore, setUserGuessScore] = useState(0);
+  const [timesGuessed, setTimesGuessed] = useState(0);
 
-
+  const [visIsFinished, setVisIsFinished] = useState(false);
+  const [visIsOngoing, setVisIsOngoing] = useState(false);
 
   const generateNewAlgoList = () => {
     const newAlgoList = [];
@@ -110,6 +115,7 @@ function App() {
     setIsGridRendered(false);
     setWinnerAlgo({});
     setRenderWinnerMsg(false);
+    setVisIsFinished(false);
     setUserChoice(0);
     generateNewAlgoList();
     setGridKey(gridKey + 1);
@@ -120,6 +126,15 @@ function App() {
   const switchToSettingsMenu = () => {
     setIsGridRendered(false);
     setIsSettingsRendered(true);
+  };
+
+  const updateUserScore = () => {
+    if (userChoice !== 0) {
+      setTimesGuessed(timesGuessed + 1);
+      if (userChoice in winnerAlgo) {
+        setUserGuessScore(userGuessScore + 1);
+      }
+    }
   };
 
   const printWinnerAlgos = (algoMap) => {
@@ -229,7 +244,14 @@ function App() {
             disabledAlgos,
             setDisabledAlgos,
             visualizerSpeed,
-            setVisualizerSpeed
+            setVisualizerSpeed,
+            userGuessScore,
+            setUserGuessScore,
+            timesGuessed,
+            setTimesGuessed,
+            updateUserScore,
+            visIsFinished,
+            setVisIsFinished,
           }}
         >
           {isSettingsRendered ? <GridCustomizer /> : null}

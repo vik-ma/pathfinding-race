@@ -8,17 +8,27 @@ export const TitleBar = () => {
     algorithmMap,
     numStartNodes,
     nodeDivMap,
+    userChoice,
     setUserChoice,
     renderWinnerMsg,
     calculatedAlgoMap,
     winnerAlgo,
     remakeGrid,
-    switchToSettingsMenu
+    switchToSettingsMenu,
+    timesGuessed,
+    userGuessScore,
+    updateUserScore,
+    visIsFinished,
   } = useContext(GridContext);
 
   const generatorRef = useRef();
 
   const [selectedDiv, setSelectedDiv] = useState("");
+
+  useEffect(() => {
+    updateUserScore();
+  }, [visIsFinished]);
+
 
   return (
     <div>
@@ -155,9 +165,9 @@ export const TitleBar = () => {
       <button onClick={() => generatorRef.current.visualize()}>
         JUST VISUALIZE
       </button>{" "}
-      <button onClick={() => remakeGrid()}>New Map</button>
-      {" "}
-      <button onClick={() => switchToSettingsMenu()}>SETTINGS</button>
+      <button onClick={() => remakeGrid()}>New Map</button>{" "}
+      <button onClick={() => switchToSettingsMenu()}>SETTINGS</button>{" "}
+      {timesGuessed > 0 ? `Score: ${userGuessScore} / ${timesGuessed}` : null}
       <GridGenerator ref={generatorRef} />
     </div>
   );

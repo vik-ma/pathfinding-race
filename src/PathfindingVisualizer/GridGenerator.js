@@ -26,6 +26,11 @@ export const GridGenerator = forwardRef((props, ref) => {
     setCalculatedAlgoMap,
     allowDiagonal,
     visualizerSpeed,
+    setTimesGuessed,
+    setUserScore,
+    userChoice,
+    updateUserScore,
+    setVisIsFinished
   } = useContext(GridContext);
 
   useImperativeHandle(ref, () => ({
@@ -436,6 +441,7 @@ export const GridGenerator = forwardRef((props, ref) => {
           if (i === path.length - 1) {
             setWinnerAlgo({ [key]: winnerAlgoMap[key].algoName });
             setRenderWinnerMsg(true);
+            setVisIsFinished(true);
           }
           const node = path[i];
           document
@@ -451,6 +457,7 @@ export const GridGenerator = forwardRef((props, ref) => {
               [key]: winnerAlgoMap[key].algoName,
             }));
             setRenderWinnerMsg(true);
+            setVisIsFinished(true);
           }
           const node = path[i];
           document
@@ -566,7 +573,11 @@ export const GridGenerator = forwardRef((props, ref) => {
         VISUALIZE
       </button> */}
       <div className="gridContainer">{drawGrid}</div>
-      {showNoPathFoundMsg ? <div className="noPathFoundMsg">No paths found, rest of visualization skipped.</div> : null}
+      {showNoPathFoundMsg ? (
+        <div className="noPathFoundMsg">
+          No paths found, rest of visualization skipped.
+        </div>
+      ) : null}
     </div>
   );
 });
