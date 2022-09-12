@@ -1,6 +1,31 @@
 body {
-    color:white;
+    color:#292929;
+    /* color:rgb(238, 237, 237); */
     background-color: #292929;
+    background-color:rgb(94, 74, 45);
+    font-weight:bold;
+}
+
+.title {
+    color:crimson;
+    display: inline-block;
+    margin-left: 2px;
+    margin-right: 3px;
+    font-size:x-large;
+}
+
+.appContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appBackdrop {
+    background-color:rgb(194, 194, 194);
+    inline-size: min-content;
+    margin-top: 5px;
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
 }
 
 .sliderContainer {
@@ -32,29 +57,33 @@ body {
 
 .titleBarChoices {
     padding: 3px;
-    width: 215px;
+    width: 225px;
     align-items: center;
     border-radius: 5px;
     display: inline-block;
     cursor: pointer;
-}
-
-.titleBarChoices:hover {
-    box-shadow: inset 0 0 0 3px seagreen; 
-}
-
-.selectedChoice {
-    background-color:seagreen;
-    box-shadow: inset 0 0 0 3px seagreen; 
-}
-
-.winnerAlgo {
-    background-color:goldenrod !important;
+    font-weight:600;
 }
 
 .algoPathMsg {
     margin-left: 15px;
     display: inline-block;
+    font-weight:600;
+    color:rgb(63, 63, 63);
+}
+
+.titleBarChoices:hover {
+    box-shadow: inset 0 0 0 3px white;
+}
+
+.selectedChoice {
+    background-color:darkkhaki;
+    box-shadow: inset 0 0 0 3px white;
+}
+
+.winnerAlgo {
+    background-color:rgb(90, 245, 69) !important;
+    box-shadow: inset 0 0 0 3px rgb(0, 126, 0);
 }
 
 .titleBarNode {
@@ -82,7 +111,7 @@ body {
 }
 
 .node {
-    border: 1px solid white;    
+    border: 1px solid white;  
     height: 30px;
     width: 30px;
     margin: 0px;
@@ -94,13 +123,13 @@ body {
 }
 
 .node-wall {
-    background-color: aliceblue;
+    background-color:#6b6b6b;
 }
 
 .node-x {
     background-color:rgb(158, 158, 158);
     color:rgb(36, 36, 36);
-    box-shadow: inset 0 0 0 5px rgb(32, 32, 32);
+    box-shadow: inset 0 0 0 4px rgb(32, 32, 32);
     border: 1px solid rgb(32, 32, 32);
 }
 
@@ -108,30 +137,35 @@ body {
     background-image: conic-gradient(lawngreen 0deg 360deg) !important;
     border: 1px solid black !important;
     box-shadow: inset 0 0 0 4px rgb(0, 126, 0);
-    color:darkgreen !important;
+    color:rgb(0, 78, 0) !important;
+    text-shadow: 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132);
 }
 
 .node-start-1 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor1) !important;
     border: 1px solid var(--nodebordercolor1) !important; 
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
     /* color: var(--nodebordercolor1); */
 }
 
 .node-start-2 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor2) !important;
     border: 1px solid var(--nodebordercolor2) !important;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
     /* color: var(--nodebordercolor2); */
 }
 
 .node-start-3 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor3) !important;
     border: 1px solid var(--nodebordercolor3) !important;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
     /* color:var(--nodebordercolor3); */
 }
 
 .node-start-4 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor4) !important;
     border: 1px solid var(--nodebordercolor4) !important;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
     /* color:var(--nodebordercolor4); */
 }
 

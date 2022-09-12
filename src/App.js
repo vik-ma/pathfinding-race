@@ -253,38 +253,27 @@ function App() {
             visIsFinished,
             setVisIsFinished,
             visIsOngoing,
-            setVisIsOngoing
+            setVisIsOngoing,
           }}
         >
-          {isSettingsRendered ? <GridCustomizer /> : null}
-          {isGridRendered ? <TitleBar key={titleKey} /> : null}
-          {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
-          {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
-          <div className="buttonContainer">
-            {/* <button
-              onClick={() => {
-                setIsGridRendered(true);
-              }}
-            >
-              Create Grid
-            </button>
-            <button
-              onClick={() => {
-                setIsGridRendered(false);
-              }}
-            >
-              Destroy Grid
-            </button>
-            <button onClick={remakeGrid}>Remake Grid</button> */}
-            {/* <button
+          <div className="appContainer">
+            <div className="appBackdrop">
+              {isSettingsRendered ? <GridCustomizer /> : null}
+              {isGridRendered ? <TitleBar key={titleKey} /> : null}
+              {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
+              {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
+              <div className="buttonContainer">
+                {/* <button
               onClick={() => {
                 setRenderTest(true);
               }}
             >
               TEST BUTTON
             </button> */}
+              </div>
+              {renderTest ? <TestComponent /> : null}
+            </div>
           </div>
-          {renderTest ? <TestComponent /> : null}
         </GridContext.Provider>
       </header>
     </div>

@@ -32,9 +32,9 @@ export const TitleBar = () => {
   return (
     <div>
       <div className="titleBarContainer">
-        <div>
-          WHICH ALGORITHM WILL REACH THE GOAL NODE{" "}
-          <div className={nodeDivMap["nodegoal"]}>G</div> FIRST?
+        <div className="title">
+          WHICH ALGORITHM WILL REACH THE GOAL NODE{" "}</div>{" "}
+          <div className={nodeDivMap["nodegoal"]}>G</div>{" "}<div className="title"> FIRST?
         </div>
         <div>
           <div
@@ -171,7 +171,7 @@ export const TitleBar = () => {
           </div>
         </div>
       </div>
-      <button onClick={() => generatorRef.current.visualize()}>
+      <button onClick={() => !visIsOngoing && !visIsFinished && generatorRef.current.visualize()}>
         JUST VISUALIZE
       </button>{" "}
       <button onClick={() => remakeGrid()}>New Map</button>{" "}
