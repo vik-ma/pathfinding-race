@@ -49,19 +49,34 @@ export const GridGenerator = forwardRef((props, ref) => {
   const visualizerSkipTime = 100;
 
   const createNodeRows = () => {
-    const nodeRows = Array(rowCount)
-      .fill()
-      .map((_, index) => index);
-    nodeRows.sort(() => Math.random() - 0.5);
-    return nodeRows.slice(0, numStartNodes + 1);
+    // const nodeRows = Array(rowCount)
+    //   .fill()
+    //   .map((_, index) => index);
+    // nodeRows.sort(() => 0.5 - Math.random());
+    // console.log(nodeRows)
+    // return nodeRows.slice(0, numStartNodes + 1);
+    const randomNodeRow = new Set();
+
+    while (randomNodeRow.size < numStartNodes + 1) {
+      randomNodeRow.add(Math.floor(Math.random() * rowCount));
+    }
+    const randomNodeArray = Array.from(randomNodeRow);
+    return randomNodeArray;
   };
 
   const createNodeCols = () => {
-    const nodeCols = Array(colCount)
-      .fill()
-      .map((_, index) => index);
-    nodeCols.sort(() => Math.random() - 0.5);
-    return nodeCols.slice(0, numStartNodes + 1);
+    // const nodeCols = Array(colCount)
+    //   .fill()
+    //   .map((_, index) => index);
+    // nodeCols.sort(() => 0.5 -Math.random());
+    // return nodeCols.slice(0, numStartNodes + 1);
+    const randomNodeCol = new Set();
+
+    while (randomNodeCol.size < numStartNodes + 1) {
+      randomNodeCol.add(Math.floor(Math.random() * colCount));
+    }
+    const randomNodeColArray = Array.from(randomNodeCol);
+    return randomNodeColArray;
   };
 
   const [randomNodeRowArray] = useState(createNodeRows());

@@ -258,11 +258,11 @@ function App() {
         >
           <div className="appContainer">
             <div className="appBackdrop">
-              {isSettingsRendered ? <GridCustomizer /> : null}
               {isGridRendered ? <TitleBar key={titleKey} /> : null}
+              {isSettingsRendered ? <GridCustomizer /> : null}
               {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
               {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
-              <div className="buttonContainer">
+              {/* <div className="buttonContainer"> */}
                 {/* <button
               onClick={() => {
                 setRenderTest(true);
@@ -270,7 +270,7 @@ function App() {
             >
               TEST BUTTON
             </button> */}
-              </div>
+              {/* </div> */}
               {renderTest ? <TestComponent /> : null}
             </div>
           </div>

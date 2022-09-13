@@ -34,6 +34,7 @@ body {
     align-items: stretch;
     justify-content: flex-start;
     margin-top: 5px;
+    height: 500px;
 }
 
 .sliderElement {
