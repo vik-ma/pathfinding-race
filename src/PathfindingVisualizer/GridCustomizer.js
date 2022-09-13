@@ -50,18 +50,18 @@ export const GridCustomizer = () => {
 
   const setRows = (e) => {
     setRowCount(e);
+    var newValue = `${e * 32 + 261}px`;
+    backdropDiv.style.setProperty("min-height", newValue);
   };
 
   const setCols = (e) => {
     setColCount(e);
-
     if (e < 22) {
       var newValue = "fit-content";
     } else {
       backdropDiv.style.removeProperty("fit-content");
       var newValue = `${30 * e + 50 + Math.abs(24 - e) * 2}px`;
     }
-
     backdropDiv.style.setProperty("min-width", newValue);
   };
 
