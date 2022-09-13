@@ -33,6 +33,8 @@ export const GridCustomizer = () => {
   const inverseVisualizerSpeedMap = { 150: 1, 100: 2, 50: 3 };
   const wordVisualizerSpeedMap = { 150: "Slow", 100: "Medium", 50: "Fast" };
 
+  var backdropDiv = document.querySelector(".appBackdrop");
+
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
       //If checkbox gets unchecked
@@ -44,6 +46,23 @@ export const GridCustomizer = () => {
       const newArray = disabledAlgos.filter((x) => x !== num);
       setDisabledAlgos(newArray);
     }
+  };
+
+  const setRows = (e) => {
+    setRowCount(e);
+  };
+
+  const setCols = (e) => {
+    setColCount(e);
+
+    if (e < 22) {
+      var newValue = "fit-content";
+    } else {
+      backdropDiv.style.removeProperty("fit-content");
+      var newValue = `${30 * e + 50 + Math.abs(24 - e) * 2}px`;
+    }
+
+    backdropDiv.style.setProperty("min-width", newValue);
   };
 
   return (
@@ -59,7 +78,7 @@ export const GridCustomizer = () => {
             max="26"
             name="row"
             defaultValue={defaultRowValue}
-            onChange={(e) => setRowCount(e.target.valueAsNumber)}
+            onChange={(e) => setRows(e.target.valueAsNumber)}
           ></input>
         </div>
         <div className="sliderElement">
@@ -71,7 +90,7 @@ export const GridCustomizer = () => {
             max="40"
             name="col"
             defaultValue={defaultColValue}
-            onChange={(e) => setColCount(e.target.valueAsNumber)}
+            onChange={(e) => setCols(e.target.valueAsNumber)}
           ></input>
         </div>
         <div className="sliderElement">

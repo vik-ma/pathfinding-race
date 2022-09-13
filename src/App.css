@@ -17,10 +17,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .appBackdrop {
     background-color:rgb(194, 194, 194);
+    min-width: 802px;
+    min-height: 840px;
     margin-top: 5px;
     padding: 10px 20px 20px 20px;
     border-radius: 10px;
@@ -47,10 +50,6 @@ body {
     margin-top: 5px;
     border: 1px solid white;
     inline-size: min-content;
-}
-
-.App {
-    margin-left: 20px;
 }
 
 .titleBarChoices {
@@ -83,7 +82,6 @@ body {
 .winnerAlgo {
     background-color:rgb(90, 245, 69) !important;
     box-shadow: inset 0 0 0 3px rgb(0, 126, 0);
-
 }
 
 .titleBarNode {
