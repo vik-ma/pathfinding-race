@@ -263,7 +263,7 @@ function App() {
               {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
               {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
               {/* <div className="buttonContainer"> */}
-                {/* <button
+              {/* <button
               onClick={() => {
                 setRenderTest(true);
               }}
@@ -273,6 +273,7 @@ function App() {
               {/* </div> */}
               {renderTest ? <TestComponent /> : null}
             </div>
+            
           </div>
         </GridContext.Provider>
       </header>

@@ -68,7 +68,7 @@ export const GridCustomizer = () => {
   return (
     <div>
       <h1>SETTINGS</h1>
-      <div className="sliderContainer">
+      <div className="settingsBackdrop">
         <div className="sliderElement">
           Row Count: {rowCount}
           <br />

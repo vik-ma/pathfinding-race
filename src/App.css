@@ -29,12 +29,11 @@ body {
     border-radius: 10px;
 }
 
-.sliderContainer {
+.settingsBackdrop {
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
     margin-top: 5px;
-    height: 500px;
 }
 
 .sliderElement {
@@ -73,6 +72,7 @@ body {
 
 .titleBarChoices:hover {
     box-shadow: inset 0 0 0 3px white;
+    color:white;
 }
 
 .selectedChoice {
