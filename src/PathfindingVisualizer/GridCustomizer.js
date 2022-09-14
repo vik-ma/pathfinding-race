@@ -50,7 +50,7 @@ export const GridCustomizer = () => {
 
   const setRows = (e) => {
     setRowCount(e);
-    var newValue = `${e * 32 + 261}px`;
+    var newValue = `${e * 32 + 101 + numStartNodes * 40}px`;
     backdropDiv.style.setProperty("min-height", newValue);
   };
 
@@ -63,6 +63,12 @@ export const GridCustomizer = () => {
       var newValue = `${30 * e + 50 + Math.abs(24 - e) * 2}px`;
     }
     backdropDiv.style.setProperty("min-width", newValue);
+  };
+
+  const setNumNodes = (e) => {
+    setNumStartNodes(e);
+    var newValue = `${rowCount * 32 + 101 + e * 40}px`;
+    backdropDiv.style.setProperty("min-height", newValue);
   };
 
   return (
@@ -131,7 +137,7 @@ export const GridCustomizer = () => {
               max="4"
               name="numNodes"
               defaultValue={defaultNumNodes}
-              onChange={(e) => setNumStartNodes(e.target.valueAsNumber)}
+              onChange={(e) => setNumNodes(e.target.valueAsNumber)}
             ></input>
           </div>
           <div className="settingsElement">
