@@ -75,7 +75,7 @@ export const GridCustomizer = () => {
     <div className="settingsPopupBackground">
       <div className="settingsBackdrop">
         <div className="settingsInner">
-          <h1>SETTINGS</h1>
+          {/* <h1>SETTINGS</h1> */}
           <div className="settingsElement">
             Row Count: {rowCount}
             <br />
@@ -151,74 +151,74 @@ export const GridCustomizer = () => {
             />
             <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
           </div>
-          <div className="settingsElement">
-            <label>Enabled Algorithms:</label>
-            <br />
-            <input
-              type="checkbox"
-              id="astar"
-              name="astar"
-              checked={!disabledAlgos.includes(0)}
-              value="astar"
-              onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
-            />
-            <label htmlFor="astar">A-Star Search</label>
-            <br />
-            <input
-              type="checkbox"
-              id="bidirectional"
-              name="bidirectional"
-              checked={!disabledAlgos.includes(1)}
-              value="bidirectional"
-              onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
-            />
-            <label htmlFor="bidirectional">Bidirectional Search</label>
-            <br />
-            <input
-              type="checkbox"
-              id="breadth"
-              name="breadth"
-              checked={!disabledAlgos.includes(2)}
-              value="breadth"
-              onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
-            />
-            <label htmlFor="breadth">Breadth-First Search</label>
-            <br />
-            <input
-              type="checkbox"
-              id="depth"
-              name="depth"
-              checked={!disabledAlgos.includes(3)}
-              value="depth"
-              onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
-            />
-            <label htmlFor="depth">Depth-First Search</label>
-            <br />
-            <input
-              type="checkbox"
-              id="dijkstra"
-              name="dijkstra"
-              checked={!disabledAlgos.includes(4)}
-              value="dijkstra"
-              onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
-            />
-            <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
-            <br />
-            <input
-              type="checkbox"
-              id="greedy"
-              name="greedy"
-              checked={!disabledAlgos.includes(5)}
-              value="greedy"
-              onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
-            />
-            <label htmlFor="greedy">Greedy Best-First Search</label>
-          </div>
         </div>
-        <div className="settingsElement">
-          <button onClick={() => remakeGrid()}>RETURN</button>
+        <div className="enableAlgoList">
+          <label>Enabled Algorithms:</label>
+          <br />
+          <input
+            type="checkbox"
+            id="astar"
+            name="astar"
+            checked={!disabledAlgos.includes(0)}
+            value="astar"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
+          />
+          <label htmlFor="astar">A-Star Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="bidirectional"
+            name="bidirectional"
+            checked={!disabledAlgos.includes(1)}
+            value="bidirectional"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
+          />
+          <label htmlFor="bidirectional">Bidirectional Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="breadth"
+            name="breadth"
+            checked={!disabledAlgos.includes(2)}
+            value="breadth"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
+          />
+          <label htmlFor="breadth">Breadth-First Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="depth"
+            name="depth"
+            checked={!disabledAlgos.includes(3)}
+            value="depth"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
+          />
+          <label htmlFor="depth">Depth-First Search</label>
+          <br />
+          <input
+            type="checkbox"
+            id="dijkstra"
+            name="dijkstra"
+            checked={!disabledAlgos.includes(4)}
+            value="dijkstra"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
+          />
+          <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
+          <br />
+          <input
+            type="checkbox"
+            id="greedy"
+            name="greedy"
+            checked={!disabledAlgos.includes(5)}
+            value="greedy"
+            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
+          />
+          <label htmlFor="greedy">Greedy Best-First Search</label>
+        
+        <div className="settingsButton">
+          <button onClick={() => remakeGrid()}>Apply</button>
         </div>
-      </div>
+      </div></div>
     </div>
   );
 };
