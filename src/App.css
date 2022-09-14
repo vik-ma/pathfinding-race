@@ -1,6 +1,6 @@
 body {
     color:#292929;
-    background-color: #292929;
+    /* background-color: #292929; */
     background-color:rgb(94, 74, 45);
     font-weight:bold;
 }
@@ -29,14 +29,37 @@ body {
     border-radius: 10px;
 }
 
+.settingsPopupBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .settingsBackdrop {
+    position: relative;
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
     margin-top: 5px;
+    background-color:rgb(194, 194, 194);
+    color:#292929;
+    padding:10px;
+    border-radius: 10px;
+    min-width: 400px;
+    inline-size: min-content;
 }
 
-.sliderElement {
+.settingsInner {
+    
+}
+
+.settingsElement {
     margin-right: 30px;
 }
 

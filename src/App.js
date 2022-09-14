@@ -124,7 +124,7 @@ function App() {
   };
 
   const switchToSettingsMenu = () => {
-    setIsGridRendered(false);
+    // setIsGridRendered(false);
     setIsSettingsRendered(true);
   };
 
@@ -273,7 +273,7 @@ function App() {
               {/* </div> */}
               {renderTest ? <TestComponent /> : null}
             </div>
-            
+
           </div>
         </GridContext.Provider>
       </header>
