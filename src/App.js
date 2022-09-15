@@ -254,6 +254,7 @@ function App() {
             setVisIsFinished,
             visIsOngoing,
             setVisIsOngoing,
+            setIsSettingsRendered
           }}
         >
           <div className="appContainer">

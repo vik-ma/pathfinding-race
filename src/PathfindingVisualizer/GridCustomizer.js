@@ -18,6 +18,7 @@ export const GridCustomizer = () => {
     setDisabledAlgos,
     visualizerSpeed,
     setVisualizerSpeed,
+    setIsSettingsRendered,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -215,7 +216,10 @@ export const GridCustomizer = () => {
           />
           <label htmlFor="greedy">Greedy Best-First Search</label>
 
-          <div className="settingsButton">
+          <div className="settingsCancelButton">
+            <button onClick={() => setIsSettingsRendered(false)}>Cancel</button>
+          </div>
+          <div className="settingsApplyButton">
             <button onClick={() => remakeGrid()}>Apply</button>
           </div>
         </div>
