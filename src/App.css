@@ -1,6 +1,5 @@
 body {
     color:#292929;
-    /* background-color: #292929; */
     background-color:rgb(94, 74, 45);
     font-weight:bold;
 }
@@ -81,6 +80,7 @@ body {
     text-decoration: none;
     display: inline-block;
     transition-duration: 0.3s;
+    font-weight: bold;
 }
 
 .settingsButton:hover {
@@ -111,7 +111,7 @@ body {
     margin: 2px;
     border-radius: 6px;
     font-size: 18px;
-    color: white;
+    color:#292929;
     padding: 5px 20px;
     border:1px solid black;
     text-align: center;
@@ -127,14 +127,17 @@ body {
 
 .justVisualizeButton {
     background-color: crimson;
+    color: aliceblue;
 }
 
 .newMapButton {
-    background-color: #43db07;
+    background-color: rgb(90, 245, 69);
+    color:#292929;
 }
 
 .settingsMenuButton {
-    background-color: rgb(20, 50, 219);
+    background-color: rgb(0, 102, 218);
+    color: aliceblue;
     float:right;
 }
 
