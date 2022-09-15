@@ -190,7 +190,27 @@ body {
 }
 
 .noPathFoundMsg {
-    margin-top: 5px;
+    padding: 8px;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(250, 250, 250);
+    animation: noPathFadeIn 0.8s;
+    border:2px solid #292929;
+}
+
+@keyframes noPathFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .rowWrapper {
