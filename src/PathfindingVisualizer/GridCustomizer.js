@@ -78,7 +78,7 @@ export const GridCustomizer = () => {
         <div className="settingsInner">
           {/* <h1>SETTINGS</h1> */}
           <div className="settingsElement">
-            Row Count: {rowCount}
+            Number of Rows: {rowCount}
             <br />
             <input
               type="range"
@@ -90,7 +90,7 @@ export const GridCustomizer = () => {
             ></input>
           </div>
           <div className="settingsElement">
-            Column Count: {colCount}
+            Number of Columns: {colCount}
             <br />
             <input
               type="range"
@@ -99,6 +99,18 @@ export const GridCustomizer = () => {
               name="col"
               defaultValue={defaultColValue}
               onChange={(e) => setCols(e.target.valueAsNumber)}
+            ></input>
+          </div>
+          <div className="settingsElement">
+            Number of Start Nodes: {numStartNodes}
+            <br />
+            <input
+              type="range"
+              min="2"
+              max="4"
+              name="numNodes"
+              defaultValue={defaultNumNodes}
+              onChange={(e) => setNumNodes(e.target.valueAsNumber)}
             ></input>
           </div>
           <div className="settingsElement">
@@ -130,18 +142,6 @@ export const GridCustomizer = () => {
             ></input>
           </div>
           <div className="settingsElement">
-            Number of Start Nodes: {numStartNodes}
-            <br />
-            <input
-              type="range"
-              min="2"
-              max="4"
-              name="numNodes"
-              defaultValue={defaultNumNodes}
-              onChange={(e) => setNumNodes(e.target.valueAsNumber)}
-            ></input>
-          </div>
-          <div className="settingsElement">
             <input
               type="checkbox"
               id="allowDiagonals"
@@ -149,7 +149,7 @@ export const GridCustomizer = () => {
               checked={allowDiagonal}
               value="allowDiagonal"
               onChange={() => setAllowDiagonal(!allowDiagonal)}
-            />
+            />{" "}
             <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
           </div>
         </div>
@@ -163,7 +163,7 @@ export const GridCustomizer = () => {
             checked={!disabledAlgos.includes(0)}
             value="astar"
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
-          />
+          />{" "}
           <label htmlFor="astar">A-Star Search</label>
           <br />
           <input
@@ -173,7 +173,7 @@ export const GridCustomizer = () => {
             checked={!disabledAlgos.includes(1)}
             value="bidirectional"
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
-          />
+          />{" "}
           <label htmlFor="bidirectional">Bidirectional Search</label>
           <br />
           <input
@@ -183,7 +183,7 @@ export const GridCustomizer = () => {
             checked={!disabledAlgos.includes(2)}
             value="breadth"
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
-          />
+          />{" "}
           <label htmlFor="breadth">Breadth-First Search</label>
           <br />
           <input
@@ -193,7 +193,7 @@ export const GridCustomizer = () => {
             checked={!disabledAlgos.includes(3)}
             value="depth"
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
-          />
+          />{" "}
           <label htmlFor="depth">Depth-First Search</label>
           <br />
           <input
@@ -203,7 +203,7 @@ export const GridCustomizer = () => {
             checked={!disabledAlgos.includes(4)}
             value="dijkstra"
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
-          />
+          />{" "}
           <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
           <br />
           <input
@@ -213,14 +213,21 @@ export const GridCustomizer = () => {
             checked={!disabledAlgos.includes(5)}
             value="greedy"
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
-          />
+          />{" "}
           <label htmlFor="greedy">Greedy Best-First Search</label>
 
           <div className="settingsCancelButtonDiv">
-            <button className="settingsButton" onClick={() => setIsSettingsRendered(false)}>Cancel</button>
+            <button
+              className="settingsButton"
+              onClick={() => setIsSettingsRendered(false)}
+            >
+              Cancel
+            </button>
           </div>
           <div className="settingsApplyButtonDiv">
-            <button className="settingsButton" onClick={() => remakeGrid()}>Apply</button>
+            <button className="settingsButton" onClick={() => remakeGrid()}>
+              Apply
+            </button>
           </div>
         </div>
       </div>
