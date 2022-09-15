@@ -92,6 +92,12 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    transition-duration: 0.3s;
+}
+
+.titleBarButton:hover {
+    background-color: rgb(219, 219, 219);
+    color:#292929;
 }
 
 .justVisualizeButton {
@@ -99,11 +105,11 @@ body {
 }
 
 .newMapButton {
-    background-color: #3cbe08;
+    background-color: #43db07;
 }
 
 .settingsMenuButton {
-    background-color: deepskyblue;
+    background-color: rgb(20, 50, 219);
     float:right;
 }
 
