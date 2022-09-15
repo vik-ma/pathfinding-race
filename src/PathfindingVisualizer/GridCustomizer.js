@@ -216,11 +216,11 @@ export const GridCustomizer = () => {
           />
           <label htmlFor="greedy">Greedy Best-First Search</label>
 
-          <div className="settingsCancelButton">
-            <button onClick={() => setIsSettingsRendered(false)}>Cancel</button>
+          <div className="settingsCancelButtonDiv">
+            <button className="settingsButton" onClick={() => setIsSettingsRendered(false)}>Cancel</button>
           </div>
-          <div className="settingsApplyButton">
-            <button onClick={() => remakeGrid()}>Apply</button>
+          <div className="settingsApplyButtonDiv">
+            <button className="settingsButton" onClick={() => remakeGrid()}>Apply</button>
           </div>
         </div>
       </div>
