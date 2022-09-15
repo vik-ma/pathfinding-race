@@ -171,11 +171,11 @@ export const TitleBar = () => {
           </div>
         </div>
       </div>
-      <button onClick={() => !visIsOngoing && !visIsFinished && generatorRef.current.visualize()}>
-        JUST VISUALIZE
+      <button className="titleBarButton justVisualizeButton" onClick={() => !visIsOngoing && !visIsFinished && generatorRef.current.visualize()}>
+        Just Visualize
       </button>{" "}
-      <button onClick={() => remakeGrid()}>New Map</button>{" "}
-      <button onClick={() => switchToSettingsMenu()}>SETTINGS</button>{" "}
+      <button className="titleBarButton newMapButton" onClick={() => remakeGrid()}>New Map</button>{" "}
+      <button className="titleBarButton settingsMenuButton" onClick={() => switchToSettingsMenu()}>Settings</button>{" "}
       {timesGuessed > 0 ? `Score: ${userGuessScore} / ${timesGuessed}` : null}
       <GridGenerator ref={generatorRef} />
     </div>

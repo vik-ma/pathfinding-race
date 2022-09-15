@@ -82,6 +82,32 @@ body {
     column-gap: 10px;
 }
 
+.titleBarButton {
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: white;
+    padding: 5px 20px;
+    border:1px solid black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.justVisualizeButton {
+    background-color: crimson;
+}
+
+.newMapButton {
+    background-color: #3cbe08;
+}
+
+.settingsMenuButton {
+background-color: deepskyblue;
+float:right;
+}
+
+
 .gridContainer {
     margin-top: 5px;
     border: 1px solid white;
