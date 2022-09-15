@@ -176,7 +176,7 @@ export const TitleBar = () => {
       </button>{" "}
       <button className="titleBarButton newMapButton" onClick={() => remakeGrid()}>New Map</button>{" "}
       <button className="titleBarButton settingsMenuButton" onClick={() => switchToSettingsMenu()}>Settings</button>{" "}
-      {timesGuessed > 0 ? `Score: ${userGuessScore} / ${timesGuessed}` : null}
+      <div className="scoreDiv">{timesGuessed > 0 ? `Score: ${userGuessScore} / ${timesGuessed}` : null}</div>
       <GridGenerator ref={generatorRef} />
     </div>
   );

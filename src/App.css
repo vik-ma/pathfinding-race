@@ -55,7 +55,7 @@ body {
 }
 
 .settingsInner {
-    
+    inline-size: min-content;
 }
 
 .enableAlgoList {
@@ -103,10 +103,16 @@ body {
 }
 
 .settingsMenuButton {
-background-color: deepskyblue;
-float:right;
+    background-color: deepskyblue;
+    float:right;
 }
 
+.scoreDiv {
+    display: flex;
+    font-size: 24px;
+    float:right;
+    margin-right: 10px;
+}
 
 .gridContainer {
     margin-top: 5px;
