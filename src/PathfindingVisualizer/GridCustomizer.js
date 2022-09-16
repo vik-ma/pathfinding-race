@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 
 export const GridCustomizer = () => {
@@ -36,6 +36,8 @@ export const GridCustomizer = () => {
 
   var backdropDiv = document.querySelector(".appBackdrop");
 
+  const [newChanges, setNewChanges] = useState({});
+
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
       //If checkbox gets unchecked
@@ -49,28 +51,47 @@ export const GridCustomizer = () => {
     }
   };
 
-  const setRows = (e) => {
-    setRowCount(e);
-    var newValue = `${e * 32 + 91 + numStartNodes * 40 + 15}px`;
-    backdropDiv.style.setProperty("min-height", newValue);
-  };
+  const applyChanges = () => {
+    for (let [key, value] of Object.entries(newChanges)) {
+      switch (key) {
+        case "rows":
+          const rowValue = newChanges[key];
+          setRowCount(rowValue);
+          const numNodes = newChanges["nodes"]
+            ? newChanges["nodes"]
+            : numStartNodes;
+          var newValue = `${rowValue * 32 + 91 + numNodes * 40 + 15}px`;
 
-  const setCols = (e) => {
-    setColCount(e);
-    if (e < 22) {
-      var newValue = "fit-content";
-    } else {
-      backdropDiv.style.removeProperty("fit-content");
-      var newValue = `${30 * e + 50 + Math.abs(24 - e) * 2}px`;
+          backdropDiv.style.setProperty("min-height", newValue);
+          break;
+        case "cols":
+          const colValue = newChanges[key];
+          setColCount(colValue);
+          if (colValue < 22) {
+            var newValue = "fit-content";
+          } else {
+            backdropDiv.style.removeProperty("fit-content");
+            var newValue = `${
+              30 * colValue + 50 + Math.abs(24 - colValue) * 2
+            }px`;
+          }
+          backdropDiv.style.setProperty("min-width", newValue);
+          break;
+        case "nodes":
+          const nodesValue = newChanges[key];
+          setNumStartNodes(nodesValue);
+          const rows = newChanges["rows"] ? newChanges["rows"] : rowCount;
+          var newValue = `${
+            rows * 32 + 95 + nodesValue * 40 + 15 - (nodesValue - 2) * 2
+          }px`;
+          backdropDiv.style.setProperty("min-height", newValue);
+          break;
+        default:
+          break;
+      }
     }
-    backdropDiv.style.setProperty("min-width", newValue);
-  };
-
-  const setNumNodes = (e) => {
-    setNumStartNodes(e);
-    var newValue = `${rowCount * 32 + 95 + e * 40 + 15 - (e - 2) * 2}px`;
-    console.log(newValue);
-    backdropDiv.style.setProperty("min-height", newValue);
+    setNewChanges({});
+    remakeGrid();
   };
 
   return (
@@ -79,7 +100,7 @@ export const GridCustomizer = () => {
         <div className="settingsInner">
           {/* <h1>SETTINGS</h1> */}
           <div className="settingsElement">
-            Number of Rows: {rowCount}
+            Number of Rows: {newChanges["rows"] ? newChanges["rows"] : rowCount}
             <br />
             <input
               type="range"
@@ -87,11 +108,14 @@ export const GridCustomizer = () => {
               max="26"
               name="row"
               defaultValue={defaultRowValue}
-              onChange={(e) => setRows(e.target.valueAsNumber)}
+              onChange={(e) =>
+                setNewChanges({ ...newChanges, rows: e.target.valueAsNumber })
+              }
             ></input>
           </div>
           <div className="settingsElement">
-            Number of Columns: {colCount}
+            Number of Columns:{" "}
+            {newChanges["cols"] ? newChanges["cols"] : colCount}
             <br />
             <input
               type="range"
@@ -99,11 +123,14 @@ export const GridCustomizer = () => {
               max="40"
               name="col"
               defaultValue={defaultColValue}
-              onChange={(e) => setCols(e.target.valueAsNumber)}
+              onChange={(e) =>
+                setNewChanges({ ...newChanges, cols: e.target.valueAsNumber })
+              }
             ></input>
           </div>
           <div className="settingsElement">
-            Number of Start Nodes: {numStartNodes}
+            Number of Start Nodes:{" "}
+            {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
             <br />
             <input
               type="range"
@@ -111,7 +138,9 @@ export const GridCustomizer = () => {
               max="4"
               name="numNodes"
               defaultValue={defaultNumNodes}
-              onChange={(e) => setNumNodes(e.target.valueAsNumber)}
+              onChange={(e) =>
+                setNewChanges({ ...newChanges, nodes: e.target.valueAsNumber })
+              }
             ></input>
           </div>
           <div className="settingsElement">
@@ -225,7 +254,7 @@ export const GridCustomizer = () => {
             </button>
           </div>
           <div className="settingsApplyButtonDiv">
-            <button className="settingsButton" onClick={() => remakeGrid()}>
+            <button className="settingsButton" onClick={() => applyChanges()}>
               Apply
             </button>
           </div>

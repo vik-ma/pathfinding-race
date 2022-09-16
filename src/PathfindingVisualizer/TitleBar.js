@@ -18,7 +18,7 @@ export const TitleBar = () => {
     userGuessScore,
     updateUserScore,
     visIsFinished,
-    visIsOngoing,
+    visIsOngoing
   } = useContext(GridContext);
 
   const generatorRef = useRef();
