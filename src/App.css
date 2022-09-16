@@ -177,6 +177,7 @@ body {
     cursor: pointer;
     font-weight:600;
     user-select: none;
+    transition-duration: 0.1s;
 }
 
 .algoPathMsg {
