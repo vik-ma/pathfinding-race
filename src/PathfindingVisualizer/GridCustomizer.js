@@ -52,6 +52,7 @@ export const GridCustomizer = () => {
   };
 
   const applyChanges = () => {
+    var minHeight = { rows: 0, nodes: 0 };
     for (let [key, value] of Object.entries(newChanges)) {
       switch (key) {
         case "rows":
@@ -60,9 +61,9 @@ export const GridCustomizer = () => {
           const numNodes = newChanges["nodes"]
             ? newChanges["nodes"]
             : numStartNodes;
-          var newValue = `${rowValue * 32 + 91 + numNodes * 40 + 15}px`;
-
-          backdropDiv.style.setProperty("min-height", newValue);
+          minHeight["rows"] = rowValue * 32 + 91 + numNodes * 40 + 15 + Math.abs(4-numNodes)*2;
+          var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
+          backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
         case "cols":
           const colValue = newChanges[key];
@@ -81,10 +82,11 @@ export const GridCustomizer = () => {
           const nodesValue = newChanges[key];
           setNumStartNodes(nodesValue);
           const rows = newChanges["rows"] ? newChanges["rows"] : rowCount;
-          var newValue = `${
+          minHeight["nodes"] = 
             rows * 32 + 95 + nodesValue * 40 + 15 - (nodesValue - 2) * 2
-          }px`;
-          backdropDiv.style.setProperty("min-height", newValue);
+          ;
+          var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
+          backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
         default:
           break;
