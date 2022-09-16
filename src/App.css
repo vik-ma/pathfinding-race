@@ -157,6 +157,7 @@ body {
     font-size: 24px;
     float:right;
     margin-right: 10px;
+    color:rgb(90, 61, 18);
 }
 
 .gridContainer {
@@ -165,6 +166,7 @@ body {
     inline-size: min-content;
     animation: fadeIn 0.3s;
 }
+
 
 .titleBarChoices {
     padding: 3px;
