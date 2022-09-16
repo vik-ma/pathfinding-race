@@ -247,17 +247,9 @@ export const GridCustomizer = () => {
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
           />{" "}
           <label htmlFor="greedy">Greedy Best-First Search</label>
-          <div className="settingsCancelButtonDiv">
-            <button
-              className="settingsButton"
-              onClick={() => setIsSettingsRendered(false)}
-            >
-              Cancel
-            </button>
-          </div>
-          <div className="settingsApplyButtonDiv">
+          <div className="settingsDoneButtonDiv">
             <button className="settingsButton" onClick={() => applyChanges()}>
-              Apply
+              Done
             </button>
           </div>
         </div>
