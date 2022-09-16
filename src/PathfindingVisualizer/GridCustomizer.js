@@ -51,7 +51,7 @@ export const GridCustomizer = () => {
 
   const setRows = (e) => {
     setRowCount(e);
-    var newValue = `${e * 32 + 92 + numStartNodes * 40 + 15}px`;
+    var newValue = `${e * 32 + 91 + numStartNodes * 40 + 15}px`;
     backdropDiv.style.setProperty("min-height", newValue);
   };
 
@@ -68,7 +68,8 @@ export const GridCustomizer = () => {
 
   const setNumNodes = (e) => {
     setNumStartNodes(e);
-    var newValue = `${rowCount * 32 + 101 + e * 40 + 15}px`;
+    var newValue = `${rowCount * 32 + 95 + e * 40 + 15 - (e - 2) * 2}px`;
+    console.log(newValue);
     backdropDiv.style.setProperty("min-height", newValue);
   };
 
@@ -215,7 +216,6 @@ export const GridCustomizer = () => {
             onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
           />{" "}
           <label htmlFor="greedy">Greedy Best-First Search</label>
-
           <div className="settingsCancelButtonDiv">
             <button
               className="settingsButton"
