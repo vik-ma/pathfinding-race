@@ -51,7 +51,7 @@ export const GridCustomizer = () => {
 
   const setRows = (e) => {
     setRowCount(e);
-    var newValue = `${e * 32 + 101 + numStartNodes * 40 + 15}px`;
+    var newValue = `${e * 32 + 92 + numStartNodes * 40 + 15}px`;
     backdropDiv.style.setProperty("min-height", newValue);
   };
 
