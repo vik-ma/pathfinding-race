@@ -108,7 +108,7 @@ export const GridCustomizer = () => {
   }, [isChangeMade]);
 
   return (
-    <div className="settingsPopupBackground">
+    <div className="popupBackground">
       <div className="settingsBackdrop">
         <div className="settingsInner">
           {/* <h1>SETTINGS</h1> */}

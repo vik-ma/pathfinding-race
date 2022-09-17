@@ -18,7 +18,9 @@ export const TitleBar = () => {
     userGuessScore,
     updateUserScore,
     visIsFinished,
-    visIsOngoing
+    visIsOngoing,
+    isInfoRendered,
+    setIsInfoRendered,
   } = useContext(GridContext);
 
   const generatorRef = useRef();
@@ -32,10 +34,9 @@ export const TitleBar = () => {
   return (
     <div>
       <div className="titleBarContainer">
-        <div className="title">
-          WHICH ALGORITHM WILL REACH THE GOAL NODE{" "}</div>{" "}
-          <div className={nodeDivMap["nodegoal"]}>G</div>{" "}<div className="title"> FIRST?
-        </div>
+        <div className="title">WHICH ALGORITHM WILL REACH THE GOAL NODE </div>{" "}
+        <div className={nodeDivMap["nodegoal"]}>G</div>{" "}
+        <div className="title"> FIRST?</div>
         <div>
           <div
             className={`titleBarChoices ${
@@ -171,12 +172,35 @@ export const TitleBar = () => {
           </div>
         </div>
       </div>
-      <button className="titleBarButton justVisualizeButton" onClick={() => !visIsOngoing && !visIsFinished && generatorRef.current.visualize()}>
+      <button
+        className="titleBarButton justVisualizeButton"
+        onClick={() =>
+          !visIsOngoing && !visIsFinished && generatorRef.current.visualize()
+        }
+      >
         Just Visualize
+      </button>
+      <button
+        className="titleBarButton newMapButton"
+        onClick={() => remakeGrid()}
+      >
+        New Map
       </button>{" "}
-      <button className="titleBarButton newMapButton" onClick={() => remakeGrid()}>New Map</button>{" "}
-      <button className="titleBarButton settingsMenuButton" onClick={() => switchToSettingsMenu()}>Settings</button>{" "}
-      <div className="scoreDiv">{timesGuessed > 0 ? `Score: ${userGuessScore} / ${timesGuessed}` : null}</div>
+      <button
+        className="titleBarButton settingsMenuButton"
+        onClick={() => switchToSettingsMenu()}
+      >
+        Settings
+      </button>{" "}
+      <button
+        className="titleBarButton infoButton"
+        onClick={() => setIsInfoRendered(true)}
+      >
+        Information
+      </button>
+      <div className="scoreDiv">
+        {timesGuessed > 0 ? `Score: ${userGuessScore} / ${timesGuessed}` : null}
+      </div>
       <GridGenerator ref={generatorRef} />
     </div>
   );

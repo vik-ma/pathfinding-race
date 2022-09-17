@@ -38,7 +38,7 @@ body {
     }
 }
 
-.settingsPopupBackground {
+.popupBackground {
     position: fixed;
     top: 0;
     left: 0;
@@ -150,11 +150,18 @@ body {
     color:#292929;
 }
 
+.infoButton {
+    background-color: cornsilk;
+    float:right;
+}
+
 .settingsMenuButton {
     background-color: rgb(0, 102, 218);
     color: aliceblue;
     float:right;
 }
+
+
 
 .scoreDiv {
     display: flex;
@@ -260,6 +267,7 @@ body {
     border: 1px solid white;  
     height: 30px;
     width: 30px;
+    min-width: 30px;
     margin: 0px;
     font-weight: bold;
     text-align: center;

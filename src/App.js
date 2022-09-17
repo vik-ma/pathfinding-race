@@ -4,12 +4,14 @@ import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
 import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 import { GridContext } from "./Helpers/GridContexts";
 import { TitleBar } from "./PathfindingVisualizer/TitleBar";
+import { SliderWindow } from "./InfoSliders/SliderWindow";
 import { TestComponent } from "./TestComponent";
 
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(true);
   const [renderTest, setRenderTest] = useState(false);
   const [isSettingsRendered, setIsSettingsRendered] = useState(false);
+  const [isInfoRendered, setIsInfoRendered] = useState(false);
 
   const SLIDER_ROW_DEFAULT_VALUE = 18;
   const SLIDER_COL_DEFAULT_VALUE = 25;
@@ -254,7 +256,9 @@ function App() {
             setVisIsFinished,
             visIsOngoing,
             setVisIsOngoing,
-            setIsSettingsRendered
+            setIsSettingsRendered,
+            isInfoRendered,
+            setIsInfoRendered
           }}
         >
           <div className="appContainer">
@@ -273,6 +277,7 @@ function App() {
             </button> */}
               {/* </div> */}
               {renderTest ? <TestComponent /> : null}
+              {isInfoRendered ? <SliderWindow /> : null}
             </div>
 
           </div>
