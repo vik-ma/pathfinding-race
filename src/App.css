@@ -213,16 +213,31 @@ body {
 .noPathFoundMsg {
     padding: 8px;
     position: absolute;
-    left:50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: max-content;
     border-radius: 8px;
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: rgb(250, 250, 250);
-    animation: fadeIn 0.8s;
+    background-color: rgb(245, 217, 91);
+    animation: fadeIn 0.5s;
     border:2px solid #292929;
+}
+
+.noPathFoundContainer {
+    position: relative;
+    animation: floatUp 0.5s;
+    bottom: 5px;
+}
+
+@keyframes floatUp {
+    from {
+        bottom: 0px;
+    }
+    to {
+        bottom: 5px;
+    }
 }
 
 .rowWrapper {
