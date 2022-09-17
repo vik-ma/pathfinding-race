@@ -590,12 +590,14 @@ export const GridGenerator = forwardRef((props, ref) => {
       {/* <button className="buttonContainer" onClick={calculatePaths}>
         VISUALIZE
       </button> */}
-      <div className="gridContainer">{drawGrid}</div>
-      {showNoPathFoundMsg ? (<div className="noPathFoundContainer">
-        <div className="noPathFoundMsg">
-          No paths found, rest of visualization skipped.
-        </div></div>
+      {showNoPathFoundMsg ? (
+        <div className="noPathFoundContainer">
+          <div className="noPathFoundMsg">
+            No paths found, rest of visualization skipped.
+          </div>
+        </div>
       ) : null}
+      <div className="gridContainer">{drawGrid}</div>
     </div>
   );
 });

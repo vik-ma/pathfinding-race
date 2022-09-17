@@ -228,15 +228,15 @@ body {
 .noPathFoundContainer {
     position: relative;
     animation: floatUp 0.5s;
-    bottom: 5px;
+    top: 30px;
 }
 
 @keyframes floatUp {
     from {
-        bottom: 0px;
+        top: 0px;
     }
     to {
-        bottom: 5px;
+        top: 30px;
     }
 }
 
