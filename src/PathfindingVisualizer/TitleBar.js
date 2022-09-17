@@ -109,7 +109,7 @@ export const TitleBar = () => {
               {algorithmMap[algoList[2]]}
             </div>
             <div className="algoPathMsg">
-              {renderWinnerMsg
+              {renderWinnerMsg && calculatedAlgoMap[3]
                 ? calculatedAlgoMap[3].pathIsFound
                   ? `Found the goal node after visiting ${
                       calculatedAlgoMap[3].path.length - 1
@@ -138,7 +138,7 @@ export const TitleBar = () => {
               {algorithmMap[algoList[3]]}
             </div>
             <div className="algoPathMsg">
-              {renderWinnerMsg
+              {renderWinnerMsg && calculatedAlgoMap[4]
                 ? calculatedAlgoMap[4].pathIsFound
                   ? `Found the goal node after visiting ${
                       calculatedAlgoMap[4].path.length - 1

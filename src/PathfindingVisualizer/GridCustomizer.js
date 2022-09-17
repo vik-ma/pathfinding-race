@@ -18,7 +18,6 @@ export const GridCustomizer = () => {
     setDisabledAlgos,
     visualizerSpeed,
     setVisualizerSpeed,
-    setIsSettingsRendered,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -39,7 +38,6 @@ export const GridCustomizer = () => {
   const [newChanges, setNewChanges] = useState({});
 
   const [isChangeMade, setIsChangeMade] = useState(false);
-
 
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
