@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 
 export const GridCustomizer = () => {
@@ -38,6 +38,9 @@ export const GridCustomizer = () => {
 
   const [newChanges, setNewChanges] = useState({});
 
+  const [isChangeMade, setIsChangeMade] = useState(false);
+
+
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
       //If checkbox gets unchecked
@@ -61,7 +64,12 @@ export const GridCustomizer = () => {
           const numNodes = newChanges["nodes"]
             ? newChanges["nodes"]
             : numStartNodes;
-          minHeight["rows"] = rowValue * 32 + 91 + numNodes * 40 + 15 + Math.abs(4-numNodes)*2;
+          minHeight["rows"] =
+            rowValue * 32 +
+            91 +
+            numNodes * 40 +
+            15 +
+            Math.abs(4 - numNodes) * 2;
           var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
           backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
@@ -82,9 +90,8 @@ export const GridCustomizer = () => {
           const nodesValue = newChanges[key];
           setNumStartNodes(nodesValue);
           const rows = newChanges["rows"] ? newChanges["rows"] : rowCount;
-          minHeight["nodes"] = 
-            rows * 32 + 95 + nodesValue * 40 + 15 - (nodesValue - 2) * 2
-          ;
+          minHeight["nodes"] =
+            rows * 32 + 95 + nodesValue * 40 + 15 - (nodesValue - 2) * 2;
           var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
           backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
@@ -93,8 +100,14 @@ export const GridCustomizer = () => {
       }
     }
     setNewChanges({});
-    remakeGrid();
+    setIsChangeMade(true);
   };
+
+  useEffect(() => {
+    if (isChangeMade === true) {
+      remakeGrid();
+    }
+  }, [isChangeMade]);
 
   return (
     <div className="settingsPopupBackground">
@@ -140,9 +153,9 @@ export const GridCustomizer = () => {
               max="4"
               name="numNodes"
               defaultValue={defaultNumNodes}
-              onChange={(e) =>
-                setNewChanges({ ...newChanges, nodes: e.target.valueAsNumber })
-              }
+              onChange={(e) => {
+                setNewChanges({ ...newChanges, nodes: e.target.valueAsNumber });
+              }}
             ></input>
           </div>
           <div className="settingsElement">
@@ -248,7 +261,12 @@ export const GridCustomizer = () => {
           />{" "}
           <label htmlFor="greedy">Greedy Best-First Search</label>
           <div className="settingsDoneButtonDiv">
-            <button className="settingsButton" onClick={() => applyChanges()}>
+            <button
+              className="settingsButton"
+              onClick={() => {
+                applyChanges();
+              }}
+            >
               Done
             </button>
           </div>
