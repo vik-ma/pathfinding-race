@@ -50,7 +50,7 @@ body {
     align-items: center;
 }
 
-.settingsBackdrop {
+.popupBackdrop {
     position: relative;
     display: flex;
     align-items: stretch;
