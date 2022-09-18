@@ -19,7 +19,6 @@ export const TitleBar = () => {
     updateUserScore,
     visIsFinished,
     visIsOngoing,
-    isInfoRendered,
     setIsInfoRendered,
   } = useContext(GridContext);
 
@@ -172,46 +171,44 @@ export const TitleBar = () => {
           </div>
         </div>
       </div>
-      
-        <div className="titleBarButtonsDiv">
-          <div className="leftSideTitleBarItems">
-            <button
-              className="titleBarButton justVisualizeButton"
-              onClick={() =>
-                !visIsOngoing &&
-                !visIsFinished &&
-                generatorRef.current.visualize()
-              }
-            >
-              Just Visualize
-            </button>
-            <button
-              className="titleBarButton newMapButton"
-              onClick={() => remakeGrid()}
-            >
-              New Map
-            </button>{" "}
-          </div>
-          <div className="rightSideTitleBarItems">
-            <div className="scoreDiv">
-              {timesGuessed > 0
-                ? `Score: ${userGuessScore} / ${timesGuessed}`
-                : null}
-            </div>
-            <button
-              className="titleBarButton infoButton"
-              onClick={() => setIsInfoRendered(true)}
-            >
-              Information
-            </button>
-            <button
-              className="titleBarButton settingsMenuButton"
-              onClick={() => switchToSettingsMenu()}
-            >
-              Settings
-            </button>
 
-          
+      <div className="titleBarButtonsDiv">
+        <div className="leftSideTitleBarItems">
+          <button
+            className="titleBarButton justVisualizeButton"
+            onClick={() =>
+              !visIsOngoing &&
+              !visIsFinished &&
+              generatorRef.current.visualize()
+            }
+          >
+            Just Visualize
+          </button>
+          <button
+            className="titleBarButton newMapButton"
+            onClick={() => remakeGrid()}
+          >
+            New Map
+          </button>{" "}
+        </div>
+        <div className="rightSideTitleBarItems">
+          <div className="scoreDiv">
+            {timesGuessed > 0
+              ? `Score: ${userGuessScore} / ${timesGuessed}`
+              : null}
+          </div>
+          <button
+            className="titleBarButton infoButton"
+            onClick={() => setIsInfoRendered(true)}
+          >
+            Information
+          </button>
+          <button
+            className="titleBarButton settingsMenuButton"
+            onClick={() => switchToSettingsMenu()}
+          >
+            Settings
+          </button>
         </div>
       </div>
       <GridGenerator ref={generatorRef} />

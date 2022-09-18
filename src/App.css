@@ -6,7 +6,10 @@ body {
 }
 
 .title {
-    color:rgb(90, 61, 18);
+    /* color:rgb(90, 61, 18); */
+    background: -webkit-linear-gradient(rgb(90, 61, 18), #333);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: inline-block;
     margin-left: 2px;
     margin-right: 3px;

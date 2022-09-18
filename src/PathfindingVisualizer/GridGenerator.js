@@ -49,12 +49,6 @@ export const GridGenerator = forwardRef((props, ref) => {
   const visualizerSkipTime = 100;
 
   const createNodeRows = () => {
-    // const nodeRows = Array(rowCount)
-    //   .fill()
-    //   .map((_, index) => index);
-    // nodeRows.sort(() => 0.5 - Math.random());
-    // console.log(nodeRows)
-    // return nodeRows.slice(0, numStartNodes + 1);
     const randomNodeRow = new Set();
 
     while (randomNodeRow.size < numStartNodes + 1) {
@@ -65,11 +59,6 @@ export const GridGenerator = forwardRef((props, ref) => {
   };
 
   const createNodeCols = () => {
-    // const nodeCols = Array(colCount)
-    //   .fill()
-    //   .map((_, index) => index);
-    // nodeCols.sort(() => 0.5 -Math.random());
-    // return nodeCols.slice(0, numStartNodes + 1);
     const randomNodeCol = new Set();
 
     while (randomNodeCol.size < numStartNodes + 1) {
@@ -587,9 +576,6 @@ export const GridGenerator = forwardRef((props, ref) => {
 
   return (
     <div>
-      {/* <button className="buttonContainer" onClick={calculatePaths}>
-        VISUALIZE
-      </button> */}
       {showNoPathFoundMsg ? (
         <div className="noPathFoundContainer">
           <div className="noPathFoundMsg">
