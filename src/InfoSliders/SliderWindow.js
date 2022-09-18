@@ -6,7 +6,10 @@ export const SliderWindow = () => {
   return (
     <div className="popupBackground">
       <div className="popupBackdrop infoBackdrop">
-        TEST<button onClick={() => setIsInfoRendered(false)}>BACK</button>
+        <div className="infoInner">
+          <h1>Information</h1>
+          <button className="settingsButton infoButtonBack" onClick={() => setIsInfoRendered(false)}>BACK</button>
+        </div>
       </div>
     </div>
   );

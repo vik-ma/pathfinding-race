@@ -73,6 +73,7 @@ body {
 .infoBackdrop {
     min-width: 500px;
     min-height: 600px;
+    position: relative;
 }
 
 .enableAlgoList {
@@ -103,6 +104,12 @@ body {
 .settingsButton:hover {
     background-color: #292929;
     color:white;
+}
+
+.infoButtonBack {
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 .settingsDoneButtonDiv {
