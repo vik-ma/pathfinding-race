@@ -5,7 +5,7 @@ export const SliderWindow = () => {
   const { setIsInfoRendered } = useContext(GridContext);
   return (
     <div className="popupBackground">
-      <div className="settingsBackdrop">
+      <div className="settingsBackdrop infoBackdrop">
         TEST<button onClick={() => setIsInfoRendered(false)}>BACK</button>
       </div>
     </div>

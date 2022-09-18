@@ -70,6 +70,11 @@ body {
     inline-size: min-content;
 }
 
+.infoBackdrop {
+    min-width: 500px;
+    min-height: 600px;
+}
+
 .enableAlgoList {
     margin-left: 10px;
     float:left;
