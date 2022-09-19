@@ -194,6 +194,8 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    opacity: 0.7;
+    transition: ease-in-out 0.2s;
   }
   
 .sliderButton img {
@@ -201,6 +203,11 @@ body {
     height: 25px;
     pointer-events: none;
   }
+
+.sliderButton:hover {
+    opacity: 1;
+    transform: translateY(-60%) scale(1.15);
+}
 
 .prevSlide {
     top: 50%;
