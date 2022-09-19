@@ -73,12 +73,6 @@ body {
     inline-size: min-content;
 }
 
-.infoBackdrop {
-    min-width: 500px;
-    min-height: 600px;
-    position: relative;
-}
-
 .enableAlgoList {
     margin-left: 10px;
     float:left;
@@ -107,12 +101,6 @@ body {
 .settingsButton:hover {
     background-color: #292929;
     color:white;
-}
-
-.infoButtonBack {
-    position: absolute;
-    right: 10px;
-    top: 10px;
 }
 
 .settingsDoneButtonDiv {
@@ -168,9 +156,32 @@ body {
     background-color: cornsilk;
 }
 
+.infoButtonBack {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.infoBackdrop {
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+
 .slide {
-    animation: fadeIn 1s;
-  }
+    left:0;
+    position: absolute;
+    margin-left: 75px;
+    margin-right: 75px;
+    word-wrap: break-word;
+    opacity: 0;
+    transition-duration: 0.4s;
+}
+
+.slideAnim {
+    opacity: 1;
+    /* animation: fadeIn 0.5s; */
+}
 
 .sliderButton {
     width: 50px;
@@ -185,19 +196,19 @@ body {
     cursor: pointer;
   }
   
-  .sliderButton img {
+.sliderButton img {
     width: 25px;
     height: 25px;
     pointer-events: none;
   }
-  .prevSlide {
+.prevSlide {
     top: 50%;
-    left: 20px;
+    left: 10px;
     transform: translateY(-60%);
   }
-  .nextSlide {
+.nextSlide {
     top: 50%;
-    right: 20px;
+    right: 10px;
     transform: translateY(-60%);
   }
 

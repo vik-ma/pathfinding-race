@@ -33,8 +33,20 @@ export const SliderWindow = () => {
             BACK
           </button>
 
-          {AlgoInfo[slideIndex].title}
-          {AlgoInfo[slideIndex].text}
+          {AlgoInfo.map((obj, index) => {
+                return (
+                    <div
+                    key={obj.id}
+                    className={slideIndex === index ? "slide slideAnim" : "slide"}
+                    >
+                        {AlgoInfo[index].title}
+                        {AlgoInfo[index].text}
+                    </div>
+                )
+            })}
+
+          {/* {AlgoInfo[slideIndex].title}
+          {AlgoInfo[slideIndex].text} */}
         </div>
       </div>
     </div>
