@@ -394,6 +394,13 @@ export const GridGenerator = forwardRef((props, ref) => {
 
             document
               .getElementById(`node-${node.row}-${node.col}`)
+              .classList.remove(newClass, "node-current");
+
+            void document.getElementById(`node-${node.row}-${node.col}`)
+              .offsetWidth;
+
+            document
+              .getElementById(`node-${node.row}-${node.col}`)
               .classList.add(newClass, "node-current");
           }
           if (algoMap[2].path.length > i) {
@@ -402,6 +409,13 @@ export const GridGenerator = forwardRef((props, ref) => {
               `node-${node2.row}-${node2.col}`
             ).className;
             const newClass = getNewNodeClass(2, classNames);
+
+            document
+            .getElementById(`node-${node2.row}-${node2.col}`)
+            .classList.remove(newClass, "node-current");
+
+          void document.getElementById(`node-${node2.row}-${node2.col}`)
+            .offsetWidth;
 
             document
               .getElementById(`node-${node2.row}-${node2.col}`)
@@ -416,6 +430,13 @@ export const GridGenerator = forwardRef((props, ref) => {
               const newClass = getNewNodeClass(3, classNames);
 
               document
+              .getElementById(`node-${node3.row}-${node3.col}`)
+              .classList.remove(newClass, "node-current");
+
+            void document.getElementById(`node-${node3.row}-${node3.col}`)
+              .offsetWidth;
+
+              document
                 .getElementById(`node-${node3.row}-${node3.col}`)
                 .classList.add(newClass, "node-current");
             }
@@ -427,6 +448,13 @@ export const GridGenerator = forwardRef((props, ref) => {
                 `node-${node4.row}-${node4.col}`
               ).className;
               const newClass = getNewNodeClass(4, classNames);
+
+              document
+              .getElementById(`node-${node4.row}-${node4.col}`)
+              .classList.remove(newClass, "node-current");
+
+            void document.getElementById(`node-${node4.row}-${node4.col}`)
+              .offsetWidth;
 
               document
                 .getElementById(`node-${node4.row}-${node4.col}`)
