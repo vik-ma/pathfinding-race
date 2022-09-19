@@ -175,7 +175,7 @@ body {
     margin-right: 75px;
     overflow-wrap: break-word;
     opacity: 0;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
 }
 
 .slideAnim {
