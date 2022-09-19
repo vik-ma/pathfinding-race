@@ -64,10 +64,11 @@ export const GridCustomizer = () => {
             : numStartNodes;
           minHeight["rows"] =
             rowValue * 32 +
-            91 +
+            93 +
             numNodes * 40 +
             15 +
             Math.abs(4 - numNodes) * 2;
+
           var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
           backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
@@ -89,7 +90,7 @@ export const GridCustomizer = () => {
           setNumStartNodes(nodesValue);
           const rows = newChanges["rows"] ? newChanges["rows"] : rowCount;
           minHeight["nodes"] =
-            rows * 32 + 95 + nodesValue * 40 + 15 - (nodesValue - 2) * 2;
+            rows * 32 + 97 + nodesValue * 40 + 15 - (nodesValue - 2) * 2;
           var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
           backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
