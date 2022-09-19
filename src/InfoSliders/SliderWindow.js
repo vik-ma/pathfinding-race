@@ -16,6 +16,10 @@ export const SliderWindow = () => {
     setSlideIndex(slideIndex - 1);
   };
 
+  const moveDot = (index) => {
+    setSlideIndex(index);
+  };
+
   return (
     <div className="popupBackground">
       <div className="popupBackdrop infoBackdrop">
@@ -34,16 +38,25 @@ export const SliderWindow = () => {
           </button>
 
           {AlgoInfo.map((obj, index) => {
-                return (
-                    <div
-                    key={obj.id}
-                    className={slideIndex === index ? "slide slideAnim" : "slide"}
-                    >
-                        {AlgoInfo[index].title}
-                        {AlgoInfo[index].text}
-                    </div>
-                )
-            })}
+            return (
+              <div
+                key={obj.id}
+                className={slideIndex === index ? "slide slideAnim" : "slide"}
+              >
+                {AlgoInfo[index].title}
+                {AlgoInfo[index].text}
+              </div>
+            );
+          })}
+
+          <div className="slider-dots">
+            {Array.from({ length: AlgoInfo.length }).map((item, index) => (
+              <div
+                onClick={() => moveDot(index)}
+                className={slideIndex === index ? "dot active" : "dot"}
+              ></div>
+            ))}
+          </div>
 
           {/* {AlgoInfo[slideIndex].title}
           {AlgoInfo[slideIndex].text} */}

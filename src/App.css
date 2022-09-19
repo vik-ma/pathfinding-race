@@ -173,7 +173,7 @@ body {
     position: absolute;
     margin-left: 75px;
     margin-right: 75px;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     opacity: 0;
     transition-duration: 0.4s;
 }
@@ -201,15 +201,38 @@ body {
     height: 25px;
     pointer-events: none;
   }
+
 .prevSlide {
     top: 50%;
     left: 10px;
     transform: translateY(-60%);
   }
+
 .nextSlide {
     top: 50%;
     right: 10px;
     transform: translateY(-60%);
+  }
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+.dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 4px solid #f1f1f1;
+    margin: 0 5px;
+    background: #f1f1f1;
+  }
+
+.dot.active {
+    background: #494949;
   }
 
 .settingsMenuButton {
