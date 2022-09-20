@@ -5,9 +5,29 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
-        <p>aaa</p>
+        <p>asd</p>
         <h2 className="infoSubTitle">Start Nodes</h2>
-        <p>asdasd</p>
+        <p>
+          These nodes are the start nodes:{" "}
+          <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
+            1
+          </div>{" "}
+          <div className="node node-visited-2 node-start-2 titleBarNode infoNode">
+            2
+          </div>{" "}
+          <div className="node node-visited-3 node-start-3 titleBarNode infoNode">
+            3
+          </div>{" "}
+          <div className="node node-visited-4 node-start-4 titleBarNode infoNode">
+            4
+          </div>
+          <br />
+          Each start node will get assigned a random pathfinding algorithm. The
+          start nodes are not considered impassable by other algorithms and the
+          different algorithms will not affect each other in any way.
+        </p>
+        <h2 className="infoSubTitle">Goal Node</h2>
+        <p>asd</p>
         <h2 className="infoSubTitle">Walls</h2>
         <p>
           These darker nodes are wall nodes:{" "}
@@ -19,15 +39,8 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Settings</h2>
         <p>
-          TE STTE STTE STTE STE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE
-          STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE
-          STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE
-          STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE
-          STTE STTE STTTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
-          STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
-          STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
-          STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
-          STTE ST
+          TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+          TEST TEST TEST TEST
         </p>
       </>
     ),
