@@ -1,6 +1,6 @@
 export const AlgoInfo = [
   {
-    id: "SLIDER-DEFAULT",
+    id: "SLIDER-INFO-1",
     title: <h1 className="infoTitle">Information</h1>,
     text: (
       <>
@@ -23,11 +23,19 @@ export const AlgoInfo = [
           </div>
           <br />
           Each start node will get assigned a random pathfinding algorithm. The
-          start nodes are not considered impassable by other algorithms and the
-          different algorithms will not affect each other in any way.
+          visualizer will draw out the path The start nodes are not considered
+          impassable by other algorithms and the algorithms do not affect each
+          other in any way.
         </p>
         <h2 className="infoSubTitle">Goal Node</h2>
-        <p>asd</p>
+        <p>
+          This node is the goal node:{" "}
+          <div className="node node-goal titleBarNode infoNode">G</div>
+          <br />
+          The visualizer will stop when the first algorithm reaches the goal
+          node. If no algorithms can find the goal node, the visualizer will
+          stop after five seconds has passed, in order to not waste time.
+        </p>
         <h2 className="infoSubTitle">Walls</h2>
         <p>
           These darker nodes are wall nodes:{" "}
@@ -37,6 +45,14 @@ export const AlgoInfo = [
           They also can not skip through two wall nodes placed diagonally next
           to each other if 'Allow Diagonal Movement' setting is turned on.
         </p>
+      </>
+    ),
+  },
+  {
+    id: "SLIDER-INFO-2",
+    title: <h1 className="infoTitle">Additional Information</h1>,
+    text: (
+      <>
         <h2 className="infoSubTitle">Settings</h2>
         <p>
           TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
