@@ -4,9 +4,21 @@ export const AlgoInfo = [
     title: <h1>Information</h1>,
     text: (
       <>
-        DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT
-        DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT
-        DEFAULT DEFAULT DEFAULT DEFAULT DEFAULT
+        <h2>Pathfinding Algorithms</h2>
+        <p>aaa</p>
+        <h2>Start Nodes</h2>
+        <p>asdasd</p>
+        <h2>Walls</h2>
+        <p>
+          These darker nodes are wall nodes:{" "}
+          <div className="node node-wall infoNode"></div>
+          <br />
+          Pathfinding algorithms can not pass through these nodes. <br />
+          They also can not skip through two wall nodes placed diagonally next
+          to each other if 'Allow Diagonal Movement' setting is turned on.
+        </p>
+        <h2>Settings</h2>
+        <p>yee</p>
       </>
     ),
   },

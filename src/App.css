@@ -16,6 +16,18 @@ body {
     font-size:x-large;
 }
 
+h2 {
+    margin:0;
+    margin-top: 5px;
+}
+
+p {
+    margin:0;
+    margin-bottom: 1px;
+}
+
+
+
 .appContainer {
     display: flex;
     justify-content: center;
@@ -322,6 +334,11 @@ body {
 .titleBarNode {
     display: inline-block;
     border-radius: 3px;
+}
+
+.infoNode {
+    display: inline-block;
+    vertical-align: text-bottom;
 }
 
 .noPathFoundMsg {
