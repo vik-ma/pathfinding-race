@@ -281,10 +281,10 @@ p {
 .scoreDiv {
     display: inline-block;
     margin-right: 10px;
-    font-size: 26px;
+    font-size: 27px;
     color:rgb(90, 61, 18);
     vertical-align: top;
-    line-height: 115%;
+    line-height: 112%;
 }
 
 .titleBarButtonsDiv {

@@ -131,6 +131,7 @@ function App() {
   };
 
   const updateUserScore = () => {
+    console.log(userChoice)
     if (userChoice !== 0) {
       setTimesGuessed(timesGuessed + 1);
       if (userChoice in winnerAlgo) {
