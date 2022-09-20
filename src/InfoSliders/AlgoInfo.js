@@ -6,6 +6,22 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
+        <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
+        <p>asd</p>
+        <h2 className="infoSubTitle">Settings Menu</h2>
+        <p>
+          TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+          TEST TEST TEST TEST
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "SLIDER-INFO-2",
+    title: <h1 className="infoTitle">Additional Information</h1>,
+    text: (
+      <>
+        {" "}
         <h2 className="infoSubTitle">Start Nodes</h2>
         <p>
           These nodes are the start nodes:{" "}
@@ -44,21 +60,6 @@ export const AlgoInfo = [
           Pathfinding algorithms can not pass through these nodes. <br />
           They also can not skip through two wall nodes placed diagonally next
           to each other if 'Allow Diagonal Movement' setting is turned on.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "SLIDER-INFO-2",
-    title: <h1 className="infoTitle">Additional Information</h1>,
-    text: (
-      <>
-        <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
-        <p>asd</p>
-        <h2 className="infoSubTitle">Settings</h2>
-        <p>
-          TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-          TEST TEST TEST TEST
         </p>
       </>
     ),

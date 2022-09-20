@@ -35,7 +35,7 @@ p {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin:0;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .appContainer {
