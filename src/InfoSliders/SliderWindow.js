@@ -48,7 +48,7 @@ export const SliderWindow = () => {
               </div>
             );
           })}
-          <div className="slider-dots">
+          <div className="sliderDots">
             {Array.from({ length: AlgoInfo.length }).map((item, index) => (
               <div
                 key={`slider-dot-${index}`}
