@@ -18,6 +18,7 @@ export const GridCustomizer = () => {
     setDisabledAlgos,
     visualizerSpeed,
     setVisualizerSpeed,
+    setIsSettingsRendered,
   } = useContext(GridContext);
 
   const defaultRowValue = rowCount;
@@ -39,6 +40,8 @@ export const GridCustomizer = () => {
 
   const [isChangeMade, setIsChangeMade] = useState(false);
 
+  const [noChangeMade, setNoChangeMade] = useState(true);
+
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
       //If checkbox gets unchecked
@@ -50,6 +53,7 @@ export const GridCustomizer = () => {
       const newArray = disabledAlgos.filter((x) => x !== num);
       setDisabledAlgos(newArray);
     }
+    setNoChangeMade(false);
   };
 
   const applyChanges = () => {
@@ -122,9 +126,10 @@ export const GridCustomizer = () => {
               max="26"
               name="row"
               defaultValue={defaultRowValue}
-              onChange={(e) =>
-                setNewChanges({ ...newChanges, rows: e.target.valueAsNumber })
-              }
+              onChange={(e) => {
+                setNoChangeMade(false);
+                setNewChanges({ ...newChanges, rows: e.target.valueAsNumber });
+              }}
             ></input>
           </div>
           <div className="settingsElement">
@@ -137,9 +142,10 @@ export const GridCustomizer = () => {
               max="40"
               name="col"
               defaultValue={defaultColValue}
-              onChange={(e) =>
-                setNewChanges({ ...newChanges, cols: e.target.valueAsNumber })
-              }
+              onChange={(e) => {
+                setNoChangeMade(false);
+                setNewChanges({ ...newChanges, cols: e.target.valueAsNumber });
+              }}
             ></input>
           </div>
           <div className="settingsElement">
@@ -153,6 +159,7 @@ export const GridCustomizer = () => {
               name="numNodes"
               defaultValue={defaultNumNodes}
               onChange={(e) => {
+                setNoChangeMade(false);
                 setNewChanges({ ...newChanges, nodes: e.target.valueAsNumber });
               }}
             ></input>
@@ -166,9 +173,10 @@ export const GridCustomizer = () => {
               max="3"
               name="wallDensity"
               defaultValue={inverseWallDensityMap[defaultWallDensity]}
-              onChange={(e) =>
-                setWallDensityValue(wallDensityMap[e.target.value])
-              }
+              onChange={(e) => {
+                setNoChangeMade(false);
+                setWallDensityValue(wallDensityMap[e.target.value]);
+              }}
             ></input>
           </div>
           <div className="settingsElement">
@@ -180,9 +188,10 @@ export const GridCustomizer = () => {
               max="3"
               name="visSpeed"
               defaultValue={inverseVisualizerSpeedMap[defaultVisualizerSpeed]}
-              onChange={(e) =>
-                setVisualizerSpeed(visualizerSpeedMap[e.target.value])
-              }
+              onChange={(e) => {
+                setNoChangeMade(false);
+                setVisualizerSpeed(visualizerSpeedMap[e.target.value]);
+              }}
             ></input>
           </div>
           <div className="settingsElement">
@@ -192,7 +201,10 @@ export const GridCustomizer = () => {
               name="allowDiagonals"
               checked={allowDiagonal}
               value="allowDiagonal"
-              onChange={() => setAllowDiagonal(!allowDiagonal)}
+              onChange={() => {
+                setNoChangeMade(false);
+                setAllowDiagonal(!allowDiagonal);
+              }}
             />{" "}
             <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
           </div>
@@ -263,7 +275,7 @@ export const GridCustomizer = () => {
             <button
               className="settingsButton"
               onClick={() => {
-                applyChanges();
+                noChangeMade ? setIsSettingsRendered(false) : applyChanges();
               }}
             >
               Done
