@@ -1,6 +1,5 @@
 import "./App.css";
 import React, { useState } from "react";
-import { GridGenerator } from "./PathfindingVisualizer/GridGenerator";
 import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 import { GridContext } from "./Helpers/GridContexts";
 import { TitleBar } from "./PathfindingVisualizer/TitleBar";
@@ -86,8 +85,7 @@ function App() {
 
   const [disabledAlgos, setDisabledAlgos] = useState([]);
 
-  const [gridKey, setGridKey] = useState(0);
-  const [titleKey, setTitleKey] = useState(1000);
+  const [titleKey, setTitleKey] = useState(0);
 
   const [userChoice, setUserChoice] = useState(0);
   const [userGuessScore, setUserGuessScore] = useState(0);
@@ -120,18 +118,11 @@ function App() {
     setVisIsFinished(false);
     setUserChoice(0);
     generateNewAlgoList();
-    setGridKey(gridKey + 1);
     setTitleKey(titleKey + 1);
     setIsGridRendered(true);
   };
 
-  const switchToSettingsMenu = () => {
-    // setIsGridRendered(false);
-    setIsSettingsRendered(true);
-  };
-
   const updateUserScore = () => {
-    console.log(userChoice)
     if (userChoice !== 0) {
       setTimesGuessed(timesGuessed + 1);
       if (userChoice in winnerAlgo) {
@@ -241,7 +232,6 @@ function App() {
             calculatedAlgoMap,
             setCalculatedAlgoMap,
             remakeGrid,
-            switchToSettingsMenu,
             allowDiagonal,
             setAllowDiagonal,
             disabledAlgos,
@@ -266,8 +256,6 @@ function App() {
             <div className="appBackdrop">
               {isGridRendered ? <TitleBar key={titleKey} /> : null}
               {isSettingsRendered ? <GridCustomizer /> : null}
-              {/* {renderWinnerMsg ? printWinnerAlgos(winnerAlgo) : null} */}
-              {/* {isGridRendered ? <GridGenerator key={gridKey} /> : null} */}
               {/* <div className="buttonContainer"> */}
               {/* <button
               onClick={() => {

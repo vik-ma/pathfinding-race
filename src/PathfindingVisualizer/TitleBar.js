@@ -13,7 +13,7 @@ export const TitleBar = () => {
     calculatedAlgoMap,
     winnerAlgo,
     remakeGrid,
-    switchToSettingsMenu,
+    setIsSettingsRendered,
     timesGuessed,
     userGuessScore,
     updateUserScore,
@@ -205,7 +205,7 @@ export const TitleBar = () => {
           </button>
           <button
             className="titleBarButton settingsMenuButton"
-            onClick={() => switchToSettingsMenu()}
+            onClick={() => setIsSettingsRendered(true)}
           >
             Settings
           </button>
