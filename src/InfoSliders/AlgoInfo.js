@@ -1,14 +1,14 @@
 export const AlgoInfo = [
   {
     id: "SLIDER-DEFAULT",
-    title: <h1>Information</h1>,
+    title: <h1 className="infoTitle">Information</h1>,
     text: (
       <>
-        <h2>Pathfinding Algorithms</h2>
+        <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
         <p>aaa</p>
-        <h2>Start Nodes</h2>
+        <h2 className="infoSubTitle">Start Nodes</h2>
         <p>asdasd</p>
-        <h2>Walls</h2>
+        <h2 className="infoSubTitle">Walls</h2>
         <p>
           These darker nodes are wall nodes:{" "}
           <div className="node node-wall infoNode"></div>
@@ -17,7 +17,7 @@ export const AlgoInfo = [
           They also can not skip through two wall nodes placed diagonally next
           to each other if 'Allow Diagonal Movement' setting is turned on.
         </p>
-        <h2>Settings</h2>
+        <h2 className="infoSubTitle">Settings</h2>
         <p>yee</p>
       </>
     ),

@@ -26,7 +26,19 @@ p {
     margin-bottom: 1px;
 }
 
+.infoTitle {
+    background: -webkit-linear-gradient(rgb(48, 143, 35), #333);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom:0px;
+    margin-top: 10px;
+}
 
+.infoSubTitle {
+    background: -webkit-linear-gradient(rgb(129, 35, 12), #333);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .appContainer {
     display: flex;
