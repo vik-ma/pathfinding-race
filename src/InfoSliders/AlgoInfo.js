@@ -18,13 +18,23 @@ export const AlgoInfo = [
           to each other if 'Allow Diagonal Movement' setting is turned on.
         </p>
         <h2 className="infoSubTitle">Settings</h2>
-        <p>yee</p>
+        <p>
+          TE STTE STTE STTE STE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE
+          STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE
+          STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE
+          STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE STTE STTE STTTE
+          STTE STTE STTTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
+          STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
+          STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
+          STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE STTE
+          STTE ST
+        </p>
       </>
     ),
   },
   {
     id: "SLIDER-BFS",
-    title: <h1>Breadth First Search</h1>,
+    title: <h1 className="infoTitle">Breadth First Search</h1>,
     text: (
       <>
         Breadth First SearchBreadth First SearchBreadth First Search Breadth
@@ -37,7 +47,7 @@ export const AlgoInfo = [
   },
   {
     id: "SLIDER-DFS",
-    title: <h1>Depth First Search</h1>,
+    title: <h1 className="infoTitle">Depth First Search</h1>,
     text: (
       <>
         Depth First Search Depth First Search Depth First Search Depth First
@@ -49,7 +59,7 @@ export const AlgoInfo = [
   },
   {
     id: "SLIDER-DIJKSTRA",
-    title: <h1>Dijkstra's Algorithm</h1>,
+    title: <h1 className="infoTitle">Dijkstra's Algorithm</h1>,
     text: (
       <>
         Dijkstra's Algoritm Dijkstra's Algoritm Dijkstra's Algoritm Dijkstra's
@@ -62,7 +72,7 @@ export const AlgoInfo = [
   },
   {
     id: "SLIDER-ASTAR",
-    title: <h1>A-Star Search</h1>,
+    title: <h1 className="infoTitle">A-Star Search</h1>,
     text: (
       <>
         A-Star SearchA-Star SearchA-Star SearchA-Star SearchA-Star SearchA-Star
@@ -75,7 +85,7 @@ export const AlgoInfo = [
   },
   {
     id: "SLIDER-GBFS",
-    title: <h1>Greedy Best-First Search</h1>,
+    title: <h1 className="infoTitle">Greedy Best-First Search</h1>,
     text: (
       <>
         Greedy Best-First SearchGreedy Best-First SearchGreedy Best-First
@@ -88,7 +98,7 @@ export const AlgoInfo = [
   },
   {
     id: "SLIDER-BIDIR",
-    title: <h1>Bidirectional Search</h1>,
+    title: <h1 className="infoTitle">Bidirectional Search</h1>,
     text: (
       <>
         Bidirectional SearchBidirectional SearchBidirectional

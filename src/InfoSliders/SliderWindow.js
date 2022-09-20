@@ -48,10 +48,10 @@ export const SliderWindow = () => {
               </div>
             );
           })}
-
           <div className="slider-dots">
             {Array.from({ length: AlgoInfo.length }).map((item, index) => (
               <div
+                key={`slider-dot-${index}`}
                 onClick={() => moveDot(index)}
                 className={slideIndex === index ? "dot active" : "dot"}
               ></div>
