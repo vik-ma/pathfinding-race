@@ -7,12 +7,17 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
-        <p>asd</p>
+        <p>
+          There are in total six different pathfinding algorithms implemented in
+          this app. You can read more about each one in the following slides.
+          The different algorithms are all visualized on the same grid, but they
+          do not affect each another at all.
+        </p>
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
           By clicking the 'Settings' button, you can customize various things
           about the pathfinding visualizer, such as the dimensions of the grid,
-          how many algorithms are racing against each other as well as other
+          how many algorithms are racing against each other, as well as other
           things. You can also disable specific pathfinding algorithms from
           being selected.
         </p>
