@@ -10,8 +10,11 @@ export const AlgoInfo = [
         <p>asd</p>
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
-          TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-          TEST TEST TEST TEST
+          By clicking the 'Settings' button, you can customize various things
+          about the pathfinding visualizer, such as the dimensions of the grid,
+          how many algorithms are racing against each other as well as other
+          things. You can also disable specific pathfinding algorithms from
+          being selected.
         </p>
       </>
     ),
