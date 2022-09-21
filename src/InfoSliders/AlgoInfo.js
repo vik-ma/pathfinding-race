@@ -47,9 +47,9 @@ export const AlgoInfo = [
           </div>
           <br />
           Each start node will get assigned a random pathfinding algorithm. The
-          visualizer will draw out the path The start nodes are not considered
-          impassable by other algorithms and the algorithms do not affect each
-          other in any way.
+          visualizer will draw out the path the algorithms takes from their
+          specific start nodes in the same color. Start nodes are not considered
+          impassable by other algorithms.
         </p>
         <h2 className="infoSubTitle">Goal Node</h2>
         <p>
