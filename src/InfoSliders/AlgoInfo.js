@@ -4,6 +4,7 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Information</h1>,
     text: (
       <>
+        <h2 className="infoSubTitle">About</h2>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
@@ -29,7 +30,6 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Additional Information</h1>,
     text: (
       <>
-        {" "}
         <h2 className="infoSubTitle">Start Nodes</h2>
         <p>
           These nodes are the start nodes:{" "}
