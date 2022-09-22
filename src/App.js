@@ -249,7 +249,7 @@ function App() {
             setVisIsOngoing,
             setIsSettingsRendered,
             isInfoRendered,
-            setIsInfoRendered
+            setIsInfoRendered,
           }}
         >
           <div className="appContainer">
@@ -268,7 +268,6 @@ function App() {
               {renderTest ? <TestComponent /> : null}
               {isInfoRendered ? <SliderWindow /> : null}
             </div>
-
           </div>
         </GridContext.Provider>
       </header>

@@ -14,8 +14,9 @@ body {
     margin-left: 2px;
     margin-right: 3px;
     font-size:x-large;
+    vertical-align:top;
+    line-height: 120%;
 }
-
 
 p {
     margin:0;
