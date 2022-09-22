@@ -5,7 +5,16 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">About</h2>
-        <p></p>
+        <p>
+          This app is a pathfinding visualizer where you get to guess which
+          algorithm will reach the goal node first!
+          <br />
+          <br />
+          The entire grid is randomized, which includes the position of the goal
+          node, the walls and the starting positions of every "contender". Each
+          "contender" gets randomly assigned one of six different pathfinding
+          algorithms.
+        </p>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
@@ -33,7 +42,9 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Start Nodes</h2>
         <p>
-          <div className="specialInfoText">These nodes are the start nodes:</div>{" "}
+          <div className="specialInfoText">
+            These nodes are the start nodes:
+          </div>{" "}
           <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
             1
           </div>{" "}
@@ -54,7 +65,7 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Goal Node</h2>
         <p>
-        <div className="specialInfoText">This node is the goal node:</div>{" "}
+          <div className="specialInfoText">This node is the goal node:</div>{" "}
           <div className="node node-goal titleBarNode infoNode">G</div>
           <br />
           The visualizer will stop when the first algorithm reaches the goal
@@ -63,7 +74,9 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Walls</h2>
         <p>
-        <div className="specialInfoText">These darker nodes are wall nodes:</div>{" "}
+          <div className="specialInfoText">
+            These darker nodes are wall nodes:
+          </div>{" "}
           <div className="node node-wall infoNode"></div>
           <br />
           Pathfinding algorithms can not pass through these nodes. <br />
