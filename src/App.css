@@ -21,6 +21,12 @@ body {
 p {
     margin:0;
     margin-bottom: 1px;
+    font-weight: 500;
+}
+
+.specialInfoText {
+    font-weight: 700;
+    display: inline-block;
 }
 
 .infoTitle {

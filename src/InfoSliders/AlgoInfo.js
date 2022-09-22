@@ -5,6 +5,7 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">About</h2>
+        <p></p>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
@@ -32,7 +33,7 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Start Nodes</h2>
         <p>
-          These nodes are the start nodes:{" "}
+          <div className="specialInfoText">These nodes are the start nodes:</div>{" "}
           <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
             1
           </div>{" "}
@@ -53,7 +54,7 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Goal Node</h2>
         <p>
-          This node is the goal node:{" "}
+        <div className="specialInfoText">This node is the goal node:</div>{" "}
           <div className="node node-goal titleBarNode infoNode">G</div>
           <br />
           The visualizer will stop when the first algorithm reaches the goal
@@ -62,7 +63,7 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Walls</h2>
         <p>
-          These darker nodes are wall nodes:{" "}
+        <div className="specialInfoText">These darker nodes are wall nodes:</div>{" "}
           <div className="node node-wall infoNode"></div>
           <br />
           Pathfinding algorithms can not pass through these nodes. <br />
