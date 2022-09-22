@@ -46,6 +46,7 @@ p {
 
 .appBackdrop {
     background-color:rgb(194, 194, 194);
+    border: 1px solid black;
     min-width: 802px;
     min-height: 844px;
     margin-top: 5px;
