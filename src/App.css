@@ -43,6 +43,11 @@ p {
     -webkit-text-fill-color: transparent;
     margin:0;
     margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.infoSubTitleNodes {
+    margin-bottom: 0px;
 }
 
 .appContainer {

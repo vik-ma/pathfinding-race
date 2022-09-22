@@ -6,17 +6,27 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">About</h2>
         <p>
-          This app is a pathfinding visualizer where you get to guess which
-          algorithm will reach the goal node first!
+          <div className="specialInfoText">
+            This app is a pathfinding visualizer where you get to guess which
+            algorithm will reach the goal node first!
+          </div>
           <br />
           <br />
-          The entire grid is randomized, which includes the position of the goal
-          node, the walls and the starting positions of every "contender". Each
+          Everything on the grid is randomized, which includes the walls, the
+          goal node, and the starting positions of every "contender". Each
           "contender" gets randomly assigned one of six different pathfinding
           algorithms.
         </p>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
+      </>
+    ),
+  },
+  {
+    id: "SLIDER-INFO-2",
+    title: <h1 className="infoTitle">Additional Information</h1>,
+    text: (
+      <>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
         <p>
           There are in total six different pathfinding algorithms implemented in
@@ -36,11 +46,11 @@ export const AlgoInfo = [
     ),
   },
   {
-    id: "SLIDER-INFO-2",
-    title: <h1 className="infoTitle">Additional Information</h1>,
+    id: "SLIDER-NODES-INFO",
+    title: <h1 className="infoTitle">Nodes</h1>,
     text: (
       <>
-        <h2 className="infoSubTitle">Start Nodes</h2>
+        <h2 className="infoSubTitle infoSubTitleNodes">Start Nodes</h2>
         <p>
           <div className="specialInfoText">
             These nodes are the start nodes:
@@ -63,7 +73,7 @@ export const AlgoInfo = [
           specific start nodes in the same color. Start nodes are not considered
           impassable by other algorithms.
         </p>
-        <h2 className="infoSubTitle">Goal Node</h2>
+        <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
           <div className="specialInfoText">This node is the goal node:</div>{" "}
           <div className="node node-goal titleBarNode infoNode">G</div>
@@ -72,7 +82,7 @@ export const AlgoInfo = [
           node. If no algorithms can find the goal node, the visualizer will
           stop after five seconds has passed, in order to not waste time.
         </p>
-        <h2 className="infoSubTitle">Walls</h2>
+        <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
           <div className="specialInfoText">
             These darker nodes are wall nodes:
