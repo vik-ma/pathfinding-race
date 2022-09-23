@@ -116,9 +116,6 @@ export const GridCustomizer = () => {
     <div className="popupBackground">
       <div className="popupBackdrop">
         <div className="settingsContainer">
-          {/* <div className="settingsTitle"> */}
-
-          {/* </div> */}
           <div className="settingsInner">
             <div className="settingsRightSide">
               <h1 className="infoTitle settingsTitle">Settings</h1>
@@ -228,8 +225,6 @@ export const GridCustomizer = () => {
             </div>
             <div className="enableAlgoList">
               <h2 className="infoTitle settingsTitle algoListTitle">Enabled Algorithms</h2>
-              {/* <label>Enabled Algorithms:</label> */}
-              {/* <br /> */}
               <input
                 type="checkbox"
                 id="astar"

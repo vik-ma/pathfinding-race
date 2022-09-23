@@ -110,7 +110,8 @@ p {
 
 .settingsInner {
     inline-size: min-content;
-    display: flex;    flex-direction: row;
+    display: flex;    
+    flex-direction: row;
 }
 
 .settingsTitle {   
@@ -122,7 +123,7 @@ p {
 
 .settingsRightSide {    
     display:flex;
-flex-direction: column;
+    flex-direction: column;
 
 }
 
