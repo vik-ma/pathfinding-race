@@ -115,171 +115,193 @@ export const GridCustomizer = () => {
   return (
     <div className="popupBackground">
       <div className="popupBackdrop">
-        <div className="settingsInner">
-          {/* <h1>SETTINGS</h1> */}
-          <div className="settingsElement">
-            Number of Rows: {newChanges["rows"] ? newChanges["rows"] : rowCount}
-            <br />
-            <input
-              type="range"
-              min="10"
-              max="26"
-              name="row"
-              defaultValue={defaultRowValue}
-              onChange={(e) => {
-                setNoChangeMade(false);
-                setNewChanges({ ...newChanges, rows: e.target.valueAsNumber });
-              }}
-            ></input>
-          </div>
-          <div className="settingsElement">
-            Number of Columns:{" "}
-            {newChanges["cols"] ? newChanges["cols"] : colCount}
-            <br />
-            <input
-              type="range"
-              min="10"
-              max="40"
-              name="col"
-              defaultValue={defaultColValue}
-              onChange={(e) => {
-                setNoChangeMade(false);
-                setNewChanges({ ...newChanges, cols: e.target.valueAsNumber });
-              }}
-            ></input>
-          </div>
-          <div className="settingsElement">
-            Number of Start Nodes:{" "}
-            {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
-            <br />
-            <input
-              type="range"
-              min="2"
-              max="4"
-              name="numNodes"
-              defaultValue={defaultNumNodes}
-              onChange={(e) => {
-                setNoChangeMade(false);
-                setNewChanges({ ...newChanges, nodes: e.target.valueAsNumber });
-              }}
-            ></input>
-          </div>
-          <div className="settingsElement">
-            Wall Density: {wordWallDensityMap[wallDensityValue]}
-            <br />
-            <input
-              type="range"
-              min="1"
-              max="3"
-              name="wallDensity"
-              defaultValue={inverseWallDensityMap[defaultWallDensity]}
-              onChange={(e) => {
-                setNoChangeMade(false);
-                setWallDensityValue(wallDensityMap[e.target.value]);
-              }}
-            ></input>
-          </div>
-          <div className="settingsElement">
-            Visualizer Speed: {wordVisualizerSpeedMap[visualizerSpeed]}
-            <br />
-            <input
-              type="range"
-              min="1"
-              max="3"
-              name="visSpeed"
-              defaultValue={inverseVisualizerSpeedMap[defaultVisualizerSpeed]}
-              onChange={(e) => {
-                setNoChangeMade(false);
-                setVisualizerSpeed(visualizerSpeedMap[e.target.value]);
-              }}
-            ></input>
-          </div>
-          <div className="settingsElement">
-            <input
-              type="checkbox"
-              id="allowDiagonals"
-              name="allowDiagonals"
-              checked={allowDiagonal}
-              value="allowDiagonal"
-              onChange={() => {
-                setNoChangeMade(false);
-                setAllowDiagonal(!allowDiagonal);
-              }}
-            />{" "}
-            <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
-          </div>
-        </div>
-        <div className="enableAlgoList">
-          <label>Enabled Algorithms:</label>
-          <br />
-          <input
-            type="checkbox"
-            id="astar"
-            name="astar"
-            checked={!disabledAlgos.includes(0)}
-            value="astar"
-            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
-          />{" "}
-          <label htmlFor="astar">A-Star Search</label>
-          <br />
-          <input
-            type="checkbox"
-            id="bidirectional"
-            name="bidirectional"
-            checked={!disabledAlgos.includes(1)}
-            value="bidirectional"
-            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
-          />{" "}
-          <label htmlFor="bidirectional">Bidirectional Search</label>
-          <br />
-          <input
-            type="checkbox"
-            id="breadth"
-            name="breadth"
-            checked={!disabledAlgos.includes(2)}
-            value="breadth"
-            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
-          />{" "}
-          <label htmlFor="breadth">Breadth-First Search</label>
-          <br />
-          <input
-            type="checkbox"
-            id="depth"
-            name="depth"
-            checked={!disabledAlgos.includes(3)}
-            value="depth"
-            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
-          />{" "}
-          <label htmlFor="depth">Depth-First Search</label>
-          <br />
-          <input
-            type="checkbox"
-            id="dijkstra"
-            name="dijkstra"
-            checked={!disabledAlgos.includes(4)}
-            value="dijkstra"
-            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
-          />{" "}
-          <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
-          <br />
-          <input
-            type="checkbox"
-            id="greedy"
-            name="greedy"
-            checked={!disabledAlgos.includes(5)}
-            value="greedy"
-            onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
-          />{" "}
-          <label htmlFor="greedy">Greedy Best-First Search</label>
-          <div className="settingsDoneButtonDiv">
-            <button
-              className="settingsButton"
-              onClick={() => {
-                noChangeMade ? setIsSettingsRendered(false) : applyChanges();
-              }}
-            >
-              Done
-            </button>
+        <div className="settingsContainer">
+          {/* <div className="settingsTitle"> */}
+
+          {/* </div> */}
+          <div className="settingsInner">
+            <div className="settingsRightSide">
+              <h1 className="infoTitle settingsTitle">Settings</h1>
+              <div className="settingsElement">
+                Number of Rows:{" "}
+                {newChanges["rows"] ? newChanges["rows"] : rowCount}
+                <br />
+                <input
+                  type="range"
+                  min="10"
+                  max="26"
+                  name="row"
+                  defaultValue={defaultRowValue}
+                  onChange={(e) => {
+                    setNoChangeMade(false);
+                    setNewChanges({
+                      ...newChanges,
+                      rows: e.target.valueAsNumber,
+                    });
+                  }}
+                ></input>
+              </div>
+              <div className="settingsElement">
+                Number of Columns:{" "}
+                {newChanges["cols"] ? newChanges["cols"] : colCount}
+                <br />
+                <input
+                  type="range"
+                  min="10"
+                  max="40"
+                  name="col"
+                  defaultValue={defaultColValue}
+                  onChange={(e) => {
+                    setNoChangeMade(false);
+                    setNewChanges({
+                      ...newChanges,
+                      cols: e.target.valueAsNumber,
+                    });
+                  }}
+                ></input>
+              </div>
+              <div className="settingsElement">
+                Number of Start Nodes:{" "}
+                {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
+                <br />
+                <input
+                  type="range"
+                  min="2"
+                  max="4"
+                  name="numNodes"
+                  defaultValue={defaultNumNodes}
+                  onChange={(e) => {
+                    setNoChangeMade(false);
+                    setNewChanges({
+                      ...newChanges,
+                      nodes: e.target.valueAsNumber,
+                    });
+                  }}
+                ></input>
+              </div>
+              <div className="settingsElement">
+                Wall Density: {wordWallDensityMap[wallDensityValue]}
+                <br />
+                <input
+                  type="range"
+                  min="1"
+                  max="3"
+                  name="wallDensity"
+                  defaultValue={inverseWallDensityMap[defaultWallDensity]}
+                  onChange={(e) => {
+                    setNoChangeMade(false);
+                    setWallDensityValue(wallDensityMap[e.target.value]);
+                  }}
+                ></input>
+              </div>
+              <div className="settingsElement">
+                Visualizer Speed: {wordVisualizerSpeedMap[visualizerSpeed]}
+                <br />
+                <input
+                  type="range"
+                  min="1"
+                  max="3"
+                  name="visSpeed"
+                  defaultValue={
+                    inverseVisualizerSpeedMap[defaultVisualizerSpeed]
+                  }
+                  onChange={(e) => {
+                    setNoChangeMade(false);
+                    setVisualizerSpeed(visualizerSpeedMap[e.target.value]);
+                  }}
+                ></input>
+              </div>
+              <div className="settingsElement">
+                <input
+                  type="checkbox"
+                  id="allowDiagonals"
+                  name="allowDiagonals"
+                  checked={allowDiagonal}
+                  value="allowDiagonal"
+                  onChange={() => {
+                    setNoChangeMade(false);
+                    setAllowDiagonal(!allowDiagonal);
+                  }}
+                />{" "}
+                <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
+              </div>
+            </div>
+            <div className="enableAlgoList">
+              <h2 className="infoTitle settingsTitle algoListTitle">Enabled Algorithms</h2>
+              {/* <label>Enabled Algorithms:</label> */}
+              {/* <br /> */}
+              <input
+                type="checkbox"
+                id="astar"
+                name="astar"
+                checked={!disabledAlgos.includes(0)}
+                value="astar"
+                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
+              />{" "}
+              <label htmlFor="astar">A-Star Search</label>
+              <br />
+              <input
+                type="checkbox"
+                id="bidirectional"
+                name="bidirectional"
+                checked={!disabledAlgos.includes(1)}
+                value="bidirectional"
+                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
+              />{" "}
+              <label htmlFor="bidirectional">Bidirectional Search</label>
+              <br />
+              <input
+                type="checkbox"
+                id="breadth"
+                name="breadth"
+                checked={!disabledAlgos.includes(2)}
+                value="breadth"
+                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
+              />{" "}
+              <label htmlFor="breadth">Breadth-First Search</label>
+              <br />
+              <input
+                type="checkbox"
+                id="depth"
+                name="depth"
+                checked={!disabledAlgos.includes(3)}
+                value="depth"
+                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
+              />{" "}
+              <label htmlFor="depth">Depth-First Search</label>
+              <br />
+              <input
+                type="checkbox"
+                id="dijkstra"
+                name="dijkstra"
+                checked={!disabledAlgos.includes(4)}
+                value="dijkstra"
+                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
+              />{" "}
+              <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
+              <br />
+              <input
+                type="checkbox"
+                id="greedy"
+                name="greedy"
+                checked={!disabledAlgos.includes(5)}
+                value="greedy"
+                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
+              />{" "}
+              <label htmlFor="greedy">Greedy Best-First Search</label>
+              <div className="settingsDoneButtonDiv">
+                <button
+                  className="settingsButton"
+                  onClick={() => {
+                    noChangeMade
+                      ? setIsSettingsRendered(false)
+                      : applyChanges();
+                  }}
+                >
+                  Done
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

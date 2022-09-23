@@ -98,6 +98,8 @@ p {
     background-color:rgb(194, 194, 194);
     color:#292929;
     padding:20px;
+    padding-top: 4px;
+    padding-bottom: 15px;
     border-radius: 10px;
     min-width: 400px;
     inline-size: min-content;
@@ -108,11 +110,34 @@ p {
 
 .settingsInner {
     inline-size: min-content;
+    display: flex;    flex-direction: row;
+}
+
+.settingsTitle {   
+    margin:0;
+    height: min-content;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.settingsRightSide {    
+    display:flex;
+flex-direction: column;
+
+}
+
+.algoListTitle {
+    margin-top: 9px;
+    margin-bottom:5px;
+
 }
 
 .enableAlgoList {
     margin-left: 10px;
-    float:left;
+    display: inline-block;
+    flex-direction: column;
+    margin-right: 0;
+    right:0;
     inline-size: max-content;
 }
 
