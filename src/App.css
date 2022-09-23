@@ -30,7 +30,7 @@ p {
 }
 
 .infoTitle {
-    background: -webkit-linear-gradient(rgb(48, 143, 35), #333);
+    background: -webkit-linear-gradient(rgb(48, 80, 224), rgb(77, 25, 160));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 5px;
@@ -38,7 +38,7 @@ p {
 }
 
 .infoSubTitle {
-    background: -webkit-linear-gradient(rgb(129, 35, 12), #333);
+    background: -webkit-linear-gradient(rgb(0, 153, 241), rgb(25, 38, 160));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin:0;
