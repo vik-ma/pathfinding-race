@@ -7,15 +7,17 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">About</h2>
         <p>
           <div className="specialInfoText">
-            This app is a pathfinding visualizer where you get to guess which
+            This is a pathfinding visualizer where multiple pathfinding
+            algorithms will race to the goal node, and you get to guess which
             algorithm will reach the goal node first!
           </div>
           <br />
           <br />
-          Everything on the grid is randomized, which includes the walls, the
-          goal node, and the starting positions of every "contender". Each
-          "contender" gets randomly assigned one of six different pathfinding
-          algorithms.
+          The entire grid is randomized. The walls, the goal node, and the
+          starting positions of every "contender" is different every map. Every
+          "contender" also gets randomly assigned one of six different
+          pathfinding algorithms. You can read more about them in the following
+          slides.
         </p>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
