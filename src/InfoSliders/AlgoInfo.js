@@ -16,8 +16,8 @@ export const AlgoInfo = [
           The entire grid is randomized. The walls, the goal node, and the
           starting positions of every "contender" is different every map. Every
           "contender" also gets randomly assigned one of six different
-          pathfinding algorithms. You can read more about them in the following
-          slides.
+          pathfinding algorithms. You can read more about each one in the
+          following slides.
         </p>
         <h2 className="infoSubTitle">How To Play</h2>
         <p>asd</p>
@@ -31,18 +31,29 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
         <p>
-          There are in total six different pathfinding algorithms implemented in
-          this app. You can read more about each one in the following slides.
-          The different algorithms are all visualized on the same grid, but they
-          do not affect each another at all.
+          The six pathfinding algorithms implemented in this app are{" "}
+          <div className="specialInfoText">
+            Breadth First Search, Depth First Search, Dijkstra's Algortihm,
+            <br /> A-Star Search, Greedy Best-First Search and Bidirectional
+            Search.
+          </div>
+          <br />
+          <br />
+          The algorithms for each contender are all visualized on the same grid,
+          but they do not affect each another at all.
         </p>
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
-          By clicking the 'Settings' button, you can customize various things
-          about the pathfinding visualizer, such as the dimensions of the grid,
-          how many algorithms are racing against each other, as well as other
-          things. You can also disable specific pathfinding algorithms from
-          being selected.
+          You can access the Settings menu by clicking the 'Settings' button.
+          <br />
+          <br />
+          There you can customize the dimensions of the grid, how many different
+          contending algorithms there are, the amount of walls, the speed of the
+          visualizer and wether or not diagonal movement is allowed.
+          <br />
+          <br />
+          You can also disable specific pathfinding algorithms from being
+          selected.
         </p>
       </>
     ),
