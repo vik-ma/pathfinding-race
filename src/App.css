@@ -32,12 +32,14 @@ body {
 }
 
 p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin:0;
     margin-bottom: 1px;
-    font-weight: 500;
-    user-select:auto;
+    font-weight: 600;
+    user-select: auto;
     color:rgb(12, 12, 12);
     line-height: 18px;
+
 }
 
 .specialInfoText {
@@ -176,6 +178,7 @@ p {
     transition-duration: 0.3s;
     font-weight: bold;
     background-color: #dadada;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .settingsButton:hover {
@@ -406,7 +409,7 @@ p {
     border-radius: 5px;
     display: inline-block;
     cursor: pointer;
-    font-weight:600;
+    font-weight: 600;
     user-select: none;
     transition-duration: 0.1s;
 }
@@ -414,7 +417,7 @@ p {
 .algoPathMsg {
     margin-left: 15px;
     display: inline-block;
-    font-weight:600;
+    font-weight: 600;
     color:rgb(12, 12, 12);
 }
 
