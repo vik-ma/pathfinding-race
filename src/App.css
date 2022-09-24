@@ -393,7 +393,7 @@ p {
 
 .gridContainer {
     margin-top: 5px;
-    border: 1px solid rgb(233, 233, 233);
+    border: 1px solid rgb(219, 219, 219);
     inline-size: min-content;
     animation: fadeIn 0.3s;
 }
@@ -462,16 +462,16 @@ p {
 
 .noPathFoundContainer {
     position: relative;
-    animation: floatUp 0.5s;
-    top: 30px;
+    animation: floatDown 0.5s;
+    top: 33px;
 }
 
-@keyframes floatUp {
+@keyframes floatDown {
     from {
         top: 0px;
     }
     to {
-        top: 30px;
+        top: 33px;
     }
 }
 
@@ -480,7 +480,7 @@ p {
 }
 
 .node {
-    border: 1px solid rgb(233, 233, 233);  
+    border: 1px solid rgb(219, 219, 219);  
     height: 30px;
     width: 30px;
     min-width: 30px;
