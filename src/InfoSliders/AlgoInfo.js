@@ -16,11 +16,11 @@ export const AlgoInfo = [
           The entire grid is randomized. The walls, the goal node, and the
           starting positions of every "contender" is different every map. Every
           "contender" also gets randomly assigned one of six different
-          pathfinding algorithms. You can read more about each one in the
+          pathfinding algorithms. <br />You can read more about each one in the
           following slides.
         </p>
         <h2 className="infoSubTitle">How To Play</h2>
-        <p>asd</p>
+        <p>no effect</p>
       </>
     ),
   },
@@ -41,6 +41,8 @@ export const AlgoInfo = [
           <br />
           The algorithms for each contender are all visualized on the same grid,
           but they do not affect each another at all.
+          <br />
+          <br />
         </p>
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>

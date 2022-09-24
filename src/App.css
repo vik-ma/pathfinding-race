@@ -1,5 +1,6 @@
 body {
-    color:#292929;
+    /* color:#292929; */
+    color:rgb(12, 12, 12);
     background-color:rgb(68, 60, 54);
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -35,6 +36,7 @@ p {
     margin-bottom: 1px;
     font-weight: 500;
     user-select:auto;
+    color:rgb(12, 12, 12);
 }
 
 .specialInfoText {
@@ -51,7 +53,7 @@ p {
 }
 
 .infoSubTitle {
-    background: -webkit-linear-gradient(rgb(0, 125, 241), rgb(22, 49, 139));
+    background: -webkit-linear-gradient(rgb(0, 120, 233), rgb(22, 49, 139));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin:0;
@@ -77,7 +79,7 @@ p {
     min-height: 844px;
     margin-top: 10px;
     padding: 10px 20px 20px 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     animation: fadeIn 1s;
 }
 
@@ -381,7 +383,6 @@ p {
 .leftSideTitleBarItems  {
     justify-content: flex-start;
     min-width: min-content;
-
 }
 
 .rightSideTitleBarItems {
@@ -413,7 +414,7 @@ p {
     margin-left: 15px;
     display: inline-block;
     font-weight:600;
-    color:rgb(63, 63, 63);
+    color:rgb(12, 12, 12);
 }
 
 .titleBarChoices:hover {
@@ -422,13 +423,15 @@ p {
 }
 
 .selectedChoice {
-    background-color:darkkhaki;
-    box-shadow: inset 0 0 0 3px rgb(179, 164, 37) !important;
+    /* background-color:darkkhaki; */
+    background: -webkit-linear-gradient(rgb(148, 137, 35), rgb(201, 195, 112));
+    box-shadow: inset 0 0 0 3px rgb(185, 171, 39) !important;
 }
 
 .winnerAlgo {
-    background-color:rgb(91, 233, 72) !important;
-    box-shadow: inset 0 0 0 3px rgb(11, 182, 11);
+    /* background-color:rgb(91, 233, 72) !important; */
+    background: -webkit-linear-gradient(rgb(5, 165, 5), rgb(91, 233, 72)) !important;
+    box-shadow: inset 0 0 0 3px rgb(80, 202, 80);
 }
 
 .titleBarNode {
