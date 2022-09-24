@@ -7,7 +7,7 @@ body {
 
 .title {
     /* color:rgb(90, 61, 18); */
-    background: -webkit-linear-gradient(rgb(90, 61, 18), #333);
+    background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(49, 49, 49));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -207,14 +207,14 @@ p {
 }
 
 .justVisualizeButton {
-    background-color: rgb(238, 55, 92);
-    box-shadow: inset 0 0 10px 0px rgb(119, 14, 14);
+    background-color: rgb(199, 25, 60);
+    box-shadow: inset 0 0 10px 0px rgb(83, 8, 8);
     color:white;
 }
 
 .justVisualizeButton:hover {
-    background-color: rgb(255, 35, 79);
-    box-shadow: inset 0 0 8px 0px rgb(105, 6, 6);
+    background-color: rgb(255, 8, 82);
+    box-shadow: inset 0 0 8px 0px rgb(90, 7, 7);
 }
 
 .newMapButton {
@@ -279,7 +279,6 @@ p {
 
 .slideAnim {
     opacity: 1;
-    /* animation: fadeIn 0.5s; */
 }
 
 .sliderButton {
@@ -321,7 +320,6 @@ p {
     transform: translateY(-60%);
 }
 
-
 .sliderDots {
     position: absolute;
     bottom: 10px;
@@ -348,14 +346,15 @@ p {
     transform: scale(1.2); 
 }
 
-
-
 .scoreDiv {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
     font-size: 27px;
     color:rgb(90, 61, 18);
+    background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(49, 49, 49));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     vertical-align: top;
     line-height: 112%;
 }
@@ -415,7 +414,7 @@ p {
 
 .selectedChoice {
     background-color:darkkhaki;
-    box-shadow: inset 0 0 0 3px rgb(156, 143, 28) !important;
+    box-shadow: inset 0 0 0 3px rgb(182, 167, 34) !important;
 }
 
 .winnerAlgo {
@@ -424,7 +423,6 @@ p {
 }
 
 .titleBarNode {
-    margin-left: -1px;
     display: inline-block;
     border-radius: 3px;
 }
