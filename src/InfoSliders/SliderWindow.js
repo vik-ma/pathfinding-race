@@ -34,7 +34,7 @@ export const SliderWindow = () => {
             className="settingsButton infoButtonBack"
             onClick={() => setIsInfoRendered(false)}
           >
-            BACK
+            Return
           </button>
 
           {AlgoInfo.map((obj, index) => {

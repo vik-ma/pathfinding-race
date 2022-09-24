@@ -16,11 +16,14 @@ export const AlgoInfo = [
           The entire grid is randomized. The walls, the goal node, and the
           starting positions of every "contender" is different every map. Every
           "contender" also gets randomly assigned one of six different
-          pathfinding algorithms. <br />You can read more about each one in the
-          following slides.
+          pathfinding algorithms.
+          <br />
+          <br />
+          You can read more about all six implemented pathfinding algorithms in
+          the following slides!
         </p>
         <h2 className="infoSubTitle">How To Play</h2>
-        <p>no effect</p>
+        <p>The contending algorithms do not affect each other in any way</p>
       </>
     ),
   },
@@ -39,8 +42,6 @@ export const AlgoInfo = [
           </div>
           <br />
           <br />
-          The algorithms for each contender are all visualized on the same grid,
-          but they do not affect each another at all.
           <br />
           <br />
         </p>
@@ -84,9 +85,10 @@ export const AlgoInfo = [
           </div>
           <br />
           Each start node will get assigned a random pathfinding algorithm. The
-          visualizer will draw out the path the algorithms takes from their
-          specific start nodes in the same color. Start nodes are not considered
-          impassable by other algorithms.
+          visualizer will draw out the paths the algorithms take from their
+          respective start nodes in the same color. <br />
+          <br />
+          Start nodes are not considered impassable by other algorithms.
         </p>
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
@@ -94,8 +96,10 @@ export const AlgoInfo = [
           <div className="node node-goal titleBarNode infoNode">G</div>
           <br />
           The visualizer will stop when the first algorithm reaches the goal
-          node. If no algorithms can find the goal node, the visualizer will
-          stop after five seconds has passed, in order to not waste time.
+          node. <br />
+          <br />
+          If no algorithms can find the goal node, the visualizer will stop
+          after five seconds has passed, in order to not waste time simulating every node being visited.
         </p>
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
@@ -105,8 +109,10 @@ export const AlgoInfo = [
           <div className="node node-wall infoNode"></div>
           <br />
           Pathfinding algorithms can not pass through these nodes. <br />
-          They also can not skip through two wall nodes placed diagonally next
-          to each other if 'Allow Diagonal Movement' setting is turned on.
+          <br />
+          If 'Allow Diagonal Movement' setting is turned on, pathfinding
+          algorithms can still not diagonally "skip" through two walls placed
+          diagonally adjacent to each other.
         </p>
       </>
     ),
