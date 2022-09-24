@@ -58,7 +58,7 @@ p {
 }
 
 .appBackdrop {
-    background-color:rgb(165, 165, 165);
+    background-color:rgb(179, 179, 179);
     border: 1px solid black;
     box-shadow: 0 0 15px black;
     min-width: 802px;
@@ -207,51 +207,49 @@ p {
 }
 
 .justVisualizeButton {
-    background-color: rgb(248, 53, 92);
-    box-shadow: inset 0 0 10px 4px rgb(99, 7, 7);
+    background-color: rgb(238, 55, 92);
+    box-shadow: inset 0 0 10px 0px rgb(119, 14, 14);
     color:white;
 }
 
 .justVisualizeButton:hover {
-    background-color: rgb(255, 29, 74);
-    box-shadow: inset 0 0 8px 0px rgb(70, 3, 3);
+    background-color: rgb(255, 35, 79);
+    box-shadow: inset 0 0 8px 0px rgb(105, 6, 6);
 }
 
 .newMapButton {
     background-color: rgb(84, 221, 66);
     color:white;
-    box-shadow: inset 0 0 10px 4px rgb(23, 128, 23);
+    box-shadow: inset 0 0 10px 4px rgb(32, 141, 32);
 }
 
-.newMapButton:hover {
+.newMapButton:hover {    
+    background-color: rgb(93, 233, 74);
+    color: white;
     box-shadow: inset 0 0 8px 0px rgb(35, 105, 35);
-    background-color: rgb(90, 245, 69);
-    /* color: #0f3d15; */
 }
 
 .infoButton {
-    background-color: cornsilk;
     background-color: rgb(248, 236, 186);
     color:#333333;
     box-shadow: inset 0 0 10px 4px rgb(119, 119, 98);
 }
 
 .infoButton:hover {
-    background-color: rgb(253, 235, 165);
     background-color: cornsilk;
     box-shadow: inset 0 0 8px 0px rgb(119, 119, 98);
 }
 
 .settingsMenuButton {
     background-color: rgb(47, 125, 241);
-    box-shadow: inset 0 0 10px 4px rgb(48, 75, 155);
+    box-shadow: inset 0 0 10px 4px rgb(61, 96, 199);
     color:white;
 }
 
 .settingsMenuButton:hover {
     background-color: rgb(40, 166, 250);
-    box-shadow: inset 0 0 8px 0px rgb(37, 63, 141);
-    /* box-shadow: inset 0 0 8px 0px rgb(48, 75, 155); */
+    /* box-shadow: inset 0 0 8px 0px rgb(37, 63, 141); */
+    box-shadow: inset 0 0 8px 0px rgb(48, 75, 155);
 }
 
 .infoButtonBack {
@@ -417,15 +415,16 @@ p {
 
 .selectedChoice {
     background-color:darkkhaki;
-    box-shadow: inset 0 0 0 3px rgb(175, 160, 22) !important;
+    box-shadow: inset 0 0 0 3px rgb(156, 143, 28) !important;
 }
 
 .winnerAlgo {
     background-color:rgb(90, 245, 69) !important;
-    box-shadow: inset 0 0 0 3px rgb(0, 126, 0);
+    box-shadow: inset 0 0 0 3px rgb(11, 182, 11);
 }
 
 .titleBarNode {
+    margin-left: -1px;
     display: inline-block;
     border-radius: 3px;
 }
