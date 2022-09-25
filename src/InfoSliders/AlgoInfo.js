@@ -56,7 +56,7 @@ export const AlgoInfo = [
           <br />
           <br />
           You can also disable specific pathfinding algorithms from being
-          selected.
+          randomly selected.
         </p>
       </>
     ),
@@ -99,7 +99,8 @@ export const AlgoInfo = [
           node. <br />
           <br />
           If no algorithms can find the goal node, the visualizer will stop
-          after five seconds has passed, in order to not waste time simulating every node being visited.
+          after five seconds has passed, in order to not waste time simulating
+          every node being visited.
         </p>
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>

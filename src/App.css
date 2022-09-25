@@ -324,7 +324,7 @@ input[type="checkbox"] {
 .settingsMenuButton:hover {
     background-color: rgb(56, 182, 255);
     /* box-shadow: inset 0 0 8px 0px rgb(37, 63, 141); */
-    box-shadow: inset 0 0 8px 0px rgb(48, 75, 155);
+    /* box-shadow: inset 0 0 8px 0px rgb(48, 75, 155); */
     box-shadow: inset 0 0 8px 0px rgb(45, 69, 143);
 }
 
@@ -370,6 +370,7 @@ input[type="checkbox"] {
     user-select: none;
     opacity: 0.75;
     transition: ease-in-out 0.2s;
+    margin: -2px;
   }
   
 .sliderButton img {
