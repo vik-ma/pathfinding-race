@@ -124,6 +124,7 @@ export const GridCustomizer = () => {
                 {newChanges["rows"] ? newChanges["rows"] : rowCount}
                 <br />
                 <input
+                className="settingsSlider"
                   type="range"
                   min="10"
                   max="26"
@@ -142,7 +143,7 @@ export const GridCustomizer = () => {
                 Number of Columns:{" "}
                 {newChanges["cols"] ? newChanges["cols"] : colCount}
                 <br />
-                <input
+                <input className="settingsSlider"
                   type="range"
                   min="10"
                   max="40"
@@ -161,7 +162,7 @@ export const GridCustomizer = () => {
                 Number of Start Nodes:{" "}
                 {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
                 <br />
-                <input
+                <input className="settingsSlider"
                   type="range"
                   min="2"
                   max="4"
@@ -179,7 +180,7 @@ export const GridCustomizer = () => {
               <div className="settingsElement">
                 Wall Density: {wordWallDensityMap[wallDensityValue]}
                 <br />
-                <input
+                <input className="settingsSlider"
                   type="range"
                   min="1"
                   max="3"
@@ -194,7 +195,7 @@ export const GridCustomizer = () => {
               <div className="settingsElement">
                 Visualizer Speed: {wordVisualizerSpeedMap[visualizerSpeed]}
                 <br />
-                <input
+                <input className="settingsSlider"
                   type="range"
                   min="1"
                   max="3"
