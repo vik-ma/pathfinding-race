@@ -74,7 +74,6 @@ export const GridCustomizer = () => {
             Math.abs(4 - numNodes) * 2;
 
           var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
-          console.log(newValue)
           backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
         case "cols":
@@ -97,7 +96,6 @@ export const GridCustomizer = () => {
           minHeight["nodes"] =
             rows * 32 + 97 + nodesValue * 40 + 15 - (nodesValue - 2) * 2;
           var newValue = Math.max(minHeight["rows"], minHeight["nodes"]);
-          console.log(newValue)
           backdropDiv.style.setProperty("min-height", `${newValue}px`);
           break;
         default:

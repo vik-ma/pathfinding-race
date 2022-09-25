@@ -367,13 +367,13 @@ p {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 27px;
+    font-size: 30px;
     color:rgb(90, 61, 18);
     background: -webkit-linear-gradient(rgb(114, 76, 19), rgb(70, 60, 52));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: top;
-    line-height: 112%;
+    line-height: 110%;
 }
 
 .titleBarButtonsDiv {
