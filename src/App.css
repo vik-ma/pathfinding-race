@@ -208,16 +208,20 @@ p {
 .titleBarButton {
     margin: 2px;
     border-radius: 5px;
-    font-size: 15px;
-    color:#e6e6e6;
+    font-size: 18px;
+    color:rgb(247, 247, 247);
     padding: 5px 20px;
-    border:1px solid black;
-    text-align: center;
-    text-decoration: none;
+    border: 1px solid black;
     display: inline-block;
-    transition-duration: 0.2s;
+    transition-duration: 0.1s;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+    text-shadow:
+       0px 0px 1px rgb(26, 26, 26),
+     -1px -1px 1px rgb(26, 26, 26),  
+      1px -1px 1px rgb(26, 26, 26),
+      -1px 1px 1px rgb(26, 26, 26),
+       1px 1px 1px rgb(26, 26, 26);
 }
 
 .titleBarButton:hover {
@@ -226,8 +230,7 @@ p {
 
 .justVisualizeButton {
     background-color: rgb(216, 27, 65);
-    box-shadow: inset 0 0 10px 0px rgb(83, 8, 8);
-    color:white;
+    box-shadow: inset 0 0 8px 2px rgb(104, 10, 10);
 }
 
 .justVisualizeButton:hover {
@@ -237,20 +240,17 @@ p {
 
 .newMapButton {
     background-color: rgb(84, 221, 66);
-    color:white;
-    box-shadow: inset 0 0 10px 4px rgb(36, 158, 36);
+    box-shadow: inset 0 0 8px 2px rgb(35, 105, 35);
 }
 
 .newMapButton:hover {    
     background-color: rgb(93, 233, 74);
-    color: white;
     box-shadow: inset 0 0 8px 0px rgb(35, 105, 35);
 }
 
 .infoButton {
     background-color: rgb(248, 236, 186);
-    color:#333333;
-    box-shadow: inset 0 0 10px 4px rgb(161, 161, 124);
+    box-shadow: inset 0 0 8px 2px rgb(128, 128, 105);
 }
 
 .infoButton:hover {
@@ -259,15 +259,15 @@ p {
 }
 
 .settingsMenuButton {
-    background-color: rgb(57, 127, 233);
-    box-shadow: inset 0 0 10px 4px rgb(61, 96, 199);
-    color:#f7f7f7;
+    background-color: rgb(57, 132, 245);
+    box-shadow: inset 0 0 8px 2px rgb(45, 69, 143);
 }
 
 .settingsMenuButton:hover {
-    background-color: rgb(40, 166, 250);
+    background-color: rgb(56, 182, 255);
     /* box-shadow: inset 0 0 8px 0px rgb(37, 63, 141); */
     box-shadow: inset 0 0 8px 0px rgb(48, 75, 155);
+    box-shadow: inset 0 0 8px 0px rgb(45, 69, 143);
 }
 
 .infoButtonBack {
