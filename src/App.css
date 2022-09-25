@@ -52,7 +52,7 @@ p {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 3px;
-    /* margin-top: 10px; */
+    /* margin-top: 15px; */
 }
 
 .infoSubTitle {
@@ -178,6 +178,12 @@ p {
 
 input[type="checkbox"] { 
     filter: contrast(80%);
+    filter: opacity(80%);
+}
+
+input[type="checkbox"]:hover {
+    filter: contrast(100%);
+    filter: opacity(100%);
 }
 
 .settingsInner {
