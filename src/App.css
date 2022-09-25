@@ -19,8 +19,8 @@ body {
 }
 
 .title {
-    /* color:rgb(90, 61, 18); */
-    background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(49, 49, 49));
+    /* background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(41, 41, 41)); */
+    background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(32, 32, 32));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -369,7 +369,7 @@ p {
     margin-right: 10px;
     font-size: 30px;
     color:rgb(90, 61, 18);
-    background: -webkit-linear-gradient(rgb(114, 76, 19), rgb(70, 60, 52));
+    background: -webkit-linear-gradient(rgb(114, 76, 19), rgb(54, 47, 40));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: top;
