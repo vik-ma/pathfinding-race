@@ -176,6 +176,10 @@ p {
     border-radius: 4px;
 }
 
+input[type="checkbox"] { 
+    filter: contrast(80%);
+}
+
 .settingsInner {
     inline-size: min-content;
     display: flex;    
