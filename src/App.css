@@ -184,7 +184,7 @@ p {
 
 .settingsInner {
     inline-size: min-content;
-    display: flex;    
+    display: flex;   
     flex-direction: row;
     user-select: none;
 }
@@ -205,7 +205,6 @@ p {
 .algoListTitle {
     margin-top: 9px;
     margin-bottom:5px;
-
 }
 
 .enableAlgoList {
@@ -220,19 +219,24 @@ p {
 .settingsElement {
     margin-right: 30px;
     inline-size: max-content;
-    color:rgb(15, 15, 15);
-    filter: opacity(80%);
-    transition-duration: 0.1s;
+    width: 200px;
     margin-top: 2px;
 }
 
-.settingsElement:hover {    
+.settingsElementVisual {
+    color:rgb(15, 15, 15);
+    filter: opacity(80%);
+    transition-duration: 0.1s;
+}
+
+.settingsElementVisual:hover {    
     filter: opacity(100%);
     color:black;
 }
 
+
 .allowDiagonalSetting {
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .settingValue {

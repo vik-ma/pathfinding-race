@@ -119,7 +119,7 @@ export const GridCustomizer = () => {
           <div className="settingsInner">
             <div className="settingsRightSide">
               <h1 className="infoTitle settingsTitle">Settings</h1>
-              <div className="settingsElement">
+              <div className="settingsElement settingsElementVisual">
                 Number of Rows:{" "}
                 <div className="settingValue">
                   {newChanges["rows"] ? newChanges["rows"] : rowCount}
@@ -141,7 +141,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement">
+              <div className="settingsElement settingsElementVisual">
                 Number of Columns:{" "}
                 <div className="settingValue">
                   {newChanges["cols"] ? newChanges["cols"] : colCount}
@@ -163,7 +163,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement">
+              <div className="settingsElement settingsElementVisual">
                 Number of Start Nodes:{" "}
                 <div className="settingValue">
                   {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
@@ -185,7 +185,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement">
+              <div className="settingsElement settingsElementVisual">
                 Wall Density:{" "}
                 <div className="settingValue">
                   {wordWallDensityMap[wallDensityValue]}
@@ -204,7 +204,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement">
+              <div className="settingsElement settingsElementVisual">
                 Visualizer Speed:{" "}
                 <div className="settingValue">
                   {wordVisualizerSpeedMap[visualizerSpeed]}
@@ -309,7 +309,7 @@ export const GridCustomizer = () => {
                 />{" "}
                 <label htmlFor="greedy">Greedy Best-First Search</label>
               </div>
-              <div className="settingsElement allowDiagonalSetting">
+              <div className="allowDiagonalSetting settingsElementVisual">
                 <input
                   type="checkbox"
                   id="allowDiagonals"
