@@ -213,7 +213,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement"><div className="checkboxItem">
+              <div className="settingsElement">
                 <input
                   type="checkbox"
                   id="allowDiagonals"
@@ -226,7 +226,7 @@ export const GridCustomizer = () => {
                   }}
                 />{" "}
                 <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
-              </div></div>
+              </div>
             </div>
             <div className="enableAlgoList">
               <h2 className="infoTitle settingsTitle algoListTitle">

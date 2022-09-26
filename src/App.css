@@ -137,15 +137,8 @@ p {
     border-radius: 5px;  
     background: #dadada;
     outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
     cursor: grab;
     border: none;
-}
-
-.settingsSlider:hover {
-    opacity: 1;
 }
 
 .settingsSlider:active {
@@ -180,12 +173,13 @@ p {
     color:rgb(15, 15, 15);
     filter: contrast(80%);
     filter: opacity(80%);
+    transition-duration: 0.1s;
 }
 
 .checkboxItem:hover {    
     filter: contrast(100%);
-    filter: opacity(100%);}
-
+    filter: opacity(100%);
+}
 
 .settingsInner {
     inline-size: min-content;
@@ -225,6 +219,14 @@ p {
 .settingsElement {
     margin-right: 30px;
     inline-size: max-content;
+    color:rgb(15, 15, 15);
+    filter: opacity(80%);
+    transition-duration: 0.1s;
+    margin-top: 2px;
+}
+
+.settingsElement:hover {    
+    filter: opacity(100%);
 }
 
 .settingsButton {
