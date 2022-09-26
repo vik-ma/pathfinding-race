@@ -53,14 +53,16 @@ export const TitleBar = () => {
             <div className={nodeDivMap["nodestart1"]}>1</div>{" "}
             {algorithmMap[algoList[0]]}
           </div>
-          <div className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : "" }`}>
+          <div
+            className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+          >
             {renderWinnerMsg
               ? calculatedAlgoMap[1].pathIsFound
                 ? `Found the goal node after visiting ${
                     calculatedAlgoMap[1].path.length - 1
                   } nodes!`
                 : "Could not find the goal node!"
-                : null}
+              : null}
           </div>
         </div>
         <div>
@@ -80,7 +82,9 @@ export const TitleBar = () => {
             <div className={nodeDivMap["nodestart2"]}>2</div>{" "}
             {algorithmMap[algoList[1]]}
           </div>
-          <div className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : "" }`}>
+          <div
+            className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+          >
             {renderWinnerMsg
               ? calculatedAlgoMap[2].pathIsFound
                 ? `Found the goal node after visiting ${
@@ -108,7 +112,9 @@ export const TitleBar = () => {
               <div className={nodeDivMap["nodestart3"]}>3</div>{" "}
               {algorithmMap[algoList[2]]}
             </div>
-            <div className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : "" }`}>
+            <div
+              className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+            >
               {renderWinnerMsg && calculatedAlgoMap[3]
                 ? calculatedAlgoMap[3].pathIsFound
                   ? `Found the goal node after visiting ${
@@ -137,7 +143,9 @@ export const TitleBar = () => {
               <div className={nodeDivMap["nodestart4"]}>4</div>{" "}
               {algorithmMap[algoList[3]]}
             </div>
-            <div className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : "" }`}>
+            <div
+              className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+            >
               {renderWinnerMsg && calculatedAlgoMap[4]
                 ? calculatedAlgoMap[4].pathIsFound
                   ? `Found the goal node after visiting ${
@@ -186,7 +194,7 @@ export const TitleBar = () => {
           </button>
           <button
             className="titleBarButton newMapButton"
-            onClick={() => remakeGrid()}
+            onClick={() => !visIsOngoing && remakeGrid()}
           >
             New Map
           </button>{" "}
@@ -205,7 +213,7 @@ export const TitleBar = () => {
           </button>
           <button
             className="titleBarButton settingsMenuButton"
-            onClick={() => setIsSettingsRendered(true)}
+            onClick={() => !visIsOngoing && setIsSettingsRendered(true)}
           >
             Settings
           </button>
