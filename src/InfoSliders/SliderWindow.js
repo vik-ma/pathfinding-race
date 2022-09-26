@@ -30,12 +30,13 @@ export const SliderWindow = () => {
           {slideIndex !== 0 ? (
             <SliderButton changeSlide={prevSlide} direction={"prev"} />
           ) : null}
+          <div className="infoButtonBack">
           <button
-            className="settingsButton infoButtonBack"
+            className="settingsButton"
             onClick={() => setIsInfoRendered(false)}
           >
             Return
-          </button>
+          </button></div>
 
           {AlgoInfo.map((obj, index) => {
             return (

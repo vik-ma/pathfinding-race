@@ -42,6 +42,7 @@ export const AlgoInfo = [
           </div>
           <br />
           <br />
+          An important thing to note 
           <br />
           <br />
         </p>
