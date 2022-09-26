@@ -179,6 +179,7 @@ p {
 .checkboxItem:hover {    
     filter: contrast(100%);
     filter: opacity(100%);
+    color:black;
 }
 
 .settingsInner {
@@ -227,6 +228,16 @@ p {
 
 .settingsElement:hover {    
     filter: opacity(100%);
+    color:black;
+}
+
+.allowDiagonalSetting {
+    margin-top:30px;
+}
+
+.settingValue {
+    display: inline-block;
+    color:rgb(0, 71, 204);
 }
 
 .settingsButton {
@@ -512,14 +523,14 @@ p {
     /* background-color:darkkhaki; */
     background: -webkit-linear-gradient(rgb(148, 137, 35), rgb(201, 195, 112));
     box-shadow: inset 0 0 0 3px rgb(185, 171, 39) !important;
-    color:#36360c;
+    color:#33330a;
 }
 
 .winnerAlgo {
     /* background-color:rgb(91, 233, 72) !important; */
     background: -webkit-linear-gradient(rgb(5, 165, 5), rgb(91, 233, 72)) !important;
     box-shadow: inset 0 0 0 3px rgb(80, 202, 80);
-    color:#133618;
+    color:#0e2e13;
 }
 
 .titleBarNode {

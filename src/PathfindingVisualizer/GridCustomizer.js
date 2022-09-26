@@ -121,7 +121,9 @@ export const GridCustomizer = () => {
               <h1 className="infoTitle settingsTitle">Settings</h1>
               <div className="settingsElement">
                 Number of Rows:{" "}
-                {newChanges["rows"] ? newChanges["rows"] : rowCount}
+                <div className="settingValue">
+                  {newChanges["rows"] ? newChanges["rows"] : rowCount}
+                </div>
                 <br />
                 <input
                   className="settingsSlider"
@@ -141,7 +143,9 @@ export const GridCustomizer = () => {
               </div>
               <div className="settingsElement">
                 Number of Columns:{" "}
-                {newChanges["cols"] ? newChanges["cols"] : colCount}
+                <div className="settingValue">
+                  {newChanges["cols"] ? newChanges["cols"] : colCount}
+                </div>
                 <br />
                 <input
                   className="settingsSlider"
@@ -161,7 +165,9 @@ export const GridCustomizer = () => {
               </div>
               <div className="settingsElement">
                 Number of Start Nodes:{" "}
-                {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
+                <div className="settingValue">
+                  {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
+                </div>
                 <br />
                 <input
                   className="settingsSlider"
@@ -180,7 +186,10 @@ export const GridCustomizer = () => {
                 ></input>
               </div>
               <div className="settingsElement">
-                Wall Density: {wordWallDensityMap[wallDensityValue]}
+                Wall Density:{" "}
+                <div className="settingValue">
+                  {wordWallDensityMap[wallDensityValue]}
+                </div>
                 <br />
                 <input
                   className="settingsSlider"
@@ -196,7 +205,10 @@ export const GridCustomizer = () => {
                 ></input>
               </div>
               <div className="settingsElement">
-                Visualizer Speed: {wordVisualizerSpeedMap[visualizerSpeed]}
+                Visualizer Speed:{" "}
+                <div className="settingValue">
+                  {wordVisualizerSpeedMap[visualizerSpeed]}
+                </div>
                 <br />
                 <input
                   className="settingsSlider"
@@ -213,20 +225,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement">
-                <input
-                  type="checkbox"
-                  id="allowDiagonals"
-                  name="allowDiagonals"
-                  checked={allowDiagonal}
-                  value="allowDiagonal"
-                  onChange={() => {
-                    setNoChangeMade(false);
-                    setAllowDiagonal(!allowDiagonal);
-                  }}
-                />{" "}
-                <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
-              </div>
+              
             </div>
             <div className="enableAlgoList">
               <h2 className="infoTitle settingsTitle algoListTitle">
@@ -309,6 +308,20 @@ export const GridCustomizer = () => {
                   }
                 />{" "}
                 <label htmlFor="greedy">Greedy Best-First Search</label>
+              </div>
+              <div className="settingsElement allowDiagonalSetting">
+                <input
+                  type="checkbox"
+                  id="allowDiagonals"
+                  name="allowDiagonals"
+                  checked={allowDiagonal}
+                  value="allowDiagonal"
+                  onChange={() => {
+                    setNoChangeMade(false);
+                    setAllowDiagonal(!allowDiagonal);
+                  }}
+                />{" "}
+                <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
               </div>
               <div className="settingsDoneButtonDiv">
                 <button
