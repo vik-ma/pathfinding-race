@@ -536,6 +536,7 @@ p {
 .titleBarNode {
     display: inline-block;
     border-radius: 3px;
+    border: 1px solid rgb(32, 32, 32) !important;
 }
 
 .infoNode {
@@ -599,12 +600,14 @@ p {
     background-color:rgb(158, 158, 158);
     color:rgb(36, 36, 36);
     box-shadow: inset 0 0 0 4px rgb(32, 32, 32);
-    border: 1px solid rgb(32, 32, 32);
+    /* border: 1px solid rgb(32, 32, 32); */
 }
 
 .node-goal {
     background-image: conic-gradient(lawngreen 0deg 360deg) !important;
-    border: 1px solid black !important;
+    /* border: 1px solid black !important; */
+    border: 1px solid rgb(0, 126, 0);
+
     box-shadow: inset 0 0 0 4px rgb(0, 126, 0);
     color:rgb(0, 78, 0) !important;
     text-shadow: 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132);
