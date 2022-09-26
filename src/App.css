@@ -289,6 +289,10 @@ input[type="checkbox"]:hover {
        1px 1px 1px rgb(26, 26, 26);
 }
 
+.titleBarButton:active {
+    transform: translateY(4px);
+}
+
 .justVisualizeButton {
     background-color: rgb(216, 27, 65);
     box-shadow: inset 0 0 8px 2px rgb(104, 10, 10);
