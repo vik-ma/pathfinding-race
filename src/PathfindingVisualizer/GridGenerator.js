@@ -371,6 +371,17 @@ export const GridGenerator = forwardRef((props, ref) => {
       if (i === lengthToDraw) {
         if (anyPathFound) {
           setTimeout(() => {
+            document
+              .getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
+              .classList.remove(`node-${goalNodeRow}-${goalNodeCol}`, "node-current");
+
+            void document.getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
+              .offsetWidth;
+
+            document
+              .getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
+              .classList.add(`node-${goalNodeRow}-${goalNodeCol}`, "node-current");
+
             drawWinnerPath(minIndex);
           }, visualizerSpeed * i);
         } else {
