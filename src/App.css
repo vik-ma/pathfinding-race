@@ -190,6 +190,7 @@ input[type="checkbox"]:hover {
     inline-size: min-content;
     display: flex;    
     flex-direction: row;
+    user-select: none;
 }
 
 .settingsTitle {   
