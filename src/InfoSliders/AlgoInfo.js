@@ -42,19 +42,23 @@ export const AlgoInfo = [
           </div>
           <br />
           <br />
-          The grid is an unweighted graph, which means the distance to every adjacent node is always the same. If 'Allow Diagonal Movement' setting is turned on, diagonally adjacent nodes also carries the same distance as 
+          The grid is an unweighted graph, which means the distance to every
+          adjacent node is always the same. If 'Allow Diagonal Movement' setting
+          is turned on, diagonally adjacent nodes also carries the same distance
+          as
           <br />
           <br />
-          An important thing to note 
+          An important thing to note
         </p>
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
           You can access the Settings menu by clicking the 'Settings' button.
           <br />
           <br />
-          In the Settings menu, you can customize the dimensions of the grid, how many different
-          contending algorithms there are, the amount of walls, the speed of the
-          visualizer and whether or not diagonal movement is allowed.
+          In the Settings menu, you can customize the dimensions of the grid,
+          how many different contending algorithms there are, the amount of
+          walls, the speed of the visualizer and whether or not diagonal
+          movement is allowed.
           <br />
           <br />
           You can also disable specific pathfinding algorithms from being

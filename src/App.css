@@ -432,6 +432,7 @@ p {
     border: 4px solid #dadada;
     margin: 0 4px;
     background: #dadada;
+    transition-duration: 0.2s;
 }
 
 .dot.active {
