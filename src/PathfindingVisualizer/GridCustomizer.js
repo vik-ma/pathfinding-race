@@ -124,7 +124,7 @@ export const GridCustomizer = () => {
                 {newChanges["rows"] ? newChanges["rows"] : rowCount}
                 <br />
                 <input
-                className="settingsSlider"
+                  className="settingsSlider"
                   type="range"
                   min="10"
                   max="26"
@@ -143,7 +143,8 @@ export const GridCustomizer = () => {
                 Number of Columns:{" "}
                 {newChanges["cols"] ? newChanges["cols"] : colCount}
                 <br />
-                <input className="settingsSlider"
+                <input
+                  className="settingsSlider"
                   type="range"
                   min="10"
                   max="40"
@@ -162,7 +163,8 @@ export const GridCustomizer = () => {
                 Number of Start Nodes:{" "}
                 {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
                 <br />
-                <input className="settingsSlider"
+                <input
+                  className="settingsSlider"
                   type="range"
                   min="2"
                   max="4"
@@ -180,7 +182,8 @@ export const GridCustomizer = () => {
               <div className="settingsElement">
                 Wall Density: {wordWallDensityMap[wallDensityValue]}
                 <br />
-                <input className="settingsSlider"
+                <input
+                  className="settingsSlider"
                   type="range"
                   min="1"
                   max="3"
@@ -195,7 +198,8 @@ export const GridCustomizer = () => {
               <div className="settingsElement">
                 Visualizer Speed: {wordVisualizerSpeedMap[visualizerSpeed]}
                 <br />
-                <input className="settingsSlider"
+                <input
+                  className="settingsSlider"
                   type="range"
                   min="1"
                   max="3"
@@ -209,7 +213,7 @@ export const GridCustomizer = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement">
+              <div className="settingsElement"><div className="checkboxItem">
                 <input
                   type="checkbox"
                   id="allowDiagonals"
@@ -222,69 +226,90 @@ export const GridCustomizer = () => {
                   }}
                 />{" "}
                 <label htmlFor="allowDiagonals">Allow Diagonal Movement</label>
-              </div>
+              </div></div>
             </div>
             <div className="enableAlgoList">
-              <h2 className="infoTitle settingsTitle algoListTitle">Enabled Algorithms</h2>
-              <input
-                type="checkbox"
-                id="astar"
-                name="astar"
-                checked={!disabledAlgos.includes(0)}
-                value="astar"
-                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 0)}
-              />{" "}
-              <label htmlFor="astar">A-Star Search</label>
-              <br />
-              <input
-                type="checkbox"
-                id="bidirectional"
-                name="bidirectional"
-                checked={!disabledAlgos.includes(1)}
-                value="bidirectional"
-                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 1)}
-              />{" "}
-              <label htmlFor="bidirectional">Bidirectional Search</label>
-              <br />
-              <input
-                type="checkbox"
-                id="breadth"
-                name="breadth"
-                checked={!disabledAlgos.includes(2)}
-                value="breadth"
-                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 2)}
-              />{" "}
-              <label htmlFor="breadth">Breadth-First Search</label>
-              <br />
-              <input
-                type="checkbox"
-                id="depth"
-                name="depth"
-                checked={!disabledAlgos.includes(3)}
-                value="depth"
-                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 3)}
-              />{" "}
-              <label htmlFor="depth">Depth-First Search</label>
-              <br />
-              <input
-                type="checkbox"
-                id="dijkstra"
-                name="dijkstra"
-                checked={!disabledAlgos.includes(4)}
-                value="dijkstra"
-                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 4)}
-              />{" "}
-              <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
-              <br />
-              <input
-                type="checkbox"
-                id="greedy"
-                name="greedy"
-                checked={!disabledAlgos.includes(5)}
-                value="greedy"
-                onChange={(e) => handleAlgoCheckboxChange(e.target.checked, 5)}
-              />{" "}
-              <label htmlFor="greedy">Greedy Best-First Search</label>
+              <h2 className="infoTitle settingsTitle algoListTitle">
+                Enabled Algorithms
+              </h2>
+              <div className="checkboxItem">
+                <input
+                  type="checkbox"
+                  id="astar"
+                  name="astar"
+                  checked={!disabledAlgos.includes(0)}
+                  value="astar"
+                  onChange={(e) =>
+                    handleAlgoCheckboxChange(e.target.checked, 0)
+                  }
+                />{" "}
+                <label htmlFor="astar">A-Star Search</label>
+              </div>
+              <div className="checkboxItem">
+                <input
+                  type="checkbox"
+                  id="bidirectional"
+                  name="bidirectional"
+                  checked={!disabledAlgos.includes(1)}
+                  value="bidirectional"
+                  onChange={(e) =>
+                    handleAlgoCheckboxChange(e.target.checked, 1)
+                  }
+                />{" "}
+                <label htmlFor="bidirectional">Bidirectional Search</label>
+              </div>
+              <div className="checkboxItem">
+                <input
+                  type="checkbox"
+                  id="breadth"
+                  name="breadth"
+                  checked={!disabledAlgos.includes(2)}
+                  value="breadth"
+                  onChange={(e) =>
+                    handleAlgoCheckboxChange(e.target.checked, 2)
+                  }
+                />{" "}
+                <label htmlFor="breadth">Breadth-First Search</label>
+              </div>
+              <div className="checkboxItem">
+                <input
+                  type="checkbox"
+                  id="depth"
+                  name="depth"
+                  checked={!disabledAlgos.includes(3)}
+                  value="depth"
+                  onChange={(e) =>
+                    handleAlgoCheckboxChange(e.target.checked, 3)
+                  }
+                />{" "}
+                <label htmlFor="depth">Depth-First Search</label>
+              </div>
+              <div className="checkboxItem">
+                <input
+                  type="checkbox"
+                  id="dijkstra"
+                  name="dijkstra"
+                  checked={!disabledAlgos.includes(4)}
+                  value="dijkstra"
+                  onChange={(e) =>
+                    handleAlgoCheckboxChange(e.target.checked, 4)
+                  }
+                />{" "}
+                <label htmlFor="dijkstra">Dijkstra's Algorithm</label>
+              </div>
+              <div className="checkboxItem">
+                <input
+                  type="checkbox"
+                  id="greedy"
+                  name="greedy"
+                  checked={!disabledAlgos.includes(5)}
+                  value="greedy"
+                  onChange={(e) =>
+                    handleAlgoCheckboxChange(e.target.checked, 5)
+                  }
+                />{" "}
+                <label htmlFor="greedy">Greedy Best-First Search</label>
+              </div>
               <div className="settingsDoneButtonDiv">
                 <button
                   className="settingsButton"

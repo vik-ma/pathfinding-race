@@ -176,15 +176,16 @@ p {
     border-radius: 4px;
 }
 
-input[type="checkbox"] { 
+.checkboxItem {
+    color:rgb(15, 15, 15);
     filter: contrast(80%);
     filter: opacity(80%);
 }
 
-input[type="checkbox"]:hover {
+.checkboxItem:hover {    
     filter: contrast(100%);
-    filter: opacity(100%);
-}
+    filter: opacity(100%);}
+
 
 .settingsInner {
     inline-size: min-content;
