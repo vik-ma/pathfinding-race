@@ -8,14 +8,12 @@ export const AlgoInfo = [
         <p>
           <strong>
             This is a pathfinding visualizer where multiple pathfinding
-            algorithms will race to the goal node, and you get to guess which
-            algorithm will reach the goal node first!
-          </strong>
+            algorithms will race to the Goal Node, and you get to guess which one will win!</strong> The algorithm that finds the Goal Node after visiting the least amount nodes wins!
           <br />
           <br />
           The entire grid is randomized. The walls, the goal node, and the
           starting positions of every "contender" is different every map. Every
-          "contender" also gets randomly assigned one of six different
+          "contender" also gets randomly assigned one out of six different
           pathfinding algorithms.
           <br />
           <br />
