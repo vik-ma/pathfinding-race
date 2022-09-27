@@ -43,12 +43,18 @@ export const AlgoInfo = [
           <br />
           <br />
           The grid is an unweighted graph, which means the distance to every
-          adjacent node is always the same. If 'Allow Diagonal Movement' setting
-          is turned on, diagonally adjacent nodes also carries the same distance
-          as
+          immediately adjacent node is always the same. If the 'Allow Diagonal
+          Movement' setting is turned on, diagonally adjacent nodes will carry
+          the same distance as the adjacent nodes in one of the four cardinal
+          directions
           <br />
           <br />
-          An important thing to note
+          An important thing to note is the order of which adjacent nodes that
+          the pathfinding algorithms will go through. In this app, the order is
+          as follows: North, South, West, East, North-West, South-West,
+          South-East, North-East. For some algorithms, this will have very
+          little to no impact, but it will completely determine the paths which
+          the Depth First Search algorithm will take.
         </p>
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>

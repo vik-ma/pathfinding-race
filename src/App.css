@@ -372,8 +372,8 @@ p {
 .slide {
     left:0;
     position: absolute;
-    margin-left: 75px;
-    margin-right: 75px;
+    margin-left: 70px;
+    margin-right: 70px;
     overflow-wrap: break-word;
     opacity: 0;
     transition-duration: 0.2s;
