@@ -6,11 +6,11 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">About</h2>
         <p>
-          <div className="specialInfoText">
+          <strong>
             This is a pathfinding visualizer where multiple pathfinding
             algorithms will race to the goal node, and you get to guess which
             algorithm will reach the goal node first!
-          </div>
+          </strong>
           <br />
           <br />
           The entire grid is randomized. The walls, the goal node, and the
@@ -25,19 +25,18 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle">How To Play</h2>
         <p>
-          <div className="specialInfoText">
+          <strong>
             Simply click on the contender you will think win listed above the
             grid and the visualizer will start!
-          </div>
-          <br />
-          <br /> Your choice will be marked in golden-beige color, and once the
+          </strong>{" "}
+          Your choice will be marked in golden-beige color, and once the
           visualizer finishes, the correct choice will get marked in green.
           <br />
           <br />
-          <div className="specialInfoText">
-            Click the 'New Map' button to generate a fresh new randomized grid and play
-            again!
-          </div>
+          <strong>
+            Click the 'New Map' button to generate a fresh new randomized grid
+            and play again!
+          </strong>
           <br />
           <br />
           If you don't want to make a prediction, click the 'Just Visualize'
@@ -58,12 +57,12 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
         <p>
-          The six pathfinding algorithms implemented in this app are{" "}
-          <div className="specialInfoText">
+          The six pathfinding algorithms implemented in this app are <br />
+          <strong>
             Breadth First Search, Depth First Search, Dijkstra's Algortihm,
-            <br /> A-Star Search, Greedy Best-First Search and Bidirectional
-            Search.
-          </div>
+            <br /> A-Star Search, Greedy Best-First Search
+          </strong>{" "}
+          and <strong>Bidirectional Search.</strong>
           <br />
           <br />
           The grid is an unweighted graph, which means the distance to every
@@ -75,10 +74,13 @@ export const AlgoInfo = [
           <br />
           An important thing to note is the order of which adjacent nodes the
           pathfinding algorithms will go through. In this app, the order is as
-          follows: North, South, West, East, North-West, South-West, South-East,
-          North-East. For some algorithms, this will have very little to no
-          impact, but this does completely determine the path which the Depth
-          First Search algorithm will take.
+          follows: <strong>North, South, West, East, North-West, South-West, South-East,
+          North-East.</strong> For some algorithms, this will have very little to no
+          impact, but{" "}
+          <strong>
+            this does completely determine the paths which the Depth First
+            Search algorithm takes.
+          </strong>
         </p>
         <br />
         <h2 className="infoSubTitle">Settings Menu</h2>
@@ -86,14 +88,14 @@ export const AlgoInfo = [
           You can access the Settings menu by clicking the 'Settings' button.
           <br />
           <br />
-          In the Settings menu, you can customize the dimensions of the grid,
+          In the Settings menu, <strong>you can customize the dimensions of the grid,
           how many different contending algorithms there are, the amount of
           walls, the speed of the visualizer and whether or not diagonal
-          movement is allowed.
+          movement is allowed.</strong>
           <br />
           <br />
           You can also disable specific pathfinding algorithms from being
-          randomly selected.
+          assigned to the contenders.
         </p>
       </>
     ),
@@ -105,9 +107,9 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle infoSubTitleNodes">Start Nodes</h2>
         <p>
-          <div className="specialInfoText">
+        <strong>
             These nodes are the start nodes:
-          </div>{" "}
+          </strong>{" "}
           <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
             1
           </div>{" "}
@@ -121,7 +123,7 @@ export const AlgoInfo = [
             4
           </div>
           <br />
-          Each start node will get assigned a random pathfinding algorithm. The
+          Each contender will get assigned a random pathfinding algorithm. The
           visualizer will draw out the paths the algorithms take from their
           respective start nodes in the same color. <br />
           <br />
@@ -130,7 +132,7 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
-          <div className="specialInfoText">This node is the goal node:</div>{" "}
+        <strong>This node is the goal node:</strong>{" "}
           <div className="node node-goal titleBarNode infoNode">G</div>
           <br />
           The visualizer will stop when the first algorithm reaches the goal
@@ -143,9 +145,9 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
-          <div className="specialInfoText">
+        <strong>
             These darker nodes are wall nodes:
-          </div>{" "}
+          </strong>{" "}
           <div className="node node-wall infoNode"></div>
           <br />
           Pathfinding algorithms can not pass through these nodes. <br />
