@@ -21,9 +21,28 @@ export const AlgoInfo = [
           <br />
           You can read more about all six implemented pathfinding algorithms in
           the following slides!
-        </p><br />
+        </p>
+        <br />
         <h2 className="infoSubTitle">How To Play</h2>
-        <p>The contending algorithms do not affect each other in any way</p>
+        <p>
+          Simply click on the contender you will think win listed above the grid
+          and the visualizer will start. Your choice will be marked in
+          golden-beige color, and once the visualizer finishes, the correct
+          choice will get marked in green.
+          <br />
+          <br />
+          Click the 'New Map' button to generate a fresh new grid and play
+          again!
+          <br />
+          <br />
+          If you don't want to make a prediction, click the 'Just Visualize'
+          button to just watch the match unfold instead.
+          <br />
+          <br />
+          The contending algorithms do not affect each other in any way, and if
+          one node gets visited by more than one contender, the node will split
+          its coloring to represent every visited contender.
+        </p>
       </>
     ),
   },
@@ -55,7 +74,8 @@ export const AlgoInfo = [
           North-East. For some algorithms, this will have very little to no
           impact, but it will completely determine the paths which the Depth
           First Search algorithm will take.
-        </p><br />
+        </p>
+        <br />
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
           You can access the Settings menu by clicking the 'Settings' button.
@@ -101,7 +121,8 @@ export const AlgoInfo = [
           respective start nodes in the same color. <br />
           <br />
           Start nodes are not considered impassable by other algorithms.
-        </p><br />
+        </p>
+        <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
           <div className="specialInfoText">This node is the goal node:</div>{" "}
@@ -113,7 +134,8 @@ export const AlgoInfo = [
           If no algorithms can find the goal node, the visualizer will stop
           after five seconds has passed, in order to not waste time simulating
           every node being visited.
-        </p><br />
+        </p>
+        <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
           <div className="specialInfoText">
