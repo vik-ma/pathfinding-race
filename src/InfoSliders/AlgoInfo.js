@@ -77,7 +77,7 @@ export const AlgoInfo = [
           pathfinding algorithms will go through. In this app, the order is as
           follows: North, South, West, East, North-West, South-West, South-East,
           North-East. For some algorithms, this will have very little to no
-          impact, but it will completely determine the paths which the Depth
+          impact, but this does completely determine the path which the Depth
           First Search algorithm will take.
         </p>
         <br />
