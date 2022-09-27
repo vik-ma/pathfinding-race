@@ -25,14 +25,19 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle">How To Play</h2>
         <p>
-          Simply click on the contender you will think win listed above the grid
-          and the visualizer will start. Your choice will be marked in
-          golden-beige color, and once the visualizer finishes, the correct
-          choice will get marked in green.
+          <div className="specialInfoText">
+            Simply click on the contender you will think win listed above the
+            grid and the visualizer will start!
+          </div>
+          <br />
+          <br /> Your choice will be marked in golden-beige color, and once the
+          visualizer finishes, the correct choice will get marked in green.
           <br />
           <br />
-          Click the 'New Map' button to generate a fresh new grid and play
-          again!
+          <div className="specialInfoText">
+            Click the 'New Map' button to generate a fresh new randomized grid and play
+            again!
+          </div>
           <br />
           <br />
           If you don't want to make a prediction, click the 'Just Visualize'
