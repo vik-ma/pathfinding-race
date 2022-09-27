@@ -21,7 +21,7 @@ export const AlgoInfo = [
           <br />
           You can read more about all six implemented pathfinding algorithms in
           the following slides!
-        </p>
+        </p><br />
         <h2 className="infoSubTitle">How To Play</h2>
         <p>The contending algorithms do not affect each other in any way</p>
       </>
@@ -46,16 +46,16 @@ export const AlgoInfo = [
           immediately adjacent node is always the same. If the 'Allow Diagonal
           Movement' setting is turned on, diagonally adjacent nodes will carry
           the same distance as the adjacent nodes in one of the four cardinal
-          directions
+          directions.
           <br />
           <br />
-          An important thing to note is the order of which adjacent nodes that
-          the pathfinding algorithms will go through. In this app, the order is
-          as follows: North, South, West, East, North-West, South-West,
-          South-East, North-East. For some algorithms, this will have very
-          little to no impact, but it will completely determine the paths which
-          the Depth First Search algorithm will take.
-        </p>
+          An important thing to note is the order of which adjacent nodes the
+          pathfinding algorithms will go through. In this app, the order is as
+          follows: North, South, West, East, North-West, South-West, South-East,
+          North-East. For some algorithms, this will have very little to no
+          impact, but it will completely determine the paths which the Depth
+          First Search algorithm will take.
+        </p><br />
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
           You can access the Settings menu by clicking the 'Settings' button.
@@ -101,7 +101,7 @@ export const AlgoInfo = [
           respective start nodes in the same color. <br />
           <br />
           Start nodes are not considered impassable by other algorithms.
-        </p>
+        </p><br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
           <div className="specialInfoText">This node is the goal node:</div>{" "}
@@ -113,7 +113,7 @@ export const AlgoInfo = [
           If no algorithms can find the goal node, the visualizer will stop
           after five seconds has passed, in order to not waste time simulating
           every node being visited.
-        </p>
+        </p><br />
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
           <div className="specialInfoText">
