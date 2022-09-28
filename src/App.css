@@ -39,6 +39,7 @@ p {
     user-select: auto;
     color:rgb(12, 12, 12);
     line-height: 18px;
+    display: inline-block;
 }
 
 p strong {

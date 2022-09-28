@@ -107,7 +107,7 @@ export const AlgoInfo = [
         <p>
         <strong>
             These nodes are the start nodes:
-          </strong>{" "}
+          </strong></p>{" "}
           <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
             1
           </div>{" "}
@@ -119,7 +119,7 @@ export const AlgoInfo = [
           </div>{" "}
           <div className="node node-visited-4 node-start-4 titleBarNode infoNode">
             4
-          </div>
+          </div><p>
           <br />
           Each contender will get assigned a random pathfinding algorithm. The
           visualizer will draw out the paths the algorithms take from their
@@ -130,9 +130,9 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
-        <strong>This node is the goal node:</strong>{" "}
+        <strong>This node is the goal node:</strong></p>{" "}
           <div className="node node-goal titleBarNode infoNode">G</div>
-          <br />
+          <br /><p>
           The visualizer will stop when the first algorithm reaches the goal
           node. <br />
           <br />
@@ -145,8 +145,8 @@ export const AlgoInfo = [
         <p>
         <strong>
             These darker nodes are wall nodes:
-          </strong>{" "}
-          <div className="node node-wall infoNode"></div>
+          </strong></p>{" "}
+          <div className="node node-wall infoNode"></div><p>
           <br />
           Pathfinding algorithms can not pass through these nodes. <br />
           <br />
