@@ -635,8 +635,8 @@ export const GridGenerator = forwardRef((props, ref) => {
         </div>
       ) : null}
       {isPending ? (
-        <div className="loadingGridMsg">
-          Loading Grid...
+        <div className="loadingContainer">
+          Loading Grid...<div className="loadingGridMsg"></div>
         </div>
       ) : (
         <div className="gridContainer">{drawGrid}</div>
