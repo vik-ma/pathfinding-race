@@ -8,7 +8,11 @@ export const AlgoInfo = [
         <p>
           <strong>
             This is a pathfinding visualizer where multiple pathfinding
-            algorithms will race to the Goal Node, and you get to guess which one will win!</strong> The algorithm that finds the Goal Node after visiting the least amount nodes wins!
+            algorithms will race to the Goal Node, and you get to guess which
+            one will win!
+          </strong>{" "}
+          The algorithm that finds the Goal Node after visiting the least amount
+          nodes wins!
           <br />
           <br />
           The entire grid is randomized. The walls, the goal node, and the
@@ -17,7 +21,7 @@ export const AlgoInfo = [
           pathfinding algorithms.
           <br />
           <br />
-          You can read more about all six implemented pathfinding algorithms in
+          You can read more about the six implemented pathfinding algorithms in
           the following slides!
         </p>
         <br />
@@ -72,9 +76,12 @@ export const AlgoInfo = [
           <br />
           An important thing to note is the order of which adjacent nodes the
           pathfinding algorithms will go through. In this app, the order is as
-          follows: <strong>North, South, West, East, North-West, South-West, South-East,
-          North-East.</strong> For some algorithms, this will have very little to no
-          impact, but{" "}
+          follows:{" "}
+          <strong>
+            North, South, West, East, North-West, South-West, South-East,
+            North-East.
+          </strong>{" "}
+          For some algorithms, this will have very little to no impact, but{" "}
           <strong>
             this does completely determine the paths which the Depth First
             Search algorithm takes.
@@ -86,10 +93,12 @@ export const AlgoInfo = [
           You can access the Settings menu by clicking the 'Settings' button.
           <br />
           <br />
-          In the Settings menu, <strong>you can customize the dimensions of the grid,
-          how many different contending algorithms there are, the amount of
-          walls, the speed of the visualizer and whether or not diagonal
-          movement is allowed.</strong>
+          In the Settings menu,{" "}
+          <strong>
+            you can customize the dimensions of the grid, how many different
+            contending algorithms there are, the amount of walls, the speed of
+            the visualizer and whether or not diagonal movement is allowed.
+          </strong>
           <br />
           <br />
           You can also disable specific pathfinding algorithms from being
@@ -105,21 +114,21 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle infoSubTitleNodes">Start Nodes</h2>
         <p>
-        <strong>
-            These nodes are the start nodes:
-          </strong></p>{" "}
-          <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
-            1
-          </div>{" "}
-          <div className="node node-visited-2 node-start-2 titleBarNode infoNode">
-            2
-          </div>{" "}
-          <div className="node node-visited-3 node-start-3 titleBarNode infoNode">
-            3
-          </div>{" "}
-          <div className="node node-visited-4 node-start-4 titleBarNode infoNode">
-            4
-          </div><p>
+          <strong>These nodes are the start nodes:</strong>
+        </p>{" "}
+        <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
+          1
+        </div>{" "}
+        <div className="node node-visited-2 node-start-2 titleBarNode infoNode">
+          2
+        </div>{" "}
+        <div className="node node-visited-3 node-start-3 titleBarNode infoNode">
+          3
+        </div>{" "}
+        <div className="node node-visited-4 node-start-4 titleBarNode infoNode">
+          4
+        </div>
+        <p>
           Each contender will get assigned a random pathfinding algorithm. The
           visualizer will draw out the paths the algorithms take from their
           respective start nodes in the same color. <br />
@@ -129,9 +138,11 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
-        <strong>This node is the goal node:</strong></p>{" "}
-          <div className="node node-goal titleBarNode infoNode">G</div>
-          <br /><p>
+          <strong>This node is the goal node:</strong>
+        </p>{" "}
+        <div className="node node-goal titleBarNode infoNode">G</div>
+        <br />
+        <p>
           The visualizer will stop when the first algorithm reaches the goal
           node. <br />
           <br />
@@ -142,10 +153,10 @@ export const AlgoInfo = [
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
-        <strong>
-            These darker nodes are wall nodes:
-          </strong></p>{" "}
-          <div className="node node-wall infoNode"></div><p>
+          <strong>These darker nodes are wall nodes:</strong>
+        </p>{" "}
+        <div className="node node-wall infoNode"></div>
+        <p>
           Pathfinding algorithms can not pass through these nodes. <br />
           <br />
           If 'Allow Diagonal Movement' setting is turned on, pathfinding
@@ -160,11 +171,39 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Breadth First Search</h1>,
     text: (
       <>
-        Breadth First SearchBreadth First SearchBreadth First Search Breadth
-        First SearchBreadth First SearchBreadth First SearchBreadth First Search
-        Breadth First SearchBreadth First SearchBreadth First SearchBreadth
-        First SearchBreadth First SearchBreadth First SearchBreadth First
-        SearchBreadth First Search Breadth First Search
+        <p>
+          <br />
+          The Breadth First Search algorithm traverses the grid using a queue
+          system.
+          <br />
+        </p>
+        <h2 className="infoSubTitle">How It Works</h2>
+        <p>
+          Beginning from the start node, every non-wall adjacent node gets added
+          into a queue. <br />
+          Then, the first node added to the queue gets popped out of the queue.{" "}
+          <br />
+          The node is marked as visited and checked if it is the Goal Node, if
+          not, all of it's non-wall, non-visited adjacent nodes will be added to
+          the back of the queue. <br />
+          After that, the first node in the queue gets popped out again and the
+          process is repeated until the Goal Node is found, or there are no more
+          connected nodes to explore (Goal Node is not reachable).
+          <br />
+          <br />
+          In practice, this means that the algorithm will traverse the grid
+          "layer by layer" out from the start node.
+        </p>
+        <h2 className="infoSubTitle">Performance</h2>
+        <p>
+          Breadth First Search is a very slow on average, as no optimizations or
+          heuristics are being done to alter the direction it takes when
+          searching for the Goal Node.
+          <br />
+          <br />
+          On average, Breadth First Search is, along with Dijkstra's Algorithm
+          the slowest pathfinding algorithm implemented in this app.
+        </p>
       </>
     ),
   },
