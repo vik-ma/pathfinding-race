@@ -495,6 +495,19 @@ p strong {
     animation: fadeIn 0.4s;
 }
 
+.loadingGridMsg {
+    font-family: Arial, Helvetica, sans-serif;
+    background: -webkit-linear-gradient( rgb(202, 202, 202),rgb(240, 240, 240));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    margin-top: 30px;
+    opacity: 70%;
+}
+
 .titleBarChoices {
     padding: 3px;
     width: 225px;

@@ -4,6 +4,7 @@ import React, {
   useContext,
   forwardRef,
   useImperativeHandle,
+  useTransition,
 } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 import { Node } from "./Node";
@@ -36,6 +37,8 @@ export const GridGenerator = forwardRef((props, ref) => {
       calculatePaths();
     },
   }));
+
+  const [isPending, startTransition] = useTransition();
 
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
@@ -83,7 +86,9 @@ export const GridGenerator = forwardRef((props, ref) => {
   const [startNodeCol4] = useState(randomNodeColArray[4]);
 
   useEffect(() => {
-    createGrid();
+    startTransition(() => {
+      createGrid();
+    });
   }, []);
 
   const createGrid = () => {
@@ -373,14 +378,20 @@ export const GridGenerator = forwardRef((props, ref) => {
           setTimeout(() => {
             document
               .getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
-              .classList.remove(`node-${goalNodeRow}-${goalNodeCol}`, "node-current");
+              .classList.remove(
+                `node-${goalNodeRow}-${goalNodeCol}`,
+                "node-current"
+              );
 
             void document.getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
               .offsetWidth;
 
             document
               .getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
-              .classList.add(`node-${goalNodeRow}-${goalNodeCol}`, "node-current");
+              .classList.add(
+                `node-${goalNodeRow}-${goalNodeCol}`,
+                "node-current"
+              );
 
             drawWinnerPath(minIndex);
           }, visualizerSpeed * i);
@@ -423,11 +434,11 @@ export const GridGenerator = forwardRef((props, ref) => {
             const newClass = getNewNodeClass(2, classNames);
 
             document
-            .getElementById(`node-${node2.row}-${node2.col}`)
-            .classList.remove(newClass, "node-current");
+              .getElementById(`node-${node2.row}-${node2.col}`)
+              .classList.remove(newClass, "node-current");
 
-          void document.getElementById(`node-${node2.row}-${node2.col}`)
-            .offsetWidth;
+            void document.getElementById(`node-${node2.row}-${node2.col}`)
+              .offsetWidth;
 
             document
               .getElementById(`node-${node2.row}-${node2.col}`)
@@ -442,11 +453,11 @@ export const GridGenerator = forwardRef((props, ref) => {
               const newClass = getNewNodeClass(3, classNames);
 
               document
-              .getElementById(`node-${node3.row}-${node3.col}`)
-              .classList.remove(newClass, "node-current");
+                .getElementById(`node-${node3.row}-${node3.col}`)
+                .classList.remove(newClass, "node-current");
 
-            void document.getElementById(`node-${node3.row}-${node3.col}`)
-              .offsetWidth;
+              void document.getElementById(`node-${node3.row}-${node3.col}`)
+                .offsetWidth;
 
               document
                 .getElementById(`node-${node3.row}-${node3.col}`)
@@ -462,11 +473,11 @@ export const GridGenerator = forwardRef((props, ref) => {
               const newClass = getNewNodeClass(4, classNames);
 
               document
-              .getElementById(`node-${node4.row}-${node4.col}`)
-              .classList.remove(newClass, "node-current");
+                .getElementById(`node-${node4.row}-${node4.col}`)
+                .classList.remove(newClass, "node-current");
 
-            void document.getElementById(`node-${node4.row}-${node4.col}`)
-              .offsetWidth;
+              void document.getElementById(`node-${node4.row}-${node4.col}`)
+                .offsetWidth;
 
               document
                 .getElementById(`node-${node4.row}-${node4.col}`)
@@ -623,7 +634,13 @@ export const GridGenerator = forwardRef((props, ref) => {
           </div>
         </div>
       ) : null}
-      <div className="gridContainer">{drawGrid}</div>
+      {isPending ? (
+        <div className="loadingGridMsg">
+          Loading Grid...
+        </div>
+      ) : (
+        <div className="gridContainer">{drawGrid}</div>
+      )}
     </div>
   );
 });
