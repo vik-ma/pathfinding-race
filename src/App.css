@@ -306,9 +306,9 @@ p strong {
        1px 1px 1px rgb(26, 26, 26);
 }
 
-.titleBarButton:active {
-    /* transform: translateY(4px); */
-}
+/* .titleBarButton:active {
+    transform: translateY(4px);
+} */
 
 .justVisualizeButton {
     background-color: rgb(216, 27, 65);
@@ -525,7 +525,8 @@ p strong {
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }}
+    100% { transform: rotate(360deg); }
+}
 
 @keyframes fadeInLoading {
     from {

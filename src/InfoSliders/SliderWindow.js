@@ -58,9 +58,6 @@ export const SliderWindow = () => {
               ></div>
             ))}
           </div>
-
-          {/* {AlgoInfo[slideIndex].title}
-          {AlgoInfo[slideIndex].text} */}
         </div>
       </div>
     </div>

@@ -4,11 +4,9 @@ import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
 import { GridContext } from "./Helpers/GridContexts";
 import { TitleBar } from "./PathfindingVisualizer/TitleBar";
 import { SliderWindow } from "./InfoSliders/SliderWindow";
-import { TestComponent } from "./TestComponent";
 
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(true);
-  const [renderTest, setRenderTest] = useState(false);
   const [isSettingsRendered, setIsSettingsRendered] = useState(false);
   const [isInfoRendered, setIsInfoRendered] = useState(false);
 
@@ -256,16 +254,6 @@ function App() {
             <div className="appBackdrop">
               {isGridRendered ? <TitleBar key={titleKey} /> : null}
               {isSettingsRendered ? <GridCustomizer /> : null}
-              {/* <div className="buttonContainer"> */}
-              {/* <button
-              onClick={() => {
-                setRenderTest(true);
-              }}
-            >
-              TEST BUTTON
-            </button> */}
-              {/* </div> */}
-              {renderTest ? <TestComponent /> : null}
               {isInfoRendered ? <SliderWindow /> : null}
             </div>
           </div>

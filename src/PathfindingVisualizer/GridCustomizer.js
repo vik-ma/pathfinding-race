@@ -107,7 +107,7 @@ export const GridCustomizer = () => {
   };
 
   useEffect(() => {
-    if (isChangeMade === true) {
+    if (isChangeMade) {
       remakeGrid();
     }
   }, [isChangeMade]);
