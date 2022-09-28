@@ -120,7 +120,6 @@ export const AlgoInfo = [
           <div className="node node-visited-4 node-start-4 titleBarNode infoNode">
             4
           </div><p>
-          <br />
           Each contender will get assigned a random pathfinding algorithm. The
           visualizer will draw out the paths the algorithms take from their
           respective start nodes in the same color. <br />
@@ -147,7 +146,6 @@ export const AlgoInfo = [
             These darker nodes are wall nodes:
           </strong></p>{" "}
           <div className="node node-wall infoNode"></div><p>
-          <br />
           Pathfinding algorithms can not pass through these nodes. <br />
           <br />
           If 'Allow Diagonal Movement' setting is turned on, pathfinding
