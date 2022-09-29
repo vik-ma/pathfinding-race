@@ -273,9 +273,9 @@ export const AlgoInfo = [
           priority queue rather than a chronologic list.
           <br />
           Every adjacent node gets added to the queue along with a priority
-          value. The value is calculated by taking total distance traveled from
-          the Start Node to the current node plus the distance to the specific
-          adjacent node.
+          value. The value is calculated by taking the total distance traveled
+          from the Start Node to the current node plus the distance to the
+          specific adjacent node.
           <br />
           The adjacent nodes are then enqueued based on priority value (Lower
           value equals higher priority).
@@ -327,11 +327,36 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
-        <p></p>
+        <p>
+          Bidirectional Search is an algorithm which will alternate between
+          searching from the Start Node to searching from the Goal Node. Instead
+          of searching for the Goal Node, it will search for an intersection of
+          the two paths.
+        </p>
         <h2 className="infoSubTitle">How It Works</h2>
-        <p></p>
+        <p>
+          In this app, Bidirectional Search is a regular Breadth First Search
+          applied from both the Start Node and the Goal Node.
+          <br />
+          Every other node, the algorithm will alternate between the Breadth
+          First Search algorithm originating from the Start Node to the one
+          originating from the Goal Node.
+          <br />
+          Instead of checking if the Goal Node has been found, the algorithm
+          will check if the current node has been visited by the other side.
+        </p>
         <h2 className="infoSubTitle">Performance</h2>
-        <p></p>
+        <p>
+          Bidirectional Breadth First Search is an optimized version of Breadth
+          First Search, and about twice as fast, since half of the algorithm is
+          always moving towards the "Goal".
+          <br />
+          <br />
+          It is consistently the most average performing algorithm implemented
+          in this app, since the heuristics of A-Star Search and Greedy
+          Best-First Search are generally more efficient than an optimized
+          version of Breadth First Search.
+        </p>
       </>
     ),
   },
