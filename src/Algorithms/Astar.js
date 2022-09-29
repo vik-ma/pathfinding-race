@@ -4,8 +4,8 @@ export function Astar(startNode, goalNode) {
   var pq = new PriorityQueue();
   var path = [];
   var pathFoundMessage = "CANT FIND PATH";
-  var pathIsFound = false;
   var pathToGoal = [];
+  var pathIsFound = false;
   var algoName = "A-Star Search";
 
   startNode.distance = 0;
@@ -38,8 +38,8 @@ export function Astar(startNode, goalNode) {
         pathToGoal.push(tempNode.previousNode);
         tempNode = tempNode.previousNode;
       }
-
       pathToGoal = pathToGoal.reverse();
+
       return { path, pathFoundMessage, pathToGoal, pathIsFound, algoName };
     }
 
@@ -52,6 +52,7 @@ export function Astar(startNode, goalNode) {
           let priority =
             adjacentNodes[i].distance + heuristic(adjacentNodes[i], goalNode);
           pq.enqueue([adjacentNodes[i], priority]);
+          adjacentNodes[i].previousNode = currentNode;
         }
       }
     }
