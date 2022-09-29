@@ -248,8 +248,8 @@ export const AlgoInfo = [
           The speed of the Depth First Search algorithm is highly inconsistent.
           It is one of the fastest algorithms if the Goal Node happens to line
           up with the initial path the algorithm takes. Likewise, if the Goal
-          Node happens to be just one position off the algorithm's path, or on
-          the opposite side, it will be one of the slowest algorithms.
+          Node happens to be just one position off the algorithm's path, or lay
+          in the opposite direction, it will be one of the slowest algorithms.
         </p>
       </>
     ),
@@ -274,16 +274,16 @@ export const AlgoInfo = [
           <br />
           Every adjacent node gets added to the queue along with a priority
           value. The value is calculated by taking total distance traveled from
-          the Start Node to the current node plus the distance to the specific adjacent
-          node.
+          the Start Node to the current node plus the distance to the specific
+          adjacent node.
           <br />
           The adjacent nodes are then enqueued based on priority value (Lower
           value equals higher priority).
           <br />
           <br />
           Since this grid is an unweighted graph, the distance to every adjacent
-          node is always 1. Therefore, Dijkstra's Algorithm will always
-          search "layer by layer", just like Breadth First Search.
+          node is always 1. Therefore, Dijkstra's Algorithm will always search
+          "layer by layer", just like Breadth First Search.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
