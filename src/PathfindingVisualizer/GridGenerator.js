@@ -219,10 +219,6 @@ export const GridGenerator = forwardRef((props, ref) => {
     this.previousNode = undefined;
     this.previousNodeBidirectional = undefined;
     this.distance = Infinity;
-    this.isClosed = false;
-    this.f = 0;
-    this.g = 0;
-    this.h = 0;
     this.addAdjacentNodes = function (grid) {
       let row = this.row;
       let col = this.col;
