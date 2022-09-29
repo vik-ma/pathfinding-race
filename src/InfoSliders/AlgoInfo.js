@@ -171,11 +171,10 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Breadth First Search</h1>,
     text: (
       <>
+        <h2 className="infoSubTitle">Description</h2>
         <p>
-          <br />
           The Breadth First Search algorithm traverses the grid using a queue
           system.
-          <br />
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
@@ -212,10 +211,12 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Depth First Search</h1>,
     text: (
       <>
-        Depth First Search Depth First Search Depth First Search Depth First
-        SearchDepth First SearchDepth First SearchDepth First Search Depth First
-        Search Depth First SearchDepth First SearchDepth First Search Depth
-        First SearchDepth First SearchvvDepth First Searchvv
+        <h2 className="infoSubTitle">Description</h2>
+        <p></p>
+        <h2 className="infoSubTitle">How It Works</h2>
+        <p></p>
+        <h2 className="infoSubTitle">Performance</h2>
+        <p></p>
       </>
     ),
   },
