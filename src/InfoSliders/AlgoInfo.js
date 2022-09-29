@@ -299,11 +299,40 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
-        <p></p>
+        <p>
+          A-Star Search algorithm is an improved version of Dijkstra's
+          Algorithm, where a heuristic function that measures the distance
+          between the current adjacent nodes and the Goal Node is added, making
+          the algorithm much faster.
+        </p>
         <h2 className="infoSubTitle">How It Works</h2>
-        <p></p>
+        <p>
+          Just like Dijkstra's Algorithm, the A-Star Search algorithm uses a
+          priority queue. The difference is that the priority value is now
+          influenced by a heuristic function that calculates the distance
+          between the current adjacent nodes and the Goal Node.
+          <br />
+          Since this is an unweighted grid, the heuristic value is going to be
+          the only thing influencing the path the algorithm will take.
+          <br />
+          The adjacent node closer to the Goal Node will always produce a lower
+          heuristic value, and thus get a higher priority in the queue.
+          <br />
+          <br />
+          In this app, the implemented heuristic function is the Manhattan
+          Distance, also known as Taxicab Metric, among other names.
+        </p>
         <h2 className="infoSubTitle">Performance</h2>
-        <p></p>
+        <p>
+          A-Star Search is really fast, but is on average slower than Greedy
+          Best-First Search, making it the second fastest algorithm implemented
+          in this app.
+          <br />
+          <br />
+          It does, however, generally outperform Greedy Best-First Algorithm when
+          there are a lot of obstacles in the way of the Goal Node, as Greedy
+          Best-First Search can easily get stuck in loops when having to go around walls.
+        </p>
       </>
     ),
   },
