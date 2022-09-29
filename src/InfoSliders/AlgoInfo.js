@@ -225,11 +225,12 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Dijkstra's Algorithm</h1>,
     text: (
       <>
-        Dijkstra's Algoritm Dijkstra's Algoritm Dijkstra's Algoritm Dijkstra's
-        AlgoritmDijkstra's AlgoritmDijkstra's AlgoritmDijkstra's
-        AlgoritmDijkstra's AlgoritmDijkstra's Algoritm Dijkstra's Algoritm
-        Dijkstra's Algoritm Dijkstra's Algoritm v Dijkstra's AlgoritmDijkstra's
-        AlgoritmDijkstra's Algoritm
+        <h2 className="infoSubTitle">Description</h2>
+        <p></p>
+        <h2 className="infoSubTitle">How It Works</h2>
+        <p></p>
+        <h2 className="infoSubTitle">Performance</h2>
+        <p></p>
       </>
     ),
   },
@@ -238,11 +239,12 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">A-Star Search</h1>,
     text: (
       <>
-        A-Star SearchA-Star SearchA-Star SearchA-Star SearchA-Star SearchA-Star
-        SearchA-Star SearchA-Star SearchA-Star SearchA-Star Search A-Star
-        SearchA-Star SearchA-Star SearchA-Star Search A-Star SearchA-Star
-        SearchA-Star SearchA-Star SearchA-Star Search A-Star Search A-Star
-        Search
+        <h2 className="infoSubTitle">Description</h2>
+        <p></p>
+        <h2 className="infoSubTitle">How It Works</h2>
+        <p></p>
+        <h2 className="infoSubTitle">Performance</h2>
+        <p></p>
       </>
     ),
   },
@@ -251,11 +253,12 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Greedy Best-First Search</h1>,
     text: (
       <>
-        Greedy Best-First SearchGreedy Best-First SearchGreedy Best-First
-        SearchGreedy Best-First Search Greedy Best-First Search Greedy
-        Best-First Search Greedy Best-First SearchGreedy Best-First SearchGreedy
-        Best-First SearchGreedy Best-First SearchGreedy Best-First SearchGreedy
-        Best-First SearchGreedy Best-First SearchGreedy Best-First Search
+        <h2 className="infoSubTitle">Description</h2>
+        <p></p>
+        <h2 className="infoSubTitle">How It Works</h2>
+        <p></p>
+        <h2 className="infoSubTitle">Performance</h2>
+        <p></p>
       </>
     ),
   },
@@ -264,15 +267,12 @@ export const AlgoInfo = [
     title: <h1 className="infoTitle">Bidirectional Search</h1>,
     text: (
       <>
-        Bidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional SearchBidirectional SearchBidirectional
-        SearchBidirectional Search
+        <h2 className="infoSubTitle">Description</h2>
+        <p></p>
+        <h2 className="infoSubTitle">How It Works</h2>
+        <p></p>
+        <h2 className="infoSubTitle">Performance</h2>
+        <p></p>
       </>
     ),
   },
