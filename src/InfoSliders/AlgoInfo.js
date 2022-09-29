@@ -178,12 +178,12 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
-          Beginning from the start node, every non-wall adjacent node gets added
+          Beginning from the Start Node, every non-wall adjacent node gets added
           into a queue. <br />
           Then, the first node added to the queue gets popped out of the queue.{" "}
           <br />
           The node is marked as visited and checked if it is the Goal Node, if
-          not, all of it's non-wall, non-visited adjacent nodes will be added to
+          not, all of its non-wall, non-visited adjacent nodes will be added to
           the back of the queue. <br />
           After that, the first node in the queue gets popped out again and the
           process is repeated until the Goal Node is found, or there are no more
@@ -195,7 +195,7 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
-          Breadth First Search is a very slow on average, as no optimizations or
+          Breadth First Search is very slow on average, as no optimizations or
           heuristics are being done to alter the direction it takes when
           searching for the Goal Node.
           <br />
@@ -212,11 +212,43 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
-        <p></p>
+        <p>
+          The Depth First Search algorithm will traverse the grid in a single
+          direction for as long as it can. When there's no more valid nodes in
+          its path, it will backtrack to the most recent unvisited adjacent
+          node, continue the search in that direction and the process repeats
+          itself.
+        </p>
         <h2 className="infoSubTitle">How It Works</h2>
-        <p></p>
+        <p>
+          Beginning from the Start Node, the algorithm will begin its search in
+          the direction of the first added non-wall adjacent node. <br />
+          It will mark the new node as visited, check if it's the Goal Node, and
+          will then create a list of all unvisited, non-wall adjacent node and
+          start repeating the process of visiting the first added adjacent node.
+          <br />
+          When it reaches either a wall, a visited node or the edge of the grid,
+          it backtracks to the next node in the most recent list of adjacent
+          nodes and continues its search in that new direction. <br />
+          This process gets repeated until either the Goal Node is found or
+          there is no more unvisited nodes.
+          <br />
+          <br />
+          In this app, the list of adjacent nodes are always added in the order
+          of:{" "}
+          <strong>
+            North, South, West, East, North-West, South-West, South-East,
+            North-East.
+          </strong>{" "}
+          The path of the Depth First Search algorithm will always be determined
+          by this.
+        </p>
         <h2 className="infoSubTitle">Performance</h2>
-        <p></p>
+        <p>
+          The speed of the Depth First Search algorithm is highly inconsistent.
+          It is one of the fastest algorithms if the Goal Node happens to line
+          up with the initial path the algorithm takes. Likewise, if the Goal Node happens to be just one position off the algorithm's path, or on the opposite side, it will be one of the slowest algorithms.  
+        </p>
       </>
     ),
   },
