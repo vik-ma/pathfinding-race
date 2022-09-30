@@ -302,18 +302,18 @@ export const AlgoInfo = [
         <p>
           A-Star Search algorithm is an improved version of Dijkstra's
           Algorithm, where a heuristic function that measures the distance
-          between the current adjacent nodes and the Goal Node is added, making
-          the algorithm much faster.
+          between the current node's adjacent nodes and the Goal Node is added,
+          making the algorithm much faster.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Just like Dijkstra's Algorithm, the A-Star Search algorithm uses a
           priority queue. The difference is that the priority value is now
           influenced by a heuristic function that calculates the distance
-          between the current adjacent nodes and the Goal Node.
+          between the current node's adjacent nodes and the Goal Node.
           <br />
           Since this is an unweighted grid, the heuristic value is going to be
-          the only thing influencing the path the algorithm will take.
+          the most important thing influencing the path the algorithm will take.
           <br />
           The adjacent node closer to the Goal Node will always produce a lower
           heuristic value, and thus get a higher priority in the queue.
@@ -324,14 +324,15 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
-          A-Star Search is really fast, but is on average slower than Greedy
-          Best-First Search, making it the second fastest algorithm implemented
-          in this app.
+          A-Star Search is fast, but is usually slower than Greedy Best-First
+          Search, making it, on average, the second fastest algorithm
+          implemented in this app.
           <br />
           <br />
-          It does, however, generally outperform Greedy Best-First Algorithm when
-          there are a lot of obstacles in the way of the Goal Node, as Greedy
-          Best-First Search can easily get stuck in loops when having to go around walls.
+          It does, however, generally outperform Greedy Best-First Algorithm
+          when there's a lot of obstacles in the way of the Goal Node, as Greedy
+          Best-First Search can easily get stuck choosing suboptimal paths when
+          having to go around walls.
         </p>
       </>
     ),
