@@ -56,6 +56,7 @@ export function GreedyBestFirstSearch(startNode, goalNode, gridMaxNodes) {
       if (!adjacentNodes[i].isVisited) {
         let priority = heuristic(adjacentNodes[i], goalNode);
         pq.enqueue([adjacentNodes[i], priority]);
+        adjacentNodes[i].isVisited = true;
         adjacentNodes[i].previousNode = currentNode;
       }
     }
