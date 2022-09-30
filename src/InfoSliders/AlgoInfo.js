@@ -320,19 +320,13 @@ export const AlgoInfo = [
           <br />
           <br />
           In this app, the implemented heuristic function is the Manhattan
-          Distance, also known as Taxicab Metric, among other names.
+          Distance, for both A-Star Search and Greedy Best-First Search.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
           A-Star Search is fast, but is usually slower than Greedy Best-First
           Search, making it, on average, the second fastest algorithm
           implemented in this app.
-          <br />
-          <br />
-          It does, however, generally outperform Greedy Best-First Algorithm
-          when there's a lot of obstacles in the way of the Goal Node, as Greedy
-          Best-First Search can easily get stuck choosing suboptimal paths when
-          having to go around walls.
         </p>
       </>
     ),
@@ -343,11 +337,39 @@ export const AlgoInfo = [
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
-        <p></p>
+        <p>
+          Greedy Best-First Search uses a priority queue based on the heuristic
+          distance towards the Goal Node, just like the A-Star Search. Unlike
+          A-Star Search, though, it does not include the total distance traveled
+          from the Start Node component from Dijkstra's Algorithm when
+          calculating the priority value.
+        </p>
         <h2 className="infoSubTitle">How It Works</h2>
-        <p></p>
+        <p>
+          Greedy Best-First Search uses a priority queue just like Dijkstra's
+          Algorithm and A-Star Search, except the only thing influencing the
+          priority value is a heuristic function measuring the distance between
+          the current node's adjacent nodes and the Goal Node.
+          <br />
+          <br />
+          In practice, this means that out of all unvisited adjacent nodes, the
+          one with the shortest mathematical distance to the Goal Node will be
+          chosen first.
+          <br />
+          <br />
+          The main difference to A-Star Search is that when multiple unvisited
+          adjacent nodes share the shortest heuristic distance, A-Star Search
+          will visit all of these nodes before moving closer to the Goal Node,
+          wheras Greedy Best-First Search can move on visiting just one.
+        </p>
         <h2 className="infoSubTitle">Performance</h2>
-        <p></p>
+        <p>
+          Greedy Best-First Search is really fast, and on average the fastest
+          pathfinding algorithm implemented in this app.
+          <br />
+          <br />
+          It can, however, choose very suboptimal paths when faced with walls.
+        </p>
       </>
     ),
   },
