@@ -132,7 +132,7 @@ ul {
     min-width: 400px;
     inline-size: min-content;
     border: 1px solid black;
-    animation: fadeIn 0.4s;
+    animation: fadeIn 0.25s;
     box-shadow: 0 0 15px black;
 }
 
