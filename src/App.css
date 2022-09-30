@@ -605,7 +605,8 @@ ul {
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: rgb(250, 241, 204);
+    line-height: 120%;
+    background-color: rgb(247, 240, 214);
     animation: fadeIn 0.5s;
     border: 2px solid #1d1d1d;
     color:rgb(49, 49, 49);
@@ -614,7 +615,7 @@ ul {
 .noPathFoundContainer {
     position: relative;
     animation: floatDown 0.5s;
-    top: 33px;
+    top: 37px;
 }
 
 @keyframes floatDown {
@@ -622,7 +623,7 @@ ul {
         top: 0px;
     }
     to {
-        top: 33px;
+        top: 37px;
     }
 }
 
