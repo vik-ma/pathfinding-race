@@ -4,9 +4,7 @@ import { AlgoInfo } from "./AlgoInfo";
 import { SliderButton } from "./SliderButton";
 
 export const SliderWindow = () => {
-  const { setIsInfoRendered } = useContext(GridContext);
-
-  const [slideIndex, setSlideIndex] = useState(0);
+  const { setIsInfoRendered, slideIndex, setSlideIndex } = useContext(GridContext);
 
   const nextSlide = () => {
     setSlideIndex(slideIndex + 1);

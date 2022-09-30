@@ -39,6 +39,8 @@ function App() {
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
   const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
 
+  const [slideIndex, setSlideIndex] = useState(0);
+
   const algorithmMap = {
     0: "A-Star Search",
     1: "Bidirectional Search",
@@ -248,6 +250,8 @@ function App() {
             setIsSettingsRendered,
             isInfoRendered,
             setIsInfoRendered,
+            slideIndex,
+            setSlideIndex,
           }}
         >
           <div className="appContainer">
