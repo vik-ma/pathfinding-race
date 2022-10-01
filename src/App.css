@@ -553,6 +553,7 @@ ul {
     font-weight: 600;
     user-select: none;    
     transition-duration: 0.1s;
+    backface-visibility: hidden;
     /* text-shadow: 0 0 6px #f1f1f1, 0 0 6px #f1f1f1, 0 0 6px #f1f1f1, 0 0 6px #f1f1f1; */
 }
 
