@@ -85,7 +85,7 @@ export const AlgoInfo = [
           For some algorithms, this will have very little to no impact, but{" "}
           <strong>
             this does completely determine the paths which the Depth First
-            Search algorithm takes.
+            Search algorithm will take.
           </strong>
         </p>
         <br />
@@ -94,16 +94,18 @@ export const AlgoInfo = [
           You can access the Settings menu by clicking the 'Settings' button.
           <br />
           <br />
-          In the Settings menu,{" "}
-          <strong>
-            you can customize the dimensions of the grid, how many different
-            contending algorithms there are, the amount of walls, the speed of
-            the visualizer and whether or not diagonal movement is allowed.
-          </strong>
+          In the Settings menu, you can customize the amount of{" "}
+          <strong>rows</strong> and <strong>columns</strong> the grid has,{" "}
+          <strong>how many contending algorithms</strong> there are, the{" "}
+          <strong>density of walls</strong> around the grid, the{" "}
+          <strong>speed of the visualizer</strong> and an option to{" "}
+          <strong>turn on diagonal movement</strong> of pathfinding algorithms.
           <br />
           <br />
-          You can also disable specific pathfinding algorithms from being
-          assigned to the contenders.
+          You can also <strong>
+            disable specific pathfinding algorithms
+          </strong>{" "}
+          from being assigned to the contenders.
         </p>
       </>
     ),
