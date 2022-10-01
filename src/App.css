@@ -323,7 +323,7 @@ ul {
 }
 
 .justVisualizeButton:hover {
-    background-color: rgb(255, 21, 91);
+    background-color: rgb(255, 0, 76);
     box-shadow: inset 0 0 8px 0px rgb(90, 7, 7);
 }
 
@@ -333,7 +333,7 @@ ul {
 }
 
 .newMapButton:hover {    
-    background-color: rgb(93, 233, 74);
+    background-color: rgb(101, 252, 81);
     box-shadow: inset 0 0 8px 0px rgb(35, 105, 35);
 }
 
@@ -343,7 +343,7 @@ ul {
 }
 
 .infoButton:hover {
-    background-color: cornsilk;
+    background-color: rgb(255, 250, 232);
     box-shadow: inset 0 0 8px 0px rgb(119, 119, 98);
 }
 
