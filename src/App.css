@@ -19,8 +19,7 @@ body {
 }
 
 .title {
-    /* background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(41, 41, 41)); */
-    background: -webkit-linear-gradient(rgb(107, 71, 16), rgb(32, 32, 32));
+    background: -webkit-linear-gradient(rgb(122, 81, 18), rgb(46, 38, 31));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -469,8 +468,7 @@ ul {
     margin-left: 10px;
     margin-right: 10px;
     font-size: 30px;
-    color:rgb(90, 61, 18);
-    background: -webkit-linear-gradient(rgb(114, 76, 19), rgb(54, 47, 40));
+    background: -webkit-linear-gradient(rgb(114, 76, 19), rgb(61, 49, 36));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     vertical-align: top;
