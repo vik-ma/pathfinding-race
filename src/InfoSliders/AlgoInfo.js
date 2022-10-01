@@ -16,13 +16,15 @@ export const AlgoInfo = [
           <br />
           <br />
           The entire grid is randomized. The walls, the goal node, and the
-          starting positions of every "contender" is different every map. Every
-          "contender" also gets randomly assigned one out of six different
+          starting positions of every contending algorithm is different every
+          map. Every contender is randomly assigned one out of six different
           pathfinding algorithms.
           <br />
           <br />
-          You can read more about the six implemented pathfinding algorithms in
-          the following slides!
+          <strong>
+            You can read more about the six implemented pathfinding algorithms
+            in the following slides!
+          </strong>
         </p>
         <br />
         <h2 className="infoSubTitle">How To Play</h2>
@@ -46,8 +48,8 @@ export const AlgoInfo = [
           <br />
           <br />
           The contending algorithms do not affect each other in any way, and if
-          one node gets visited by more than one contender, the node will split
-          its coloring to represent every visited contender.
+          a node on the grid gets visited by more than one contender, the node
+          will split its coloring to represent every visited contender.
         </p>
       </>
     ),
@@ -61,7 +63,7 @@ export const AlgoInfo = [
         <p>
           The six pathfinding algorithms implemented in this app are <br />
           <strong>
-            Breadth First Search, Depth First Search, Dijkstra's Algortihm,
+            Breadth First Search, Depth First Search, Dijkstra's Algorithm,
             <br /> A-Star Search, Greedy Best-First Search
           </strong>{" "}
           and <strong>Bidirectional Search.</strong>
@@ -69,14 +71,13 @@ export const AlgoInfo = [
           <br />
           The grid is an unweighted graph, which means the distance to every
           immediately adjacent node is always the same. If the 'Allow Diagonal
-          Movement' setting is turned on, diagonally adjacent nodes will carry
-          the same distance as the adjacent nodes in one of the four cardinal
-          directions.
+          Movement' setting is turned on, diagonally adjacent nodes will also
+          carry the same distance.
           <br />
           <br />
-          An important thing to note is the order of which adjacent nodes the
-          pathfinding algorithms will go through. In this app, the order is as
-          follows:{" "}
+          An important thing to note is the order of which different adjacent
+          nodes the pathfinding algorithms will choose to go through. In this
+          app, the order is as follows:{" "}
           <strong>
             North, South, West, East, North-West, South-West, South-East,
             North-East.
