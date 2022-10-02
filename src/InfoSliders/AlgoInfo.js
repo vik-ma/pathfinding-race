@@ -121,7 +121,7 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle infoSubTitleNodes">Start Nodes</h2>
         <p>
-          <strong>These nodes are the start nodes:</strong>
+          <strong>These are the Start Nodes:</strong>
         </p>{" "}
         <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
           1
@@ -136,38 +136,41 @@ export const AlgoInfo = [
           4
         </div>
         <p>
-          Each contender will get assigned a random pathfinding algorithm. The
-          visualizer will draw out the paths the algorithms take from their
-          respective start nodes in the same color. <br />
+          Each contender will get randomly assigned a starting position on the
+          grid and a pathfinding algorithm. The visualizer will draw the paths
+          of the different contenders in the same color as their Start Nodes.{" "}
           <br />
-          Start nodes are not considered impassable by other algorithms.
+          <br />
+          Start Nodes are not considered impassable by other contenders.
         </p>
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
-          <strong>This node is the goal node:</strong>
+          <strong>This is the Goal Node:</strong>
         </p>{" "}
         <div className="node node-goal titleBarNode infoNode">G</div>
         <br />
         <p>
-          The visualizer will stop when the first algorithm reaches the goal
-          node. <br />
+          The visualizer will stop once the first pathfinding algorithm finds
+          the Goal Node and mark out the winner. The result of all contenders
+          will then be displayed at the top.
           <br />
-          If no algorithms can find the goal node, the visualizer will stop
-          after five seconds has passed, in order to not waste time simulating
-          every node being visited.
+          <br />
+          If no algorithms can find the Goal Node, the visualizer will stop
+          after a few seconds and skip the rest of the visualization, in order
+          to not waste time.
         </p>
         <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
-          <strong>These darker nodes are wall nodes:</strong>
+          <strong>These darker nodes are Wall Nodes:</strong>
         </p>{" "}
         <div className="node node-wall infoNode"></div>
         <p>
           Pathfinding algorithms can not pass through these nodes. <br />
           <br />
           If 'Allow Diagonal Movement' setting is turned on, pathfinding
-          algorithms can still not diagonally "skip" through two walls placed
+          algorithms can also not diagonally "skip" through two walls placed
           diagonally adjacent to each other.
         </p>
       </>
