@@ -94,18 +94,18 @@ export const AlgoInfo = [
           You can access the Settings menu by clicking the 'Settings' button.
           <br />
           <br />
-          In the Settings menu, you can customize the amount of{" "}
-          <strong>rows</strong> and <strong>columns</strong> the grid has,{" "}
+          In the Settings menu, you can customize the{" "}
+          <strong>amount of rows and columns</strong> the grid has,{" "}
           <strong>how many contending algorithms</strong> there are, the{" "}
-          <strong>density of walls</strong> around the grid, the{" "}
-          <strong>speed of the visualizer</strong> and an option to{" "}
-          <strong>turn on diagonal movement</strong> of pathfinding algorithms.
+          <strong>density of walls</strong> around the grid and the{" "}
+          <strong>speed of the visualizer.</strong>
           <br />
           <br />
           You can also <strong>
             disable specific pathfinding algorithms
           </strong>{" "}
-          from being assigned to the contenders.
+          from being assigned to the contenders and <strong>turn on diagonal movement</strong> of
+          pathfinding algorithms as well.
         </p>
       </>
     ),
