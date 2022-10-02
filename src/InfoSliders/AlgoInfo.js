@@ -75,17 +75,20 @@ export const AlgoInfo = [
           carry the same distance.
           <br />
           <br />
-          An important thing to note is the order of which different adjacent
-          nodes the pathfinding algorithms will choose to go through. In this
-          app, the order is as follows:{" "}
+          An important thing to note is how the pathfinding algorithms will
+          choose which adjacent node to visit first, and in what order the rest
+          are visited. <br />
+          In this app, the order is as follows:{" "}
           <strong>
             North, South, West, East, North-West, South-West, South-East,
             North-East.
           </strong>{" "}
-          For some algorithms, this will have very little to no impact, but{" "}
+          <br />
+          For some pathfinding algorithms, this will have very little to no
+          impact, but{" "}
           <strong>
-            this does completely determine the paths which the Depth First
-            Search algorithm will take.
+            for Depth First Search, this completely determines the path it will
+            take.
           </strong>
         </p>
         <br />
@@ -104,8 +107,9 @@ export const AlgoInfo = [
           You can also <strong>
             disable specific pathfinding algorithms
           </strong>{" "}
-          from being assigned to the contenders and <strong>turn on diagonal movement</strong> of
-          pathfinding algorithms as well.
+          from being assigned to the contenders, and{" "}
+          <strong>turn on diagonal movement</strong> of pathfinding algorithms
+          as well.
         </p>
       </>
     ),
