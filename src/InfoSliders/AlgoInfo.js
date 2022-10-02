@@ -148,7 +148,7 @@ export const AlgoInfo = [
         <p>
           <strong>This is the Goal Node:</strong>
         </p>{" "}
-        <div className="node node-goal titleBarNode infoNode">G</div>
+        <div className="node node-goal titleBarNode infoNode infoNodeGoal">G</div>
         <br />
         <p>
           The visualizer will stop once the first pathfinding algorithm finds
@@ -165,7 +165,7 @@ export const AlgoInfo = [
         <p>
           <strong>These darker nodes are Wall Nodes:</strong>
         </p>{" "}
-        <div className="node node-wall infoNode"></div>
+        <div className="node node-wall infoNode infoNodeWall"></div>
         <p>
           Pathfinding algorithms can not pass through these nodes. <br />
           <br />

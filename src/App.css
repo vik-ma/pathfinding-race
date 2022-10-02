@@ -594,6 +594,15 @@ ul {
     vertical-align: text-bottom;
 }
 
+.infoNodeGoal {
+    border-radius: 4px;
+}
+
+.infoNodeWall {
+    border: 1px solid rgb(32, 32, 32) !important; 
+    border-radius: 2px;
+}
+
 .noPathFoundMsg {
     padding: 8px;
     position: absolute;
@@ -645,6 +654,7 @@ ul {
 
 .node-wall {
     background-color:#5e5b58;
+    border: 1px solid #5e5b58; 
 }
 
 .node-x {
