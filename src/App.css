@@ -740,7 +740,7 @@ ul {
 
 @keyframes current-anim {
     from {}
-    to {box-shadow: inset 0 0 0 5px black;}
+    to {box-shadow: inset 0 0 0 5px rgb(32, 32, 32);}
   }
 
 .node-current {
