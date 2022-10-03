@@ -148,7 +148,9 @@ export const AlgoInfo = [
         <p>
           <strong>This is the Goal Node:</strong>
         </p>{" "}
-        <div className="node node-goal titleBarNode infoNode infoNodeGoal">G</div>
+        <div className="node node-goal titleBarNode infoNode infoNodeGoal">
+          G
+        </div>
         <br />
         <p>
           The visualizer will stop once the first pathfinding algorithm finds
@@ -189,15 +191,18 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Beginning from the Start Node, every non-wall adjacent node gets added
-          into a queue. <br />
-          Then, the first node added to the queue gets popped out of the queue.{" "}
+          into a queue.
+          <br />
+          Next, the first node added to the queue gets popped out of the queue.{" "}
           <br />
           The node is marked as visited and checked if it is the Goal Node, if
-          not, all of its non-wall, non-visited adjacent nodes will be added to
-          the back of the queue. <br />
-          After that, the first node in the queue gets popped out again and the
-          process is repeated until the Goal Node is found, or there are no more
-          connected nodes to explore (Goal Node is not reachable).
+          not, all of its non-wall and non-visited adjacent nodes gets added to
+          the end of the queue.
+          <br />
+          Then, the node at the first position in the queue gets popped
+          out again and the process is repeated until the Goal Node is found, or
+          until there are no more connected nodes to explore (Goal Node is
+          walled off).
           <br />
           <br />
           In practice, this means that the algorithm will traverse the grid
@@ -210,7 +215,7 @@ export const AlgoInfo = [
           searching for the Goal Node.
           <br />
           <br />
-          On average, Breadth First Search is, along with Dijkstra's Algorithm
+          On average, Breadth First Search is, along with Dijkstra's Algorithm,
           the slowest pathfinding algorithm implemented in this app.
         </p>
       </>
