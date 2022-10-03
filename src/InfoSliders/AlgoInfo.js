@@ -199,8 +199,8 @@ export const AlgoInfo = [
           not, all of its non-wall and non-visited adjacent nodes gets added to
           the end of the queue.
           <br />
-          Then, the node at the first position in the queue gets popped
-          out again and the process is repeated until the Goal Node is found, or
+          Then, the node at the first position in the queue gets popped out
+          again and the process is repeated until the Goal Node is found, or
           until there are no more connected nodes to explore (Goal Node is
           walled off).
           <br />
@@ -211,7 +211,7 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">Performance</h2>
         <p>
           Breadth First Search is very slow on average, as no optimizations or
-          heuristics are being done to alter the direction it takes when
+          heuristics are being applied to alter the direction it takes when
           searching for the Goal Node.
           <br />
           <br />
@@ -228,11 +228,11 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Description</h2>
         <p>
-          The Depth First Search algorithm will traverse the grid in a single
-          direction for as long as it can. When there's no more valid nodes in
-          its path, it will backtrack to the most recent unvisited adjacent
-          node, continue the search in that direction and the process repeats
-          itself.
+          The Depth First Search algorithm will always attempt to traverse the
+          grid in a specific direction. When its not able to, it will instead
+          attempt another direction. If there are no adjacent nodes available at
+          its current position, it will backtrack and continue from the most
+          recent available node.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
