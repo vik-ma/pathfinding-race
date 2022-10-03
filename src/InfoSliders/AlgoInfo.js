@@ -232,7 +232,7 @@ export const AlgoInfo = [
           grid in a specific direction. When its not able to, it will instead
           attempt another direction. If there are no adjacent nodes available at
           its current position, it will backtrack and continue from the most
-          recent available node.
+          recently visited node with an available adjacent node.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
