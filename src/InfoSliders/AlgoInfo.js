@@ -272,20 +272,24 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">Description</h2>
         <p>
           Dijkstra's Algorithm is an algorithm made for graphs where adjacent
-          nodes can have different distances to each other (A weighted graph).
-          Since this grid is an unweighted graph, Dijkstra's Algorithm will
-          behave pretty much like the Breadth First Search algorithm.
+          nodes can have different distances between them (Weighted graphs).
+          <br />
+          <br />
+          Since this grid is an unweighted graph (The distance to every adjacent
+          node is always the same), Dijkstra's Algorithm will behave pretty much
+          like the Breadth First Search algorithm.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Dijkstra's Algorithm uses a queue system just like Breadth First
           Search, but unlike Breadth First Search, Dijkstra's Algorithm uses a
-          priority queue rather than a chronologic list.
+          priority queue rather than a list of items added in chronological
+          order.
           <br />
           Every adjacent node gets added to the queue along with a priority
-          value. The value is calculated by taking the total distance traveled
-          from the Start Node to the current node plus the distance to the
-          specific adjacent node.
+          value. The priority value is calculated by taking the total distance
+          traveled from the Start Node to the current node plus the distance to
+          the specific adjacent node.
           <br />
           The adjacent nodes are then enqueued based on priority value (Lower
           value equals higher priority).
@@ -297,7 +301,7 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
-          On average, Dijkstra's Algorithm is, along with Breadth First Search
+          On average, Dijkstra's Algorithm is, along with Breadth First Search,
           the slowest pathfinding algorithm implemented in this app.
         </p>
       </>
