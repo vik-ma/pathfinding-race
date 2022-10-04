@@ -233,16 +233,15 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Beginning from the Start Node, the algorithm will begin its search in
-          the direction of the first added non-wall adjacent node. <br />
-          It will mark the new node as visited, check if it's the Goal Node, and
-          will then create a list of all unvisited, non-wall adjacent node and
-          start repeating the process of visiting the first added adjacent node.
+          the direction of the first added adjacent node. <br />
+          It will mark the node as visited, check if it's the Goal Node, and
+          will then create a list of all unvisited, non-wall adjacent nodes and
+          repeat the process of visiting the first added adjacent node.
           <br />
-          When it reaches either a wall, a visited node or the edge of the grid,
-          it backtracks to the next node in the most recent list of adjacent
-          nodes and continues its search in that new direction. <br />
-          This process gets repeated until either the Goal Node is found or
-          there is no more unvisited nodes.
+          When it reaches a node which has no unvisited, non-wall adjacent
+          nodes, it backtracks to the next node in the most recent list of
+          adjacent nodes and continues its search from that node until either
+          the Goal Node is found or there are no more unvisited nodes.
           <br />
           <br />
           In this app, the list of adjacent nodes are always added in the order
@@ -251,16 +250,16 @@ export const AlgoInfo = [
             North, South, West, East, North-West, South-West, South-East,
             North-East.
           </strong>{" "}
-          The path of the Depth First Search algorithm will always be determined
-          by this.
+          These are the directions that the Depth First Search algorithm will
+          attempt to traverse the grid in order.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
           The speed of the Depth First Search algorithm is highly inconsistent.
           It is one of the fastest algorithms if the Goal Node happens to line
-          up with the initial path the algorithm takes. Likewise, if the Goal
-          Node happens to be just one position off the algorithm's path, or lay
-          in the opposite direction, it will be one of the slowest algorithms.
+          up with the direction the algorithm takes. Likewise, if the Goal Node
+          happens to lay in the opposite direction, or even just one node off
+          early in its path, it will end up being one of the slowest algorithms.
         </p>
       </>
     ),
