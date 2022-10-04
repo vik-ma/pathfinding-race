@@ -322,14 +322,14 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Just like Dijkstra's Algorithm, the A-Star Search algorithm uses a
-          priority queue. The difference is that the priority value is now
+          priority queue. The difference is that the priority value is now also
           influenced by a heuristic function that calculates the distance
           between the current node's adjacent nodes and the Goal Node.
           <br />
           Since this is an unweighted grid, the heuristic value is going to be
           the most important thing influencing the path the algorithm will take.
           <br />
-          The adjacent node closer to the Goal Node will always produce a lower
+          The adjacent nodes closer to the Goal Node will always produce a lower
           heuristic value, and thus get a higher priority in the queue.
           <br />
           <br />
