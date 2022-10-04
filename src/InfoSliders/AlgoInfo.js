@@ -395,15 +395,16 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Description</h2>
         <p>
-          Bidirectional Search is an algorithm which will alternate between
-          searching from the Start Node to searching from the Goal Node. Instead
-          of searching for the Goal Node, it will search for an intersection of
-          the two paths.
+          Bidirectional Search will, instead of searching for the Goal Node from
+          the Start Node, launch two separate pathfinding algorithms. One is
+          launched from the Start Node and the other from the Goal Node. The
+          algorithm will then look for an intersection of the two paths.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           In this app, Bidirectional Search is a regular Breadth First Search
           applied from both the Start Node and the Goal Node.
+          <br />
           <br />
           Every other node, the algorithm will alternate between the Breadth
           First Search algorithm originating from the Start Node to the one
@@ -414,15 +415,15 @@ export const AlgoInfo = [
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
-          Bidirectional Breadth First Search is an optimized version of Breadth
-          First Search, and about twice as fast, since half of the algorithm is
-          always moving towards the "Goal".
+          Bidirectional Breadth First Search is an optimized and faster version
+          of Breadth First Search. Generally, the bigger the grid gets, the faster
+          Bidirectional Search becomes (Compared to regular Breadth First Search).
           <br />
           <br />
-          It is consistently the most average performing algorithm implemented
-          in this app, since the heuristics of A-Star Search and Greedy
-          Best-First Search are generally more efficient than an optimized
-          version of Breadth First Search.
+          It is consistently the most average performing pathfinding algorithm
+          implemented in this app, since the heuristics of A-Star Search and
+          Greedy Best-First Search are generally more efficient than this
+          optimization of the Breadth First Search.
         </p>
       </>
     ),
