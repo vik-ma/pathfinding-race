@@ -185,8 +185,8 @@ export const AlgoInfo = [
       <>
         <h2 className="infoSubTitle">Description</h2>
         <p>
-          The Breadth First Search algorithm traverses the grid using a queue
-          system.
+          The Breadth First Search algorithm traverses the grid "layer by layer"
+          out from the start node using a queue system.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
@@ -203,10 +203,6 @@ export const AlgoInfo = [
           again and the process is repeated until the Goal Node is found, or
           until there are no more connected nodes to explore (Goal Node is
           walled off).
-          <br />
-          <br />
-          In practice, this means that the algorithm will traverse the grid
-          "layer by layer" out from the start node.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
