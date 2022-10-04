@@ -355,15 +355,15 @@ export const AlgoInfo = [
           Greedy Best-First Search uses a priority queue based on the heuristic
           distance towards the Goal Node, just like the A-Star Search. Unlike
           A-Star Search, though, it does not include the total distance traveled
-          from the Start Node component from Dijkstra's Algorithm when
-          calculating the priority value.
+          component from Dijkstra's Algorithm when calculating the priority
+          value.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
-          Greedy Best-First Search uses a priority queue just like Dijkstra's
-          Algorithm and A-Star Search, except the only thing influencing the
-          priority value is a heuristic function measuring the distance between
-          the current node's adjacent nodes and the Goal Node.
+          Like Dijkstra's Algorithm and A-Star Search, Greedy Best-First Search
+          uses a priority queue, except the only thing influencing the priority
+          value is a heuristic function measuring the distance between the
+          current node's adjacent nodes and the Goal Node.
           <br />
           <br />
           In practice, this means that out of all unvisited adjacent nodes, the
@@ -374,7 +374,7 @@ export const AlgoInfo = [
           The main difference to A-Star Search is that when multiple unvisited
           adjacent nodes share the shortest heuristic distance, A-Star Search
           will visit all of these nodes before moving closer to the Goal Node,
-          wheras Greedy Best-First Search can move on visiting just one.
+          wheras Greedy Best-First Search can move on after visiting just one.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
@@ -382,7 +382,8 @@ export const AlgoInfo = [
           pathfinding algorithm implemented in this app.
           <br />
           <br />
-          It can, however, choose very suboptimal paths when faced with walls.
+          It can, however, choose very suboptimal paths when confronted with
+          many walls.
         </p>
       </>
     ),
