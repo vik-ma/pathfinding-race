@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { SettingsMenu } from "./PathfindingVisualizer/SettingsMenu";
-import { GridContext } from "./Helpers/GridContexts";
+import { AppContext } from "./Helpers/AppContext";
 import { TitleBar } from "./PathfindingVisualizer/TitleBar";
 import { SliderWindow } from "./InfoSliders/SliderWindow";
 
@@ -208,7 +208,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GridContext.Provider
+        <AppContext.Provider
           value={{
             rowCount,
             setRowCount,
@@ -261,7 +261,7 @@ function App() {
               {isInfoRendered ? <SliderWindow /> : null}
             </div>
           </div>
-        </GridContext.Provider>
+        </AppContext.Provider>
       </header>
     </div>
   );

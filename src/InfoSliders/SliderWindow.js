@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { GridContext } from "../Helpers/GridContexts";
+import { AppContext } from "../Helpers/AppContext";
 import { AlgoInfo } from "./AlgoInfo";
 import { SliderButton } from "./SliderButton";
 
 export const SliderWindow = () => {
-  const { setIsInfoRendered, slideIndex, setSlideIndex } = useContext(GridContext);
+  const { setIsInfoRendered, slideIndex, setSlideIndex } =
+    useContext(AppContext);
 
   const nextSlide = () => {
     setSlideIndex(slideIndex + 1);
@@ -29,12 +30,13 @@ export const SliderWindow = () => {
             <SliderButton changeSlide={prevSlide} direction={"prev"} />
           ) : null}
           <div className="infoButtonBack">
-          <button
-            className="settingsButton"
-            onClick={() => setIsInfoRendered(false)}
-          >
-            Return
-          </button></div>
+            <button
+              className="settingsButton"
+              onClick={() => setIsInfoRendered(false)}
+            >
+              Return
+            </button>
+          </div>
 
           {AlgoInfo.map((obj, index) => {
             return (

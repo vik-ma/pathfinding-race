@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { GridContext } from "../Helpers/GridContexts";
+import { AppContext } from "../Helpers/AppContext";
 
 export const SettingsMenu = () => {
   const {
@@ -19,7 +19,7 @@ export const SettingsMenu = () => {
     visualizerSpeed,
     setVisualizerSpeed,
     setIsSettingsRendered,
-  } = useContext(GridContext);
+  } = useContext(AppContext);
 
   const defaultRowValue = rowCount;
   const defaultColValue = colCount;
@@ -225,7 +225,6 @@ export const SettingsMenu = () => {
                   }}
                 ></input>
               </div>
-              
             </div>
             <div className="enableAlgoList">
               <h2 className="infoTitle settingsTitle algoListTitle">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import { GridContext } from "../Helpers/GridContexts";
+import { AppContext } from "../Helpers/AppContext";
 import { GridGenerator } from "./GridGenerator";
 
 export const TitleBar = () => {
@@ -20,7 +20,7 @@ export const TitleBar = () => {
     visIsFinished,
     visIsOngoing,
     setIsInfoRendered,
-  } = useContext(GridContext);
+  } = useContext(AppContext);
 
   const generatorRef = useRef();
 

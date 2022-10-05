@@ -6,7 +6,7 @@ import React, {
   useImperativeHandle,
   useTransition,
 } from "react";
-import { GridContext } from "../Helpers/GridContexts";
+import { AppContext } from "../Helpers/AppContext";
 import { Node } from "./Node";
 import { BreadthFirstSearch } from "../Algorithms/BreadthFirstSearch";
 import { DepthFirstSearch } from "../Algorithms/DepthFirstSearch";
@@ -29,7 +29,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     visualizerSpeed,
     setVisIsFinished,
     setVisIsOngoing,
-  } = useContext(GridContext);
+  } = useContext(AppContext);
 
   useImperativeHandle(ref, () => ({
     visualize() {
