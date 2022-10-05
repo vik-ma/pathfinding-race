@@ -1,12 +1,12 @@
 import leftArrow from "../Icons/left-arrow.svg";
 import rightArrow from "../Icons/right-arrow.svg";
 
-export const SliderButton = ({ changeSlide, direction }) => {
+export const SliderArrow = ({ changeSlide, direction }) => {
   return (
     <button
       onClick={changeSlide}
       className={
-        direction === "next" ? "sliderButton nextSlide" : "sliderButton prevSlide"
+        direction === "next" ? "sliderArrow nextSlide" : "sliderArrow prevSlide"
       }
     >
       <img

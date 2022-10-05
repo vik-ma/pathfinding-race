@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../Helpers/AppContext";
 import { AlgoInfo } from "./AlgoInfo";
-import { SliderButton } from "./SliderButton";
+import { SliderArrow } from "./SliderArrow";
 
 export const InfoSlider = () => {
   const { setIsInfoRendered, slideIndex, setSlideIndex } =
@@ -24,10 +24,10 @@ export const InfoSlider = () => {
       <div className="popupBackdrop infoBackdrop">
         <div className="infoInner">
           {slideIndex !== AlgoInfo.length - 1 ? (
-            <SliderButton changeSlide={nextSlide} direction={"next"} />
+            <SliderArrow changeSlide={nextSlide} direction={"next"} />
           ) : null}
           {slideIndex !== 0 ? (
-            <SliderButton changeSlide={prevSlide} direction={"prev"} />
+            <SliderArrow changeSlide={prevSlide} direction={"prev"} />
           ) : null}
           <div className="infoButtonBack">
             <button

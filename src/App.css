@@ -388,7 +388,7 @@ ul {
     opacity: 1;
 }
 
-.sliderButton {
+.sliderArrow {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -407,18 +407,18 @@ ul {
     /* margin: -1px; */
   }
   
-.sliderButton img {
+.sliderArrow img {
     width: 25px;
     height: 25px;
     pointer-events: none;
 }
 
-.sliderButton:hover {
+.sliderArrow:hover {
     opacity: 1;
     transform: translateY(-60%) scale(1.15);
 }
 
-.sliderButton:active {
+.sliderArrow:active {
     /* opacity: 0.4; */
     /* transform: translateY(1px); */
     background-color: white;
