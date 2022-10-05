@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { AppContext } from "../Helpers/AppContext";
 import { GridGenerator } from "./GridGenerator";
 
-export const TitleBar = () => {
+export const GameMenu = () => {
   const {
     algoList,
     algorithmMap,

@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import { SettingsMenu } from "./PathfindingVisualizer/SettingsMenu";
 import { AppContext } from "./Helpers/AppContext";
-import { TitleBar } from "./PathfindingVisualizer/TitleBar";
+import { GameMenu } from "./PathfindingVisualizer/GameMenu";
 import { InfoSlider } from "./InfoWindow/InfoSlider";
 
 function App() {
@@ -256,7 +256,7 @@ function App() {
         >
           <div className="appContainer">
             <div className="appBackdrop">
-              {isGridRendered ? <TitleBar key={titleKey} /> : null}
+              {isGridRendered ? <GameMenu key={titleKey} /> : null}
               {isSettingsRendered ? <SettingsMenu /> : null}
               {isInfoRendered ? <InfoSlider /> : null}
             </div>
