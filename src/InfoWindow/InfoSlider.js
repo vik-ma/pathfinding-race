@@ -3,7 +3,7 @@ import { AppContext } from "../Helpers/AppContext";
 import { AlgoInfo } from "./AlgoInfo";
 import { SliderButton } from "./SliderButton";
 
-export const SliderWindow = () => {
+export const InfoSlider = () => {
   const { setIsInfoRendered, slideIndex, setSlideIndex } =
     useContext(AppContext);
 

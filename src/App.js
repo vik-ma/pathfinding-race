@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SettingsMenu } from "./PathfindingVisualizer/SettingsMenu";
 import { AppContext } from "./Helpers/AppContext";
 import { TitleBar } from "./PathfindingVisualizer/TitleBar";
-import { SliderWindow } from "./InfoSliders/SliderWindow";
+import { InfoSlider } from "./InfoWindow/InfoSlider";
 
 function App() {
   const [isGridRendered, setIsGridRendered] = useState(true);
@@ -258,7 +258,7 @@ function App() {
             <div className="appBackdrop">
               {isGridRendered ? <TitleBar key={titleKey} /> : null}
               {isSettingsRendered ? <SettingsMenu /> : null}
-              {isInfoRendered ? <SliderWindow /> : null}
+              {isInfoRendered ? <InfoSlider /> : null}
             </div>
           </div>
         </AppContext.Provider>
