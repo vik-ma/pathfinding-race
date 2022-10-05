@@ -1,4 +1,4 @@
-export const AlgoInfo = [
+export const SliderContent = [
   {
     id: "SLIDER-INFO-1",
     title: <h1 className="infoTitle">Information</h1>,
@@ -416,8 +416,9 @@ export const AlgoInfo = [
         <h2 className="infoSubTitle">Performance</h2>
         <p>
           Bidirectional Breadth First Search is an optimized and faster version
-          of Breadth First Search. Generally, the bigger the grid gets, the faster
-          Bidirectional Search becomes (Compared to regular Breadth First Search).
+          of Breadth First Search. Generally, the bigger the grid gets, the
+          faster Bidirectional Search becomes (Compared to regular Breadth First
+          Search).
           <br />
           <br />
           It is consistently the most average performing pathfinding algorithm

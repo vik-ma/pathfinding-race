@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../Helpers/AppContext";
-import { AlgoInfo } from "./AlgoInfo";
+import { SliderContent } from "./SliderContent";
 import { SliderArrow } from "./SliderArrow";
 
 export const InfoSlider = () => {
@@ -23,7 +23,7 @@ export const InfoSlider = () => {
     <div className="popupBackground">
       <div className="popupBackdrop infoBackdrop">
         <div className="infoInner">
-          {slideIndex !== AlgoInfo.length - 1 ? (
+          {slideIndex !== SliderContent.length - 1 ? (
             <SliderArrow changeSlide={nextSlide} direction={"next"} />
           ) : null}
           {slideIndex !== 0 ? (
@@ -38,19 +38,19 @@ export const InfoSlider = () => {
             </button>
           </div>
 
-          {AlgoInfo.map((obj, index) => {
+          {SliderContent.map((obj, index) => {
             return (
               <div
                 key={obj.id}
                 className={slideIndex === index ? "slide slideAnim" : "slide"}
               >
-                {AlgoInfo[index].title}
-                {AlgoInfo[index].text}
+                {SliderContent[index].title}
+                {SliderContent[index].text}
               </div>
             );
           })}
           <div className="sliderDots">
-            {Array.from({ length: AlgoInfo.length }).map((item, index) => (
+            {Array.from({ length: SliderContent.length }).map((item, index) => (
               <div
                 key={`slider-dot-${index}`}
                 onClick={() => moveDot(index)}
