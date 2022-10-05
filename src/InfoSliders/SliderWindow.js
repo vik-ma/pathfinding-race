@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../Helpers/AppContext";
 import { AlgoInfo } from "./AlgoInfo";
 import { SliderButton } from "./SliderButton";
