@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GridContext } from "../Helpers/GridContexts";
 
-export const GridCustomizer = () => {
+export const SettingsMenu = () => {
   const {
     rowCount,
     setRowCount,

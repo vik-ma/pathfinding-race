@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import { GridCustomizer } from "./PathfindingVisualizer/GridCustomizer";
+import { SettingsMenu } from "./PathfindingVisualizer/SettingsMenu";
 import { GridContext } from "./Helpers/GridContexts";
 import { TitleBar } from "./PathfindingVisualizer/TitleBar";
 import { SliderWindow } from "./InfoSliders/SliderWindow";
@@ -257,7 +257,7 @@ function App() {
           <div className="appContainer">
             <div className="appBackdrop">
               {isGridRendered ? <TitleBar key={titleKey} /> : null}
-              {isSettingsRendered ? <GridCustomizer /> : null}
+              {isSettingsRendered ? <SettingsMenu /> : null}
               {isInfoRendered ? <SliderWindow /> : null}
             </div>
           </div>
