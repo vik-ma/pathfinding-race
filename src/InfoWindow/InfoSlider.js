@@ -31,7 +31,7 @@ export const InfoSlider = () => {
           ) : null}
           <div className="infoButtonBack">
             <button
-              className="settingsButton"
+              className="popupButton"
               onClick={() => setIsInfoRendered(false)}
             >
               Return

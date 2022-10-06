@@ -119,7 +119,7 @@ export const SettingsMenu = () => {
           <div className="settingsInner">
             <div className="settingsRightSide">
               <h1 className="infoTitle settingsTitle">Settings</h1>
-              <div className="settingsElement settingsElementVisual">
+              <div className="settingsElement settingsElementOpacity">
                 Number of Rows:{" "}
                 <div className="settingValue">
                   {newChanges["rows"] ? newChanges["rows"] : rowCount}
@@ -141,7 +141,7 @@ export const SettingsMenu = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement settingsElementVisual">
+              <div className="settingsElement settingsElementOpacity">
                 Number of Columns:{" "}
                 <div className="settingValue">
                   {newChanges["cols"] ? newChanges["cols"] : colCount}
@@ -163,7 +163,7 @@ export const SettingsMenu = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement settingsElementVisual">
+              <div className="settingsElement settingsElementOpacity">
                 Number of Start Nodes:{" "}
                 <div className="settingValue">
                   {newChanges["nodes"] ? newChanges["nodes"] : numStartNodes}
@@ -185,7 +185,7 @@ export const SettingsMenu = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement settingsElementVisual">
+              <div className="settingsElement settingsElementOpacity">
                 Wall Density:{" "}
                 <div className="settingValue">
                   {wordWallDensityMap[wallDensityValue]}
@@ -204,7 +204,7 @@ export const SettingsMenu = () => {
                   }}
                 ></input>
               </div>
-              <div className="settingsElement settingsElementVisual">
+              <div className="settingsElement settingsElementOpacity">
                 Visualizer Speed:{" "}
                 <div className="settingValue">
                   {wordVisualizerSpeedMap[visualizerSpeed]}
@@ -226,7 +226,7 @@ export const SettingsMenu = () => {
                 ></input>
               </div>
             </div>
-            <div className="enableAlgoList">
+            <div className="enabledAlgoList">
               <h2 className="infoTitle settingsTitle algoListTitle">
                 Enabled Algorithms
               </h2>
@@ -308,7 +308,7 @@ export const SettingsMenu = () => {
                 />{" "}
                 <label htmlFor="greedy">Greedy Best-First Search</label>
               </div>
-              <div className="allowDiagonalSetting settingsElementVisual">
+              <div className="allowDiagonalSetting settingsElementOpacity">
                 <input
                   type="checkbox"
                   id="allowDiagonals"
@@ -324,7 +324,7 @@ export const SettingsMenu = () => {
               </div>
               <div className="settingsDoneButtonDiv">
                 <button
-                  className="settingsButton"
+                  className="popupButton"
                   onClick={() => {
                     noChangeMade
                       ? setIsSettingsRendered(false)

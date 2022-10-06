@@ -212,7 +212,7 @@ ul {
     margin-bottom:5px;
 }
 
-.enableAlgoList {
+.enabledAlgoList {
     margin-left: 10px;
     display: inline-block;
     flex-direction: column;
@@ -228,13 +228,13 @@ ul {
     margin-top: 2px;
 }
 
-.settingsElementVisual {
+.settingsElementOpacity {
     color:rgb(15, 15, 15);
     filter: opacity(80%);
     transition-duration: 0.1s;
 }
 
-.settingsElementVisual:hover {    
+.settingsElementOpacity:hover {    
     filter: opacity(100%);
     color:black;
 }
@@ -248,7 +248,7 @@ ul {
     color:rgb(0, 71, 204);
 }
 
-.settingsButton {
+.popupButton {
     margin: 2px;
     border-radius: 6px;
     font-size: 15px;
@@ -265,7 +265,7 @@ ul {
     cursor: pointer;
 }
 
-.settingsButton:hover {
+.popupButton:hover {
     background-color: #292929;
     color:#e6e6e6;
 }
