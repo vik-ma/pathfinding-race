@@ -1,5 +1,4 @@
 body {
-    /* color:#292929; */
     color:rgb(12, 12, 12);
     background-color:rgb(68, 60, 54);
     font-weight: bold;
@@ -298,8 +297,6 @@ ul {
     display: inline-block;
     transition-duration: 0.1s;
     cursor: pointer;
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     height: 31px;
@@ -354,8 +351,6 @@ ul {
 
 .settingsMenuButton:hover {
     background-color: rgb(56, 182, 255);
-    /* box-shadow: inset 0 0 8px 0px rgb(37, 63, 141); */
-    /* box-shadow: inset 0 0 8px 0px rgb(48, 75, 155); */
     box-shadow: inset 0 0 8px 0px rgb(45, 69, 143);
 }
 
@@ -394,7 +389,6 @@ ul {
     border-radius: 50%;
     background: #dddddd;
     border: 1px solid #292929;
-    /* border: 1px solid rgba(0,0,0,0.7); */
     position: absolute;
     display: flex;
     justify-content: center;
@@ -404,7 +398,6 @@ ul {
     opacity: 0.7;
     transition: ease-in-out 0.2s;
     outline: none;
-    /* margin: -1px; */
   }
   
 .sliderArrow img {
@@ -419,8 +412,6 @@ ul {
 }
 
 .sliderArrow:active {
-    /* opacity: 0.4; */
-    /* transform: translateY(1px); */
     background-color: white;
 }
 
@@ -554,7 +545,6 @@ ul {
     user-select: none;    
     transition-duration: 0.1s;
     backface-visibility: hidden;
-    /* text-shadow: 0 0 6px #f1f1f1, 0 0 6px #f1f1f1, 0 0 6px #f1f1f1, 0 0 6px #f1f1f1; */
 }
 
 .algoPathMsg {
@@ -570,14 +560,12 @@ ul {
 }
 
 .selectedChoice {
-    /* background-color:darkkhaki; */
     background: -webkit-linear-gradient(rgb(148, 137, 35), rgb(201, 195, 112));
     box-shadow: inset 0 0 0 3px rgb(185, 171, 39) !important;
     color:#33330a;
 }
 
 .winnerAlgo {
-    /* background-color:rgb(91, 233, 72) !important; */
     background: -webkit-linear-gradient(rgb(5, 165, 5), rgb(91, 233, 72)) !important;
     box-shadow: inset 0 0 0 3px rgb(80, 202, 80);
     color:#0e2e13;
@@ -666,9 +654,7 @@ ul {
 
 .node-goal {
     background-image: conic-gradient(lawngreen 0deg 360deg) !important;
-    /* border: 1px solid black !important; */
     border: 1px solid rgb(0, 126, 0);
-
     box-shadow: inset 0 0 0 4px rgb(0, 126, 0);
     color:rgb(0, 78, 0) !important;
     text-shadow: 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132);
@@ -678,28 +664,24 @@ ul {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor1) !important;
     border: 1px solid var(--nodebordercolor1) !important; 
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-    /* color: var(--nodebordercolor1); */
 }
 
 .node-start-2 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor2) !important;
     border: 1px solid var(--nodebordercolor2) !important;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-    /* color: var(--nodebordercolor2); */
 }
 
 .node-start-3 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor3) !important;
     border: 1px solid var(--nodebordercolor3) !important;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-    /* color:var(--nodebordercolor3); */
 }
 
 .node-start-4 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor4) !important;
     border: 1px solid var(--nodebordercolor4) !important;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-    /* color:var(--nodebordercolor4); */
 }
 
 .node-visited-1 {
@@ -750,7 +732,6 @@ ul {
 
 .node-visited-1-2 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor2) 180deg 360deg);
-    /* background-image: repeating-conic-gradient(var(--nodebgcolor1) 0deg 90deg,var(--nodebgcolor2) 90deg 180deg); */
 }
 
 .node-visited-1-3 {
@@ -790,7 +771,6 @@ ul {
 }
 
 .node-visited-1-2-3-4 {
-    /* background-image: conic-gradient(var(--nodebgcolor1) 0deg 45deg, var(--nodebgcolor2) 45deg 135deg, var(--nodebgcolor3) 135deg 225deg, var(--nodebgcolor4) 225deg 315deg, var(--nodebgcolor1) 315deg 360deg); */
     background-image: conic-gradient(var(--nodebgcolor4) 0deg 45deg, var(--nodebgcolor1) 45deg 135deg, var(--nodebgcolor2) 135deg 225deg, var(--nodebgcolor3) 225deg 315deg, var(--nodebgcolor4) 315deg 360deg);
 }
 
