@@ -310,9 +310,9 @@ ul {
        1px 1px 1px rgb(26, 26, 26);
 }
 
-/* .gameMenuButton:active {
-    transform: translateY(4px);
-} */
+.gameMenuButton:active {
+    transform: translateY(-2px);
+}
 
 .justVisualizeButton {
     background-color: rgb(216, 27, 65);
