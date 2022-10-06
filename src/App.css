@@ -424,13 +424,13 @@ ul {
     background-color: white;
 }
 
-.prevSlide {
+.prevSlideButton {
     top: 50%;
     left: 10px;
     transform: translateY(-60%);
 }
 
-.nextSlide {
+.nextSlideButton {
     top: 50%;
     right: 10px;
     transform: translateY(-60%);

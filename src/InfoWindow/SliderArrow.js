@@ -6,7 +6,9 @@ export const SliderArrow = ({ changeSlide, direction }) => {
     <button
       onClick={changeSlide}
       className={
-        direction === "next" ? "sliderArrow nextSlide" : "sliderArrow prevSlide"
+        direction === "next"
+          ? "sliderArrow nextSlideButton"
+          : "sliderArrow prevSlideButton"
       }
     >
       <img

@@ -7,11 +7,11 @@ export const InfoSlider = () => {
   const { setIsInfoRendered, slideIndex, setSlideIndex } =
     useContext(AppContext);
 
-  const nextSlide = () => {
+  const nextSlideButton = () => {
     setSlideIndex(slideIndex + 1);
   };
 
-  const prevSlide = () => {
+  const prevSlideButton = () => {
     setSlideIndex(slideIndex - 1);
   };
 
@@ -24,10 +24,10 @@ export const InfoSlider = () => {
       <div className="popupBackdrop infoBackdrop">
         <div className="infoInner">
           {slideIndex !== SliderContent.length - 1 ? (
-            <SliderArrow changeSlide={nextSlide} direction={"next"} />
+            <SliderArrow changeSlide={nextSlideButton} direction={"next"} />
           ) : null}
           {slideIndex !== 0 ? (
-            <SliderArrow changeSlide={prevSlide} direction={"prev"} />
+            <SliderArrow changeSlide={prevSlideButton} direction={"prev"} />
           ) : null}
           <div className="infoButtonBack">
             <button
