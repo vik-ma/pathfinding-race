@@ -123,16 +123,16 @@ export const SliderContent = [
         <p>
           <strong>These are the Start Nodes:</strong>
         </p>{" "}
-        <div className="node node-visited-1 node-start-1 titleBarNode infoNode">
+        <div className="node node-visited-1 node-start-1 menuNode infoNode">
           1
         </div>{" "}
-        <div className="node node-visited-2 node-start-2 titleBarNode infoNode">
+        <div className="node node-visited-2 node-start-2 menuNode infoNode">
           2
         </div>{" "}
-        <div className="node node-visited-3 node-start-3 titleBarNode infoNode">
+        <div className="node node-visited-3 node-start-3 menuNode infoNode">
           3
         </div>{" "}
-        <div className="node node-visited-4 node-start-4 titleBarNode infoNode">
+        <div className="node node-visited-4 node-start-4 menuNode infoNode">
           4
         </div>
         <p>
@@ -148,9 +148,7 @@ export const SliderContent = [
         <p>
           <strong>This is the Goal Node:</strong>
         </p>{" "}
-        <div className="node node-goal titleBarNode infoNode infoNodeGoal">
-          G
-        </div>
+        <div className="node node-goal menuNode infoNode infoNodeGoal">G</div>
         <br />
         <p>
           The visualizer will stop once the first pathfinding algorithm finds

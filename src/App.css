@@ -583,7 +583,7 @@ ul {
     color:#0e2e13;
 }
 
-.titleBarNode {
+.menuNode {
     display: inline-block;
     border-radius: 3px;
     border: 1px solid rgb(32, 32, 32) !important;
