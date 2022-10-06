@@ -32,29 +32,31 @@ export const GameMenu = () => {
 
   return (
     <div>
-      <div className="titleBarContainer">
+      <div className="gameMenuContainer">
         <div className="title">WHICH ALGORITHM WILL REACH THE GOAL NODE </div>{" "}
         <div className={nodeDivMap["nodegoal"]}>G</div>{" "}
         <div className="title"> FIRST?</div>
         <div>
           <div
-            className={`titleBarChoices ${
-              selectedDiv === "algoChoice1" ? " selectedChoice" : undefined
+            className={`contenderChoice ${
+              selectedDiv === "contenderChoice1" ? " selectedChoice" : undefined
             } ${renderWinnerMsg && winnerAlgo[1] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
-                setSelectedDiv("algoChoice1");
+                setSelectedDiv("contenderChoice1");
                 setUserChoice(1);
                 generatorRef.current.visualize();
               }
             }}
-            id="algoChoice1"
+            id="contenderChoice1"
           >
             <div className={nodeDivMap["nodestart1"]}>1</div>{" "}
             {algorithmMap[algoList[0]]}
           </div>
           <div
-            className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+            className={`algoPathMsg ${
+              renderWinnerMsg ? "fadeInAnimClass" : ""
+            }`}
           >
             {renderWinnerMsg
               ? calculatedAlgoMap[1].pathIsFound
@@ -67,23 +69,25 @@ export const GameMenu = () => {
         </div>
         <div>
           <div
-            className={`titleBarChoices ${
-              selectedDiv === "algoChoice2" ? " selectedChoice" : undefined
+            className={`contenderChoice ${
+              selectedDiv === "contenderChoice2" ? " selectedChoice" : undefined
             } ${renderWinnerMsg && winnerAlgo[2] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
-                setSelectedDiv("algoChoice2");
+                setSelectedDiv("contenderChoice2");
                 setUserChoice(2);
                 generatorRef.current.visualize();
               }
             }}
-            id="algoChoice2"
+            id="contenderChoice2"
           >
             <div className={nodeDivMap["nodestart2"]}>2</div>{" "}
             {algorithmMap[algoList[1]]}
           </div>
           <div
-            className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+            className={`algoPathMsg ${
+              renderWinnerMsg ? "fadeInAnimClass" : ""
+            }`}
           >
             {renderWinnerMsg
               ? calculatedAlgoMap[2].pathIsFound
@@ -97,23 +101,27 @@ export const GameMenu = () => {
         {numStartNodes > 2 ? (
           <div>
             <div
-              className={`titleBarChoices ${
-                selectedDiv === "algoChoice3" ? " selectedChoice" : undefined
+              className={`contenderChoice ${
+                selectedDiv === "contenderChoice3"
+                  ? " selectedChoice"
+                  : undefined
               } ${renderWinnerMsg && winnerAlgo[3] ? "winnerAlgo" : ""}`}
               onClick={() => {
                 if (!visIsOngoing && !visIsFinished) {
-                  setSelectedDiv("algoChoice3");
+                  setSelectedDiv("contenderChoice3");
                   setUserChoice(3);
                   generatorRef.current.visualize();
                 }
               }}
-              id="algoChoice3"
+              id="contenderChoice3"
             >
               <div className={nodeDivMap["nodestart3"]}>3</div>{" "}
               {algorithmMap[algoList[2]]}
             </div>
             <div
-              className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+              className={`algoPathMsg ${
+                renderWinnerMsg ? "fadeInAnimClass" : ""
+              }`}
             >
               {renderWinnerMsg && calculatedAlgoMap[3]
                 ? calculatedAlgoMap[3].pathIsFound
@@ -128,23 +136,27 @@ export const GameMenu = () => {
         {numStartNodes > 3 ? (
           <div>
             <div
-              className={`titleBarChoices ${
-                selectedDiv === "algoChoice4" ? " selectedChoice" : undefined
+              className={`contenderChoice ${
+                selectedDiv === "contenderChoice4"
+                  ? " selectedChoice"
+                  : undefined
               } ${renderWinnerMsg && winnerAlgo[4] ? "winnerAlgo" : ""}`}
               onClick={() => {
                 if (!visIsOngoing && !visIsFinished) {
-                  setSelectedDiv("algoChoice4");
+                  setSelectedDiv("contenderChoice4");
                   setUserChoice(4);
                   generatorRef.current.visualize();
                 }
               }}
-              id="algoChoice4"
+              id="contenderChoice4"
             >
               <div className={nodeDivMap["nodestart4"]}>4</div>{" "}
               {algorithmMap[algoList[3]]}
             </div>
             <div
-              className={`algoPathMsg ${renderWinnerMsg ? "fadeInClass" : ""}`}
+              className={`algoPathMsg ${
+                renderWinnerMsg ? "fadeInAnimClass" : ""
+              }`}
             >
               {renderWinnerMsg && calculatedAlgoMap[4]
                 ? calculatedAlgoMap[4].pathIsFound
@@ -158,17 +170,17 @@ export const GameMenu = () => {
         ) : null}
         <div>
           <div
-            className={`titleBarChoices ${
-              selectedDiv === "algoChoice0" ? " selectedChoice" : undefined
+            className={`contenderChoice ${
+              selectedDiv === "contenderChoice0" ? " selectedChoice" : undefined
             } ${renderWinnerMsg && winnerAlgo[5] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
-                setSelectedDiv("algoChoice0");
+                setSelectedDiv("contenderChoice0");
                 setUserChoice(5);
                 generatorRef.current.visualize();
               }
             }}
-            id="algoChoice5"
+            id="contenderChoice5"
           >
             <div className={nodeDivMap["nodex"]}>X</div> No Path Will Be Found!
           </div>
@@ -180,10 +192,10 @@ export const GameMenu = () => {
         </div>
       </div>
 
-      <div className="titleBarButtonsDiv">
-        <div className="leftSideTitleBarItems">
+      <div className="gameMenuButtonContainer">
+        <div className="gameMenuLeftSideItems">
           <button
-            className="titleBarButton justVisualizeButton"
+            className="gameMenuButton justVisualizeButton"
             onClick={() =>
               !visIsOngoing &&
               !visIsFinished &&
@@ -193,26 +205,26 @@ export const GameMenu = () => {
             Just Visualize
           </button>
           <button
-            className="titleBarButton newMapButton"
+            className="gameMenuButton newMapButton"
             onClick={() => !visIsOngoing && remakeGrid()}
           >
             New Map
           </button>{" "}
         </div>
-        <div className="rightSideTitleBarItems">
+        <div className="gameMenuRightSideItems">
           <div className="scoreDiv">
             {timesGuessed > 0
               ? `Score: ${userGuessScore} / ${timesGuessed}`
               : null}
           </div>
           <button
-            className="titleBarButton infoButton"
+            className="gameMenuButton infoButton"
             onClick={() => setIsInfoRendered(true)}
           >
             Information
           </button>
           <button
-            className="titleBarButton settingsMenuButton"
+            className="gameMenuButton settingsMenuButton"
             onClick={() => !visIsOngoing && setIsSettingsRendered(true)}
           >
             Settings
