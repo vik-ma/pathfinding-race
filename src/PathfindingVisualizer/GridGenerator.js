@@ -422,8 +422,11 @@ export const GridGenerator = forwardRef((props, ref) => {
 
   const visualizePaths = (algoMap, minIndex, lengthToDraw, anyPathFound) => {
     for (let i = 0; i <= lengthToDraw; i++) {
+      //Every loop, the visualizer will draw one turn for all contending pathfinding algortihms
       if (i === lengthToDraw) {
+        //The last node to get visualized
         if (anyPathFound) {
+          //If any contender has reached the Goal Node
           setTimeout(() => {
             document
               .getElementById(`node-${goalNodeRow}-${goalNodeCol}`)
@@ -445,10 +448,12 @@ export const GridGenerator = forwardRef((props, ref) => {
             drawWinnerPath(minIndex);
           }, visualizerSpeed * i);
         } else {
+          //If no contender reached the Goal Node
           setTimeout(() => {
             setRenderWinnerMsg(true);
             setWinnerAlgo({ 5: "No Path Found" });
             if (lengthToDraw === visualizerSkipTime) {
+              //Show messagebox saying rest of visualization was skipped
               setShowNoPathFoundMsg(true);
             }
             setVisIsOngoing(false);
@@ -456,14 +461,18 @@ export const GridGenerator = forwardRef((props, ref) => {
           }, visualizerSpeed * i);
         }
       } else {
+        //For every turn except for last
         setTimeout(() => {
           if (algoMap[1].path.length > i) {
+            //If visited by Contender 1 and Contender 1 still has turns to be visualized
             const node = algoMap[1].path[i];
             const classNames = document.getElementById(
               `node-${node.row}-${node.col}`
             ).className;
+            //Add new visual background color based on contender to current node
             const newClass = getNewNodeClass(1, classNames);
 
+            //Add animation to show which node was just visited
             document
               .getElementById(`node-${node.row}-${node.col}`)
               .classList.remove(newClass, "node-current");
@@ -476,6 +485,7 @@ export const GridGenerator = forwardRef((props, ref) => {
               .classList.add(newClass, "node-current");
           }
           if (algoMap[2].path.length > i) {
+            //If visited by Contender 2 and Contender 2 still has turns to be visualized
             const node2 = algoMap[2].path[i];
             const classNames = document.getElementById(
               `node-${node2.row}-${node2.col}`
@@ -494,7 +504,9 @@ export const GridGenerator = forwardRef((props, ref) => {
               .classList.add(newClass, "node-current");
           }
           if (algoMap[3]) {
+            //If there are 3 or more contenders
             if (algoMap[3].path.length > i) {
+              //If visited by Contender 3 and Contender 3 still has turns to be visualized
               const node3 = algoMap[3].path[i];
               const classNames = document.getElementById(
                 `node-${node3.row}-${node3.col}`
@@ -514,7 +526,9 @@ export const GridGenerator = forwardRef((props, ref) => {
             }
           }
           if (algoMap[4]) {
+            //If there are 4 contenders
             if (algoMap[4].path.length > i) {
+              //If visited by Contender 4 and Contender 4 still has turns to be visualized
               const node4 = algoMap[4].path[i];
               const classNames = document.getElementById(
                 `node-${node4.row}-${node4.col}`
@@ -533,14 +547,16 @@ export const GridGenerator = forwardRef((props, ref) => {
                 .classList.add(newClass, "node-current");
             }
           }
-        }, visualizerSpeed * i);
+        }, visualizerSpeed * i); //Add timeout based on Visualizer Speed setting between every turn
       }
     }
   };
 
+  //Draw the connecting path from Start Node to Goal Node for the winner(s)
   const drawWinnerPath = (winnerAlgoMap) => {
     for (let [key, value] of Object.entries(winnerAlgoMap)) {
       if (Object.keys(winnerAlgoMap).length === 1) {
+        //If there is only one winner
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
           if (i === path.length - 1) {
@@ -549,15 +565,18 @@ export const GridGenerator = forwardRef((props, ref) => {
             setVisIsFinished(true);
             setVisIsOngoing(false);
           }
+          //Add border in color corresponding to contender
           const node = path[i];
           document
             .getElementById(`node-${node.row}-${node.col}`)
             .classList.add(`node-winner-${key}`);
         }
       } else {
+        //If there is a tie
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
           if (i === path.length - 1) {
+            //Store all winning contenders in winnerAlgo useState
             setWinnerAlgo((prevState) => ({
               ...prevState,
               [key]: winnerAlgoMap[key].algoName,
@@ -566,6 +585,7 @@ export const GridGenerator = forwardRef((props, ref) => {
             setVisIsFinished(true);
             setVisIsOngoing(false);
           }
+          //Add dark grey border to every winning contender
           const node = path[i];
           document
             .getElementById(`node-${node.row}-${node.col}`)
@@ -575,30 +595,41 @@ export const GridGenerator = forwardRef((props, ref) => {
     }
   };
 
+  //Function to return new 'node-visited' CSS class based on which contenders the node has already been visited by
   function getNewNodeClass(algoNum, classNames) {
     switch (algoNum) {
+      //---Examples for case 1 only---
       case 1:
+        //When the contender visiting the current node is Contender 1
         if (classNames.includes("2")) {
+          //If the current node has already been visited by Contender 2
           if (classNames.includes("3")) {
+            //If the current node has already been visited by Contender 2 and Contender 3
             if (classNames.includes("4")) {
+              //If the current node has already been visited by Contender 2, Contender 3 and Contender 4
               return "node-visited-1-2-3-4";
             }
             return "node-visited-1-2-3";
           }
           if (classNames.includes("4")) {
+            //If the current node has already been visited by Contender 2 and Contender 4
             return "node-visited-1-2-4";
           }
           return "node-visited-1-2";
         }
         if (classNames.includes("3")) {
+          //If the current node has already been visited by Contender 3
           if (classNames.includes("4")) {
+            //If the current node has already been visited by Contender 3 and Contender 4
             return "node-visited-1-3-4";
           }
           return "node-visited-1-3";
         }
         if (classNames.includes("4")) {
+          //If the current node has already been visited by Contender 4
           return "node-visited-1-4";
         }
+        //If the current node has not previously been visited by any other contender
         return "node-visited-1";
       case 2:
         if (classNames.includes("1")) {
@@ -683,6 +714,7 @@ export const GridGenerator = forwardRef((props, ref) => {
           </div>
         </div>
       ) : null}
+      {/* Draw "Loading Grid" message if grid takes too long to load */}
       {isPending ? (
         <div className="loadingContainer">
           Loading Grid...<div className="loadingGridMsg"></div>
