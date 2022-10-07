@@ -31,6 +31,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     setVisIsOngoing,
   } = useContext(AppContext);
 
+  //Hook to launch visualizer from GameMenu component
   useImperativeHandle(ref, () => ({
     visualize() {
       setVisIsOngoing(true);
@@ -38,22 +39,28 @@ export const GridGenerator = forwardRef((props, ref) => {
     },
   }));
 
+  //"Loading Grid" message if grid takes too long to render
   const [isPending, startTransition] = useTransition();
 
+  //Grids for every contending pathfinding algorithm
   const [savedGrid1, setSavedGrid1] = useState([]);
   const [savedGrid2, setSavedGrid2] = useState([]);
   const [savedGrid3, setSavedGrid3] = useState([]);
   const [savedGrid4, setSavedGrid4] = useState([]);
 
+  //Stores the grid's dimensions
   const [gridLayout, setGridLayout] = useState([]);
 
+  //Messagebox to show that visualizer has skipped visualizing the rest when no paths were found
   const [showNoPathFoundMsg, setShowNoPathFoundMsg] = useState(false);
-  //100 = 5 seconds
+
+  //Time until visualizer skips
+  //100 turns = 5 seconds for fast visualizer setting
   const visualizerSkipTime = 100;
 
+  //Randomize up to five unique row indices
   const createNodeRows = () => {
     const randomNodeRow = new Set();
-
     while (randomNodeRow.size < numStartNodes + 1) {
       randomNodeRow.add(Math.floor(Math.random() * rowCount));
     }
@@ -61,9 +68,9 @@ export const GridGenerator = forwardRef((props, ref) => {
     return randomNodeArray;
   };
 
+  //Randomize up to five unique columns indices
   const createNodeCols = () => {
     const randomNodeCol = new Set();
-
     while (randomNodeCol.size < numStartNodes + 1) {
       randomNodeCol.add(Math.floor(Math.random() * colCount));
     }
@@ -74,6 +81,7 @@ export const GridGenerator = forwardRef((props, ref) => {
   const [randomNodeRowArray] = useState(createNodeRows());
   const [randomNodeColArray] = useState(createNodeCols());
 
+  //Assign uniquely randomized rows/column indices to Goal and Start Nodes
   const [goalNodeRow] = useState(randomNodeRowArray[0]);
   const [goalNodeCol] = useState(randomNodeColArray[0]);
   const [startNodeRow1] = useState(randomNodeRowArray[1]);
@@ -92,8 +100,7 @@ export const GridGenerator = forwardRef((props, ref) => {
   }, []);
 
   const createGrid = () => {
-    let gridsForAllStartNodes = [];
-
+    //Randomize which nodes (row, column) on the grid will be walls
     const wallDensity = Math.floor(rowCount * colCount * wallDensityValue);
 
     const walls = new Set();
@@ -105,6 +112,8 @@ export const GridGenerator = forwardRef((props, ref) => {
       ]);
     }
 
+    const gridsForAllStartNodes = [];
+    //Create same grid for every contending pathfinding algorithm
     for (let i = 0; i < numStartNodes; i++) {
       const grid = new Array(rowCount);
 
@@ -113,13 +122,9 @@ export const GridGenerator = forwardRef((props, ref) => {
       }
 
       createNodeMatrix(grid);
-
       setGridLayout(grid);
-
       createWalls(grid, walls);
-
-      createAdjacentNodeMatrix(grid);
-
+      createAdjacentNodeList(grid);
       gridsForAllStartNodes.push(grid);
     }
 
@@ -129,6 +134,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     setSavedGrid4(gridsForAllStartNodes[3]);
   };
 
+  //Create every node on the grid as a gridElement object with its corresponding row and column index
   const createNodeMatrix = (grid) => {
     for (let row = 0; row < rowCount; row++) {
       for (let col = 0; col < colCount; col++) {
@@ -137,7 +143,8 @@ export const GridGenerator = forwardRef((props, ref) => {
     }
   };
 
-  const createAdjacentNodeMatrix = (grid) => {
+  //Add list of adjacent nodes to each node
+  const createAdjacentNodeList = (grid) => {
     for (let row = 0; row < rowCount; row++) {
       for (let col = 0; col < colCount; col++) {
         grid[row][col].addAdjacentNodes(grid);
@@ -149,6 +156,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     walls.forEach((element) => {
       grid[element[0]][element[1]].isWall = true;
     });
+    //Assure that Goal/Start Nodes do not become walls
     grid[goalNodeRow][goalNodeCol].isWall = false;
     grid[startNodeRow1][startNodeCol1].isWall = false;
     grid[startNodeRow2][startNodeCol2].isWall = false;
@@ -160,6 +168,7 @@ export const GridGenerator = forwardRef((props, ref) => {
     }
   };
 
+  //Create grid on screen
   const drawGrid = (
     <div>
       {gridLayout.map((row, rowIndex) => {
@@ -167,6 +176,7 @@ export const GridGenerator = forwardRef((props, ref) => {
           <div key={rowIndex} className="rowWrapper">
             {row.map((col, colIndex) => {
               const {
+                //Props to assign correct color to special nodes
                 isStartNode1,
                 isStartNode2,
                 isStartNode3,
@@ -194,9 +204,12 @@ export const GridGenerator = forwardRef((props, ref) => {
     </div>
   );
 
+  //Values of every node in the grid
   function gridElement(row, col) {
     this.row = row;
     this.col = col;
+
+    //Booleans to represent if node is Goal or Start Nodes
     this.isStartNode1 =
       this.row === startNodeRow1 && this.col === startNodeCol1;
     this.isStartNode2 =
@@ -211,17 +224,32 @@ export const GridGenerator = forwardRef((props, ref) => {
       numStartNodes >= 4;
     this.isGoalNode = this.row === goalNodeRow && this.col === goalNodeCol;
 
-    this.allowDiagonals = allowDiagonal;
     this.isWall = false;
+
+    //Boolean for whether or not 'Allow Diagonal Movement' setting has been turned on
+    this.allowDiagonals = allowDiagonal;
+
+    //Variable to mark if node has been visited by pathfinding algorithms
     this.isVisited = false;
+    //Used by Bidirectional Search only
     this.isVisitedBidirectional = false;
-    this.adjacentNodes = [];
+
+    //Variable to store the node that led the pathfinding algorithm to this node
+    //Will create a Linked List of nodes in order to draw connected path from Start Node to Goal Node onto the grid
     this.previousNode = undefined;
+    //Used by Bidirectional Search only
     this.previousNodeBidirectional = undefined;
+
+    //Default priority value for every node
+    //Used for Priority Queue based pathfinding algorithms
     this.distance = Infinity;
+
+    //List of node's adjacent nodes
+    this.adjacentNodes = [];
     this.addAdjacentNodes = function (grid) {
       let row = this.row;
       let col = this.col;
+      //Only adds non-wall adjacent nodes to the list
       if (row > 0 && !grid[row - 1][col].isWall)
         this.adjacentNodes.push(grid[row - 1][col]);
       if (row < rowCount - 1 && !grid[row + 1][col].isWall)
@@ -231,8 +259,8 @@ export const GridGenerator = forwardRef((props, ref) => {
       if (col < colCount - 1 && !grid[row][col + 1].isWall)
         this.adjacentNodes.push(grid[row][col + 1]);
 
-      // DIAGONALS
       if (this.allowDiagonals) {
+        //Adds diagonally adjacent non-wall nodes if setting is turned on
         if (
           row > 0 &&
           col > 0 &&
@@ -265,39 +293,49 @@ export const GridGenerator = forwardRef((props, ref) => {
     };
   }
 
+  //Function to launch pathfinding algorithms
   const calculatePaths = () => {
     var grid1 = savedGrid1;
     var grid2 = savedGrid2;
     var grid3 = savedGrid3;
     var grid4 = savedGrid4;
 
+    //Create HashMaps storing each contender's Goal and Start Nodes (row, column)
+    //Key corresponds to contender's number
     var gridStartMap = {
       1: grid1[startNodeRow1][startNodeCol1],
       2: grid2[startNodeRow2][startNodeCol2],
     };
-
     var gridGoalMap = {
       1: grid1[goalNodeRow][goalNodeCol],
       2: grid2[goalNodeRow][goalNodeCol],
     };
-
     if (grid3) {
+      //If number of contestants are 3 or more
       gridStartMap[3] = grid3[startNodeRow3][startNodeCol3];
       gridGoalMap[3] = grid3[goalNodeRow][goalNodeCol];
       if (grid4) {
+        //If number of contestants are 4
         gridStartMap[4] = grid4[startNodeRow4][startNodeCol4];
         gridGoalMap[4] = grid4[goalNodeRow][goalNodeCol];
       }
     }
 
+    //HashMap to store every contender's result after pathfinding algorithms has executed
+    //Key corresponds to contender's number
     let algoMap = {};
+
+    //List to store how long the paths were for all contenders
+    //(How many total nodes the pathfinding algorithms visited)
     let algoPathLengths = [];
+    //List to store how long the paths were for all contenders who found the Goal Node
     let algoPathCompleted = [];
 
     for (let i = 1; i < algoList.length + 1; i++) {
-      let algoType = algoList[i - 1];
-      // let algoType = 5;
+      //Loop through all contenders in the field
+      const algoType = algoList[i - 1];
       switch (algoType) {
+        //Launch specific pathfinding algorithm assigned to contender
         case 0:
           var algo = Astar(gridStartMap[i], gridGoalMap[i]);
           break;
@@ -323,47 +361,66 @@ export const GridGenerator = forwardRef((props, ref) => {
         default:
           return;
       }
+      //Save result of pathfinding algorithm in algoMap HashMap to corresponding key
       algoMap[i] = algo;
+      //Save how many nodes the pathfinding algorithm visited
       algoPathLengths.push(algo.path.length);
       if (algo.pathIsFound) {
+        //Save how many nodes the pathfinding algorithm visited if Goal Node was found
         algoPathCompleted.push(algo.path.length);
       }
     }
 
+    //Console log every contender for debug
     // console.log(algoMap[1]);
     // console.log(algoMap[2]);
     // console.log(algoMap[3]);
     // console.log(algoMap[4]);
 
-    let pathMaxLength = Math.max(...algoPathLengths);
-    let pathMinCompleted = Math.min(...algoPathCompleted);
+    //Longest path taken of all contending algorithms
+    const pathMaxLength = Math.max(...algoPathLengths);
+    //Shortest path taken of all contending algorithms who found the Goal Node
+    const pathMinCompleted = Math.min(...algoPathCompleted);
 
-    let anyPathFound = false;
+    //HashMap storing the contender who found the Goal Node after visiting the least amount of nodes
+    //(Incase there is a tie for first place)
+    //Key corresponds to contender's number
     let minIndex = {};
 
+    //Integer to determine how many "turns" the pathfinding visualizer should draw
     let lengthToDraw = 0;
 
+    //If any contenders found the Goal Node
+    let anyPathFound = false;
+
     if (algoPathCompleted.length < 1) {
+      //If no contenders found the Goal Node
+      //Visualize only the longest path taken by all contending algorithms if it's below visualizerSkipTime treshold
       lengthToDraw = Math.min(pathMaxLength, visualizerSkipTime);
     } else {
       anyPathFound = true;
+      //If at least one contender found the Goal Node
+      //Visualize until the first contender reaches the Goal Node
       lengthToDraw = pathMinCompleted;
       for (let [key, value] of Object.entries(algoMap)) {
         if (algoMap[key].pathIsFound) {
           if (algoMap[key].path.length === pathMinCompleted) {
+            //Store the winning contender(s) path length with their corresponding number as key
             minIndex[key] = value;
           }
         }
       }
     }
 
+    //Store the results of all contenders in calculatedAlgoMap useState
     setCalculatedAlgoMap({
       1: algoMap[1],
       2: algoMap[2],
-      ...(algoMap[3] && { 3: algoMap[3] }),
-      ...(algoMap[4] && { 4: algoMap[4] }),
+      ...(algoMap[3] && { 3: algoMap[3] }), //If 3 or more contenders
+      ...(algoMap[4] && { 4: algoMap[4] }), //If 4 contenders
     });
 
+    //Execute visualizer
     visualizePaths(algoMap, minIndex, lengthToDraw, anyPathFound);
   };
 
