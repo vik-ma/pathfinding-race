@@ -6,40 +6,37 @@ import { GameMenu } from "./PathfindingVisualizer/GameMenu";
 import { InfoSlider } from "./InfoWindow/InfoSlider";
 
 function App() {
-  const [isGridRendered, setIsGridRendered] = useState(true);
-  const [isSettingsRendered, setIsSettingsRendered] = useState(false);
-  const [isInfoRendered, setIsInfoRendered] = useState(false);
-
   const SLIDER_ROW_DEFAULT_VALUE = 18;
   const SLIDER_COL_DEFAULT_VALUE = 25;
+  const SLIDER_NUMNODES_DEFAULT_VALUE = 4;
+  const SLIDER_WALL_DENSITY_DEFAULT_VALUE = 0.25;
+  const ALLOW_DIAGONAL_DEFAULT_VALUE = false;
+  const VIS_SPEED_DEFAULT_VALUE = 50;
+
   const [rowCount, setRowCount] = useState(SLIDER_ROW_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_COL_DEFAULT_VALUE);
-
-  const SLIDER_NUMNODES_DEFAULT_VALUE = 4;
   const [numStartNodes, setNumStartNodes] = useState(
     SLIDER_NUMNODES_DEFAULT_VALUE
   );
-
-  const SLIDER_WALL_DENSITY_DEFAULT_VALUE = 0.25;
   const [wallDensityValue, setWallDensityValue] = useState(
     SLIDER_WALL_DENSITY_DEFAULT_VALUE
   );
-
-  const ALLOW_DIAGONAL_DEFAULT_VALUE = false;
   const [allowDiagonal, setAllowDiagonal] = useState(
     ALLOW_DIAGONAL_DEFAULT_VALUE
   );
-
-  const VIS_SPEED_DEFAULT_VALUE = 50;
   const [visualizerSpeed, setVisualizerSpeed] = useState(
     VIS_SPEED_DEFAULT_VALUE
   );
 
+  const [isGridRendered, setIsGridRendered] = useState(true);
+  const [isSettingsRendered, setIsSettingsRendered] = useState(false);
+  const [isInfoRendered, setIsInfoRendered] = useState(false);
+  const [gameKey, setGameKey] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
+
   const [winnerAlgo, setWinnerAlgo] = useState({});
   const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
   const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
-
-  const [slideIndex, setSlideIndex] = useState(0);
 
   const algorithmMap = {
     0: "A-Star Search",
@@ -85,8 +82,6 @@ function App() {
 
   const [disabledAlgos, setDisabledAlgos] = useState([]);
 
-  const [titleKey, setTitleKey] = useState(0);
-
   const [userChoice, setUserChoice] = useState(0);
   const [userGuessScore, setUserGuessScore] = useState(0);
   const [timesGuessed, setTimesGuessed] = useState(0);
@@ -118,7 +113,7 @@ function App() {
     setVisIsFinished(false);
     setUserChoice(0);
     generateNewAlgoList();
-    setTitleKey(titleKey + 1);
+    setGameKey(gameKey + 1);
     setIsGridRendered(true);
   };
 
@@ -256,7 +251,7 @@ function App() {
         >
           <div className="appContainer">
             <div className="appBackdrop">
-              {isGridRendered ? <GameMenu key={titleKey} /> : null}
+              {isGridRendered ? <GameMenu key={gameKey} /> : null}
               {isSettingsRendered ? <SettingsMenu /> : null}
               {isInfoRendered ? <InfoSlider /> : null}
             </div>
