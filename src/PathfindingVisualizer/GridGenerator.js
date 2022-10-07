@@ -330,10 +330,10 @@ export const GridGenerator = forwardRef((props, ref) => {
       }
     }
 
-    console.log(algoMap[1]);
-    console.log(algoMap[2]);
-    console.log(algoMap[3]);
-    console.log(algoMap[4]);
+    // console.log(algoMap[1]);
+    // console.log(algoMap[2]);
+    // console.log(algoMap[3]);
+    // console.log(algoMap[4]);
 
     let pathMaxLength = Math.max(...algoPathLengths);
     let pathMinCompleted = Math.min(...algoPathCompleted);
