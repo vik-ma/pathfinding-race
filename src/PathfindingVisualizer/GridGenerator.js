@@ -352,11 +352,7 @@ export const GridGenerator = forwardRef((props, ref) => {
           var algo = Dijkstra(gridStartMap[i], gridGoalMap[i]);
           break;
         case 5:
-          var algo = GreedyBestFirstSearch(
-            gridStartMap[i],
-            gridGoalMap[i],
-            rowCount * colCount
-          );
+          var algo = GreedyBestFirstSearch(gridStartMap[i], gridGoalMap[i]);
           break;
         default:
           return;
@@ -371,7 +367,7 @@ export const GridGenerator = forwardRef((props, ref) => {
       }
     }
 
-    //Console log every contender for debug
+    //Console log every contender for debugging purposes
     // console.log(algoMap[1]);
     // console.log(algoMap[2]);
     // console.log(algoMap[3]);
