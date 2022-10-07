@@ -21,12 +21,14 @@ export const SettingsMenu = () => {
     setIsSettingsRendered,
   } = useContext(AppContext);
 
+  //Default values for range sliders
   const defaultRowValue = rowCount;
   const defaultColValue = colCount;
   const defaultNumNodes = numStartNodes;
   const defaultWallDensity = wallDensityValue;
   const defaultVisualizerSpeed = visualizerSpeed;
 
+  //Dictionaries to convert between range slider value, displayed value and set useState values
   const wallDensityMap = { 1: 0.15, 2: 0.25, 3: 0.4 };
   const inverseWallDensityMap = { 0.15: 1, 0.25: 2, 0.4: 3 };
   const wordWallDensityMap = { 0.15: "Low", 0.25: "Medium", 0.4: "High" };
@@ -34,18 +36,26 @@ export const SettingsMenu = () => {
   const inverseVisualizerSpeedMap = { 150: 1, 100: 2, 50: 3 };
   const wordVisualizerSpeedMap = { 150: "Slow", 100: "Medium", 50: "Fast" };
 
+  //Variable to store reference to the CSS class for the light-grey background for GameMenu + Grid
   var backdropDiv = document.querySelector(".appBackdrop");
 
+  //HashMap of changed to be made after Settings Menu is closed
+  //Key defines which setting
+  //Value defines the setting's new value
   const [newChanges, setNewChanges] = useState({});
 
+  //useEffect dependency to only remake grid after Settings Menu is closed (if true)
   const [isChangeMade, setIsChangeMade] = useState(false);
 
+  //Will not remake grid if true when Settings Menu is closed
   const [noChangeMade, setNoChangeMade] = useState(true);
 
+  //Handler for 'Enabled Algorithms' checkboxes ('Allow Diagonal Movement' not included)
   const handleAlgoCheckboxChange = (e, num) => {
     if (!e) {
       //If checkbox gets unchecked
       if (disabledAlgos.length < 5) {
+        //Only 5 pathfinding algorithms can be disabled at the same time
         setDisabledAlgos([...disabledAlgos, num]);
       }
     } else {
@@ -56,6 +66,7 @@ export const SettingsMenu = () => {
     setNoChangeMade(false);
   };
 
+  //Function to resize appBackdrop CSS class when changing grid dimensions / number of contenders to avoid jitter when remaking grid
   const applyChanges = () => {
     var minHeight = { rows: 0, nodes: 0 };
     for (let [key, value] of Object.entries(newChanges)) {
