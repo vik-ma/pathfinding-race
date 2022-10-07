@@ -13,6 +13,7 @@ function App() {
   const ALLOW_DIAGONAL_DEFAULT_VALUE = false;
   const VIS_SPEED_DEFAULT_VALUE = 50;
 
+  //Values changeable in Settings Menu
   const [rowCount, setRowCount] = useState(SLIDER_ROW_DEFAULT_VALUE);
   const [colCount, setColCount] = useState(SLIDER_COL_DEFAULT_VALUE);
   const [numStartNodes, setNumStartNodes] = useState(
@@ -27,25 +28,28 @@ function App() {
   const [visualizerSpeed, setVisualizerSpeed] = useState(
     VIS_SPEED_DEFAULT_VALUE
   );
+  //List of user disabled pathfinding algorithms in Settings Menu
+  const [disabledAlgos, setDisabledAlgos] = useState([]);
 
   const [isGridRendered, setIsGridRendered] = useState(true);
   const [isSettingsRendered, setIsSettingsRendered] = useState(false);
   const [isInfoRendered, setIsInfoRendered] = useState(false);
+
+  //Key for GameMenu component
+  //Everytime remakeGrid() is called, the old GameMenu component gets deleted
+  //and a new one created with a different key
   const [gameKey, setGameKey] = useState(0);
+
+  //Default Information Menu slide
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const [winnerAlgo, setWinnerAlgo] = useState({});
-  const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
+  //HashMap of the calculated paths for the different contending pathfinding algorithms
   const [calculatedAlgoMap, setCalculatedAlgoMap] = useState({});
+  //Contending pathfinding algorithm(s) that wins the current game
+  const [winnerAlgo, setWinnerAlgo] = useState({});
+  //Displays the result of the game in GameMenu when true
+  const [renderWinnerMsg, setRenderWinnerMsg] = useState(false);
 
-  const algorithmMap = {
-    0: "A-Star Search",
-    1: "Bidirectional Search",
-    2: "Breadth-First Search",
-    3: "Depth-First Search",
-    4: "Dijkstra's Algorithm",
-    5: "Greedy Best-First Search",
-  };
   const styles = {
     node: "node",
     nodevisited1: "node-visited-1",
@@ -60,6 +64,7 @@ function App() {
     menunode: "menuNode",
     nodex: "node-x",
   };
+  //HashMap of combined CSS classes for specific nodes
   const nodeDivMap = {
     nodestart1: `${styles.node} ${styles.nodevisited1} ${styles.nodestart1} ${styles.menunode}`,
     nodestart2: `${styles.node} ${styles.nodevisited2} ${styles.nodestart2} ${styles.menunode}`,
@@ -69,6 +74,18 @@ function App() {
     nodex: `${styles.node} ${styles.nodex} ${styles.menunode}`,
   };
 
+  //HashMap of implemented pathfinding algorithms
+  const algorithmMap = {
+    0: "A-Star Search",
+    1: "Bidirectional Search",
+    2: "Breadth-First Search",
+    3: "Depth-First Search",
+    4: "Dijkstra's Algorithm",
+    5: "Greedy Best-First Search",
+  };
+
+  //List of which contending pathfinding algorithms gets assigned which implemented pathfinding algorithms
+  //Randomly generated numbers (corresponding to algorithmMap keys)
   const [algoList, setAlgoList] = useState(
     Array.from(
       numStartNodes > 3
@@ -80,15 +97,7 @@ function App() {
     )
   );
 
-  const [disabledAlgos, setDisabledAlgos] = useState([]);
-
-  const [userChoice, setUserChoice] = useState(0);
-  const [userGuessScore, setUserGuessScore] = useState(0);
-  const [timesGuessed, setTimesGuessed] = useState(0);
-
-  const [visIsFinished, setVisIsFinished] = useState(false);
-  const [visIsOngoing, setVisIsOngoing] = useState(false);
-
+  //Assigns new pathfinding algorithms to contenders
   const generateNewAlgoList = () => {
     const newAlgoList = [];
     for (let i = 0; i < numStartNodes; i++) {
@@ -97,6 +106,7 @@ function App() {
     setAlgoList(newAlgoList);
   };
 
+  //Generates random numbers corresponding to algorithmMap keys excluding user disabled algorithms
   const filterDisabledAlgos = () => {
     let random = Math.floor(Math.random() * 6);
     while (disabledAlgos.includes(random)) {
@@ -105,6 +115,19 @@ function App() {
     return random;
   };
 
+  //Contending pathfinding algorithm that user picks to win
+  const [userChoice, setUserChoice] = useState(0);
+
+  //Number of correct user picks
+  const [userGuessScore, setUserGuessScore] = useState(0);
+  //Number of total user picks
+  const [timesGuessed, setTimesGuessed] = useState(0);
+
+  //States of pathfinding visualizer
+  const [visIsOngoing, setVisIsOngoing] = useState(false);
+  const [visIsFinished, setVisIsFinished] = useState(false);
+
+  //Create new map/game
   const remakeGrid = () => {
     setIsSettingsRendered(false);
     setIsGridRendered(false);
@@ -113,19 +136,22 @@ function App() {
     setVisIsFinished(false);
     setUserChoice(0);
     generateNewAlgoList();
-    setGameKey(gameKey + 1);
+    setGameKey(gameKey + 1); //Create new GameMenu component with different key from last
     setIsGridRendered(true);
   };
 
   const updateUserScore = () => {
     if (userChoice !== 0) {
+      //If user picked any contender
       setTimesGuessed(timesGuessed + 1);
       if (userChoice in winnerAlgo) {
+        //If user picked correct contender
         setUserGuessScore(userGuessScore + 1);
       }
     }
   };
 
+  //Unused function to print out winning contender in a div
   const printWinnerAlgos = (algoMap) => {
     if (algoMap !== null) {
       const winnerDivList = [];
