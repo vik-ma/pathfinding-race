@@ -559,12 +559,10 @@ export const GridGenerator = forwardRef((props, ref) => {
         //If there is only one winner
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
-          if (i === path.length - 1) {
-            setWinnerAlgo({ [key]: winnerAlgoMap[key].algoName });
-            setRenderWinnerMsg(true);
-            setVisIsFinished(true);
-            setVisIsOngoing(false);
-          }
+          setWinnerAlgo({ [key]: winnerAlgoMap[key].algoName });
+          setRenderWinnerMsg(true);
+          setVisIsFinished(true);
+          setVisIsOngoing(false);
           //Add border in color corresponding to contender
           const node = path[i];
           document
@@ -575,16 +573,14 @@ export const GridGenerator = forwardRef((props, ref) => {
         //If there is a tie
         let path = winnerAlgoMap[key].pathToGoal;
         for (let i = 0; i < path.length; i++) {
-          if (i === path.length - 1) {
-            //Store all winning contenders in winnerAlgo useState
-            setWinnerAlgo((prevState) => ({
-              ...prevState,
-              [key]: winnerAlgoMap[key].algoName,
-            }));
-            setRenderWinnerMsg(true);
-            setVisIsFinished(true);
-            setVisIsOngoing(false);
-          }
+          //Store all winning contenders in winnerAlgo useState
+          setWinnerAlgo((prevState) => ({
+            ...prevState,
+            [key]: winnerAlgoMap[key].algoName,
+          }));
+          setRenderWinnerMsg(true);
+          setVisIsFinished(true);
+          setVisIsOngoing(false);
           //Add dark grey border to every winning contender
           const node = path[i];
           document
