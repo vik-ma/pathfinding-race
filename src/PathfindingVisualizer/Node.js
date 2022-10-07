@@ -8,6 +8,7 @@ export const Node = ({
   col,
   isWall,
 }) => {
+  //Add CSS class to node if special node
   const nodeValues = isStartNode1
     ? "node-start-1 node-visited-1"
     : isStartNode2
@@ -21,6 +22,7 @@ export const Node = ({
     : isWall
     ? "node-wall"
     : "";
+  //Add text to node if special node
   const gridText = isStartNode1
     ? "1"
     : isStartNode2
@@ -31,11 +33,9 @@ export const Node = ({
     ? "4"
     : isGoalNode
     ? "G"
-    : // : `${row},${col}`;
-      "";
+    : "";
   return (
     <div className={`node ${nodeValues}`} id={`node-${row}-${col}`}>
-      {/* {row},{col} */}
       {gridText}
     </div>
   );
