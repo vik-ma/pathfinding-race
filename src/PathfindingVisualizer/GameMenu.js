@@ -22,8 +22,10 @@ export const GameMenu = () => {
     setIsInfoRendered,
   } = useContext(AppContext);
 
+  //Reference to GridGenerator component
   const generatorRef = useRef();
 
+  //Used to mark which contender user has picked
   const [selectedDiv, setSelectedDiv] = useState("");
 
   useEffect(() => {
@@ -43,17 +45,21 @@ export const GameMenu = () => {
             } ${renderWinnerMsg && winnerAlgo[1] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
+                //Do nothing if visualizer has already started
                 setSelectedDiv("contenderChoice1");
                 setUserChoice(1);
+                //Automatically start visualizer after user clicks on contender
                 generatorRef.current.visualize();
               }
             }}
             id="contenderChoice1"
           >
             <div className={nodeDivMap["nodestart1"]}>1</div>{" "}
+            {/* Show which randomly assigned pathfinding algorithm contender was assigned */}
             {algorithmMap[algoList[0]]}
           </div>
           <div
+          //Show result of contender's pathfinding algorithm when visualizer is finished
             className={`algoPathMsg ${
               renderWinnerMsg ? "fadeInAnimClass" : ""
             }`}
@@ -231,6 +237,7 @@ export const GameMenu = () => {
           </button>
         </div>
       </div>
+      {/* Create randomized grid */}
       <GridGenerator ref={generatorRef} />
     </div>
   );
