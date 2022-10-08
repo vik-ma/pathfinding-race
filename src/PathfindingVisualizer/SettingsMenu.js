@@ -129,7 +129,7 @@ export const SettingsMenu = () => {
         <div className="settingsContainer">
           <div className="settingsInner">
             <div className="settingsRightSide">
-              <h1 className="infoTitle settingsTitle">Settings</h1>
+              <h1 className="settingsTitle">Settings</h1>
               <div className="settingsElement settingsElementOpacity">
                 Number of Rows:{" "}
                 <div className="settingValue">
@@ -238,7 +238,7 @@ export const SettingsMenu = () => {
               </div>
             </div>
             <div className="enabledAlgoList">
-              <h2 className="infoTitle settingsTitle algoListTitle">
+              <h2 className="settingsTitle algoListTitle">
                 Enabled Algorithms
               </h2>
               <div className="checkboxItem">

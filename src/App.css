@@ -375,15 +375,21 @@ p strong {
 }
 
 .settingsTitle {   
+    background: var(--titlegradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin:0;
     height: min-content;
     padding: 0;
-    margin-bottom: 5px;
+    margin-top: 2px;
 }
 
 .algoListTitle {
-    margin-top: 9px;
-    margin-bottom:5px;
+    background: var(--titlegradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 12px;
+    margin-bottom: 3px;
 }
 
 .settingsElement {
