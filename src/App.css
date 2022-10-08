@@ -30,6 +30,8 @@ p strong {
     --nodebordercolor3: rgb(185, 136, 1);
     --nodebordercolor4: rgb(107, 2, 182);
     --backdropcolor: rgb(153, 149, 145);
+    --titlegradient: -webkit-linear-gradient(rgb(50, 84, 236), rgb(77, 25, 160));
+    --subtitlegradient: -webkit-linear-gradient(rgb(0, 120, 233), rgb(22, 49, 139));
 }
 
 .appContainer {
@@ -573,7 +575,7 @@ p strong {
 }
 
 .infoTitle {
-    background: -webkit-linear-gradient(rgb(50, 84, 236), rgb(77, 25, 160));
+    background: var(--titlegradient);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 3px;
@@ -581,7 +583,7 @@ p strong {
 }
 
 .infoSubTitle {
-    background: -webkit-linear-gradient(rgb(0, 120, 233), rgb(22, 49, 139));
+    background: var(--subtitlegradient);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin:0;
