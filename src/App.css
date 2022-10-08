@@ -21,25 +21,31 @@ p strong {
 }
 
 :root {
+    /* Background color for every contender's nodes displayed in the grid */
     --nodebgcolor1: rgb(236, 27, 62);
     --nodebgcolor2: dodgerblue;
     --nodebgcolor3: rgb(214, 200, 2);
     --nodebgcolor4: darkorchid;
+    /* Border color for every contender's nodes displayed in the grid */
     --nodebordercolor1: rgb(160, 1, 1);
     --nodebordercolor2: rgb(28, 68, 245);
     --nodebordercolor3: rgb(185, 136, 1);
     --nodebordercolor4: rgb(107, 2, 182);
+    /* Background color of app content and popup windows */
     --backdropcolor: rgb(153, 149, 145);
+    /* Gradient colors for Headers in InfoWindow and SettingsMenu */
     --titlegradient: -webkit-linear-gradient(rgb(50, 84, 236), rgb(77, 25, 160));
     --subtitlegradient: -webkit-linear-gradient(rgb(0, 120, 233), rgb(22, 49, 139));
 }
 
+/* Center the contents of the app */
 .appContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Window backdrop of contents of the app */
 .appBackdrop {
     background-color: var(--backdropcolor);
     border: 1px solid black;
@@ -65,6 +71,7 @@ p strong {
     }
 }
 
+/* Header at the top of app */
 .title {
     background: -webkit-linear-gradient(rgb(122, 81, 18), rgb(46, 38, 31));
     background-clip: text;
@@ -72,17 +79,19 @@ p strong {
     display: inline-block;
     margin-left: 2px;
     margin-right: 3px;
-    font-size:x-large;
-    vertical-align:top;
+    font-size: x-large;
+    vertical-align: top;
     line-height: 120%;
 }
 
+/* Class to display nodes out of grid*/
 .menuNode {
     display: inline-block;
     border-radius: 3px;
     border: 1px solid rgb(32, 32, 32) !important;
 }
 
+/* Clickable container for contending pathfinding algorithms in GameMenu */
 .contenderChoice {
     padding: 3px;
     width: 225px;
@@ -93,6 +102,7 @@ p strong {
     font-weight: 600;
     user-select: none;    
     transition-duration: 0.1s;
+    /* Property to not create artifacts with animations */
     backface-visibility: hidden;
 }
 
@@ -101,18 +111,21 @@ p strong {
     color: white;
 }
 
+/* Contender that user has clicked on */
 .selectedChoice {
     background: -webkit-linear-gradient(rgb(148, 137, 35), rgb(201, 195, 112));
     box-shadow: inset 0 0 0 3px rgb(185, 171, 39) !important;
     color:#33330a;
 }
 
+/* Winning contender to be displayed after visualization had ended */
 .winnerAlgo {
     background: -webkit-linear-gradient(rgb(5, 165, 5), rgb(91, 233, 72)) !important;
     box-shadow: inset 0 0 0 3px rgb(80, 202, 80);
     color:#0e2e13;
 }
 
+/* Text next to every contender to be displayed after visualization has ended */
 .algoPathMsg {
     margin-left: 15px;
     display: inline-block;
@@ -120,6 +133,7 @@ p strong {
     color:rgb(12, 12, 12);
 }
 
+/* Container for buttons over grid and the score */
 .gameMenuButtonContainer {
     position: relative;
     margin-top: 2px;
@@ -133,12 +147,14 @@ p strong {
     min-width: min-content;
 }
 
+/* Align right side items of gameMenuButtonContainer to the right side of appBackdrop */
 .gameMenuRightSideItems {
     min-width: min-content;
     align-items: flex-end;
     margin-left: auto;
 }
 
+/* Template design for buttons over grid */
 .gameMenuButton {
     margin: 2px;
     border-radius: 5px;
@@ -224,10 +240,12 @@ p strong {
     animation: fadeIn 0.4s;
 }
 
+/* Container for each row on the grid */
 .rowWrapper {
     display: flex;
 }
 
+/* Loading message to be displayed instead of grid if grid does not instantly generate */
 .loadingContainer {
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
@@ -243,7 +261,8 @@ p strong {
     animation: fadeInLoading 0.8s;
 }
 
-.loadingGridMsg {
+/* Spinning circle to indicate loading */
+.loadingGridSpinner {
     margin-top: 45px;
     position: absolute;
     left: 45%;
@@ -270,6 +289,7 @@ p strong {
     }
 }
 
+/* Message box popping up if rest of visualization has been skipped */
 .noPathFoundMsg {
     padding: 8px;
     position: absolute;

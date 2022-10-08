@@ -713,7 +713,7 @@ export const GridGenerator = forwardRef((props, ref) => {
       {/* Draw "Loading Grid" message if grid takes too long to load */}
       {isPending ? (
         <div className="loadingContainer">
-          Loading Grid...<div className="loadingGridMsg"></div>
+          Loading Grid...<div className="loadingGridSpinner"></div>
         </div>
       ) : (
         <div className="gridContainer">{drawGrid}</div>
