@@ -1,3 +1,4 @@
+//Array where every element is an object storing the Title and Content of every slide in InfoWindow
 export const SliderContent = [
   {
     id: "SLIDER-INFO-1",

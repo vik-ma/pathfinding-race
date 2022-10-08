@@ -3,7 +3,7 @@
 
 export function PriorityQueue() {
   var array = [];
-  this.printCollection = function () {
+  this.returnCollection = function () {
     return array;
   };
   this.enqueue = function (newMem) {
