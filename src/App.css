@@ -516,6 +516,7 @@ p strong {
     margin-top: 27px;
 }
 
+/* Information popup window */
 .infoBackdrop {
     width: 600px;
     height: 650px;
@@ -532,6 +533,7 @@ p strong {
     z-index: 1;
 }
 
+/* Part of Information window where SliderContent gets filled */
 .slide {
     left:0;
     position: absolute;
@@ -542,10 +544,12 @@ p strong {
     transition-duration: 0.2s;
 }
 
-.slideAnim {
+/* Make only the current slide visible */
+.slideCurrent {
     opacity: 1;
 }
 
+/* Arrow button to change slide */
 .sliderArrow {
     width: 48px;
     height: 48px;
@@ -590,6 +594,7 @@ p strong {
     transform: translateY(-60%);
 }
 
+/* Container for clickable dots at the bottom of Information window */
 .sliderDots {
     position: absolute;
     bottom: 10px;
@@ -608,6 +613,7 @@ p strong {
     transition-duration: 0.2s;
 }
 
+/* Highlight dot corresponding to current slide */
 .dot.active {
     background: #444444;
 }
@@ -617,6 +623,7 @@ p strong {
     transform: scale(1.2); 
 }
 
+/* Main header for every slide in Information window */
 .infoTitle {
     background: var(--titlegradient);
     background-clip: text;
@@ -625,6 +632,7 @@ p strong {
     margin-top: 25px;
 }
 
+/* Sub headers for content in Information sliders */
 .infoSubTitle {
     background: var(--subtitlegradient);
     background-clip: text;
@@ -634,24 +642,29 @@ p strong {
     margin-bottom: 1px;
 }
 
+/* Special spacing for when nodes are displayed below sub headers */
 .infoSubTitleNodes {
     margin-bottom: 0px;
 }
 
+/* Align nodes displayed in Information window with text */
 .infoNode {
     display: inline-block;
     vertical-align: text-bottom;
 }
 
+/* Modify appearance of Goal Node in Information window */
 .infoNodeGoal {
     border-radius: 4px;
 }
 
+/* Modify appearance of Wall Nodes in Information window */
 .infoNodeWall {
     border: 1px solid rgb(32, 32, 32) !important; 
     border-radius: 2px;
 }
 
+/* Template for nodes in grid */
 .node {
     border: 1px solid rgb(219, 219, 219);  
     height: 30px;
@@ -665,11 +678,13 @@ p strong {
     color:white;
 }
 
+/* Wall Nodes in grid */
 .node-wall {
     background-color:#5e5b58;
     border: 1px solid #5e5b58; 
 }
 
+/* Node only used to represent 'No Path Will Be Found!'-option in Game Menu */
 .node-x {
     background-color:rgb(158, 158, 158);
     color:rgb(36, 36, 36);
@@ -677,6 +692,7 @@ p strong {
     border: 1px solid rgb(54, 54, 54) !important;
 }
 
+/* Goal Node in grid */
 .node-goal {
     background-image: conic-gradient(lawngreen 0deg 360deg) !important;
     border: 1px solid rgb(0, 126, 0);
@@ -685,116 +701,104 @@ p strong {
     text-shadow: 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132);
 }
 
+/* Start Nodes for every contender */
 .node-start-1 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor1) !important;
     border: 1px solid var(--nodebordercolor1) !important; 
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-
 .node-start-2 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor2) !important;
     border: 1px solid var(--nodebordercolor2) !important;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-
 .node-start-3 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor3) !important;
     border: 1px solid var(--nodebordercolor3) !important;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-
 .node-start-4 {
     box-shadow: inset 0 0 0 4px var(--nodebordercolor4) !important;
     border: 1px solid var(--nodebordercolor4) !important;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
 
+/* Nodes that have only been visited by one contender in visualization */
 .node-visited-1 {
     background-color: var(--nodebgcolor1);
 }
-
 .node-visited-2 {
     background-color:var(--nodebgcolor2);
 }
-
 .node-visited-3 {
     background-color: var(--nodebgcolor3);
 }
-
 .node-visited-4 {
     background-color: var(--nodebgcolor4);
 }
 
+/* Border to be drawn connecting Start Node to Goal Node for winning contender(s) */
 .node-winner-1 {
     box-shadow: inset 0 0 0 5px var(--nodebordercolor1);
 }
-
 .node-winner-2 {
     box-shadow: inset 0 0 0 5px var(--nodebordercolor2);
 }
-
 .node-winner-3 {
     box-shadow: inset 0 0 0 5px var(--nodebordercolor3);
 }
-
 .node-winner-4 {
     box-shadow: inset 0 0 0 5px var(--nodebordercolor4);
 }
-
 .node-winner-tie {
     box-shadow: inset 0 0 0 5px #4d4d4d;
 }
 
+/* Animation to highlight currently visited node in visualization */
+.node-current {
+    animation-name: current-anim;
+    animation-duration: 50ms;
+}
 @keyframes current-anim {
     from {}
     to {box-shadow: inset 0 0 0 5px rgb(32, 32, 32);}
   }
 
-.node-current {
-    animation-name: current-anim;
-    animation-duration: 50ms;
-}
-
+/* Nodes that have been visited by two contenders in visualization */
 .node-visited-1-2 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor2) 180deg 360deg);
 }
-
 .node-visited-1-3 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor3) 180deg 360deg);
 }
-
 .node-visited-1-4 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 180deg,var(--nodebgcolor4) 180deg 360deg);
 }
-
 .node-visited-2-3 {
     background-image: conic-gradient(var(--nodebgcolor2) 0deg 180deg,var(--nodebgcolor3) 180deg 360deg);
 }
-
 .node-visited-2-4 {
     background-image: conic-gradient(var(--nodebgcolor2) 0deg 180deg,var(--nodebgcolor4) 180deg 360deg);
 }
-
 .node-visited-3-4 {
     background-image: conic-gradient(var(--nodebgcolor3) 0deg 180deg,var(--nodebgcolor4) 180deg 360deg);
 }
 
+/* Nodes that have been visited by three contenders in visualization */
 .node-visited-1-2-3 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 120deg,var(--nodebgcolor2) 120deg 240deg, var(--nodebgcolor3) 240deg 360deg);
 }
-
 .node-visited-1-2-4 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 120deg,var(--nodebgcolor2) 120deg 240deg, var(--nodebgcolor4) 240deg 360deg);
 }
-
 .node-visited-1-3-4 {
     background-image: conic-gradient(var(--nodebgcolor1) 0deg 120deg,var(--nodebgcolor3) 120deg 240deg, var(--nodebgcolor4) 240deg 360deg);
 }
-
 .node-visited-2-3-4 {
     background-image: conic-gradient(var(--nodebgcolor2) 0deg 120deg, var(--nodebgcolor3) 120deg 240deg, var(--nodebgcolor4) 240deg 360deg);
 }
 
+/* Nodes that have been visited by four contenders in visualization */
 .node-visited-1-2-3-4 {
     background-image: conic-gradient(var(--nodebgcolor4) 0deg 45deg, var(--nodebgcolor1) 45deg 135deg, var(--nodebgcolor2) 135deg 225deg, var(--nodebgcolor3) 225deg 315deg, var(--nodebgcolor4) 315deg 360deg);
 }

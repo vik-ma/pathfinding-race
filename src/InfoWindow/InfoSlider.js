@@ -47,7 +47,9 @@ export const InfoSlider = () => {
             return (
               <div
                 key={obj.id}
-                className={slideIndex === index ? "slide slideAnim" : "slide"}
+                className={
+                  slideIndex === index ? "slide slideCurrent" : "slide"
+                }
               >
                 {SliderContent[index].title}
                 {SliderContent[index].text}
