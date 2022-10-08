@@ -307,6 +307,7 @@ p strong {
     color:rgb(49, 49, 49);
 }
 
+/* Make message box float down slightly when shown */
 .noPathFoundContainer {
     position: relative;
     animation: floatDown 0.5s;
@@ -322,6 +323,7 @@ p strong {
     }
 }
 
+/* Dimmed background when popup windows are rendered */
 .popupBackground {
     position: fixed;
     top: 0;
@@ -334,6 +336,7 @@ p strong {
     align-items: center;
 }
 
+/* Backdrop for popup windows */
 .popupBackdrop {
     position: relative;
     display: flex;
@@ -353,6 +356,7 @@ p strong {
     box-shadow: 0 0 15px black;
 }
 
+/* Template buttons for popup windows */
 .popupButton {
     margin: 2px;
     border-radius: 6px;
@@ -382,11 +386,13 @@ p strong {
     user-select: none;
 }
 
+/* Align list of enabled algorithms and 'Allow Diagonal Movement' setting to the right of range slider settings */
 .settingsRightSide {    
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
+/* Align 'Done' button in Settings Menu to the bottom right */
 .settingsDoneButtonDiv {
     position: absolute;
     bottom: 10px;
@@ -412,6 +418,7 @@ p strong {
     margin-bottom: 3px;
 }
 
+/* Container for range slider and corresponding label in the Settings Menu */
 .settingsElement {
     margin-right: 30px;
     inline-size: max-content;
@@ -419,22 +426,26 @@ p strong {
     margin-top: 2px;
 }
 
+/* Opacity for every setting in Settings Menu */
 .settingsElementOpacity {
     color:rgb(15, 15, 15);
     filter: opacity(80%);
     transition-duration: 0.1s;
 }
 
+/* Highlight mouse-overed setting */
 .settingsElementOpacity:hover {    
     filter: opacity(100%);
     color:black;
 }
 
+/* Display value of range slider setting in blue color */
 .settingValue {
     display: inline-block;
     color:rgb(0, 71, 204);
 }
 
+/* Range slider in Settings Menu */
 .settingsSlider {
     -webkit-appearance: none;
     width: 150px;
@@ -450,6 +461,7 @@ p strong {
     cursor: grabbing;
 }
 
+/* Dial of range slider */
 .settingsSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -468,12 +480,14 @@ p strong {
     border: none;
 }
 
+/* Fill range slider track left of dial with blue color (Firefox only) */
 .settingsSlider::-moz-range-progress {
     background-color: rgb(48, 78, 211); 
     min-height: 100%;
     border-radius: 4px;
 }
 
+/* Container for checkbox and corresponding label in Settings Menu */
 .checkboxItem {
     color:rgb(15, 15, 15);
     filter: contrast(80%);
@@ -481,12 +495,14 @@ p strong {
     transition-duration: 0.1s;
 }
 
+/* Highlight mouse-overed checkbox and corresponding label */
 .checkboxItem:hover {    
     filter: contrast(100%);
     filter: opacity(100%);
     color:black;
 }
 
+/* Container for all checkboxes related to 'Enabled Algorithms' */
 .enabledAlgoList {
     margin-left: 10px;
     display: inline-block;
@@ -512,6 +528,7 @@ p strong {
     position: absolute;
     top: 10px;
     right: 10px;
+    /* Property to make entire button clickable */
     z-index: 1;
 }
 
