@@ -201,7 +201,7 @@ export const GameMenu = () => {
       <div className="gameMenuButtonContainer">
         <div className="gameMenuLeftSideItems">
           <button
-            className="gameMenuButton justVisualizeButton"
+            className={visIsOngoing ? "cursorNotAllowed gameMenuButton justVisualizeButton" : "gameMenuButton justVisualizeButton"}
             onClick={() =>
               !visIsOngoing &&
               !visIsFinished &&
@@ -211,7 +211,7 @@ export const GameMenu = () => {
             Just Visualize
           </button>
           <button
-            className="gameMenuButton newMapButton"
+            className={visIsOngoing ? "cursorNotAllowed gameMenuButton newMapButton" : "gameMenuButton newMapButton"}
             onClick={() => !visIsOngoing && remakeGrid()}
           >
             New Map
@@ -230,7 +230,7 @@ export const GameMenu = () => {
             Information
           </button>
           <button
-            className="gameMenuButton settingsMenuButton"
+            className={visIsOngoing ? "cursorNotAllowed gameMenuButton settingsMenuButton" : "gameMenuButton settingsMenuButton"}
             onClick={() => !visIsOngoing && setIsSettingsRendered(true)}
           >
             Settings
