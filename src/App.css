@@ -23,14 +23,14 @@ p strong {
 :root {
     /* Background color for every contender's nodes displayed in the grid */
     --nodebgcolor1: rgb(236, 27, 62);
-    --nodebgcolor2: dodgerblue;
+    --nodebgcolor2: rgb(17, 166, 252);
     --nodebgcolor3: rgb(214, 200, 2);
-    --nodebgcolor4: darkorchid;
+    --nodebgcolor4: rgb(143, 33, 199);
     /* Border color for every contender's nodes displayed in the grid */
-    --nodebordercolor1: rgb(160, 1, 1);
-    --nodebordercolor2: rgb(28, 68, 245);
-    --nodebordercolor3: rgb(185, 136, 1);
-    --nodebordercolor4: rgb(107, 2, 182);
+    --nodebordercolor1: rgb(143, 8, 26);
+    --nodebordercolor2: rgb(32, 87, 240);
+    --nodebordercolor3: rgb(160, 118, 4);
+    --nodebordercolor4: rgb(92, 8, 151);
     /* Background color of app content and popup windows */
     --backdropcolor: rgb(153, 149, 145);
     /* Gradient colors for Headers in InfoWindow and SettingsMenu */
@@ -696,8 +696,8 @@ p strong {
 /* Goal Node in grid */
 .node-goal {
     background-image: conic-gradient(lawngreen 0deg 360deg) !important;
-    border: 1px solid rgb(0, 126, 0);
-    box-shadow: inset 0 0 0 4px rgb(0, 126, 0);
+    border: 1px solid rgb(0, 116, 0);
+    box-shadow: inset 0 0 0 4px rgb(0, 116, 0);
     color:rgb(0, 78, 0) !important;
     text-shadow: 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132), 0 0 2px rgb(141, 235, 132);
 }
@@ -752,7 +752,7 @@ p strong {
     box-shadow: inset 0 0 0 5px var(--nodebordercolor4);
 }
 .node-winner-tie {
-    box-shadow: inset 0 0 0 5px #4d4d4d;
+    box-shadow: inset 0 0 0 5px #444444;
 }
 
 /* Animation to highlight currently visited node in visualization */
