@@ -201,7 +201,7 @@ export const GameMenu = () => {
       <div className="gameMenuButtonContainer">
         <div className="gameMenuLeftSideItems">
           <button
-            className={visIsOngoing ? "cursorNotAllowed gameMenuButton justVisualizeButton" : "gameMenuButton justVisualizeButton"}
+            className={visIsOngoing || visIsFinished ? "cursorNotAllowed gameMenuButton justVisualizeButton" : "gameMenuButton justVisualizeButton"}
             onClick={() =>
               !visIsOngoing &&
               !visIsFinished &&

@@ -183,6 +183,7 @@ p strong {
 
 .cursorNotAllowed {
     cursor: not-allowed;
+    transform: none !important;
 }
 
 .justVisualizeButton {
