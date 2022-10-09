@@ -787,20 +787,20 @@ p strong {
 
 /* Nodes that have been visited by three contenders in visualization */
 .node-visited-1-2-3 {
-    background-image: conic-gradient(var(--nodebgcolor1) 0deg 116deg,var(--nodebgcolor2) 123deg 236deg, var(--nodebgcolor3) 243deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 116deg,var(--nodebgcolor2) 124deg 236deg, var(--nodebgcolor3) 244deg 360deg);
 }
 .node-visited-1-2-4 {
-    background-image: conic-gradient(var(--nodebgcolor1) 0deg 116deg,var(--nodebgcolor2) 123deg 236deg, var(--nodebgcolor4) 243deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 116deg,var(--nodebgcolor2) 124deg 236deg, var(--nodebgcolor4) 244deg 360deg);
 }
 .node-visited-1-3-4 {
-    background-image: conic-gradient(var(--nodebgcolor1) 0deg 116deg,var(--nodebgcolor3) 123deg 236deg, var(--nodebgcolor4) 243deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor1) 0deg 116deg,var(--nodebgcolor3) 124deg 236deg, var(--nodebgcolor4) 244deg 360deg);
 }
 .node-visited-2-3-4 {
-    background-image: conic-gradient(var(--nodebgcolor2) 0deg 116deg,var(--nodebgcolor3) 123deg 236deg, var(--nodebgcolor4) 243deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor2) 0deg 116deg,var(--nodebgcolor3) 124deg 236deg, var(--nodebgcolor4) 244deg 360deg);
 }
 
 /* Nodes that have been visited by four contenders in visualization */
 .node-visited-1-2-3-4 {
-    background-image: conic-gradient(var(--nodebgcolor4) 0deg 45deg, var(--nodebgcolor1) 45deg 135deg, var(--nodebgcolor2) 135deg 225deg, var(--nodebgcolor3) 226deg 315deg, var(--nodebgcolor4) 315deg 360deg);
+    background-image: conic-gradient(var(--nodebgcolor4) 0deg 44deg, var(--nodebgcolor1) 46deg 134deg, var(--nodebgcolor2) 136deg 224deg, var(--nodebgcolor3) 226deg 314deg, var(--nodebgcolor4) 316deg 360deg);
 }
 
