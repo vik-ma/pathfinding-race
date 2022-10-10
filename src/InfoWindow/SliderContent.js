@@ -27,20 +27,19 @@ export const SliderContent = [
             in the following slides!
           </strong>
         </p>
-        <br />
         <h2 className="infoSubTitle">How To Play</h2>
         <p>
           <strong>
-            Simply click on the contender you will think win listed above the
-            grid and the visualizer will start!
+            Simply click on the contender you think will win in the list above
+            the grid and the visualizer will start!
           </strong>{" "}
           Your choice will be marked in golden-beige color, and once the
-          visualizer finishes, the correct choice will get marked in green.
+          visualizer finishes, the correct choice will be marked in green.
           <br />
           <br />
           <strong>
-            Click the 'New Map' button to generate a fresh new randomized grid
-            and play again!
+            Click the 'New Map' button to generate a new randomized grid and
+            play again!
           </strong>
           <br />
           <br />
@@ -92,7 +91,6 @@ export const SliderContent = [
             take.
           </strong>
         </p>
-        <br />
         <h2 className="infoSubTitle">Settings Menu</h2>
         <p>
           You can access the Settings menu by clicking the 'Settings' button.
@@ -138,13 +136,12 @@ export const SliderContent = [
         </div>
         <p>
           Each contender will get randomly assigned a starting position on the
-          grid and a pathfinding algorithm. The visualizer will draw the paths
-          of the different contenders in the same color as their Start Nodes.{" "}
+          grid along with a pathfinding algorithm. The visualizer will draw the
+          different contenders' path in the same color as their Start Nodes.{" "}
           <br />
           <br />
           Start Nodes are not considered impassable by other contenders.
         </p>
-        <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Goal Node</h2>
         <p>
           <strong>This is the Goal Node:</strong>
@@ -153,15 +150,14 @@ export const SliderContent = [
         <br />
         <p>
           The visualizer will stop once the first pathfinding algorithm finds
-          the Goal Node and mark out the winner. The result of all contenders
-          will then be displayed at the top.
+          the Goal Node. The end result of all contenders will then be displayed
+          at the top.
           <br />
           <br />
-          If no algorithms can find the Goal Node, the visualizer will stop
-          after a few seconds and skip the rest of the visualization, in order
-          to not waste time.
+          If no algorithms can find the Goal Node, due to walls completely
+          blocking it off, the visualizer will stop after a few seconds and skip
+          the rest of the visualization, in order to not waste time.
         </p>
-        <br />
         <h2 className="infoSubTitle infoSubTitleNodes">Walls</h2>
         <p>
           <strong>These darker nodes are Wall Nodes:</strong>
@@ -195,8 +191,8 @@ export const SliderContent = [
           Next, the first node added to the queue gets popped out of the queue.{" "}
           <br />
           The node is marked as visited and checked if it is the Goal Node, if
-          not, all of its non-wall and non-visited adjacent nodes gets added to
-          the end of the queue.
+          not, all of its non-wall, unvisited adjacent nodes gets added to the
+          end of the queue.
           <br />
           Then, the node at the first position in the queue gets popped out
           again and the process is repeated until the Goal Node is found, or
@@ -225,22 +221,22 @@ export const SliderContent = [
         <p>
           The Depth First Search algorithm will always attempt to traverse the
           grid in a specific direction. When its not able to, it will instead
-          attempt another direction. If there are no adjacent nodes available at
-          its current position, it will backtrack and continue from the most
-          recently visited node with an available adjacent node.
+          attempt different directions, in a specific order. If there are no
+          available adjacent nodes at its current position, it will backtrack
+          and continue from the most recently available adjacent node.
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Beginning from the Start Node, the algorithm will begin its search in
           the direction of the first added adjacent node. <br />
           It will mark the node as visited, check if it's the Goal Node, and
-          will then create a list of all unvisited, non-wall adjacent nodes and
+          will then create a list of all non-wall, unvisited adjacent nodes and
           repeat the process of visiting the first added adjacent node.
           <br />
-          When it reaches a node which has no unvisited, non-wall adjacent
+          When it reaches a node which has no non-wall, unvisited adjacent
           nodes, it backtracks to the next node in the most recent list of
-          adjacent nodes and continues its search from that node until either
-          the Goal Node is found or there are no more unvisited nodes.
+          adjacent nodes and continues its search from there until either the
+          Goal Node is found or there are no more nodes to visit.
           <br />
           <br />
           In this app, the list of adjacent nodes are always added in the order
@@ -249,16 +245,16 @@ export const SliderContent = [
             North, South, West, East, North-West, South-West, South-East,
             North-East.
           </strong>{" "}
-          These are the directions that the Depth First Search algorithm will
-          attempt to traverse the grid in order.
+          This is the order of the directions that the Depth First Search
+          algorithm will attempt to traverse the grid in.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
           The speed of the Depth First Search algorithm is highly inconsistent.
-          It is one of the fastest algorithms if the Goal Node happens to line
-          up with the direction the algorithm takes. Likewise, if the Goal Node
-          happens to lay in the opposite direction, or even just one node off
-          early in its path, it will end up being one of the slowest algorithms.
+          It is one of the fastest algorithms when the Goal Node happens to line
+          up with the direction the algorithm takes. But when the Goal Node
+          happens to, for example, lay in the opposite direction of the path it
+          takes, it becomes one of the slowest algorithms in this app.
         </p>
       </>
     ),
