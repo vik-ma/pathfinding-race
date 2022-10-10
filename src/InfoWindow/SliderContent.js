@@ -252,9 +252,9 @@ export const SliderContent = [
         <p>
           The speed of the Depth First Search algorithm is highly inconsistent.
           It is one of the fastest algorithms when the Goal Node happens to line
-          up with the direction the algorithm takes. But when the Goal Node
-          happens to, for example, lay in the opposite direction of the path it
-          takes, it becomes one of the slowest algorithms in this app.
+          up with the direction the algorithm takes. But when the Goal Node, for
+          example, lays in the opposite direction of the path it takes, it
+          becomes one of the slowest algorithms in this app.
         </p>
       </>
     ),
@@ -277,9 +277,9 @@ export const SliderContent = [
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
           Dijkstra's Algorithm uses a queue system just like Breadth First
-          Search, but unlike Breadth First Search, Dijkstra's Algorithm uses a
-          priority queue rather than a list of items added in chronological
-          order.
+          Search, but unlike Breadth First Search, Dijkstra's Algorithm will
+          utilize a priority queue rather than a normal queue where items are
+          added in chronological order.
           <br />
           Every adjacent node gets added to the queue along with a priority
           value. The priority value is calculated by taking the total distance
@@ -291,8 +291,8 @@ export const SliderContent = [
           <br />
           <br />
           Since this grid is an unweighted graph, the distance to every adjacent
-          node is always 1. Therefore, Dijkstra's Algorithm will always search
-          "layer by layer", just like Breadth First Search.
+          node is always 1. Therefore, Dijkstra's Algorithm will always end up
+          searching "layer by layer", just like Breadth First Search.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
@@ -366,10 +366,10 @@ export const SliderContent = [
           chosen first.
           <br />
           <br />
-          The main difference to A-Star Search is that when multiple unvisited
+          The main difference from A-Star Search is that when multiple unvisited
           adjacent nodes share the shortest heuristic distance, A-Star Search
           will visit all of these nodes before moving closer to the Goal Node,
-          wheras Greedy Best-First Search can move on after visiting just one.
+          whereas Greedy Best-First Search can move on after visiting just one.
         </p>
         <h2 className="infoSubTitle">Performance</h2>
         <p>
@@ -377,8 +377,8 @@ export const SliderContent = [
           pathfinding algorithm implemented in this app.
           <br />
           <br />
-          It can, however, choose very suboptimal paths when confronted with
-          many walls.
+          It can, however, choose very suboptimal paths when there are many
+          walls in the way of the Goal Node.
         </p>
       </>
     ),
@@ -401,9 +401,12 @@ export const SliderContent = [
           applied from both the Start Node and the Goal Node.
           <br />
           <br />
-          Every other node, the algorithm will alternate between the Breadth
-          First Search algorithm originating from the Start Node to the one
-          originating from the Goal Node.
+          The algorithm will alternate between the Breadth First Search
+          algorithm originating from the Start Node to the one originating from
+          the Goal Node.
+          <br />
+          After one side has visited a node, the other side will visit a node
+          next.
           <br />
           Instead of checking if the Goal Node has been found, the algorithm
           will check if the current node has been visited by the other side.
@@ -419,7 +422,7 @@ export const SliderContent = [
           It is consistently the most average performing pathfinding algorithm
           implemented in this app, since the heuristics of A-Star Search and
           Greedy Best-First Search are generally more efficient than this
-          optimization of the Breadth First Search.
+          optimization of the Breadth First Search algorithm.
         </p>
       </>
     ),
