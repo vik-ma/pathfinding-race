@@ -477,9 +477,11 @@ export const GridGenerator = forwardRef((props, ref) => {
               .getElementById(`node-${node.row}-${node.col}`)
               .classList.remove(newClass, "node-current");
 
+            //Needed to actually remove the class later
             void document.getElementById(`node-${node.row}-${node.col}`)
               .offsetWidth;
 
+            //Remove class so it can be re-added when another contender visits it
             document
               .getElementById(`node-${node.row}-${node.col}`)
               .classList.add(newClass, "node-current");
