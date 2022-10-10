@@ -420,8 +420,8 @@ export const SliderContent = [
           <br />
           <br />
           It is consistently the most average performing pathfinding algorithm
-          implemented in this app, since the heuristics of A-Star Search and
-          Greedy Best-First Search are generally more efficient than this
+          implemented in this app, since the heuristic function of A-Star Search and
+          Greedy Best-First Search is generally more efficient than this
           optimization of the Breadth First Search algorithm.
         </p>
       </>
