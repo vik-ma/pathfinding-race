@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/pathfinding-race/static/css/main.ecfae15c.css",
+    "main.js": "/pathfinding-race/static/js/main.ef1b9f23.js",
+    "static/js/787.4bb41245.chunk.js": "/pathfinding-race/static/js/787.4bb41245.chunk.js",
+    "static/media/left-arrow.svg": "/pathfinding-race/static/media/left-arrow.53878c51904c34f1288e46174c107c57.svg",
+    "static/media/right-arrow.svg": "/pathfinding-race/static/media/right-arrow.8b8fb639d7ed68731e5b073c0700d3bf.svg",
+    "index.html": "/pathfinding-race/index.html",
+    "main.ecfae15c.css.map": "/pathfinding-race/static/css/main.ecfae15c.css.map",
+    "main.ef1b9f23.js.map": "/pathfinding-race/static/js/main.ef1b9f23.js.map",
+    "787.4bb41245.chunk.js.map": "/pathfinding-race/static/js/787.4bb41245.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ecfae15c.css",
+    "static/js/main.ef1b9f23.js"
+  ]
+}
