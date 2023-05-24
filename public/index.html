@@ -13,6 +13,9 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <style>
     body {
+      background-color:rgb(68, 60, 54);
+    }
+    noscript {
       color:rgb(247, 247, 247);
       text-shadow:
        0px 0px 1px rgb(26, 26, 26),
@@ -20,30 +23,31 @@
       1px -1px 1px rgb(26, 26, 26),
       -1px 1px 1px rgb(26, 26, 26),
        1px 1px 1px rgb(26, 26, 26);
-      background-color:rgb(68, 60, 54);
       font-weight: bold;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     } 
-    h1 {
+    .noscript-h1 {
       margin-top: 20px;
       margin-bottom: 15px;
       font-size: 300%;
     }
-    h2 {
+    .noscript-h2 {
       margin-top: 15px;
       font-size: 200%;
     }
-    noscript {
+    .noscript-h3 {
+      margin-top: 15px;
+      margin-bottom: 25px;
       font-size: 250%;
     }
-    .app-container {
+    .noscript-app-container {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    .app-backdrop {
+    .noscript-app-backdrop {
       background: radial-gradient(circle at top left, #9c27b0, #ff9800);
-      padding: 0px 40px 25px;
+      padding: 0px 40px;
       border-radius: 16px;
       border: 1px solid black;
       box-shadow: 0 0 15px black;
@@ -54,16 +58,16 @@
     <title>Pathfinding Race</title>
   </head>
   <body>
-    <main>
-        <div class="app-container">
-          <div class="app-backdrop">
-            <h1>Pathfinding Race</h1>
-            <h2>A Browser Game Visualizing Pathfinding Algorithms</h2>
+    <noscript>
+      <main>
+        <div class="noscript-app-container">
+          <div class="noscript-app-backdrop">
+            <h1 class="noscript-h1">Pathfinding Race</h1>
+            <h2 class="noscript-h2">A Browser Game Visualizing Pathfinding Algorithms</h2>
             <p>
               Pathfinder Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!
               <br />
               <br />
-
               The six pathfinding algorithms implemented in this app are:
               <ol>
                 <li>Breadth First Search</li>
@@ -75,12 +79,12 @@
               </ol>
               You can read more about each algorithm by clicking the 'Information' button in the app.</p>
             </p>
-            <noscript>
-              Enable JavaScript To Play Pathfinding Race Now!
-            </noscript>
+            <h3 class="noscript-h3">Enable JavaScript To Play Pathfinding Race Now!</h3>
+            </div>
           </div>
         </div>
-    </main>
+      </main>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>
