@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="A browser game where you get to guess which pathfinding algorithm will reach the goal first, all visualized!"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -25,7 +25,16 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     } 
     h1 {
+      margin-top: 20px;
+      margin-bottom: 15px;
       font-size: 300%;
+    }
+    h2 {
+      margin-top: 15px;
+      font-size: 200%;
+    }
+    noscript {
+      font-size: 250%;
     }
     .app-container {
       display: flex;
@@ -34,7 +43,7 @@
     }
     .app-backdrop {
       background: radial-gradient(circle at top left, #9c27b0, #ff9800);
-      padding: 0px 40px;
+      padding: 0px 40px 25px;
       border-radius: 16px;
       border: 1px solid black;
       box-shadow: 0 0 15px black;
@@ -45,29 +54,33 @@
     <title>Pathfinding Race</title>
   </head>
   <body>
-    <noscript>
-      <div class="app-container">
-        <div class="app-backdrop">
-          <h1>Pathfinding Race</h1>
-          <p>Pathfinder Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!</p>
-          
-          <br />
-          
-          The six pathfinding algorithms implemented in this app are:
-          <ol>
-            <li>Breadth First Search</li>
-            <li>Depth First Search</li>
-            <li>Dijkstra's Algorithm</li>
-            <li>A-Star Search</li>
-            <li>Greedy Best-First Search</li>
-            <li>Bidirectional Breadth First Search</li>
-          </ol>
-          You can read more about each algorithm by clicking the 'Information' button in the app.</p>
-          
-          <h1>Enable JavaScript to play Pathfinding Race now!</h1>
+    <main>
+        <div class="app-container">
+          <div class="app-backdrop">
+            <h1>Pathfinding Race</h1>
+            <h2>A Browser Game Visualizing Pathfinding Algorithms</h2>
+            <p>
+              Pathfinder Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!
+              <br />
+              <br />
+
+              The six pathfinding algorithms implemented in this app are:
+              <ol>
+                <li>Breadth First Search</li>
+                <li>Depth First Search</li>
+                <li>Dijkstra's Algorithm</li>
+                <li>A-Star Search</li>
+                <li>Greedy Best-First Search</li>
+                <li>Bidirectional Breadth First Search</li>
+              </ol>
+              You can read more about each algorithm by clicking the 'Information' button in the app.</p>
+            </p>
+            <noscript>
+              Enable JavaScript To Play Pathfinding Race Now!
+            </noscript>
+          </div>
         </div>
-      </div>
-    </noscript>
+    </main>
     <div id="root"></div>
   </body>
 </html>
