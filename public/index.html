@@ -24,10 +24,63 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <style>
+    body {
+      color:rgb(247, 247, 247);
+      text-shadow:
+       0px 0px 1px rgb(26, 26, 26),
+     -1px -1px 1px rgb(26, 26, 26),  
+      1px -1px 1px rgb(26, 26, 26),
+      -1px 1px 1px rgb(26, 26, 26),
+       1px 1px 1px rgb(26, 26, 26);
+      background-color:rgb(68, 60, 54);
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    } 
+    h1 {
+      font-size: 300%;
+    }
+    .app-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .app-backdrop {
+      background: radial-gradient(circle at top left, #9c27b0, #ff9800);
+      padding: 0px 40px;
+      border-radius: 16px;
+      border: 1px solid black;
+      box-shadow: 0 0 15px black;
+      margin-top: 15px;
+      max-width: fit-content;
+    }
+    </style>
     <title>Pathfinding Race</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div class="app-container">
+        <div class="app-backdrop">
+          <h1>Pathfinding Race</h1>
+          <p>Pathfinder Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!</p>
+          
+          <br />
+          
+          The six pathfinding algorithms implemented in this app are:
+          <ol>
+            <li>Breadth First Search</li>
+            <li>Depth First Search</li>
+            <li>Dijkstra's Algorithm</li>
+            <li>A-Star Search</li>
+            <li>Greedy Best-First Search</li>
+            <li>Bidirectional Breadth First Search</li>
+          </ol>
+          You can read more about each algorithm by clicking the 'Information' button in the app.</p>
+          
+          <h1>Enable JavaScript to play Pathfinding Race now!</h1>
+        </div>
+      </div>
+    </noscript>
     <div id="root"></div>
     <!--
       This HTML file is a template.
