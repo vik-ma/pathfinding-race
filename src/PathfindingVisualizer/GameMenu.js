@@ -41,7 +41,7 @@ export const GameMenu = () => {
         <div>
           <div
             className={`contenderChoice ${
-              selectedDiv === "contenderChoice1" ? " selectedChoice" : undefined
+              selectedDiv === "contenderChoice1" ? "selectedChoice" : ""
             } ${renderWinnerMsg && winnerAlgo[1] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
@@ -76,7 +76,7 @@ export const GameMenu = () => {
         <div>
           <div
             className={`contenderChoice ${
-              selectedDiv === "contenderChoice2" ? " selectedChoice" : undefined
+              selectedDiv === "contenderChoice2" ? "selectedChoice" : ""
             } ${renderWinnerMsg && winnerAlgo[2] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
@@ -109,8 +109,8 @@ export const GameMenu = () => {
             <div
               className={`contenderChoice ${
                 selectedDiv === "contenderChoice3"
-                  ? " selectedChoice"
-                  : undefined
+                  ? "selectedChoice"
+                  : ""
               } ${renderWinnerMsg && winnerAlgo[3] ? "winnerAlgo" : ""}`}
               onClick={() => {
                 if (!visIsOngoing && !visIsFinished) {
@@ -144,8 +144,8 @@ export const GameMenu = () => {
             <div
               className={`contenderChoice ${
                 selectedDiv === "contenderChoice4"
-                  ? " selectedChoice"
-                  : undefined
+                  ? "selectedChoice"
+                  : ""
               } ${renderWinnerMsg && winnerAlgo[4] ? "winnerAlgo" : ""}`}
               onClick={() => {
                 if (!visIsOngoing && !visIsFinished) {
@@ -177,7 +177,7 @@ export const GameMenu = () => {
         <div>
           <div
             className={`contenderChoice ${
-              selectedDiv === "contenderChoice0" ? " selectedChoice" : undefined
+              selectedDiv === "contenderChoice0" ? "selectedChoice" : ""
             } ${renderWinnerMsg && winnerAlgo[5] ? "winnerAlgo" : ""}`}
             onClick={() => {
               if (!visIsOngoing && !visIsFinished) {
