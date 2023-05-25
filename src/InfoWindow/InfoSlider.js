@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { AppContext } from "../Helpers/AppContext";
 import { SliderContent } from "./SliderContent";
 import { SliderArrow } from "./SliderArrow";
@@ -7,24 +7,44 @@ export const InfoSlider = () => {
   const { setIsInfoRendered, slideIndex, setSlideIndex } =
     useContext(AppContext);
 
-  //Go to slide to the right
+  // Go to slide to the right
   const nextSlideButton = () => {
     setSlideIndex(slideIndex + 1);
   };
 
-  //Go to slide to the left
+  // Go to slide to the left
   const prevSlideButton = () => {
     setSlideIndex(slideIndex - 1);
   };
 
-  //Change which dot is marked at the bottom of InfoWindow
+  // Change which dot is marked at the bottom of InfoWindow
   const moveDot = (index) => {
     setSlideIndex(index);
   };
 
+  // useRef for popup window
+  const windowRef = useRef(null);
+
+  useEffect(() => {
+    // Close Information popup when clicking outside of Information window
+    function handleClickOutside(event) {
+      if (
+        windowRef.current &&
+        !windowRef.current.contains(event.target)
+      ) {
+        setIsInfoRendered(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+
   return (
     <div className="popupBackground">
-      <div className="popupBackdrop infoBackdrop">
+      <div ref={windowRef} className="popupBackdrop infoBackdrop">
         <div className="infoInner">
           {/* Show arrow buttons if prev/next slide is available */}
           {slideIndex !== SliderContent.length - 1 ? (
@@ -38,7 +58,7 @@ export const InfoSlider = () => {
               className="popupButton"
               onClick={() => setIsInfoRendered(false)}
             >
-              Return
+              Close
             </button>
           </div>
 
