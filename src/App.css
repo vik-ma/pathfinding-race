@@ -119,8 +119,8 @@ p strong {
 
 /* Contender that user has clicked on */
 .selectedChoice {
-    background: -webkit-linear-gradient(rgb(148, 137, 35), rgb(201, 195, 112));
-    box-shadow: inset 0 0 0 3px rgb(177, 154, 23) !important;
+    background: -webkit-linear-gradient(rgb(160, 145, 12), rgb(224, 217, 108));
+    box-shadow: inset 0 0 0 3px rgb(226, 203, 74) !important;
     color:#33330a;
 }
 
