@@ -35,7 +35,7 @@ p strong {
     --nodebordercolor3: rgb(160, 118, 4);
     --nodebordercolor4: rgb(92, 8, 151);
     /* Background color of app content and popup windows */
-    --backdropcolor: rgb(153, 149, 145);
+    --backdropcolor: rgb(184, 170, 157);
     /* Gradient colors for Headers in InfoWindow and SettingsMenu */
     --titlegradient: -webkit-linear-gradient(rgb(50, 84, 236), rgb(77, 25, 160));
     --subtitlegradient: -webkit-linear-gradient(rgb(0, 120, 233), rgb(22, 49, 139));
@@ -50,8 +50,7 @@ p strong {
 
 /* Window backdrop of contents of the app */
 .appBackdrop {
-    background-color: var(--backdropcolor);
-    background-color: rgb(182, 170, 158);
+    background-color: var(--backdropcolor); 
     border: 1px solid black;
     box-shadow: 0 0 15px black;
     min-width: 802px;
