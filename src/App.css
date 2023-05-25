@@ -79,9 +79,7 @@ p strong {
 
 /* Header at the top of app */
 .title {
-    background: -webkit-linear-gradient(rgb(122, 81, 18), rgb(46, 38, 31));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgb(78, 52, 12);
     display: inline-block;
     margin-left: 2px;
     margin-right: 3px;
