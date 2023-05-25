@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { AppContext } from "../Helpers/AppContext";
 
 export const SettingsMenu = () => {
@@ -123,9 +123,31 @@ export const SettingsMenu = () => {
     }
   }, [isChangeMade]);
 
+  // useRef for popup window
+  const windowRef = useRef(null);
+
+  useEffect(() => {
+    // Close Settings Menu popup when clicking outside of Settings Menu window
+    function handleClickOutside(event) {
+      if (windowRef.current && !windowRef.current.contains(event.target)) {
+        if (noChangeMade) {
+          setIsSettingsRendered(false);
+        }
+        else {
+          applyChanges();
+        }
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+
   return (
     <div className="popupBackground">
-      <div className="popupBackdrop">
+      <div ref={windowRef} className="popupBackdrop">
         <div className="settingsContainer">
           <div className="settingsInner">
             <div className="settingsRightSide">
