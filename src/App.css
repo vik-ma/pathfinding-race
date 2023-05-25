@@ -37,7 +37,7 @@ p strong {
     /* Background color of app content and popup windows */
     --backdropcolor: rgb(184, 170, 157);
     /* Color for foreground items, such as buttons and Information slider dots */
-    --foregroundcolor: #eeeeee;
+    --foregroundcolor: rgb(253, 242, 231);
     /* Gradient colors for Headers in InfoWindow and SettingsMenu */
     --titlegradient: -webkit-linear-gradient(rgb(50, 84, 236), rgb(77, 25, 160));
     --subtitlegradient: -webkit-linear-gradient(rgb(0, 120, 233), rgb(22, 49, 139));
