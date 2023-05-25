@@ -1,13 +1,16 @@
 body {
     color:rgb(12, 12, 12);
-    background-color:rgb(68, 60, 54);
+    background: radial-gradient(circle at top left, #9c27b0, #ff9800);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin:0;
+    margin: 0;
     margin-bottom: 10px;
     font-weight: 600;
     user-select: auto;
@@ -48,6 +51,7 @@ p strong {
 /* Window backdrop of contents of the app */
 .appBackdrop {
     background-color: var(--backdropcolor);
+    background-color: rgb(182, 170, 158);
     border: 1px solid black;
     box-shadow: 0 0 15px black;
     min-width: 802px;
@@ -676,7 +680,7 @@ p strong {
 
 /* Template for nodes in grid */
 .node {
-    border: 1px solid rgb(219, 219, 219);  
+    border: 1px solid rgb(255, 255, 255);  
     height: 30px;
     width: 30px;
     min-width: 30px;
@@ -690,8 +694,8 @@ p strong {
 
 /* Wall Nodes in grid */
 .node-wall {
-    background-color:#5e5b58;
-    border: 1px solid #5e5b58; 
+    background-color: #665b55;
+    border: 1px solid #665b55;
 }
 
 /* Node only used to represent 'No Path Will Be Found!'-option in Game Menu */
