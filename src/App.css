@@ -120,14 +120,14 @@ p strong {
 /* Contender that user has clicked on */
 .selectedChoice {
     background: -webkit-linear-gradient(rgb(148, 137, 35), rgb(201, 195, 112));
-    box-shadow: inset 0 0 0 3px rgb(185, 171, 39) !important;
+    box-shadow: inset 0 0 0 3px rgb(177, 154, 23) !important;
     color:#33330a;
 }
 
 /* Winning contender to be displayed after visualization had ended */
 .winnerAlgo {
-    background: -webkit-linear-gradient(rgb(5, 165, 5), rgb(91, 233, 72)) !important;
-    box-shadow: inset 0 0 0 3px rgb(80, 202, 80);
+    background: -webkit-linear-gradient(#05a305, #72ff30) !important;
+    box-shadow: inset 0 0 0 3px rgb(67, 235, 25);
     color:#0e2e13;
 }
 
