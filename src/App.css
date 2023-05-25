@@ -696,8 +696,8 @@ p strong {
 
 /* Wall Nodes in grid */
 .node-wall {
-    background-color: #665b55;
-    border: 1px solid #665b55;
+    background-color: #615650;
+    border: 1px solid #615650;
 }
 
 /* Node only used to represent 'No Path Will Be Found!'-option in Game Menu */
