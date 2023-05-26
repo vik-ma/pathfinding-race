@@ -368,10 +368,10 @@ p strong {
 .popupButton {
     margin: 2px;
     border-radius: 6px;
-    font-size: 22px;
+    font-size: 23px;
     line-height: 26px;
     color: rgb(56, 56, 56);
-    padding: 2px 18px 4px;
+    padding: 3px 18px 5px;
     border: 1px solid black;
     text-align: center;
     text-decoration: none;
@@ -538,7 +538,7 @@ p strong {
 .infoButtonBack {
     user-select: none;
     position: absolute;
-    top: 25px;
+    top: 22px;
     right: 15px;
     /* Property to make entire button clickable */
     z-index: 2;
