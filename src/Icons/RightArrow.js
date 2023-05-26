@@ -1,4 +1,5 @@
 export default function RightArrow() {
+  // SVG Icon depicting an arrow pointing to the right
   return (
     <svg
       width="32px"

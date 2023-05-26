@@ -1,4 +1,5 @@
 export default function LeftArrow() {
+  // SVG Icon depicting an arrow pointing to the left
   return (
     <svg
       width="32px"
