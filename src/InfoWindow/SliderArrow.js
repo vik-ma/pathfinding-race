@@ -1,5 +1,5 @@
-import leftArrow from "../Icons/left-arrow.svg";
-import rightArrow from "../Icons/right-arrow.svg";
+import RightArrow from "../Icons/RightArrow";
+import LeftArrow from "../Icons/LeftArrow";
 
 export const SliderArrow = ({ changeSlide, direction }) => {
   return (
@@ -12,11 +12,8 @@ export const SliderArrow = ({ changeSlide, direction }) => {
           : "sliderArrow prevSlideButton"
       }
     >
-      <img
-        //Display right arrow for next slide and left arrow for prev slide
-        src={direction === "next" ? rightArrow : leftArrow}
-        alt={direction === "next" ? "Right Arrow" : "Left Arrow"}
-      />
+      {/* Display right arrow for next slide and left arrow for prev slide */}
+      {direction === "next" ? <RightArrow /> : <LeftArrow />}
     </button>
   );
 };
