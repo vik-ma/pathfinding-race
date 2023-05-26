@@ -245,7 +245,7 @@ p strong {
 
 .gridContainer {
     margin-top: 5px;
-    border: 1px solid rgb(219, 219, 219);
+    border: 1px solid rgb(255, 255, 255);
     inline-size: min-content;
     animation: fadeIn 0.4s;
 }
