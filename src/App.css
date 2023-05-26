@@ -367,12 +367,12 @@ p strong {
 /* Template buttons for popup windows */
 .popupButton {
     margin: 2px;
-    border-radius: 6px;
+    border-radius: 7px;
     font-size: 23px;
     line-height: 26px;
     color: rgb(56, 56, 56);
     padding: 3px 18px 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(56, 56, 56);
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -380,7 +380,7 @@ p strong {
     font-weight: bold;
     background-color: var(--foregroundcolor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* font-family: Arial, Helvetica, sans-serif; */
+    box-shadow: 0 0 4px rgb(56, 56, 56);
     cursor: pointer;
 }
 
