@@ -368,10 +368,10 @@ p strong {
 .popupButton {
     margin: 2px;
     border-radius: 6px;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 22px;
+    line-height: 26px;
     color: rgb(56, 56, 56);
-    padding: 2px 17px 4px;
+    padding: 2px 18px 4px;
     border: 1px solid black;
     text-align: center;
     text-decoration: none;
@@ -538,8 +538,8 @@ p strong {
 .infoButtonBack {
     user-select: none;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 25px;
+    right: 15px;
     /* Property to make entire button clickable */
     z-index: 2;
 }
@@ -637,8 +637,9 @@ p strong {
     background: var(--titlegradient);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 3px;
-    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-top: 13px;
+    font-size: 2.5em;
 }
 
 /* Sub headers for content in Information sliders */
