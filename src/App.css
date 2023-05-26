@@ -355,9 +355,7 @@ p strong {
     margin-top: -60px;
     background-color: var(--backdropcolor);
     color:#292929;
-    padding: 20px;
-    padding-top: 0px;
-    padding-bottom: 15px;
+    padding: 0 20px 15px;
     border-radius: 10px;
     min-width: 400px;
     inline-size: min-content;
@@ -531,7 +529,7 @@ p strong {
 
 /* Information popup window */
 .infoBackdrop {
-    width: 600px;
+    width: 650px;
     height: 650px;
     position: relative;
     overflow: auto;
@@ -570,7 +568,7 @@ p strong {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: #dddddd;
+    background: var(--foregroundcolor);
     border: 1px solid #292929;
     position: absolute;
     display: flex;
@@ -578,16 +576,11 @@ p strong {
     align-items: center;
     cursor: pointer;
     user-select: none;
-    opacity: 0.7;
+    opacity: 0.9;
     transition: ease-in-out 0.2s;
     outline: none;
   }
   
-.sliderArrow img {
-    width: 25px;
-    height: 25px;
-    pointer-events: none;
-}
 
 .sliderArrow:hover {
     opacity: 1;
@@ -595,18 +588,18 @@ p strong {
 }
 
 .sliderArrow:active {
-    background-color: white;
+    background-color: rgb(253, 251, 248);
 }
 
 .prevSlideButton {
     top: 50%;
-    left: 10px;
+    left: 12px;
     transform: translateY(-60%);
 }
 
 .nextSlideButton {
     top: 50%;
-    right: 10px;
+    right: 12px;
     transform: translateY(-60%);
 }
 
