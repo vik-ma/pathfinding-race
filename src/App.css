@@ -119,14 +119,14 @@ p strong {
 .selectedChoice {
     background: -webkit-linear-gradient(rgb(180, 163, 11), rgb(224, 217, 108));
     box-shadow: inset 0 0 0 3px rgb(226, 203, 74) !important;
-    color:#33330a;
+    color:#313107;
 }
 
 /* Winning contender to be displayed after visualization had ended */
 .winnerAlgo {
     background: -webkit-linear-gradient(#03b603, #72ff30) !important;
     box-shadow: inset 0 0 0 3px rgb(67, 235, 25);
-    color:#0e2e13;
+    color:#033009;
 }
 
 /* Text next to every contender to be displayed after visualization has ended */
