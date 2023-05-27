@@ -38,7 +38,7 @@ export const GameMenu = () => {
         <div className="title">WHICH ALGORITHM WILL REACH THE GOAL NODE </div>{" "}
         <div className={nodeDivMap["nodegoal"]}>G</div>{" "}
         <div className="title"> FIRST?</div>
-        <div>
+        <div className="contenderContainer">
           <div
             className={`contenderChoice ${
               selectedDiv === "contenderChoice1" ? "selectedChoice" : ""

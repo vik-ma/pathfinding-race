@@ -95,6 +95,12 @@ p strong {
     border: 1px solid rgb(32, 32, 32) !important;
 }
 
+/* Container for all contenderChoice elements */
+.contenderContainer {
+    /* Property to not create artifacts with animations */
+    backface-visibility: hidden;
+}
+
 /* Clickable container for contending pathfinding algorithms in GameMenu */
 .contenderChoice {
     padding: 3px;
