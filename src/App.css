@@ -683,7 +683,7 @@ p strong {
 .githubContainer {
     position: absolute;
     right: 13px;
-    bottom: 10px;
+    bottom: 8px;
 }
 
 .githubLink {
@@ -695,6 +695,12 @@ p strong {
     border-radius: 7px;
     transition-duration: 0.3s;
     display: inline-block;
+}
+
+.githubLink:hover {
+    background-color: rgb(205, 255, 147);
+    box-shadow: 0 0 6px rgb(56, 56, 56);
+    transform: scale(1.1);
 }
 
 /* Template for nodes in grid */
