@@ -85,15 +85,16 @@ export const InfoSlider = () => {
               ></div>
             ))}
           </div>
-          <div className="githubContainer">
+          <div className="githubContainer" tooltip="asddadasdsdasdasdsaads">
             <a
               className="githubLink"
               href="https://github.com/vik-ma/pathfinding-race"
               target="_blank"
               rel="noreferrer"
+              
             >
-              <img src={GitHubMark} alt="GitHub Mark" height={30} />
-              <img src={GitHubLogo} alt="GitHub Logo" height={30} />
+              <img src={GitHubMark} alt="GitHub Mark" width={30} />
+              <img src={GitHubLogo} alt="GitHub Logo" width={73} />
             </a>
           </div>
         </div>
