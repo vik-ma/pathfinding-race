@@ -2,6 +2,8 @@ import React, { useContext, useRef, useEffect } from "react";
 import { AppContext } from "../Helpers/AppContext";
 import { SliderContent } from "./SliderContent";
 import { SliderArrow } from "./SliderArrow";
+import GitHubLogo from "../Icons/GitHub_Logo.png";
+import GitHubMark from "../Icons/github-mark.png";
 
 export const InfoSlider = () => {
   const { setIsInfoRendered, slideIndex, setSlideIndex } =
@@ -28,10 +30,7 @@ export const InfoSlider = () => {
   useEffect(() => {
     // Close Information popup when clicking outside of Information window
     function handleClickOutside(event) {
-      if (
-        windowRef.current &&
-        !windowRef.current.contains(event.target)
-      ) {
+      if (windowRef.current && !windowRef.current.contains(event.target)) {
         setIsInfoRendered(false);
       }
     }
@@ -85,6 +84,17 @@ export const InfoSlider = () => {
                 className={slideIndex === index ? "dot active" : "dot"}
               ></div>
             ))}
+          </div>
+          <div className="githubContainer">
+            <a
+              className="githubLink"
+              href="https://github.com/vik-ma/pathfinding-race"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={GitHubMark} alt="GitHub Mark" height={30} />
+              <img src={GitHubLogo} alt="GitHub Logo" height={30} />
+            </a>
           </div>
         </div>
       </div>

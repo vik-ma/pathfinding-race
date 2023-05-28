@@ -544,8 +544,8 @@ p strong {
 .infoButtonBack {
     user-select: none;
     position: absolute;
-    top: 22px;
-    right: 15px;
+    top: 15px;
+    right: 10px;
     /* Property to make entire button clickable */
     z-index: 2;
 }
@@ -678,6 +678,23 @@ p strong {
 .infoNodeWall {
     border: 1px solid rgb(32, 32, 32) !important; 
     border-radius: 2px;
+}
+
+.githubContainer {
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+}
+
+.githubLink {
+    background-color: var(--foregroundcolor);
+    padding: 4px 12px 1px;
+    border: 1px solid rgb(56, 56, 56);
+    box-shadow: 0 0 4px rgb(56, 56, 56);
+    cursor: pointer;
+    border-radius: 7px;
+    transition-duration: 0.3s;
+    display: inline-block;
 }
 
 /* Template for nodes in grid */
