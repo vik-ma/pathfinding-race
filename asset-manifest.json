@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/pathfinding-race/static/css/main.c178e0b9.css",
+    "main.css": "/pathfinding-race/static/css/main.26c24f58.css",
     "main.js": "/pathfinding-race/static/js/main.f29225cb.js",
     "static/js/787.4bb41245.chunk.js": "/pathfinding-race/static/js/787.4bb41245.chunk.js",
     "static/media/GitHub_Logo.png": "/pathfinding-race/static/media/GitHub_Logo.746ec8f0bc97208f903e.png",
     "index.html": "/pathfinding-race/index.html",
-    "main.c178e0b9.css.map": "/pathfinding-race/static/css/main.c178e0b9.css.map",
+    "main.26c24f58.css.map": "/pathfinding-race/static/css/main.26c24f58.css.map",
     "main.f29225cb.js.map": "/pathfinding-race/static/js/main.f29225cb.js.map",
     "787.4bb41245.chunk.js.map": "/pathfinding-race/static/js/787.4bb41245.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c178e0b9.css",
+    "static/css/main.26c24f58.css",
     "static/js/main.f29225cb.js"
   ]
 }
