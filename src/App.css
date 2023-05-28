@@ -694,8 +694,8 @@ p strong {
     border: 1px solid rgb(56, 56, 56);
     box-shadow: 0 0 4px rgb(56, 56, 56);
     cursor: pointer;
-    border-radius: 7px;
-    transition-duration: 0.3s;
+    border-radius: 10px;
+    transition-duration: 0.2s;
     display: inline-block;
 }
 
