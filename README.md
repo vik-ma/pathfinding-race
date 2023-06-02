@@ -4,7 +4,7 @@ Pathfinding Race is not only a pathfinding visualizer, but also a game! Multiple
 
 ![Pathfinding Race Preview](pathfinding-race-preview.gif)
 
-**[Play it now, hosted on GitHub Pages!](https://vik-ma.github.io/pathfinding-race/)**
+<font size="6">**[Play it now, hosted on GitHub Pages!](https://vik-ma.github.io/pathfinding-race/)**</font>
 
 The project is made in React and requires JavaScript to be played.
 
