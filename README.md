@@ -2,6 +2,8 @@
 
 Pathfinding Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!
 
+<video width="840" height="820" src="https://github.com/vik-ma/pathfinding-race/assets/1612287/a7430bc2-25dc-4dee-bd8b-ccb0b598500a"></video>
+
 **[Play it now, hosted on GitHub Pages!](https://vik-ma.github.io/pathfinding-race/)**
 
 The project is made in React and requires JavaScript to be played.
