@@ -568,43 +568,52 @@ p strong {
     z-index: 1;
 }
 
-/* Arrow button to change slide */
+/* Invisible button to change Information slide */
 .sliderArrow {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--foregroundcolor);
-    border: 1px solid #292929;
+    margin-top: 60px;
+    height: 560px;
+    border: none;
+    background: none;
+    appearance: none;
+    padding: 0;
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
     user-select: none;
     opacity: 0.9;
     transition: ease-in-out 0.2s;
     outline: none;
-  }
+}
   
-
 .sliderArrow:hover {
     opacity: 1;
     transform: translateY(-60%) scale(1.15);
 }
 
-.sliderArrow:active {
+.sliderArrow:active>.sliderArrowIcon {
     background-color: rgb(253, 251, 248);
+}
+
+/* Visible Arrow button */ 
+.sliderArrowIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--foregroundcolor);
+    border: 1px solid #292929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .prevSlideButton {
     top: 50%;
-    left: 9px;
+    left: 8px;
     transform: translateY(-60%);
 }
 
 .nextSlideButton {
     top: 50%;
-    right: 9px;
+    right: 8px;
     transform: translateY(-60%);
 }
 

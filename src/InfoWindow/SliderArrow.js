@@ -13,7 +13,9 @@ export const SliderArrow = ({ changeSlide, direction }) => {
       }
     >
       {/* Display right arrow for next slide and left arrow for prev slide */}
-      {direction === "next" ? <RightArrow /> : <LeftArrow />}
+      <div className="sliderArrowIcon">
+        {direction === "next" ? <RightArrow /> : <LeftArrow />}
+      </div>
     </button>
   );
 };
