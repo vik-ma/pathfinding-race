@@ -626,6 +626,7 @@ p strong {
     margin: 0 4px;
     background: var(--foregroundcolor);
     transition-duration: 0.2s;
+    cursor: pointer;
 }
 
 /* Highlight dot corresponding to current slide */
