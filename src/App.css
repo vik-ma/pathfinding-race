@@ -535,7 +535,7 @@ p strong {
 /* Information popup window */
 .infoBackdrop {
     width: 650px;
-    height: 650px;
+    height: 656px;
     position: relative;
     overflow: auto;
 }
@@ -551,10 +551,10 @@ p strong {
 
 /* Part of Information window where SliderContent gets filled */
 .slide {
-    left:0;
+    left: 0;
     position: absolute;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 66px;
+    margin-right: 66px;
     overflow-wrap: break-word;
     opacity: 0;
     transition-duration: 0.2s;
@@ -598,13 +598,13 @@ p strong {
 
 .prevSlideButton {
     top: 50%;
-    left: 8px;
+    left: 9px;
     transform: translateY(-60%);
 }
 
 .nextSlideButton {
     top: 50%;
-    right: 8px;
+    right: 9px;
     transform: translateY(-60%);
 }
 
@@ -644,7 +644,7 @@ p strong {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 5px;
-    margin-top: 13px;
+    margin-top: 20px;
     font-size: 2.5em;
 }
 
@@ -683,7 +683,7 @@ p strong {
 /* Container inside InfoSlider for external link to GitHub Repo */
 .githubContainer {
     position: absolute;
-    right: 8px;
+    right: 9px;
     bottom: 8px;
 }
 
