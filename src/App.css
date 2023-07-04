@@ -411,9 +411,8 @@ p strong {
 /* Align 'Done' button in Settings Menu to the bottom right */
 .settingsDoneButtonDiv {
     position: absolute;
-    bottom: 10px;
-    right: 5px;
-    margin-right: 5px;
+    bottom: 8px;
+    right: 8px;
 }
 
 .settingsTitle {   
@@ -544,8 +543,8 @@ p strong {
 .infoButtonBack {
     user-select: none;
     position: absolute;
-    top: 15px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
     /* Property to make entire button clickable */
     z-index: 2;
 }
@@ -599,13 +598,13 @@ p strong {
 
 .prevSlideButton {
     top: 50%;
-    left: 12px;
+    left: 8px;
     transform: translateY(-60%);
 }
 
 .nextSlideButton {
     top: 50%;
-    right: 12px;
+    right: 8px;
     transform: translateY(-60%);
 }
 
@@ -684,7 +683,7 @@ p strong {
 /* Container inside InfoSlider for external link to GitHub Repo */
 .githubContainer {
     position: absolute;
-    right: 10px;
+    right: 8px;
     bottom: 8px;
 }
 
