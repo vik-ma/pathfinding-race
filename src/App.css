@@ -547,7 +547,8 @@ p strong {
 /* Information popup window */
 .infoBackdrop {
     width: 650px;
-    height: 656px;
+    height: 800px;
+    padding: 0;
     position: relative;
     overflow: auto;
 }
@@ -563,10 +564,7 @@ p strong {
 
 /* Part of Information window where SliderContent gets filled */
 .slide {
-    left: 0;
     position: absolute;
-    margin-left: 70px;
-    margin-right: 70px;
     overflow-wrap: break-word;
     opacity: 0;
     transition-duration: 0.2s;
@@ -580,20 +578,31 @@ p strong {
     z-index: 1;
 }
 
+.sliderContentContainer {
+    position: relative;
+    width: 100%;
+    
+}
+
+.sliderArrowContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 40px;
+    width: 100px;
+}
+
 /* Invisible button to change Information slide */
-.sliderArrow {
-    margin-top: 60px;
-    height: 560px;
+.sliderArrow {  
     border: none;
     background: none;
     appearance: none;
-    padding: 3px;
-    position: absolute;
     cursor: pointer;
     user-select: none;
     opacity: 0.9;
     transition: ease-in-out 0.2s;
     outline: none;
+
 }
   
 .sliderArrow:hover {
@@ -659,6 +668,19 @@ p strong {
     transform: scale(1.2); 
 }
 
+.infoContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.infoMain {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
 /* Main header for every slide in Information window */
 .infoTitle {
     margin-bottom: 8px;
@@ -684,7 +706,7 @@ p strong {
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
-    margin:0;
+    margin: 0;
     margin-top: -2px;
     margin-bottom: 1px;
 }

@@ -44,14 +44,7 @@ export const InfoSlider = () => {
   return (
     <div className="popupBackground">
       <div ref={windowRef} className="popupBackdrop infoBackdrop">
-        <div className="infoInner">
-          {/* Show arrow buttons if prev/next slide is available */}
-          {slideIndex !== SliderContent.length - 1 ? (
-            <SliderArrow changeSlide={nextSlideButton} direction={"next"} />
-          ) : null}
-          {slideIndex !== 0 ? (
-            <SliderArrow changeSlide={prevSlideButton} direction={"prev"} />
-          ) : null}
+        <div className="infoContainer">
           <div className="infoButtonBack">
             <button
               className="popupButton"
@@ -60,21 +53,37 @@ export const InfoSlider = () => {
               Close
             </button>
           </div>
+          <div className="infoMain">
+            {/* Show left arrow button if prev slide is available */}
+            <div className="sliderArrowContainer">
+              {slideIndex !== 0 ? (
+                <SliderArrow changeSlide={prevSlideButton} direction={"prev"} />
+              ) : null}
+            </div>
+            <div className="sliderContentContainer">
+              {/* Fill each slide with corresponding index in SliderContent */}
+              {SliderContent.map((obj, index) => {
+                return (
+                  <div
+                    key={obj.id}
+                    className={
+                      slideIndex === index ? "slide slideCurrent" : "slide"
+                    }
+                  >
+                    {SliderContent[index].title}
+                    {SliderContent[index].text}
+                  </div>
+                );
+              })}
+            </div>
 
-          {/* Fill each slide with corresponding index in SliderContent */}
-          {SliderContent.map((obj, index) => {
-            return (
-              <div
-                key={obj.id}
-                className={
-                  slideIndex === index ? "slide slideCurrent" : "slide"
-                }
-              >
-                {SliderContent[index].title}
-                {SliderContent[index].text}
-              </div>
-            );
-          })}
+            {/* Show right arrow button if next slide is available */}
+            <div className="sliderArrowContainer">
+              {slideIndex !== SliderContent.length - 1 ? (
+                <SliderArrow changeSlide={nextSlideButton} direction={"next"} />
+              ) : null}
+            </div>
+          </div>
           {/* Create clickable dots at bottom of window based on SliderContent elements */}
           <div className="sliderDots">
             {Array.from({ length: SliderContent.length }).map((item, index) => (
@@ -85,7 +94,10 @@ export const InfoSlider = () => {
               ></div>
             ))}
           </div>
-          <div className="githubContainer" title="Visit the project's GitHub repo">
+          <div
+            className="githubContainer"
+            title="Visit the project's GitHub repo"
+          >
             <a
               className="githubLink"
               href="https://github.com/vik-ma/pathfinding-race"
