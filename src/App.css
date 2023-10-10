@@ -244,7 +244,10 @@ p strong {
     font-size: 30px;
     background: -webkit-linear-gradient(rgb(114, 76, 19), rgb(61, 49, 36));
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     vertical-align: top;
     line-height: 110%;
 }
@@ -267,7 +270,10 @@ p strong {
     font-family: Arial, Helvetica, sans-serif;
     background: -webkit-linear-gradient( rgb(202, 202, 202),rgb(240, 240, 240));
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -418,7 +424,10 @@ p strong {
 .settingsTitle {   
     background: var(--titlegradient);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     margin:0;
     height: min-content;
     padding: 0;
@@ -428,7 +437,10 @@ p strong {
 .algoListTitle {
     background: var(--titlegradient);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     margin-top: 12px;
     margin-bottom: 3px;
 }
@@ -651,7 +663,10 @@ p strong {
 .infoTitle {
     background: var(--titlegradient);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     margin-bottom: 5px;
     margin-top: 20px;
     font-size: 2.5em;
@@ -661,7 +676,10 @@ p strong {
 .infoSubTitle {
     background: var(--subtitlegradient);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
     margin:0;
     margin-top: -2px;
     margin-bottom: 1px;
