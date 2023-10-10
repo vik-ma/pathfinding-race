@@ -397,7 +397,7 @@ export const SliderContent = [
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
-          In this app, Bidirectional Search is a regular Breadth First Search
+GreedyBestFirstSearch          In this app, Bidirectional Search is a regular Breadth First Search
           applied from both the Start Node and the Goal Node.
           <br />
           <br />
