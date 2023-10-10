@@ -565,8 +565,8 @@ p strong {
 .slide {
     left: 0;
     position: absolute;
-    margin-left: 66px;
-    margin-right: 66px;
+    margin-left: 70px;
+    margin-right: 70px;
     overflow-wrap: break-word;
     opacity: 0;
     transition-duration: 0.2s;
@@ -587,7 +587,7 @@ p strong {
     border: none;
     background: none;
     appearance: none;
-    padding: 0;
+    padding: 3px;
     position: absolute;
     cursor: pointer;
     user-select: none;
