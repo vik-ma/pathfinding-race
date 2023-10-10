@@ -661,15 +661,19 @@ p strong {
 
 /* Main header for every slide in Information window */
 .infoTitle {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+
+/* Gradient for infoTitle header */
+.infoTitleGradient {
     background: var(--titlegradient);
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
-    margin-bottom: 5px;
-    margin-top: 20px;
-    font-size: 2.5em;
 }
 
 /* Sub headers for content in Information sliders */

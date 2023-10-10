@@ -2,7 +2,7 @@
 export const SliderContent = [
   {
     id: "SLIDER-INFO-1",
-    title: <h1 className="infoTitle">Information</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Information</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">About</h2>
@@ -56,7 +56,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-INFO-2",
-    title: <h1 className="infoTitle">Additional Information</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Additional Information</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
@@ -115,7 +115,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-NODES-INFO",
-    title: <h1 className="infoTitle">Nodes</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Nodes</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle infoSubTitleNodes">Start Nodes</h2>
@@ -175,7 +175,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-BFS",
-    title: <h1 className="infoTitle">Breadth First Search</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Breadth First Search</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -214,7 +214,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-DFS",
-    title: <h1 className="infoTitle">Depth First Search</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Depth First Search</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -261,7 +261,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-DIJKSTRA",
-    title: <h1 className="infoTitle">Dijkstra's Algorithm</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Dijkstra's Algorithm</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -304,7 +304,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-ASTAR",
-    title: <h1 className="infoTitle">A-Star Search</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">A-Star Search</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -342,7 +342,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-GBFS",
-    title: <h1 className="infoTitle">Greedy Best-First Search</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Greedy Best-First Search</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -385,7 +385,7 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-BIDIR",
-    title: <h1 className="infoTitle">Bidirectional Search</h1>,
+    title: <h1 className="infoTitle"><span className="infoTitleGradient">Bidirectional Search</span></h1>,
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
