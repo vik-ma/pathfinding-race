@@ -578,19 +578,21 @@ p strong {
     z-index: 1;
 }
 
+/* Container for the content inside of Information slider */
 .sliderContentContainer {
     position: relative;
     width: 100%;
 }
 
+/* Container for the side parts of the Information slider, containing the navigation arrows */
 .sliderSideContainer {
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin-top: 30px;
     width: 100px;
 }
 
+/* Button to change slides inside Information slider */
 .sliderArrowButton {
     height: 100%;
     cursor: pointer;
@@ -601,23 +603,10 @@ p strong {
 }
 
 /* Invisible button to change Information slide */
-.sliderArrowIconContainer {  
+.sliderArrowIcon {  
     opacity: 0.9;
     transition: ease-in-out 0.2s;
     outline: none;
-}
-  
-.sliderArrowButton:hover>.sliderArrowIconContainer {
-    opacity: 1;
-    transform: translateY(-60%) scale(1.15);
-}
-
-.sliderArrowButton:active .sliderArrowIcon {
-    background-color: rgb(253, 251, 248);
-}
-
-/* Visible Arrow button */ 
-.sliderArrowIcon {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -627,17 +616,17 @@ p strong {
     justify-content: center;
     align-items: center;
 }
-
-.prevSlideButton {
-    top: 50%;
-    left: 8px;
-    transform: translateY(-60%);
+  
+/* Increase the size and opacity of sliderArrowIcon when hovering sliderArrowButton */
+.sliderArrowButton:hover>.sliderArrowIcon {
+    opacity: 1;
+    transform: scale(1.15);
 }
 
-.nextSlideButton {
-    top: 50%;
-    right: 8px;
-    transform: translateY(-60%);
+/* Change the background color of sliderArrowIcon when clicking sliderArrowButton */
+.sliderArrowButton:active .sliderArrowIcon {
+    background-color: rgb(253, 251, 248);
+    transition: ease 0.1s;
 }
 
 /* Container for clickable dots at the bottom of Information window */

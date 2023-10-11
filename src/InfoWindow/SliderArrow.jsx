@@ -8,14 +8,12 @@ export const SliderArrow = ({ changeSlide, direction }) => {
         className={
           //Go to new slide based on direction
           direction === "next"
-            ? "sliderArrowIconContainer nextSlideButton"
-            : "sliderArrowIconContainer prevSlideButton"
+            ? "sliderArrowIcon"
+            : "sliderArrowIcon"
         }
       >
         {/* Display right arrow for next slide and left arrow for prev slide */}
-        <div className="sliderArrowIcon">
-          {direction === "next" ? <RightArrow /> : <LeftArrow />}
-        </div>
+        {direction === "next" ? <RightArrow /> : <LeftArrow />}
       </div>
     </button>
   );
