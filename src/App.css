@@ -591,7 +591,7 @@ p strong {
     width: 100px;
 }
 
-.sliderArrowContainer {
+.sliderArrowButton {
     height: 100%;
     cursor: pointer;
     border: none;
@@ -601,18 +601,18 @@ p strong {
 }
 
 /* Invisible button to change Information slide */
-.sliderArrow {  
+.sliderArrowIconContainer {  
     opacity: 0.9;
     transition: ease-in-out 0.2s;
     outline: none;
 }
   
-.sliderArrowContainer:hover>.sliderArrow {
+.sliderArrowButton:hover>.sliderArrowIconContainer {
     opacity: 1;
     transform: translateY(-60%) scale(1.15);
 }
 
-.sliderArrowContainer:active .sliderArrowIcon {
+.sliderArrowButton:active .sliderArrowIcon {
     background-color: rgb(253, 251, 248);
 }
 

@@ -3,13 +3,13 @@ import LeftArrow from "../Icons/LeftArrow";
 
 export const SliderArrow = ({ changeSlide, direction }) => {
   return (
-    <button onClick={changeSlide} className="sliderArrowContainer">
+    <button onClick={changeSlide} className="sliderArrowButton">
       <div
         className={
           //Go to new slide based on direction
           direction === "next"
-            ? "sliderArrow nextSlideButton"
-            : "sliderArrow prevSlideButton"
+            ? "sliderArrowIconContainer nextSlideButton"
+            : "sliderArrowIconContainer prevSlideButton"
         }
       >
         {/* Display right arrow for next slide and left arrow for prev slide */}
