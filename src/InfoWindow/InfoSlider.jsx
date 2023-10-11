@@ -55,11 +55,11 @@ export const InfoSlider = () => {
           </div>
           <div className="infoMain">
             {/* Show left arrow button if prev slide is available */}
-            <button className="sliderArrowContainer">
+            <div className="sliderSideContainer">
               {slideIndex !== 0 ? (
                 <SliderArrow changeSlide={prevSlideButton} direction={"prev"} />
               ) : null}
-            </button>
+            </div>
             <div className="sliderContentContainer">
               {/* Fill each slide with corresponding index in SliderContent */}
               {SliderContent.map((obj, index) => {
@@ -78,11 +78,11 @@ export const InfoSlider = () => {
             </div>
 
             {/* Show right arrow button if next slide is available */}
-            <button className="sliderArrowContainer">
+            <div className="sliderSideContainer">
               {slideIndex !== SliderContent.length - 1 ? (
                 <SliderArrow changeSlide={nextSlideButton} direction={"next"} />
               ) : null}
-            </button>
+            </div>
           </div>
           {/* Create clickable dots at bottom of window based on SliderContent elements */}
           <div className="sliderDots">

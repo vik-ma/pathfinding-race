@@ -583,12 +583,16 @@ p strong {
     width: 100%;
 }
 
-.sliderArrowContainer {
+.sliderSideContainer {
     display: flex;
     justify-content: center;
     align-items: center; 
     margin-top: 30px;
     width: 100px;
+}
+
+.sliderArrowContainer {
+    height: 100%;
     cursor: pointer;
     border: none;
     background: none;
@@ -608,7 +612,7 @@ p strong {
     transform: translateY(-60%) scale(1.15);
 }
 
-.sliderArrowContainer:active>.sliderArrowIcon {
+.sliderArrowContainer:active .sliderArrowIcon {
     background-color: rgb(253, 251, 248);
 }
 
