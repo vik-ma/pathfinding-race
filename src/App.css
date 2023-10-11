@@ -581,36 +581,34 @@ p strong {
 .sliderContentContainer {
     position: relative;
     width: 100%;
-    
 }
 
 .sliderArrowContainer {
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin-top: 40px;
+    margin-top: 30px;
     width: 100px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    appearance: none;
+    user-select: none;
 }
 
 /* Invisible button to change Information slide */
 .sliderArrow {  
-    border: none;
-    background: none;
-    appearance: none;
-    cursor: pointer;
-    user-select: none;
     opacity: 0.9;
     transition: ease-in-out 0.2s;
     outline: none;
-
 }
   
-.sliderArrow:hover {
+.sliderArrowContainer:hover>.sliderArrow {
     opacity: 1;
     transform: translateY(-60%) scale(1.15);
 }
 
-.sliderArrow:active>.sliderArrowIcon {
+.sliderArrowContainer:active>.sliderArrowIcon {
     background-color: rgb(253, 251, 248);
 }
 
