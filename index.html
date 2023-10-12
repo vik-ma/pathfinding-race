@@ -1,1 +1,97 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/pathfinding-race/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="A browser game where you get to guess which pathfinding algorithm will reach the goal first, all visualized!"/><link rel="manifest" href="/pathfinding-race/manifest.json"/><style>body{background:radial-gradient(circle at top left,#9c27b0,#ff9800);background-repeat:no-repeat;background-attachment:fixed;background-size:cover}noscript{color:#f7f7f7;text-shadow:0 0 1px #1a1a1a,-1px -1px 1px #1a1a1a,1px -1px 1px #1a1a1a,-1px 1px 1px #1a1a1a,1px 1px 1px #1a1a1a;font-weight:700;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}.noscript-h1{margin-top:20px;margin-bottom:15px;font-size:300%}.noscript-h2{margin-top:15px;font-size:200%}.noscript-h3{margin-top:15px;margin-bottom:25px;font-size:250%}.noscript-p{color:#f7f7f7}.noscript-app-container{display:flex;justify-content:center;align-items:center}.noscript-app-backdrop{background-color:rgba(0,0,0,.4);padding:0 40px;border-radius:16px;border:1px solid #000;box-shadow:0 0 15px #000;margin-top:15px;max-width:fit-content}</style><title>Pathfinding Race</title><script defer="defer" src="/pathfinding-race/static/js/main.32d7dcaf.js"></script><link href="/pathfinding-race/static/css/main.9c0ebe2c.css" rel="stylesheet"></head><body><noscript><main><div class="noscript-app-container"><div class="noscript-app-backdrop"><h1 class="noscript-h1">Pathfinding Race</h1><h2 class="noscript-h2">A Browser Game Visualizing Pathfinding Algorithms Made In React</h2><p class="noscript-p">Pathfinding Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!<br/><br/>The six pathfinding algorithms implemented in this app are:</p><ol><li>Breadth First Search</li><li>Depth First Search</li><li>Dijkstra's Algorithm</li><li>A-Star Search</li><li>Greedy Best-First Search</li><li>Bidirectional Breadth First Search</li></ol>You can read more about each algorithm by clicking the 'Information' button in the app.<p></p><p></p><h3 class="noscript-h3">Enable JavaScript To Play Pathfinding Race Now!</h3></div></div></main></noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:image/x-icon;base64,Qk02DAAAAAAAADYAAAAoAAAAIAAAACAAAAABABgAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APt7APx8APx8APx8APx8APx8APx8APx8APt7APx8APx8APx8APx8APx8APx8APx8APt7APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8APx8BPyAEPh8FviAGviAGviAGviAFviAE/iACPx8APx8APx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8BPx8E/iAJ/aCR/WEV/CHXPGHXvGIXvGIW/CITfKGLPeAEPh8BPx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8BPyAGviAQvSGZ++KAJBtAE4AAE4AAE4AAE4AAE4AQ04AbO1sOPOEEPiAAPx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8BPx8GviATfKGJ6l+AE4AAE4AAE4AAE4AAE4AAE4AAE4AAE4AKU4AYdpYIPiABPx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8EPiAPfOCPcGMAE4AAE4AAE4Acagta+2KY++Jc+2LAI9tAE4AKk4Aa9lZKvaCBPyAAPx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8BPx8IPiAS+6JAE5IAE4AAE4AcqgtXPGINfeEOPOCX/GIAI9tAE4AKk4AbdpZKvaABPyAAPx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APt7CPx8MveCPMKKAE4AAE4ARE4Abu5sO/OCOPOCWfCIcu2LAI9tAE4AKk4AbdpZKvZ/BPyAAPx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8DPh8PfOCJ6l+AE4AAE4AU3EAXvF9PfOENMOIAE4AAE4AAE4AAE4AKk4AbNlaKvaCBPyAAPx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8DPh8PfOCJ6l+AE4AAE4AZY8AV/CHOPOCM8OJAE4AAE4AAE4AAE4AKU4AXt1YIPiABPx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8CPx8NfeCPMOLAE4AAE4AU3EAXvF7KvaCNfeEUfKHXPGIXvGIW/CITfKGKvaADPh8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8BPyAJvaAQ9mJAE4tAE4ARE4AcO9rOPOEFviAFviAGviAGviAHfiAHviAEPiABPx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8FviATfKGAI9tAE4AAE4AZI8AZO+INfeEHfiAGviAIPiAMPeCL/eAFviABPx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8CPx8KvaATu+JAE5JAE4AAE4AU3EAcOx/Yu6IX/GIZu+KOcOJUpAAOPOEDPh8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8EPiANfeCUu2KAE5JAE4AAE4AAE4AAE4AAE4AAE4AAE4AXpAAQ/SEEPiAAPx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APt7APx8APx8APx8EPiALPeAWPCHS9qLAE4tAE4AAE4AAE4AAE4AAE4AZagtNfeCDPt/APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8CPx8GviANfeCUfKHWvGHXvGIXvGIXPGIU/CIO/OCFviABPx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8APx8APx8DPyAE/h8FviAGviAGviAGviAFviAEPiABPx8APx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAPx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8APx8AHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAAHQAICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="A browser game where you get to guess which pathfinding algorithm will reach the goal first, all visualized!"
+    />
+    <link rel="manifest" href="data:application/json;base64,ewogICJzaG9ydF9uYW1lIjogIlBhdGhmaW5kaW5nIFJhY2UiLAogICJuYW1lIjogIlBhdGhmaW5kaW5nIFJhY2U6IEJyb3dzZXIgR2FtZSBBYm91dCBQYXRoZmluZGluZyBBbGdvcml0aG1zIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZmF2aWNvbi5pY28iLAogICAgICAic2l6ZXMiOiAiNjR4NjQgMzJ4MzIgMjR4MjQgMTZ4MTYiLAogICAgICAidHlwZSI6ICJpbWFnZS94LWljb24iCiAgICB9CiAgXSwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJ0aGVtZV9jb2xvciI6ICIjMDAwMDAwIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjZmZmZmZmIgp9Cg==" />
+    <style>
+    body {
+      background: radial-gradient(circle at top left, #9c27b0, #ff9800);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    noscript {
+      color:rgb(247, 247, 247);
+      text-shadow:
+       0px 0px 1px rgb(26, 26, 26),
+     -1px -1px 1px rgb(26, 26, 26),  
+      1px -1px 1px rgb(26, 26, 26),
+      -1px 1px 1px rgb(26, 26, 26),
+       1px 1px 1px rgb(26, 26, 26);
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    } 
+    .noscript-h1 {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      font-size: 300%;
+    }
+    .noscript-h2 {
+      margin-top: 15px;
+      font-size: 200%;
+    }
+    .noscript-h3 {
+      margin-top: 15px;
+      margin-bottom: 25px;
+      font-size: 250%;
+    }
+    .noscript-p {
+      color:rgb(247, 247, 247);
+    }
+    .noscript-app-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .noscript-app-backdrop {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 0px 40px;
+      border-radius: 16px;
+      border: 1px solid black;
+      box-shadow: 0 0 15px black;
+      margin-top: 15px;
+      max-width: fit-content;
+    }
+    </style>
+    <title>Pathfinding Race</title>
+    <script type="module" crossorigin src="/assets/index-dd2efc2f.js"></script>
+    <link rel="stylesheet" href="/assets/index-17c56f8c.css">
+  </head>
+  <body>
+    <noscript>
+      <main>
+        <div class="noscript-app-container">
+          <div class="noscript-app-backdrop">
+            <h1 class="noscript-h1">Pathfinding Race</h1>
+            <h2 class="noscript-h2">A Browser Game Visualizing Pathfinding Algorithms Made In React</h2>
+            <p class="noscript-p">
+              Pathfinding Race is not only a pathfinding visualizer, but also a game! Multiple pathfinding algorithms will battle it out on a randomized grid, and the game is in correctly guessing which contender will reach the Goal Node first!
+              <br />
+              <br />
+              The six pathfinding algorithms implemented in this app are:
+              <ol>
+                <li>Breadth First Search</li>
+                <li>Depth First Search</li>
+                <li>Dijkstra's Algorithm</li>
+                <li>A-Star Search</li>
+                <li>Greedy Best-First Search</li>
+                <li>Bidirectional Breadth First Search</li>
+              </ol>
+              You can read more about each algorithm by clicking the 'Information' button in the app.</p>
+            </p>
+            <h3 class="noscript-h3">Enable JavaScript To Play Pathfinding Race Now!</h3>
+          </div>
+        </div>
+      </main>
+    </noscript>
+    <div id="root"></div>
+    
+  </body>
+</html>
