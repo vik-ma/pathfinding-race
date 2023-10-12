@@ -547,7 +547,7 @@ p strong {
 /* Information popup window */
 .infoBackdrop {
     width: 650px;
-    height: 800px;
+    height: 700px;
     padding: 0;
     position: relative;
     overflow: auto;
@@ -589,7 +589,7 @@ p strong {
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: 100px;
+    width: 96px;
 }
 
 /* Button to change slides inside Information slider */
@@ -600,6 +600,7 @@ p strong {
     background: none;
     appearance: none;
     user-select: none;
+    padding: 0;
 }
 
 /* Invisible button to change Information slide */
