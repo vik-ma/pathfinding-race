@@ -525,11 +525,22 @@ p strong {
     transition-duration: 0.1s;
 }
 
+/* Add pointer cursor to elements inside checkboxItem and allowDiagonalSetting */
+.checkboxItem>label, input,
+.allowDiagonalSetting>label, input {
+    cursor: pointer;
+}
+
 /* Highlight mouse-overed checkbox and corresponding label */
 .checkboxItem:hover {    
     filter: contrast(100%);
     filter: opacity(100%);
     color:black;
+}
+
+.checkboxItem:active,
+.allowDiagonalSetting:active {
+    filter: opacity(50%);
 }
 
 /* Container for all checkboxes related to 'Enabled Algorithms' */
