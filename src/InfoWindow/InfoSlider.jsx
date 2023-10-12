@@ -9,14 +9,16 @@ export const InfoSlider = () => {
   const { setIsInfoRendered, slideIndex, setSlideIndex } =
     useContext(AppContext);
 
-  // Go to slide to the right
+  // Go to slide to the right, unless at last index, then go to first slide
   const nextSlideButton = () => {
-    setSlideIndex(slideIndex + 1);
+    if (slideIndex === SliderContent.length - 1) setSlideIndex(0);
+    else setSlideIndex(slideIndex + 1);
   };
 
-  // Go to slide to the left
+  // Go to slide to the left, unless at first index, then go to last slide
   const prevSlideButton = () => {
-    setSlideIndex(slideIndex - 1);
+    if (slideIndex === 0) setSlideIndex(SliderContent.length - 1);
+    else setSlideIndex(slideIndex - 1);
   };
 
   // Change which dot is marked at the bottom of InfoWindow
@@ -56,9 +58,7 @@ export const InfoSlider = () => {
           <div className="infoMain">
             {/* Show left arrow button if prev slide is available */}
             <div className="sliderSideContainer">
-              {slideIndex !== 0 ? (
-                <SliderArrow changeSlide={prevSlideButton} direction={"prev"} />
-              ) : null}
+              <SliderArrow changeSlide={prevSlideButton} direction={"prev"} />
             </div>
             <div className="sliderContentContainer">
               {/* Fill each slide with corresponding index in SliderContent */}
@@ -79,9 +79,7 @@ export const InfoSlider = () => {
 
             {/* Show right arrow button if next slide is available */}
             <div className="sliderSideContainer">
-              {slideIndex !== SliderContent.length - 1 ? (
-                <SliderArrow changeSlide={nextSlideButton} direction={"next"} />
-              ) : null}
+              <SliderArrow changeSlide={nextSlideButton} direction={"next"} />
             </div>
           </div>
           {/* Create clickable dots at bottom of window based on SliderContent elements */}
