@@ -2,7 +2,11 @@
 export const SliderContent = [
   {
     id: "SLIDER-INFO-1",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Information</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Information</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">About</h2>
@@ -56,7 +60,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-INFO-2",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Additional Information</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Additional Information</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Pathfinding Algorithms</h2>
@@ -115,7 +123,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-NODES-INFO",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Nodes</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Nodes</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle infoSubTitleNodes">Start Nodes</h2>
@@ -175,7 +187,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-BFS",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Breadth First Search</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Breadth First Search</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -214,7 +230,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-DFS",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Depth First Search</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Depth First Search</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -261,7 +281,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-DIJKSTRA",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Dijkstra's Algorithm</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Dijkstra's Algorithm</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -278,7 +302,7 @@ export const SliderContent = [
         <p>
           Dijkstra's Algorithm uses a queue system just like Breadth First
           Search, but unlike Breadth First Search, Dijkstra's Algorithm will
-          utilize a priority queue rather than a normal queue where items are
+          utilize a priority queue rather than a normal queue, where items are
           added in chronological order.
           <br />
           Every adjacent node gets added to the queue along with a priority
@@ -304,7 +328,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-ASTAR",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">A-Star Search</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">A-Star Search</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -342,7 +370,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-GBFS",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Greedy Best-First Search</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Greedy Best-First Search</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -385,7 +417,11 @@ export const SliderContent = [
   },
   {
     id: "SLIDER-BIDIR",
-    title: <h1 className="infoTitle"><span className="infoTitleGradient">Bidirectional Search</span></h1>,
+    title: (
+      <h1 className="infoTitle">
+        <span className="infoTitleGradient">Bidirectional Search</span>
+      </h1>
+    ),
     text: (
       <>
         <h2 className="infoSubTitle">Description</h2>
@@ -397,7 +433,7 @@ export const SliderContent = [
         </p>
         <h2 className="infoSubTitle">How It Works</h2>
         <p>
-GreedyBestFirstSearch          In this app, Bidirectional Search is a regular Breadth First Search
+          In this app, Bidirectional Search is a regular Breadth First Search
           applied from both the Start Node and the Goal Node.
           <br />
           <br />
@@ -420,8 +456,8 @@ GreedyBestFirstSearch          In this app, Bidirectional Search is a regular Br
           <br />
           <br />
           It is consistently the most average performing pathfinding algorithm
-          implemented in this app, since the heuristic function of A-Star Search and
-          Greedy Best-First Search is generally more efficient than this
+          implemented in this app, since the heuristic function of A-Star Search
+          and Greedy Best-First Search is generally more efficient than this
           optimization of the Breadth First Search algorithm.
         </p>
       </>
